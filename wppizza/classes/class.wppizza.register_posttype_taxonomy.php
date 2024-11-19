@@ -57,17 +57,17 @@ class WPPIZZA_REGISTER_POSTTYPE_AND_TAXONOMY{
 		$labels = array(
 			'name'               => WPPIZZA_NAME.' '.__( 'Menu Items', 'wppizza-admin'),
 			'singular_name'      => WPPIZZA_NAME.' '.__( 'Menu Item', 'wppizza-admin'),
-			'add_new'            => __( 'Add New',  'wppizza-admin' ),
-			'add_new_item'       => __( 'Add New Menu Item','wppizza-admin' ),
-			'edit'				 => __( 'Edit', 'wppizza-admin' ),
-			'edit_item'          => __( 'Edit Menu Item','wppizza-admin' ),
-			'new_item'           => __( 'New Menu Item','wppizza-admin' ),
-			'all_items'          => __( 'All Menu Items','wppizza-admin' ),
-			'view'               => __( 'View', 'wppizza-admin' ),
-			'view_item'          => __( 'View Menu Item','wppizza-admin' ),
-			'search_items'       => __( 'Search Menu Items','wppizza-admin' ),
-			'not_found'          => __( 'No items found','wppizza-admin' ),
-			'not_found_in_trash' => __( 'No items found in the Trash','wppizza-admin' ),
+			'add_new'            => __( 'Add New',  'wppizza-admin'),
+			'add_new_item'       => __( 'Add New Menu Item','wppizza-admin'),
+			'edit'				 => __( 'Edit', 'wppizza-admin'),
+			'edit_item'          => __( 'Edit Menu Item','wppizza-admin'),
+			'new_item'           => __( 'New Menu Item','wppizza-admin'),
+			'all_items'          => __( 'All Menu Items','wppizza-admin'),
+			'view'               => __( 'View', 'wppizza-admin'),
+			'view_item'          => __( 'View Menu Item','wppizza-admin'),
+			'search_items'       => __( 'Search Menu Items','wppizza-admin'),
+			'not_found'          => __( 'No items found','wppizza-admin'),
+			'not_found_in_trash' => __( 'No items found in the Trash','wppizza-admin'),
 			'parent_item_colon'  => '',
 			'menu_name'          => ''.WPPIZZA_NAME.''
 		);
@@ -76,7 +76,7 @@ class WPPIZZA_REGISTER_POSTTYPE_AND_TAXONOMY{
 
 		$args = array(
 			'labels'        => $labels,
-			'description'   => sprintf( __( 'Holds %1$s  menu items data', 'wppizza-admin' ), WPPIZZA_NAME ),
+			'description'   => sprintf( __( 'Holds %1$s  menu items data', 'wppizza-admin'), WPPIZZA_NAME ),
 			'show_ui'		=> true,
 			'public'        => true,
 			//'publicly_queryable'	=> false,	// As Hint: set to false to completely disable single item pages (must/should resave permalinks)

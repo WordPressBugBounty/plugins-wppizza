@@ -3,7 +3,7 @@
 #* Plugin Name: WPPizza
 #* Plugin URI: https://wordpress.org/extend/plugins/wppizza/
 #* Description: A Restaurant Plugin (not only for Pizza)  
-#* Version: 3.19
+#* Version: 3.19.1
 #* Requires PHP: 5.3+
 #* Author: ollybach
 #* Author URI: https://www.wp-pizza.com
@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {exit();}
 *	[for convenience in plugin/theme development]
 *
 ***************************************************************/
-define('WPPIZZA_VERSION', '3.19');
+define('WPPIZZA_VERSION', '3.19.1');
 define('WPPIZZA_VERSION_MAJOR', '3');
 
 /***************************************************************
@@ -254,16 +254,18 @@ if (!class_exists( 'WPPIZZA' )){
 	  		and are subsequently used from there.
 	  		localization is split for convenience to enable frontend localization into more languages
 	  		without having to translate the whole backend too (although that would be ideal of course)
+	  		Filterable since 3.19.1
 	  		*/
+	  		$plugin_text_domain_path =  apply_filters('wppizza_filter_textdomain_path', dirname(plugin_basename( __FILE__ ) ) . '/lang');
 	  		if(is_admin()){
 	        	// admin localization strings
-	        	load_plugin_textdomain('wppizza-admin', false, dirname(plugin_basename( __FILE__ ) ) . '/lang' );
+	        	load_plugin_textdomain('wppizza-admin', false, $plugin_text_domain_path );
 	        	// load after admin to insert default localization strings
-	        	load_plugin_textdomain('wppizza', false, dirname(plugin_basename( __FILE__ ) ) . '/lang' );
+	        	load_plugin_textdomain('wppizza', false, $plugin_text_domain_path );
 	  		}else{
 	        	// frontend dev constants - not loaded by default (but can be enabled by constant) as it's kind of overkill loading these for very little benefit,
 	        	if(WPPIZZA_DEV_LOAD_TEXTDOMAIN){
-	        		load_plugin_textdomain('wppizza_dev', false, dirname(plugin_basename( __FILE__ ) ) . '/lang' );
+	        		load_plugin_textdomain('wppizza_dev', false, $plugin_text_domain_path );
 	        	}
 	  		}
 	    }
@@ -288,7 +290,7 @@ if (!class_exists( 'WPPIZZA' )){
 		function plugin_action_links($links, $file) {
 			
 			if (($file === plugin_basename(__FILE__) ) && (current_user_can('manage_options'))) {
-				$settings = '<a href="'. admin_url('edit.php?post_type=wppizza&page=order_settings') .'">'. esc_html__('Order Settings', 'disable-gutenberg') .'</a>';
+				$settings = '<a href="'. admin_url('edit.php?post_type=wppizza&page=order_settings') .'">'. esc_html__('Order Settings', 'wppizza-admin') .'</a>';
 				array_unshift($links, $settings);
 			}
 		

@@ -247,9 +247,9 @@ class WPPIZZA_MARKUP_EMAIL_PRINT{
 										/*label for order is made up of 3 labels*/
 										if($section_key=='order'){
 											$orderlbl=implode(' | ',$section['labels']['parameters']);
-											$markup.=''.sprintf( __( 'Show "%1$s"', 'wppizza-admin' ), $orderlbl ).'';
+											$markup.=''.sprintf( __( 'Show "%1$s"', 'wppizza-admin'), $orderlbl ).'';
 										}else{
-											$markup.=''.sprintf( __( 'Show "%1$s" label', 'wppizza-admin' ), $section['labels']['label'] ).'';
+											$markup.=''.sprintf( __( 'Show "%1$s" label', 'wppizza-admin'), $section['labels']['label'] ).'';
 										}
 									$markup.='</label>';
 

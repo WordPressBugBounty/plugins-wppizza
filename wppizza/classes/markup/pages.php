@@ -590,7 +590,7 @@ class WPPIZZA_MARKUP_PAGES{
 			right after opening div
 		*/
 		if(!empty($wppizza_options['tools']['disable_emails'])){
-			$markup['div_'] .= '<h3 style="color:red; text-align:center">'.esc_attr__('Note: Email sending has currently been disabled by the administrator', 'wppizza_dev').'</h3>';
+			$markup['div_'] .= '<h3 style="color:red; text-align:center">'.wppizza_dev_textdomain__('Note: Email sending has currently been disabled by the administrator', 'wppizza_dev').'</h3>';
 		}
 
 		/*
@@ -602,7 +602,7 @@ class WPPIZZA_MARKUP_PAGES{
 			/* explode comma separated str to array */
 			$always_open_for_user = explode(',', $wppizza_options['tools']['always_open_for_user']);
 			if( in_array(get_current_user_id(), $always_open_for_user) || in_array($_SERVER['REMOTE_ADDR'], $always_open_for_user)){
-				$markup['div_'] .= '<h3 style="color:red; text-align:center">'.esc_attr__('Note: Shop is set to be always open for your UserID / IP-Address', 'wppizza_dev').'</h3>';
+				$markup['div_'] .= '<h3 style="color:red; text-align:center">'.wppizza_dev_textdomain__('Note: Shop is set to be always open for your UserID / IP-Address', 'wppizza_dev').'</h3>';
 			}
 		}
 

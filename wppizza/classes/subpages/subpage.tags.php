@@ -38,12 +38,23 @@ class WPPIZZA_TAGS{
 	******************************************************************************************************************/
 	function __construct() {
 
-		$this->submenu_caps_title=__('Tags','wppizza-admin');
+		/*titles/labels throughout class*/
+		add_action('init', array( $this, 'init_admin_lables') );
 
 		/*register capabilities for this page*/
 		add_filter('wppizza_filter_define_caps', array( $this, 'wppizza_filter_define_caps'), $this->submenu_priority);
 
 	}
+
+	/******************
+	*	@since 3.19.1
+    *	[admin ajax include file]
+    *******************/
+	public function init_admin_lables(){
+		/*titles/labels throughout class*/
+		$this->submenu_caps_title	=	apply_filters('wppizza_filter_admin_label_caps_title_'.$this->class_key.'', __('Tags','wppizza-admin'));
+	}
+
 	/*********************************************************
 	*
 	*	[define caps]

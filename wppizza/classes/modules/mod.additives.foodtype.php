@@ -202,7 +202,7 @@ class WPPIZZA_MODULE_FOODTYPE{
 			$settings['help'][$this->section_key][] = array(
 				'label'=>__('Manage Type', 'wppizza-admin'),
 				'description'=>array(
-					__('Some meals or beverages may be of a certain type you may wish to indicate alongside the menu item title', 'wppizza-admin'),
+					__('Some meals or beverages may be of a certain type you may wish to indicate alongside the menu item title.', 'wppizza-admin'),
 					__('Define the types you would like to have available for selection here and select these as applicable in the individual menu item pages.', 'wppizza-admin'),
 					__('By default, selected types will be sorted alphabetically, but you can use the "sort" field to customise the sortorder.', 'wppizza-admin'),
 					__('If a food type is associated with an icon, the icon will be displayed, otherwise the selected sortid will be used. The full name/type will be displayed on hovering over icon or identification', 'wppizza-admin'),

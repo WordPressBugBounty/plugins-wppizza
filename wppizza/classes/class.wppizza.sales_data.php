@@ -55,7 +55,7 @@ class WPPIZZA_SALES_DATA{
 	*********************************************************/
 	function wppizza_report_detailed($array){
 
-		$array['detailed'] = __('Detailed','wppizza_admin');
+		$array['detailed'] = __('Detailed','wppizza-admin');
 
 	return $array;
 	}
@@ -149,55 +149,55 @@ class WPPIZZA_SALES_DATA{
 				$columns = array();
 
 				/* order transaction details */
-				$columns['order_id'] = __('Order ID', 'wppizza_admin');
-				$columns['order_date_formatted'] = __('Date', 'wppizza_admin');
-				$columns['order_paid_by'] = __('Paid By', 'wppizza_admin');
-				$columns['payment_status'] = __('Status', 'wppizza_admin');
-				$columns['transaction_id'] = __('Transaction ID', 'wppizza_admin');
-				$columns['self_pickup'] = __('Pickup', 'wppizza_admin');
+				$columns['order_id'] = __('Order ID', 'wppizza-admin');
+				$columns['order_date_formatted'] = __('Date', 'wppizza-admin');
+				$columns['order_paid_by'] = __('Paid By', 'wppizza-admin');
+				$columns['payment_status'] = __('Status', 'wppizza-admin');
+				$columns['transaction_id'] = __('Transaction ID', 'wppizza-admin');
+				$columns['self_pickup'] = __('Pickup', 'wppizza-admin');
 
 				/* WP (un)-registered users */
-				$columns['user_registered'] = __('Registered User', 'wppizza_admin');
-				$columns['user_username'] = __('Username', 'wppizza_admin');
-				$columns['user_fullname'] = __('Full Name', 'wppizza_admin');
-				$columns['user_email'] = __('eMail', 'wppizza_admin');
+				$columns['user_registered'] = __('Registered User', 'wppizza-admin');
+				$columns['user_username'] = __('Username', 'wppizza-admin');
+				$columns['user_fullname'] = __('Full Name', 'wppizza-admin');
+				$columns['user_email'] = __('eMail', 'wppizza-admin');
 
 				/* customer info labels - entered in checkout page - related to each order looping through each formfield */
 				foreach($data['formfields'][$blogID] as $ffID => $ffValues){
 					$columns['customer_'.$ffID] = $ffValues['label'];
 				}
-				$columns['customer_ip_address'] = __('IP Address', 'wppizza_admin');
+				$columns['customer_ip_address'] = __('IP Address', 'wppizza-admin');
 
 				/* order items */
-				$columns['order_verbose'] = __('Order Verbose', 'wppizza_admin');
-				$columns['number_of_items'] = __('Products Count', 'wppizza_admin');
-				$columns['products_verbose'] = __('Products Verbose', 'wppizza_admin');
+				$columns['order_verbose'] = __('Order Verbose', 'wppizza-admin');
+				$columns['number_of_items'] = __('Products Count', 'wppizza-admin');
+				$columns['products_verbose'] = __('Products Verbose', 'wppizza-admin');
 
 				/* financials */
-				$columns['currencyiso'] = __('Currency', 'wppizza_admin');
-				$columns['total_price_items'] = __('Price Items', 'wppizza_admin');
-				$columns['total_discounts'] = __('Discounts', 'wppizza_admin');
-				$columns['delivery_charges'] = __('Delivery Charges', 'wppizza_admin');
-				$columns['handling_charges'] = __('Handling Charges', 'wppizza_admin');
-				$columns['tips'] = __('Tips', 'wppizza_admin');
+				$columns['currencyiso'] = __('Currency', 'wppizza-admin');
+				$columns['total_price_items'] = __('Price Items', 'wppizza-admin');
+				$columns['total_discounts'] = __('Discounts', 'wppizza-admin');
+				$columns['delivery_charges'] = __('Delivery Charges', 'wppizza-admin');
+				$columns['handling_charges'] = __('Handling Charges', 'wppizza-admin');
+				$columns['tips'] = __('Tips', 'wppizza-admin');
 
 				//taxes verbose
-				$columns['tax_rates_verbose'] = __('Tax Rates Verbose', 'wppizza_admin');
+				$columns['tax_rates_verbose'] = __('Tax Rates Verbose', 'wppizza-admin');
 
 				//taxes details
-				$columns['tax_rate_main'] = __('Tax Rate (Main)', 'wppizza_admin');
-				$columns['tax_total_main'] = __('Tax Total (Main)', 'wppizza_admin');
-				$columns['tax_rate_alt'] = __('Tax Rate (Alt)', 'wppizza_admin');
-				$columns['tax_total_alt'] = __('Tax Total (Alt)', 'wppizza_admin');
-				$columns['tax_rate_shipping'] = __('Tax Rate (Shipping)', 'wppizza_admin');
-				$columns['tax_total_shipping'] = __('Tax Total (Shipping)', 'wppizza_admin');
+				$columns['tax_rate_main'] = __('Tax Rate (Main)', 'wppizza-admin');
+				$columns['tax_total_main'] = __('Tax Total (Main)', 'wppizza-admin');
+				$columns['tax_rate_alt'] = __('Tax Rate (Alt)', 'wppizza-admin');
+				$columns['tax_total_alt'] = __('Tax Total (Alt)', 'wppizza-admin');
+				$columns['tax_rate_shipping'] = __('Tax Rate (Shipping)', 'wppizza-admin');
+				$columns['tax_total_shipping'] = __('Tax Total (Shipping)', 'wppizza-admin');
 
 				//taxes summary
-				$columns['taxes_included'] = __('Taxes Included', 'wppizza_admin');
-				$columns['taxes'] = __('Tax Total', 'wppizza_admin');
+				$columns['taxes_included'] = __('Taxes Included', 'wppizza-admin');
+				$columns['taxes'] = __('Tax Total', 'wppizza-admin');
 
 				//total
-				$columns['total'] = __('Total', 'wppizza_admin');
+				$columns['total'] = __('Total', 'wppizza-admin');
 
 
 				/* ---------------------------

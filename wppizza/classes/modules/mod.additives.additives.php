@@ -203,7 +203,7 @@ class WPPIZZA_MODULE_ADDITIVES{
 					__('Some meals or beverages may contain additives.', 'wppizza-admin'),
 					__('Add any possible additives (or any other notes for that matter) here and select them at any meal / beverage that contains these additives. This in turn will add a footnote to pages denoting which item contains what additives', 'wppizza-admin'),
 					__('By default, additives will be sorted alphabetically.', 'wppizza-admin'),
-					__('However, you can use the "sort" field to customise the sortorder. If you do, your choosen sort id will be used to identify your choosen additives in the frontend so you want to make sure to have unique identifiers/sort id\'s', 'wppizza-admin')
+					__('However, you can use the "sort" field to customise the sortorder. If you do, your choosen sort id will be used to identify your choosen additives in the frontend so you want to make sure to have unique identifiers/sort id\'s.', 'wppizza-admin')
 				)
 			);
 		}

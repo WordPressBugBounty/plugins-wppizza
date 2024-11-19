@@ -9,14 +9,15 @@ msgstr ""
 "Development Textstrings (For "
 "completeness - feel free to "
 "ignore)\n"
-"POT-Creation-Date: 2022-12-06 "
-"20:59+0000\n"
+"Report-Msgid-Bugs-To: Translator "
+"Name <translations@example.com>\n"
+"POT-Creation-Date: 2024-11-18 "
+"14:27+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your Name "
 "<you@example.com>\n"
 "Language-Team: dev@wp-pizza.com\n"
-"Report-Msgid-Bugs-To: Translator "
-"Name <translations@example.com>\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; "
 "charset=UTF-8\n"
@@ -27,48 +28,19 @@ msgstr ""
 "Generator: Poedit 1.6.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: "
-"esc_attr__\n"
+"wppizza_dev_textdomain__\n"
 "X-Poedit-Basepath: ..\n"
-"Language: en_US\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: classes/markup/pages.php:588
+#: classes/markup/pages.php:593
 msgid ""
 "Note: Email sending has currently "
 "been disabled by the administrator"
 msgstr ""
 
-#: classes/markup/pages.php:600
+#: classes/markup/pages.php:605
 msgid ""
 "Note: Shop is set to be always "
 "open for your UserID / IP-Address"
-msgstr ""
-
-#: wppizza.php:275
-msgid "Getting started"
-msgstr ""
-
-#: wppizza.php:276
-#, fuzzy
-msgid "Documentation"
-msgstr ""
-"Have questions about connecting "
-"with Stripe? See the <a href=\"%s"
-"\" target=\"_blank\" rel="
-"\"noopener noreferrer"
-"\">documentation</a>."
-
-#: wppizza.php:277
-msgid "Homepage"
-msgstr ""
-
-#: wppizza.php:278
-msgid "Changelog"
-msgstr ""
-
-#: wppizza.php:279
-msgid ""
-"Click here to rate and review "
-"this plugin on WordPress.org"
 msgstr ""

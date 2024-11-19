@@ -61,6 +61,7 @@ class WPPIZZA_REPORTS{
 
 		/*titles/labels throughout class*/
 		add_action('init', array( $this, 'init_admin_lables') );
+
 		/** registering submenu page -> priority 110 **/
 		add_action( 'admin_menu', array( $this, 'wppizza_register_submenu_page'), $this->submenu_priority );
 
@@ -306,7 +307,7 @@ class WPPIZZA_REPORTS{
 				date selection
 			*/
 			$output.='<span id="wppizza-reports-range-set">';
-				$output.=''.__('Custom range','wppizza-admin').' : ';
+				$output.=''.__('Custom Range','wppizza-admin').' : ';
 				$output.='<input type="text" size="9" placeholder="yyyy-mm-dd" value="'.$getFrom.'" name="wppizza_reports_start_date" id="wppizza_reports_start_date" readonly="readonly" />';
 				$output.='<input type="text" size="9" placeholder="yyyy-mm-dd" value="'.$getTo.'" name="wppizza_reports_end_date" id="wppizza_reports_end_date" readonly="readonly" />';
 				$output.='<input type="button" class="button" value="'.__('Go','wppizza-admin').'" id="wppizza_reports_custom_range" />';
@@ -324,7 +325,7 @@ class WPPIZZA_REPORTS{
 				/*
 					allow filterable export reports selection
 				*/
-				$export_type = apply_filters('wppizza_filter_csv_export_select' , array('default' => __('Summary','wppizza_admin')));
+				$export_type = apply_filters('wppizza_filter_csv_export_select' , array('default' => __('Summary','wppizza-admin')));
 				if(!empty($export_type)){
 				$output.='<select id="wppizza_reports_export_type" name="wppizza_reports_export_type">';
 					foreach($export_type as $select_value => $select_label){

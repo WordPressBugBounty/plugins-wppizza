@@ -109,7 +109,7 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_GENERAL{
 		$ffs = "&middot; ".implode(PHP_EOL."&middot; ", $registered_formfields).PHP_EOL."&middot; Credit Card / Payment Details.";
 
 		/* text */
-		$content = '<div class="wppizza-highlight">'.sprintf(__('Disclaimer: the below is some suggested privacy policy text when using the %s plugin. Edit as required for your particular site/setup. It does not constitute legal advise as to what is appropriate in your particular scenario.', 'wppizza-admin' ),WPPIZZA_NAME).'</div>';
+		$content = '<div class="wppizza-highlight">'.sprintf(__('Disclaimer: the below is some suggested privacy policy text when using the %s plugin. Edit as required for your particular site/setup. It does not constitute legal advise as to what is appropriate in your particular scenario.', 'wppizza-admin'),WPPIZZA_NAME).'</div>';
 		$content .=  sprintf(__( '
 			We collect information about you during the checkout process on our store.
 			This information may include but is not limited to:
@@ -128,7 +128,7 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_GENERAL{
 			&middot; Your location if you place an order, or if we need to estimate taxes and delivery costs based on your location.
 			&middot; If you choose to create an account with us, your name, address, and email address, which will be used to populate the checkout for future orders.
 			&middot; Your account email/password to allow you to access your account, if you have registered an account with us.
-		', 'wppizza-admin' ), $ffs );
+		', 'wppizza-admin'), $ffs );
 		$content .= "\n\n";
 
 
@@ -171,7 +171,7 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_GENERAL{
 		// If you define your own group, the first exporter to
 		// include a label will be used as the group label in the
 		// final exported report
-		$group_label = sprintf(__( '%s Orders', 'wppizza-admin' ), get_bloginfo( 'name' ));
+		$group_label = sprintf(__( '%s Orders', 'wppizza-admin'), get_bloginfo( 'name' ));
 
 
 		/*

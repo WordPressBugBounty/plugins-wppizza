@@ -27,7 +27,11 @@ class WPPIZZA_WIDGETS extends WP_Widget{
 		***************************************/
     	$widget_options = array (
 	        'classname' => WPPIZZA_WIDGET_CSS_CLASS, /*css class for widget*/
-        	'description' => sprintf( __( '%s widgets', 'wppizza-admin' ), WPPIZZA_NAME)/* description under widget */
+        	/* 
+        		description under widget 
+        		IMPORTANT : OMIT textdomain in gettext call here as it will not work for whatever reason and stop all translations !!!
+        	*/
+        	'description' => sprintf( __( '%s Widgets'), WPPIZZA_NAME),
     	);
 		parent::__construct(false, WPPIZZA_NAME, $widget_options );
 	}

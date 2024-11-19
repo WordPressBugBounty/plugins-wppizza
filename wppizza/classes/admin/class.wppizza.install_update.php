@@ -1181,36 +1181,36 @@ class WPPIZZA_INSTALL_UPDATE{
 			checks and error messages
 		*/
 		/* mbstring */
-		$check['mbstring'] = array('check' => function_exists( 'mb_internal_encoding' ), 'notice' => sprintf( __( "%s requires the mbstring extension to be installed", 'wppizza-admin' ), WPPIZZA_NAME));
+		$check['mbstring'] = array('check' => function_exists( 'mb_internal_encoding' ), 'notice' => sprintf( __( "%s requires the mbstring extension to be installed", 'wppizza-admin'), WPPIZZA_NAME));
 
 		/* php */
 		$min_version_php = '5.3';
-		$check['php_min_version'] = array('check' => version_compare( $min_version_php , PHP_VERSION, '<' ), 'notice' => sprintf( __( "%s requires PHP version %s or higher", 'wppizza-admin' ), WPPIZZA_NAME, $min_version_php ));
+		$check['php_min_version'] = array('check' => version_compare( $min_version_php , PHP_VERSION, '<' ), 'notice' => sprintf( __( "%s requires PHP version %s or higher", 'wppizza-admin'), WPPIZZA_NAME, $min_version_php ));
 
 		/* mysql */
 		$min_version_sql = '5.5';
-		$check['mysql_min_version'] = array('check' => version_compare( $min_version_sql, $wpdb->db_version(), '<' ), 'notice' => sprintf( __( "%s requires MySQL version %s or higher", 'wppizza-admin' ), WPPIZZA_NAME, $min_version_sql ));
+		$check['mysql_min_version'] = array('check' => version_compare( $min_version_sql, $wpdb->db_version(), '<' ), 'notice' => sprintf( __( "%s requires MySQL version %s or higher", 'wppizza-admin'), WPPIZZA_NAME, $min_version_sql ));
 
 		/* session support*/
 		$session_support = (session_start()) ?  true : false;
-		$check['session_support'] = array('check' => $session_support , 'notice' => sprintf( __( "%s requires PHP session support", 'wppizza-admin' ), WPPIZZA_NAME));
+		$check['session_support'] = array('check' => $session_support , 'notice' => sprintf( __( "%s requires PHP session support", 'wppizza-admin'), WPPIZZA_NAME));
 
 
 		/* session savepath*/
 		$ssp = ini_get( 'session.save_path' );
 		$session_save_path = (!empty($ssp)) ?  true : false;
-		$check['session_save_path'] = array('check' => $session_save_path , 'notice' => sprintf(__( "%s requires PHP session support. Your <a href='http://php.net/manual/en/function.session-save-path.php'>session.save_path</a> in your php.ini does not appear to be set. This must be set and be read/writeable for sessions to work.", 'wppizza-admin' ), WPPIZZA_NAME));
+		$check['session_save_path'] = array('check' => $session_save_path , 'notice' => sprintf(__( "%s requires PHP session support. Your <a href='http://php.net/manual/en/function.session-save-path.php'>session.save_path</a> in your php.ini does not appear to be set. This must be set and be read/writeable for sessions to work.", 'wppizza-admin'), WPPIZZA_NAME));
 
 
 		/* check max_input_vars*/
 		$min_input_vars = ( ini_get( 'max_input_vars' ) >= 500) ?  true : false;
-		$check['min_input_vars'] = array('check' => $min_input_vars , 'notice' =>  __( 'your php.ini should allow 500 (or more) max_input_vars (php default is usually 1000)', 'wppizza-admin' ));
+		$check['min_input_vars'] = array('check' => $min_input_vars , 'notice' =>  __( 'your php.ini should allow 500 (or more) max_input_vars (php default is usually 1000)', 'wppizza-admin'));
 
 
 		/* wppizza min version if updating to v3*/
 		if(!empty($wppizza_options)){
 			$min_version_wppizza = '2.16.11.10';
-			$check['wppizza_v3_update'] = array('check' => version_compare( $min_version_wppizza, $wppizza_options['plugin_data']['version'], '<' ), 'notice' => sprintf( __( "To update %s to version 3+, you must first update to version %s+ of the version 2 branch", 'wppizza-admin' ), WPPIZZA_NAME, $min_version_wppizza ));
+			$check['wppizza_v3_update'] = array('check' => version_compare( $min_version_wppizza, $wppizza_options['plugin_data']['version'], '<' ), 'notice' => sprintf( __( "To update %s to version 3+, you must first update to version %s+ of the version 2 branch", 'wppizza-admin'), WPPIZZA_NAME, $min_version_wppizza ));
 		}
 
 		/*

@@ -1493,7 +1493,7 @@ if(isset($_POST['vars']['type']) && $_POST['vars']['type']=='submitorder'){
 			as preview
 		****************************************/
 		if(empty($order)){
-			$markup['str']="Error [AOH-101]:".__(' Sorry, this order does not exist.','wppizza-admin');
+			$markup['str']="Error [AOH-101]:".__('Sorry, this order does not exist.','wppizza-admin');
 			print"".json_encode($markup)."";
 			exit();
 		}

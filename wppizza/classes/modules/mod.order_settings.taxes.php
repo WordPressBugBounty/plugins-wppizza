@@ -69,15 +69,15 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TAXES{
 		/****  alternative taxrates ***/
 		$wppizza_meta_box['alt_tax']='';
 		$wppizza_meta_box['alt_tax'].="<div class='".WPPIZZA_SLUG."_option_meta'>";
-		$wppizza_meta_box['alt_tax'].="<label class='wppizza-meta-label'>".sprintf( __( 'Taxrate', 'wppizza-admin' ), wppizza_output_format_percent($wppizza_options[$this->settings_page]['item_tax_alt']) )."</label>";
+		$wppizza_meta_box['alt_tax'].="<label class='wppizza-meta-label'>".sprintf( __( 'Taxrate', 'wppizza-admin'), wppizza_output_format_percent($wppizza_options[$this->settings_page]['item_tax_alt']) )."</label>";
 		$wppizza_meta_box['alt_tax'].="<label class='button'>";
-		$wppizza_meta_box['alt_tax'].="<input name='".WPPIZZA_SLUG."[item_tax_alt]' size='5' ". checked(empty($meta_values['item_tax_alt']), true, false)." type='radio' value='0' /> " . sprintf( __( 'Standard (%s%%)', 'wppizza-admin' ), wppizza_output_format_percent($wppizza_options[$this->settings_page]['item_tax']) ) . "";
+		$wppizza_meta_box['alt_tax'].="<input name='".WPPIZZA_SLUG."[item_tax_alt]' size='5' ". checked(empty($meta_values['item_tax_alt']), true, false)." type='radio' value='0' /> " . sprintf( __( 'Standard (%s%%)', 'wppizza-admin'), wppizza_output_format_percent($wppizza_options[$this->settings_page]['item_tax']) ) . "";
 		$wppizza_meta_box['alt_tax'].="</label>";
 		$wppizza_meta_box['alt_tax'].="<label class='button'>";
-		$wppizza_meta_box['alt_tax'].="<input name='".WPPIZZA_SLUG."[item_tax_alt]' size='5' ". checked( (!empty($meta_values['item_tax_alt']) && ($meta_values['item_tax_alt'] === true || $meta_values['item_tax_alt'] === 1)) , true, false)." type='radio' value='1' /> " . sprintf( __( 'Alt. (%s%%)', 'wppizza-admin' ), wppizza_output_format_percent($wppizza_options[$this->settings_page]['item_tax_alt']) ) . "";
+		$wppizza_meta_box['alt_tax'].="<input name='".WPPIZZA_SLUG."[item_tax_alt]' size='5' ". checked( (!empty($meta_values['item_tax_alt']) && ($meta_values['item_tax_alt'] === true || $meta_values['item_tax_alt'] === 1)) , true, false)." type='radio' value='1' /> " . sprintf( __( 'Alt. (%s%%)', 'wppizza-admin'), wppizza_output_format_percent($wppizza_options[$this->settings_page]['item_tax_alt']) ) . "";
 		$wppizza_meta_box['alt_tax'].="</label>";
 		$wppizza_meta_box['alt_tax'].="<label class='button'>";
-		$wppizza_meta_box['alt_tax'].="<input name='".WPPIZZA_SLUG."[item_tax_alt]' size='5' ". checked( (!empty($meta_values['item_tax_alt']) && $meta_values['item_tax_alt'] === 2) , true, false)." type='radio' value='2' /> ". sprintf( __( 'Alt. (%s%%)', 'wppizza-admin' ), wppizza_output_format_percent($wppizza_options[$this->settings_page]['item_tax_alt_2']) ) . "";
+		$wppizza_meta_box['alt_tax'].="<input name='".WPPIZZA_SLUG."[item_tax_alt]' size='5' ". checked( (!empty($meta_values['item_tax_alt']) && $meta_values['item_tax_alt'] === 2) , true, false)." type='radio' value='2' /> ". sprintf( __( 'Alt. (%s%%)', 'wppizza-admin'), wppizza_output_format_percent($wppizza_options[$this->settings_page]['item_tax_alt_2']) ) . "";
 		$wppizza_meta_box['alt_tax'].="</label>";
 		$wppizza_meta_box['alt_tax'].=" <span class='description'>[".__('set in wppizza->order settings', 'wppizza-admin')."]</span>";
 		$wppizza_meta_box['alt_tax'].="</div>";

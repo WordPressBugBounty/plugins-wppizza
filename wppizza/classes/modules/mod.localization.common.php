@@ -246,7 +246,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('currency', 'wppizza-admin'),
+				'label'=>__('Currency', 'wppizza-admin'),
 				'description'=>array(__('currently unused', 'wppizza-admin'))
 			));
 		}

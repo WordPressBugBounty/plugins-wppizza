@@ -135,7 +135,7 @@ class WPPIZZA_MODULE_MEAL_SIZES_SIZES{
 			$wppizza_meta_box[$this->section_key].="<select name='".WPPIZZA_SLUG."[".$this->section_key."]' class='wppizza_pricetier_select wppizza_pricetier_select_meta'>";
 
 			if(!isset($meta_values[$this->section_key])){
-				$wppizza_meta_box[$this->section_key].="<option value=''>".esc_html__('--- Please select ---', 'wppizza_admin')." ".$meta_values[$this->section_key]."</option>";
+				$wppizza_meta_box[$this->section_key].="<option value=''>".esc_html__('--- Please select ---', 'wppizza-admin')." ".$meta_values[$this->section_key]."</option>";
 			}
 			foreach($meal_sizes as $l=>$m){
 				if(isset($meta_values[$this->section_key]) && $l == $meta_values[$this->section_key]){

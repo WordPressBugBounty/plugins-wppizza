@@ -180,7 +180,7 @@ class WPPIZZA_MODULE_LAYOUT_MINICART{
 			$settings['fields'][$this->section_key][$field] = array( __('Alt Element Padding', 'wppizza-admin') , array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__(' add above set padding to another element *instead* of the body tag', 'wppizza-admin'),
+				'label'=>__('add above set padding to another element *instead* of the body tag.', 'wppizza-admin'),
 				'description'=>array(
 					__('use jQuery selectors, such as #my-elm-id or .my_elm_class etc', 'wppizza-admin')
 				)

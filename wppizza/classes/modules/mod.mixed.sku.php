@@ -568,7 +568,7 @@ class WPPIZZA_MODULE_SKU{
 			$settings['fields'][$this->section_key][$field] = array( __('Enable setting of SKU\'s:', 'wppizza-admin') , array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>sprintf( __( 'check to be able to set SKUs for menu items [more options will be become available in "%s -> Layout" / "%s -> Localization"]', 'wppizza-admin' ), WPPIZZA_NAME, WPPIZZA_NAME),
+				'label'=>sprintf( __( 'check to be able to set SKUs for menu items [more options will be become available in "%s -> Layout" / "%s -> Localization"]', 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME),
 				'description'=>array()
 			));
 			$field = 'sku_search';

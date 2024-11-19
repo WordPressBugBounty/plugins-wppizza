@@ -1,5 +1,9 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/ ?>
 <?php
+/* a function to identify (and escape) frontend dev text to look for in wppizza_dev.pot file */
+function wppizza_dev_textdomain__( $text, $domain = 'default' ) {
+	return esc_attr( translate( $text, $domain ) );
+}
 /*****************************************************
 * validate and convert characters in string  using internal wordpress functions
 * Note: we shouldnt really ever pass an array to this function

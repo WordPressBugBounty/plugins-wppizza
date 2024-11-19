@@ -1843,7 +1843,7 @@ function wppizza_phi_section_options($plugin_slug, $plugin_options, $args, $echo
 					if empty is permitted  for regular selects
 				*/				
 				if($type=='select' && !empty($args['permit_empty'])){
-					$formfield .= '<option value="" '.selected(($value == '' ), true, false).' >'. __('-- Please Select --', 'wppizza_admin') .'</option>';
+					$formfield .= '<option value="" '.selected(($value == '' ), true, false).' >'. __('-- Please Select --', 'wppizza-admin') .'</option>';
 				}
 
 				/* 

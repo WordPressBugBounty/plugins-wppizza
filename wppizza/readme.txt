@@ -6,9 +6,9 @@ Plugin URI: https://wordpress.org/extend/plugins/wppizza/
 Tags: pizzeria, restaurant, restaurant menu, food menu, food ordering, online ordering
 Requires PHP: 5.3+
 Requires at least: PHP 5.3+, MySql 5.5+, WP 3.3+ 
-Tested up to: 6.5
-Version: 3.19
-Stable tag: 3.19
+Tested up to: 6.7
+Version: 3.19.1
+Stable tag: 3.19.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -162,6 +162,12 @@ Note: Allergen/Foodtype Icons included with this plugin can be used on your site
 "Double Ring" Loading Icon SVG (v3.13+) generated at <a href="https://loading.io/spinner/double-ring">loading.io</a>  
 
 == Changelog ==
+
+3.19.1  
+* Fix: Translations not loaded with WP 6.7  
+* Updated: some admin strings, associated translations and textdomains  
+* Added: Make translation path to po/mo files filterable  
+18th November 2024  
 
 3.19  
 * Maintenance Release  

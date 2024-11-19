@@ -102,7 +102,7 @@ class WPPIZZA_MODULE_ORDERFORM_CONFIRMATIONPAGE{
 			$settings['fields'][$this->section_form_enabled][$field] = array('' , array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('Some Countries/Jurisdictions require another, final , non-editable confirmation page before sending the order. If this is the case, tick this box and save. You will get some additional formfields you can make available in that final form','wppizza-admin'),
+				'label'=>__('Some Countries/Jurisdictions require another, final , non-editable confirmation page before sending the order. If this is the case, tick this box and save. You will get some additional formfields you can make available in that final form.','wppizza-admin'),
 				'description'=>array(
 					'<span style="color:red">'.__('Disclaimer: it is your responsibility to adhere to any required laws that might apply in your locality/jurisdiction','wppizza-admin').'</span>'
 				)

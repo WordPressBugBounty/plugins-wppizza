@@ -236,7 +236,8 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_GLOBAL{
 			echo "<label>";
 				echo "<select name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' class='wppizza_".$field."'>";
 				foreach(wppizza_currencies($wppizza_options[$options_key][$field]) as $l=>$m){
-					echo "<option value='".$m['id']."' ".$m['selected'].">".$m['id']." - ".$m['value']."</option>";
+					$currencyLabel =  $m['id'] == '---none---' ? '--- '.__('None', 'wppizza-admin').' ---' : "".$m['id']." - ".$m['value']."";
+					echo "<option value='".$m['id']."' ".$m['selected'].">".$currencyLabel."</option>";
 				}
 				echo "</select>";
 				echo "".$label."";

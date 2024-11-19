@@ -71,7 +71,7 @@ class WPPIZZA_MODULE_SETTINGS_PERMALINKS{
 
 		if(!empty($wppizza_options[$this->settings_page]['single_item_permalink_rewrite'])){
 			/**change single item post slug from wppizza to selected slug**/
-			$args['rewrite'] = array( 'slug' => sprintf( __( '%s', 'wppizza-admin' ), $wppizza_options[$this->settings_page]['single_item_permalink_rewrite'] ) );
+			$args['rewrite'] = array( 'slug' => sprintf( __( '%s', 'wppizza-admin'), $wppizza_options[$this->settings_page]['single_item_permalink_rewrite'] ) );
 		}
 		return $args;
 	}
@@ -143,8 +143,8 @@ class WPPIZZA_MODULE_SETTINGS_PERMALINKS{
 				'option_key'=>$this->settings_page,
 				'label'=>'',
 				'description'=>array(
-					__('only used and relevant when using widget or shortcode to display wppizza category navigation !!!','wppizza-admin'),
-					__('page cannot be used as static post page (wp settings) or have any children', 'wppizza-admin')
+					__('Only used and relevant when using widget or shortcode to display wppizza category navigation !!!','wppizza-admin'),
+					__('Page cannot be used as static post page (wp settings) or have any children', 'wppizza-admin')
 				)
 			));
 			$field = 'single_item_permalink_rewrite';
@@ -153,8 +153,8 @@ class WPPIZZA_MODULE_SETTINGS_PERMALINKS{
 				'option_key'=>$this->settings_page,
 				'label'=>'',
 				'description'=>array(
-					__('only used and relevant when actually linking to a single item from anywhere', 'wppizza-admin'),
-					__('defaults to "wppizza" if left empty. Any value used here can not be used in by any other custom post type', 'wppizza-admin'),
+					__('Only used and relevant when actually linking to a single item from anywhere.', 'wppizza-admin'),
+					__('Defaults to "wppizza" if left empty. Any value used here can not be used in by any other custom post type.', 'wppizza-admin'),
 					__('Note: by default, wppizza templates/shortcodes do not link to any single menu items. However, if you are including menu items in search results for example or have edited a/the template(s) to include links to individual menu items you will also (probably) want to edit the single item template. see https://docs.wp-pizza.com/developers/?section=wppizza-markup-single-single-php', 'wppizza-admin')
 				)
 			));
@@ -193,7 +193,7 @@ class WPPIZZA_MODULE_SETTINGS_PERMALINKS{
 				echo "" . $label . "";
 			echo "</label>";
 			echo"".$description."";
-			echo"<br /><span class='wppizza-highlight'>".__('when changing this setting, you MUST re-save your permalink settings', 'wppizza-admin')."</span>";
+			echo"<br /><span class='wppizza-highlight'>".__('When changing this setting, you MUST re-save your permalink settings', 'wppizza-admin')."</span>";
 		}
 
 		if($field=='single_item_permalink_rewrite'){
@@ -202,7 +202,7 @@ class WPPIZZA_MODULE_SETTINGS_PERMALINKS{
 				echo "" . $label . "";
 			echo "</label>";
 			echo"".$description."";
-			echo"<br /><span class='wppizza-highlight'>".__('when changing this setting, you MUST re-save your permalink settings', 'wppizza-admin')."</span>";
+			echo"<br /><span class='wppizza-highlight'>".__('When changing this setting, you MUST re-save your permalink settings', 'wppizza-admin')."</span>";
 		}
 	}
 	/*------------------------------------------------------------------------------

@@ -37,9 +37,10 @@ class WPPIZZA_CATEGORIES{
 	*
 	******************************************************************************************************************/
 	function __construct() {
-
-		$this->submenu_caps_title=__('Categories','wppizza-admin');
-
+		
+		/*titles/labels throughout class*/
+		add_action('init', array( $this, 'init_admin_lables') );
+		
 		/*register capabilities for this page*/
 		add_filter('wppizza_filter_define_caps', array( $this, 'wppizza_filter_define_caps'), $this->submenu_priority);
 
@@ -59,6 +60,15 @@ class WPPIZZA_CATEGORIES{
 		}
 		/**load admin ajax file**/
 		add_action('wp_ajax_wppizza_admin_'.$this->class_key.'_ajax', array($this, 'set_admin_ajax') );
+	}
+
+	/******************
+	*	@since 3.19.1
+    *	[admin ajax include file]
+    *******************/
+	public function init_admin_lables(){
+		/*titles/labels throughout class*/
+		$this->submenu_caps_title	=	apply_filters('wppizza_filter_admin_label_caps_title_'.$this->class_key.'', __('Categories','wppizza-admin'));
 	}
 
 	/******************

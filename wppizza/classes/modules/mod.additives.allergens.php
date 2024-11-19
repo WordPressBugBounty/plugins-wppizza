@@ -207,7 +207,7 @@ class WPPIZZA_MODULE_ALLERGENS{
 					__('If you wish you can additionally add an icon in front of the allergens in the list of additives/allergens added to the footnotes on each page.', 'wppizza-admin'),
 					__('If "icon in title" is enabled, associated icons will also be displayed in the title of the menu item instead of its textual ident.', 'wppizza-admin'),
 					__('By default, allergens will be sorted alphabetically.', 'wppizza-admin'),
-					__('However, you can use the "sort" field to customise the sortorder. If you do, your choosen sort id will be used to identify the allergens in the frontend so you want to make sure to have unique identifiers/sort id\'s', 'wppizza-admin'),
+					__('However, you can use the "sort" field to customise the sortorder. If you do, your choosen sort id will be used to identify the allergens in the frontend so you want to make sure to have unique identifiers/sort id\'s.', 'wppizza-admin'),
 				)
 			);
 			

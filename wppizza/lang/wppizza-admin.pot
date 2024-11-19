@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: WPPizza  - A "
 "Wordpress Plugin - v3.x Admin "
 "Translations\n"
-"POT-Creation-Date: 2022-12-06 "
-"20:59+0000\n"
+"Report-Msgid-Bugs-To: Translator "
+"Name <translations@example.com>\n"
+"POT-Creation-Date: 2024-11-18 "
+"14:28+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your Name "
 "<you@example.com>\n"
 "Language-Team: dev@wp-pizza.com\n"
-"Report-Msgid-Bugs-To: Translator "
-"Name <translations@example.com>\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; "
 "charset=UTF-8\n"
@@ -26,46 +27,46 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: ..\n"
-"Language: en_US\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: ajax/ajax.wppizza.php:1047
+#: ajax/ajax.wppizza.php:1049
 #: templates/markup/global/login.php:23
 msgid "Log In"
 msgstr ""
 
-#: ajax/ajax.wppizza.php:1088
+#: ajax/ajax.wppizza.php:1090
 msgid ""
 "<strong>ERROR</strong>: Invalid "
 "username or incorrect password."
 msgstr ""
 
-#: ajax/ajax.wppizza.php:1494
-#: classes/modules/mod.orderhistory.orderhistory.php:692
+#: ajax/ajax.wppizza.php:1496
+#: classes/modules/mod.orderhistory.orderhistory.php:421
+#: classes/modules/mod.orderhistory.orderhistory.php:697
 msgid ""
-" Sorry, this order does not exist."
+"Sorry, this order does not exist."
 msgstr ""
 
-#: ajax/ajax.wppizza.php:1567
-#: ajax/ajax.wppizza.php:1676
-#: classes/modules/mod.orderhistory.orderhistory.php:121
-#: classes/modules/mod.orderhistory.orderhistory.php:276
-#: classes/modules/mod.orderhistory.orderhistory.php:370
-#: classes/modules/mod.orderhistory.orderhistory.php:457
-#: classes/modules/mod.orderhistory.orderhistory.php:518
-#: classes/modules/mod.orderhistory.orderhistory.php:562
-#: classes/modules/mod.orderhistory.orderhistory.php:602
+#: ajax/ajax.wppizza.php:1569
+#: ajax/ajax.wppizza.php:1678
+#: classes/modules/mod.orderhistory.orderhistory.php:127
+#: classes/modules/mod.orderhistory.orderhistory.php:282
+#: classes/modules/mod.orderhistory.orderhistory.php:376
+#: classes/modules/mod.orderhistory.orderhistory.php:463
+#: classes/modules/mod.orderhistory.orderhistory.php:524
+#: classes/modules/mod.orderhistory.orderhistory.php:568
+#: classes/modules/mod.orderhistory.orderhistory.php:608
 msgid "Update Prohibited"
 msgstr ""
 
-#: ajax/ajax.wppizza.php:1684
+#: ajax/ajax.wppizza.php:1686
 msgid ""
 "Error: You need order delete "
 "permissions to perform this action."
 msgstr ""
 
-#: ajax/ajax.wppizza.php:1700
+#: ajax/ajax.wppizza.php:1702
 #, php-format
 msgid "Order #%s deleted"
 msgstr ""
@@ -75,26 +76,24 @@ msgid "All"
 msgstr ""
 
 #: classes/admin/class.wppizza.admin.helpers.php:86
-#: classes/admin/class.wppizza.admin.helpers.php:93
-#, fuzzy
+#: classes/admin/class.wppizza.admin.helpers.php:95
 msgid "Not Set"
 msgstr ""
-"Card successfully set as default."
 
-#: classes/admin/class.wppizza.admin.helpers.php:188
-#: classes/admin/class.wppizza.admin.helpers.php:193
-#: classes/modules/mod.orderhistory.orderhistory.php:1891
+#: classes/admin/class.wppizza.admin.helpers.php:190
+#: classes/admin/class.wppizza.admin.helpers.php:195
+#: classes/modules/mod.orderhistory.orderhistory.php:1895
 #: classes/subpages/subpage.customers.php:286
 #: classes/subpages/subpage.templates.php:541
 #: classes/subpages/subpage.templates.php:552
 msgid "of"
 msgstr ""
 
-#: classes/admin/class.wppizza.admin.helpers.php:227
+#: classes/admin/class.wppizza.admin.helpers.php:229
 msgid "&#171; Previous"
 msgstr ""
 
-#: classes/admin/class.wppizza.admin.helpers.php:228
+#: classes/admin/class.wppizza.admin.helpers.php:230
 msgid "Next &#187;"
 msgstr ""
 
@@ -272,20 +271,20 @@ msgid ""
 "requirement check"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:399
+#: classes/admin/class.wppizza.register_gateways.php:403
 msgid "Frontend display order"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:410
+#: classes/admin/class.wppizza.register_gateways.php:414
 msgid "Frontend Label"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:411
+#: classes/admin/class.wppizza.register_gateways.php:415
 #, php-format
 msgid "displays \"%s\" if empty"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:411
+#: classes/admin/class.wppizza.register_gateways.php:415
 msgid ""
 "Used in emails and frontend. "
 "However, it is only being "
@@ -294,41 +293,34 @@ msgid ""
 "installed, activated and enabled"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:421
+#: classes/admin/class.wppizza.register_gateways.php:425
 msgid ""
 "Frontend: Additional Plugin "
 "Information"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:422
+#: classes/admin/class.wppizza.register_gateways.php:426
 msgid ""
 "only displayed if more than one "
 "gateway installed, activated and "
 "enabled"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:433
+#: classes/admin/class.wppizza.register_gateways.php:437
 msgid "Small logo"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:434
+#: classes/admin/class.wppizza.register_gateways.php:438
 msgid ""
 "Optional. Empty field to not show "
 "any logo."
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:445
-#, fuzzy
+#: classes/admin/class.wppizza.register_gateways.php:449
 msgid "Button"
 msgstr ""
-"You just toggled the test mode "
-"option. Save your changes using "
-"the Save Changes button below, "
-"then connect your Stripe account "
-"using the \"Connect with Stripe\" "
-"button when the page reloads."
 
-#: classes/admin/class.wppizza.register_gateways.php:446
+#: classes/admin/class.wppizza.register_gateways.php:450
 msgid ""
 "Optional: Using image as button if "
 "only this gateway has been enabled "
@@ -336,32 +328,32 @@ msgid ""
 "button)"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:461
+#: classes/admin/class.wppizza.register_gateways.php:465
 msgid "Discount (in %)"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:472
+#: classes/admin/class.wppizza.register_gateways.php:476
 msgid "Fixed Discount"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:483
+#: classes/admin/class.wppizza.register_gateways.php:487
 msgid ""
 "Minimum Order Value for above "
 "discounts to be applied"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:500
+#: classes/admin/class.wppizza.register_gateways.php:504
 msgid ""
 "Surcharge (in %) [0 to disable]"
 msgstr ""
 
-#: classes/admin/class.wppizza.register_gateways.php:511
+#: classes/admin/class.wppizza.register_gateways.php:515
 msgid ""
 "Fixed Surcharge [0 to disable]"
 msgstr ""
 
 #: classes/class.wppizza.dashboard_widgets.php:40
-#: classes/subpages/subpage.reports.php:272
+#: classes/subpages/subpage.reports.php:295
 msgid "Overview"
 msgstr ""
 
@@ -374,8 +366,8 @@ msgid "updated hourly"
 msgstr ""
 
 #: classes/class.wppizza.dashboard_widgets.php:84
-#: classes/modules/mod.orderhistory.orderhistory.php:1400
-#: classes/modules/mod.orderhistory.orderhistory.php:1670
+#: classes/modules/mod.orderhistory.orderhistory.php:1404
+#: classes/modules/mod.orderhistory.orderhistory.php:1674
 msgid "Guest"
 msgstr ""
 
@@ -390,26 +382,26 @@ msgstr ""
 #: classes/class.wppizza.dashboard_widgets.php:153
 #: classes/class.wppizza.dashboard_widgets.php:198
 #: classes/class.wppizza.sales_data.php:200
-#: classes/modules/mod.orderhistory.orderhistory.php:1370
+#: classes/modules/mod.orderhistory.orderhistory.php:1374
 msgid "Total"
 msgstr ""
 
 #: classes/class.wppizza.dashboard_widgets.php:154
 #: classes/class.wppizza.dashboard_widgets.php:199
-#: classes/class.wppizza.sales_data.php:544
-#: classes/class.wppizza.sales_data.php:722
+#: classes/class.wppizza.sales_data.php:548
+#: classes/class.wppizza.sales_data.php:856
 msgid "Today"
 msgstr ""
 
 #: classes/class.wppizza.dashboard_widgets.php:155
 #: classes/class.wppizza.dashboard_widgets.php:200
-#: classes/class.wppizza.sales_data.php:687
+#: classes/class.wppizza.sales_data.php:773
 msgid "This Month"
 msgstr ""
 
 #: classes/class.wppizza.dashboard_widgets.php:156
 #: classes/class.wppizza.dashboard_widgets.php:201
-#: classes/class.wppizza.sales_data.php:698
+#: classes/class.wppizza.sales_data.php:800
 msgid "Last Month"
 msgstr ""
 
@@ -431,24 +423,19 @@ msgid "Menu Items (active)"
 msgstr ""
 
 #: classes/class.wppizza.dashboard_widgets.php:247
-#: classes/class.wppizza.filters.php:900
-#: classes/class.wppizza.order.php:2158
+#: classes/class.wppizza.filters.php:930
+#: classes/class.wppizza.order.php:2202
 #: classes/class.wppizza.register_posttype_taxonomy.php:125
 #: classes/class.wppizza.register_posttype_taxonomy.php:135
-#: classes/subpages/subpage.categories.php:41
+#: classes/subpages/subpage.categories.php:71
 msgid "Categories"
 msgstr ""
 
 #: classes/class.wppizza.dashboard_widgets.php:265
 #: classes/subpages/subpage.customers.php:59
 #: classes/subpages/subpage.customers.php:61
-#, fuzzy
 msgid "Customers"
 msgstr ""
-"When enabled, provides logged in "
-"customers with a list of "
-"previously used payment methods, "
-"for faster checkout."
 
 #: classes/class.wppizza.dashboard_widgets.php:266
 msgid "Registered"
@@ -467,19 +454,18 @@ msgid "Sales Value"
 msgstr ""
 
 #: classes/class.wppizza.dashboard_widgets.php:297
-#, fuzzy
 msgid "Recent Orders"
-msgstr "Recent order requests"
+msgstr ""
 
-#: classes/class.wppizza.db.php:1416
+#: classes/class.wppizza.db.php:1455
 msgid "Error: Empty Query Parameters"
 msgstr ""
 
-#: classes/class.wppizza.filters.php:898
+#: classes/class.wppizza.filters.php:928
 msgid "WPPizza Categories"
 msgstr ""
 
-#: classes/class.wppizza.filters.php:899
+#: classes/class.wppizza.filters.php:929
 msgid "Categories WPPizza"
 msgstr ""
 
@@ -488,72 +474,66 @@ msgid "shop and bccs"
 msgstr ""
 
 #: classes/class.wppizza.helpers.php:40
-#, fuzzy
 msgid "customer"
 msgstr ""
-"Order Request details manually "
-"sent to customer."
 
-#: classes/class.wppizza.order.php:337
+#: classes/class.wppizza.order.php:342
 msgid "Login"
 msgstr ""
 
-#: classes/class.wppizza.order.php:338
-#: classes/class.wppizza.order.php:352
+#: classes/class.wppizza.order.php:343
+#: classes/class.wppizza.order.php:357
 msgid "First Name"
 msgstr ""
 
-#: classes/class.wppizza.order.php:339
-#: classes/class.wppizza.order.php:355
+#: classes/class.wppizza.order.php:344
+#: classes/class.wppizza.order.php:360
 msgid "Last Name"
 msgstr ""
 
-#: classes/class.wppizza.order.php:340
+#: classes/class.wppizza.order.php:345
 #: classes/subpages/subpage.customers.php:310
 msgid "Email"
 msgstr ""
 
-#: classes/class.wppizza.order.php:536
-#: classes/modules/mod.order_form.orderpage.php:512
-#, fuzzy
+#: classes/class.wppizza.order.php:542
+#: classes/modules/mod.order_form.orderpage.php:521
 msgid "default"
-msgstr "Default"
+msgstr ""
 
-#: classes/class.wppizza.order.php:536
-#, fuzzy
+#: classes/class.wppizza.order.php:542
 msgid "new"
-msgstr "New Card Earnings"
+msgstr ""
 
-#: classes/class.wppizza.order.php:544
+#: classes/class.wppizza.order.php:550
 msgid "toggle style input"
 msgstr ""
 
-#: classes/class.wppizza.order.php:544
+#: classes/class.wppizza.order.php:550
 msgid "N/A while plaintext template"
 msgstr ""
 
-#: classes/class.wppizza.order.php:702
+#: classes/class.wppizza.order.php:711
 msgid "blog id"
 msgstr ""
 
-#: classes/class.wppizza.order.php:718
+#: classes/class.wppizza.order.php:727
 msgid "site name"
 msgstr ""
 
-#: classes/class.wppizza.order.php:733
+#: classes/class.wppizza.order.php:742
 msgid "siteurl"
 msgstr ""
 
-#: classes/class.wppizza.order.php:749
+#: classes/class.wppizza.order.php:758
 msgid "header"
 msgstr ""
 
-#: classes/class.wppizza.order.php:765
-#, fuzzy
+#: classes/class.wppizza.order.php:774
 msgid "address"
-msgstr "Billing Address Display"
+msgstr ""
 
-#: classes/class.wppizza.order.php:781
+#: classes/class.wppizza.order.php:790
 msgid "lang id"
 msgstr ""
 
@@ -582,18 +562,16 @@ msgid "Payment Status"
 msgstr ""
 
 #: classes/class.wppizza.order.php:1089
-#, fuzzy
 msgid "Order Status"
-msgstr "Order Request status."
+msgstr ""
 
 #: classes/class.wppizza.order.php:1117
-#: classes/modules/mod.tools.licenses.init.php:737
+#: classes/modules/mod.tools.licenses.init.php:740
 #: classes/shared/wppizza.edd.inc.php:237
 #: classes/shared/wppizza.edd.plugin.updater.1.6.php:340
-#: classes/shared/wppizza.edd.plugin.updater.latest.php:531
-#, fuzzy
+#: classes/shared/wppizza.edd.plugin.updater.latest.php:532
 msgid "Error"
-msgstr "Error"
+msgstr ""
 
 #: classes/class.wppizza.order.php:1151
 msgid "Errors"
@@ -626,6 +604,7 @@ msgstr ""
 
 #: classes/class.wppizza.order.php:1266
 #: classes/class.wppizza.sales_data.php:177
+#: classes/modules/mod.localization.common.php:249
 #: classes/modules/mod.order_settings.global.php:154
 #: classes/modules/mod.order_settings.global.php:187
 msgid "Currency"
@@ -635,83 +614,87 @@ msgstr ""
 msgid "TX Details"
 msgstr ""
 
-#: classes/class.wppizza.order.php:1495
+#: classes/class.wppizza.order.php:1499
 msgid "Admin Notes"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2141
+#: classes/class.wppizza.order.php:2184
 msgid "Blog ID"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2142
+#: classes/class.wppizza.order.php:2185
 msgid "Post ID"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2143
-#: classes/modules/mod.layout.items_sorting_category_display.php:486
+#: classes/class.wppizza.order.php:2186
+#: classes/modules/mod.layout.items_sorting_category_display.php:474
 msgid "Title"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2144
+#: classes/class.wppizza.order.php:2187
+msgid "Sortname"
+msgstr ""
+
+#: classes/class.wppizza.order.php:2188
 msgid "Size Label"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2145
+#: classes/class.wppizza.order.php:2189
 msgid "Quantity"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2146
-#: classes/class.wppizza.order.php:2147
+#: classes/class.wppizza.order.php:2190
+#: classes/class.wppizza.order.php:2191
 msgid "Tax Rate"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2148
+#: classes/class.wppizza.order.php:2192
 msgid "Tax Included"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2149
+#: classes/class.wppizza.order.php:2193
 msgid "Tax Added"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2150
+#: classes/class.wppizza.order.php:2194
 msgid "Alt Tax Rate"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2151
+#: classes/class.wppizza.order.php:2195
 msgid "Sizes ID"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2152
+#: classes/class.wppizza.order.php:2196
 msgid "Size ID"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2153
-#: classes/class.wppizza.order.php:2154
+#: classes/class.wppizza.order.php:2197
+#: classes/class.wppizza.order.php:2198
 msgid "Single Item Price"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2155
-#: classes/class.wppizza.order.php:2156
+#: classes/class.wppizza.order.php:2199
+#: classes/class.wppizza.order.php:2200
 msgid "Subotal Items"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2157
+#: classes/class.wppizza.order.php:2201
 msgid "Category ID"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2159
+#: classes/class.wppizza.order.php:2203
 msgid "Extend Data"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2160
+#: classes/class.wppizza.order.php:2204
 msgid "Custom Data"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2306
+#: classes/class.wppizza.order.php:2350
 msgid "Untitled"
 msgstr ""
 
-#: classes/class.wppizza.order.php:2576
+#: classes/class.wppizza.order.php:2616
 #: classes/modules/mod.order_settings.surcharges.php:75
 #: classes/modules/mod.order_settings.surcharges.php:80
 msgid "Surcharges"
@@ -726,7 +709,7 @@ msgstr ""
 
 #: classes/class.wppizza.order_execute.php:129
 #: classes/class.wppizza.order_execute.php:323
-#: classes/class.wppizza.order_execute.php:1462
+#: classes/class.wppizza.order_execute.php:1465
 msgid "Order not found using hash"
 msgstr ""
 
@@ -763,7 +746,7 @@ msgid "Invalid nonce"
 msgstr ""
 
 #: classes/class.wppizza.order_execute.php:289
-#: classes/class.wppizza.order_execute.php:1418
+#: classes/class.wppizza.order_execute.php:1421
 msgid "Missing hash"
 msgstr ""
 
@@ -797,68 +780,67 @@ msgid ""
 "INITIALIZED => FAILED"
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:765
+#: classes/class.wppizza.order_execute.php:767
 msgid ""
 "DB: Could not update order: "
 "INITIALIZED|INPROGRESS => CAPTURED|"
 "UNCONFIRMED|CONFIRMED"
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:829
+#: classes/class.wppizza.order_execute.php:831
 msgid "TEMPLATES: "
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:862
+#: classes/class.wppizza.order_execute.php:865
 msgid "EMAIL TO SHOP FAILED: "
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:987
+#: classes/class.wppizza.order_execute.php:990
 msgid ""
 "DB: Could not update order: "
 "CAPTURED => COMPLETED"
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1498
-#: classes/class.wppizza.order_execute.php:1606
+#: classes/class.wppizza.order_execute.php:1501
+#: classes/class.wppizza.order_execute.php:1609
 msgid ""
 "Order not found using order id"
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1568
+#: classes/class.wppizza.order_execute.php:1571
 msgid "Missing order_id"
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1742
+#: classes/class.wppizza.order_execute.php:1745
 msgid "Amounts do not match: "
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1755
+#: classes/class.wppizza.order_execute.php:1758
 msgid "Currency does not match: "
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1768
+#: classes/class.wppizza.order_execute.php:1771
 msgid ""
 "This transaction has already been "
 "processed: "
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1878
+#: classes/class.wppizza.order_execute.php:1881
 msgid "CRITICAL ERROR"
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1887
+#: classes/class.wppizza.order_execute.php:1890
 msgid ""
 "NOTICE (For information only. This "
 "does not constitute a plugin "
 "error !)"
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1894
-#, fuzzy
+#: classes/class.wppizza.order_execute.php:1897
 msgid "Note:"
-msgstr "Order Request note content."
+msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1895
+#: classes/class.wppizza.order_execute.php:1898
 #, php-format
 msgid ""
 "Email notices of this kind (i.e "
@@ -867,7 +849,7 @@ msgid ""
 "-> Errors to admin email\"."
 msgstr ""
 
-#: classes/class.wppizza.order_execute.php:1896
+#: classes/class.wppizza.order_execute.php:1899
 msgid ""
 "However, notices will still be "
 "logged if \"Log failed orders\" "
@@ -875,7 +857,7 @@ msgid ""
 msgstr ""
 
 #: classes/class.wppizza.register_posttype_taxonomy.php:58
-#: classes/subpages/subpage.posts.php:37
+#: classes/subpages/subpage.posts.php:88
 msgid "Menu Items"
 msgstr ""
 
@@ -894,11 +876,8 @@ msgid "Add New Menu Item"
 msgstr ""
 
 #: classes/class.wppizza.register_posttype_taxonomy.php:62
-#, fuzzy
 msgid "Edit"
 msgstr ""
-"Order Request status changed by "
-"bulk edit:"
 
 #: classes/class.wppizza.register_posttype_taxonomy.php:63
 msgid "Edit Menu Item"
@@ -913,11 +892,8 @@ msgid "All Menu Items"
 msgstr ""
 
 #: classes/class.wppizza.register_posttype_taxonomy.php:66
-#, fuzzy
 msgid "View"
 msgstr ""
-"You do not have permission to view "
-"this data"
 
 #: classes/class.wppizza.register_posttype_taxonomy.php:67
 msgid "View Menu Item"
@@ -979,7 +955,7 @@ msgstr ""
 
 #: classes/class.wppizza.register_posttype_taxonomy.php:176
 #: classes/class.wppizza.register_posttype_taxonomy.php:190
-#: classes/subpages/subpage.tags.php:41
+#: classes/subpages/subpage.tags.php:55
 msgid "Tags"
 msgstr ""
 
@@ -1033,12 +1009,11 @@ msgid "Detailed"
 msgstr ""
 
 #: classes/class.wppizza.sales_data.php:152
-#, fuzzy
 msgid "Order ID"
-msgstr "Order Request  ID"
+msgstr ""
 
 #: classes/class.wppizza.sales_data.php:153
-#: classes/modules/mod.layout.items_sorting_category_display.php:488
+#: classes/modules/mod.layout.items_sorting_category_display.php:476
 msgid "Date"
 msgstr ""
 
@@ -1047,16 +1022,14 @@ msgid "Paid By"
 msgstr ""
 
 #: classes/class.wppizza.sales_data.php:155
-#: classes/modules/mod.orderhistory.orderhistory.php:1141
-#: classes/modules/mod.orderhistory.orderhistory.php:1230
-#: classes/modules/mod.orderhistory.orderhistory.php:1503
-#: classes/modules/mod.orderhistory.orderhistory.php:1512
-#: classes/modules/mod.orderhistory.orderhistory.php:1519
+#: classes/modules/mod.orderhistory.orderhistory.php:1145
+#: classes/modules/mod.orderhistory.orderhistory.php:1234
+#: classes/modules/mod.orderhistory.orderhistory.php:1507
+#: classes/modules/mod.orderhistory.orderhistory.php:1516
+#: classes/modules/mod.orderhistory.orderhistory.php:1523
 #: classes/subpages/subpage.order_history.php:200
-#, fuzzy
 msgid "Status"
 msgstr ""
-"Order Request status set to %s."
 
 #: classes/class.wppizza.sales_data.php:156
 msgid "Transaction ID"
@@ -1117,7 +1090,7 @@ msgstr ""
 #: classes/class.wppizza.sales_data.php:182
 #: classes/modules/mod.order_settings.tips.php:75
 #: classes/modules/mod.order_settings.tips.php:80
-#: classes/modules/mod.orderhistory.orderhistory.php:1363
+#: classes/modules/mod.orderhistory.orderhistory.php:1367
 msgid "Tips"
 msgstr ""
 
@@ -1157,291 +1130,281 @@ msgstr ""
 msgid "Tax Total"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:454
+#: classes/class.wppizza.sales_data.php:458
 msgid ""
 "Sorry, reporting is only available "
 "with php >=5.3"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:554
-#: classes/class.wppizza.sales_data.php:765
+#: classes/class.wppizza.sales_data.php:558
+#: classes/class.wppizza.sales_data.php:931
 msgid "Last 7 days"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:555
-#: classes/class.wppizza.sales_data.php:776
+#: classes/class.wppizza.sales_data.php:559
+#: classes/class.wppizza.sales_data.php:958
 msgid "Last 14 days"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:556
-#: classes/class.wppizza.sales_data.php:787
+#: classes/class.wppizza.sales_data.php:560
+#: classes/class.wppizza.sales_data.php:985
 msgid "Last 30 days"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:557
-#: classes/class.wppizza.sales_data.php:665
+#: classes/class.wppizza.sales_data.php:561
+#: classes/class.wppizza.sales_data.php:719
 msgid "Year to date"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:558
+#: classes/class.wppizza.sales_data.php:562
 msgid "Last year"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:559
+#: classes/class.wppizza.sales_data.php:563
 msgid "This month"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:560
+#: classes/class.wppizza.sales_data.php:564
 msgid "Last month"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:561
+#: classes/class.wppizza.sales_data.php:565
 msgid "Last 12 month"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:584
+#: classes/class.wppizza.sales_data.php:604
 msgid "Dashboard Widget"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:608
+#: classes/class.wppizza.sales_data.php:630
 msgid "Details last 30 days"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:676
+#: classes/class.wppizza.sales_data.php:746
 msgid "Last Year"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:710
+#: classes/class.wppizza.sales_data.php:828
 msgid "Last 12 Month"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1807
+#: classes/class.wppizza.sales_data.php:2044
 msgid "All Sales: Total"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1807
-#: classes/class.wppizza.sales_data.php:1825
+#: classes/class.wppizza.sales_data.php:2044
+#: classes/class.wppizza.sales_data.php:2062
 msgid ""
 "incl. taxes, charges and discounts"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1808
+#: classes/class.wppizza.sales_data.php:2045
 msgid "All Sales: Averages"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1808
-#: classes/class.wppizza.sales_data.php:1810
-#: classes/class.wppizza.sales_data.php:1826
-#: classes/class.wppizza.sales_data.php:1829
+#: classes/class.wppizza.sales_data.php:2045
+#: classes/class.wppizza.sales_data.php:2047
+#: classes/class.wppizza.sales_data.php:2063
+#: classes/class.wppizza.sales_data.php:2066
 msgid "per day"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1808
-#: classes/class.wppizza.sales_data.php:1810
-#: classes/class.wppizza.sales_data.php:1826
-#: classes/class.wppizza.sales_data.php:1829
+#: classes/class.wppizza.sales_data.php:2045
+#: classes/class.wppizza.sales_data.php:2047
+#: classes/class.wppizza.sales_data.php:2063
+#: classes/class.wppizza.sales_data.php:2066
 msgid "per month"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1809
+#: classes/class.wppizza.sales_data.php:2046
 msgid "All Orders/Items: Total"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1809
-#: classes/class.wppizza.sales_data.php:1810
-#: classes/class.wppizza.sales_data.php:1827
-#: classes/class.wppizza.sales_data.php:1829
+#: classes/class.wppizza.sales_data.php:2046
+#: classes/class.wppizza.sales_data.php:2047
+#: classes/class.wppizza.sales_data.php:2064
+#: classes/class.wppizza.sales_data.php:2066
 #: includes/upgrades/install.default_pages.php:9
-#, fuzzy
 msgid "Orders"
-msgstr "Order Requests"
+msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1809
-#: classes/class.wppizza.sales_data.php:1810
-#: classes/class.wppizza.sales_data.php:1827
-#: classes/class.wppizza.sales_data.php:1829
-#, fuzzy
+#: classes/class.wppizza.sales_data.php:2046
+#: classes/class.wppizza.sales_data.php:2047
+#: classes/class.wppizza.sales_data.php:2064
+#: classes/class.wppizza.sales_data.php:2066
 msgid "items"
 msgstr ""
-"There are some issues with the "
-"items on your shoppinglist (shown "
-"above). Please go back to the "
-"shoppinglist page and resolve "
-"these issues before checking out."
 
-#: classes/class.wppizza.sales_data.php:1809
-#: classes/class.wppizza.sales_data.php:1827
+#: classes/class.wppizza.sales_data.php:2046
+#: classes/class.wppizza.sales_data.php:2064
 msgid ""
 "before taxes, charges and discounts"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1810
+#: classes/class.wppizza.sales_data.php:2047
 msgid "All Orders/Items: Averages"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1811
+#: classes/class.wppizza.sales_data.php:2048
 msgid "Total Tax on Orders"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1812
-#: classes/class.wppizza.sales_data.php:1830
+#: classes/class.wppizza.sales_data.php:2049
+#: classes/class.wppizza.sales_data.php:2067
 msgid "Range"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1812
-#: classes/class.wppizza.sales_data.php:1830
+#: classes/class.wppizza.sales_data.php:2049
+#: classes/class.wppizza.sales_data.php:2067
 msgid "days"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1812
-#: classes/class.wppizza.sales_data.php:1830
+#: classes/class.wppizza.sales_data.php:2049
+#: classes/class.wppizza.sales_data.php:2067
 msgid "months"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1815
+#: classes/class.wppizza.sales_data.php:2052
 msgid ""
 "Best/Worst sellers by Volume - All"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1816
+#: classes/class.wppizza.sales_data.php:2053
 #, php-format
 msgid ""
 "Best/Worst sellers by Value - All "
 "[%s of order total]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1817
+#: classes/class.wppizza.sales_data.php:2054
 msgid "Non-Sellers - All"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1825
+#: classes/class.wppizza.sales_data.php:2062
 msgid "Sales Total [in range]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1826
+#: classes/class.wppizza.sales_data.php:2063
 msgid "Sales Averages [in range]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1827
+#: classes/class.wppizza.sales_data.php:2064
 msgid "Orders/Items Total [in range]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1828
+#: classes/class.wppizza.sales_data.php:2065
 msgid ""
 "Total Tax on Orders [in range]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1829
+#: classes/class.wppizza.sales_data.php:2066
 msgid ""
 "Orders/Items Averages [in range]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1833
+#: classes/class.wppizza.sales_data.php:2070
 msgid ""
 "Best/Worst sellers by Volume [in "
 "range]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1834
+#: classes/class.wppizza.sales_data.php:2071
 #, php-format
 msgid ""
 "Best/Worst sellers by Value [%s of "
 "all orders in range]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1835
+#: classes/class.wppizza.sales_data.php:2072
 msgid "Non-Sellers [in range]"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1858
+#: classes/class.wppizza.sales_data.php:2095
 msgid "sales value"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1868
-#: classes/subpages/subpage.reports.php:554
+#: classes/class.wppizza.sales_data.php:2105
+#: classes/subpages/subpage.reports.php:569
 msgid "number of sales"
 msgstr ""
 
-#: classes/class.wppizza.sales_data.php:1878
+#: classes/class.wppizza.sales_data.php:2115
 msgid "items sold"
 msgstr ""
 
-#: classes/class.wppizza.scripts_styles.php:656
-#: classes/modules/mod.orderhistory.orderhistory.php:1545
+#: classes/class.wppizza.scripts_styles.php:700
+#: classes/modules/mod.orderhistory.orderhistory.php:1549
 msgid "OK"
 msgstr ""
 
-#: classes/class.wppizza.sessions.php:315
-#, fuzzy
+#: classes/class.wppizza.sessions.php:324
 msgid "No gateway"
 msgstr ""
-"Easy Digital Downloads - Stripe "
-"Payment Gateway"
 
-#: classes/class.wppizza.sessions.php:318
+#: classes/class.wppizza.sessions.php:327
 msgid "Not on checkout page"
 msgstr ""
 
-#: classes/class.wppizza.sessions.php:321
+#: classes/class.wppizza.sessions.php:330
 msgid "Shop closed"
 msgstr ""
 
-#: classes/class.wppizza.sessions.php:920
 #: classes/class.wppizza.sessions.php:931
+#: classes/class.wppizza.sessions.php:942
 msgid ""
 "Delivery : Minimum order value not "
 "reached"
 msgstr ""
 
-#: classes/class.wppizza.sessions.php:946
+#: classes/class.wppizza.sessions.php:957
 msgid ""
 "Delivery : Minimum order value not "
 "reached (always free delivery)"
 msgstr ""
 
-#: classes/class.wppizza.sessions.php:968
-#: classes/class.wppizza.sessions.php:977
+#: classes/class.wppizza.sessions.php:979
+#: classes/class.wppizza.sessions.php:988
 msgid ""
 "Pickup : Minimum order value not "
 "reached"
 msgstr ""
 
-#: classes/class.wppizza.sessions.php:987
+#: classes/class.wppizza.sessions.php:998
 msgid "No items in cart"
 msgstr ""
 
-#: classes/class.wppizza.user.php:639
+#: classes/class.wppizza.user.php:651
 msgid ""
 "Sorry, user registration is "
 "disabled on this system"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:30
+#: classes/class.wppizza.widgets.php:34
 #, php-format
-msgid "%s widgets"
-msgstr ""
-
-#: classes/class.wppizza.widgets.php:310
-msgid "Widget Title"
+msgid "%s Widgets"
 msgstr ""
 
 #: classes/class.wppizza.widgets.php:314
+msgid "Widget Title"
+msgstr ""
+
+#: classes/class.wppizza.widgets.php:318
 msgid "Suppress Title ?"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:319
+#: classes/class.wppizza.widgets.php:323
 msgid "Widget Type"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:333
+#: classes/class.wppizza.widgets.php:337
 msgid "All Categories [default]"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:339
+#: classes/class.wppizza.widgets.php:343
 msgid "As dropdown ?"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:340
+#: classes/class.wppizza.widgets.php:344
 msgid ""
 "Please refer to <a href='http://"
 "docs.wp-pizza.com/getting-started/?"
@@ -1456,11 +1419,11 @@ msgid ""
 "navigation"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:345
+#: classes/class.wppizza.widgets.php:349
 msgid "Suppress Cart ?"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:351
+#: classes/class.wppizza.widgets.php:355
 msgid ""
 "You most probably want to create a "
 "dedicated orderpage with the "
@@ -1468,14 +1431,14 @@ msgid ""
 "[wppizza type='orderpage']."
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:352
+#: classes/class.wppizza.widgets.php:356
 msgid ""
 "This widget will not be displayed "
 "on orderpage itself or if cart is "
 "empty"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:356
+#: classes/class.wppizza.widgets.php:360
 msgid ""
 "Displays openingtimes set in "
 "wppizza->settings->openingtimes. "
@@ -1483,101 +1446,101 @@ msgid ""
 "type='openingtimes']"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:364
+#: classes/class.wppizza.widgets.php:368
 msgid "First Category [default]"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:370
+#: classes/class.wppizza.widgets.php:374
 msgid ""
 "Show Additives List at bottom of "
 "page ?"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:372
+#: classes/class.wppizza.widgets.php:376
 msgid "Auto [default]"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:373
+#: classes/class.wppizza.widgets.php:377
 msgid "Force Hide"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:374
+#: classes/class.wppizza.widgets.php:378
 msgid "Force Show"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:378
+#: classes/class.wppizza.widgets.php:382
 msgid "Suppress Category Header ?"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:384
+#: classes/class.wppizza.widgets.php:388
 msgid "Display Openingtimes ?"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:387
+#: classes/class.wppizza.widgets.php:391
 msgid "Display Order Info ?"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:390
+#: classes/class.wppizza.widgets.php:394
 msgid "Width [&#37; or px]"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:391
+#: classes/class.wppizza.widgets.php:395
 msgid ""
 "i.e. 200px or 85% - defaults to "
 "100% if left blank"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:395
+#: classes/class.wppizza.widgets.php:399
 msgid "Item List Height [Integer]"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:396
+#: classes/class.wppizza.widgets.php:400
 msgid ""
 "css defaults to 250px if left blank"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:401
+#: classes/class.wppizza.widgets.php:405
 msgid "No \"minicart\""
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:404
+#: classes/class.wppizza.widgets.php:408
 msgid ""
 "Add small \"minicart\" to top of "
 "screen if main cart not in view"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:407
+#: classes/class.wppizza.widgets.php:411
 msgid ""
 "Show \"minicart\" only, do not "
 "show/use main cart"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:409
+#: classes/class.wppizza.widgets.php:413
 msgid ""
 "This widget will not be displayed "
 "on orderpage itself"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:410
+#: classes/class.wppizza.widgets.php:414
 msgid ""
 "See also WPPizza->Layout->minicart "
 "for additional options"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:416
+#: classes/class.wppizza.widgets.php:420
 msgid ""
 "include the following in search "
 "results:"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:419
+#: classes/class.wppizza.widgets.php:423
 msgid "wppizza menu items"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:420
+#: classes/class.wppizza.widgets.php:424
 msgid ""
-"If enabled, create a <a href="
-"\"http://docs.wp-pizza.com/"
+"If enabled, create a <a "
+"href=\"http://docs.wp-pizza.com/"
 "developers/?section=wppizza-markup-"
 "single-single-php\">single page</"
 "a> and <a href=\"https://docs.wp-"
@@ -1587,58 +1550,57 @@ msgid ""
 "appropriate for your theme"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:425
+#: classes/class.wppizza.widgets.php:429
 msgid "blog posts"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:429
+#: classes/class.wppizza.widgets.php:433
 msgid "pages"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:433
+#: classes/class.wppizza.widgets.php:437
 msgid "Additional post types"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:434
+#: classes/class.wppizza.widgets.php:438
 msgid ""
 "you can add additional, comma "
 "separated,  post types here that "
 "should be included in the search."
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:440
+#: classes/class.wppizza.widgets.php:444
 msgid ""
 "show only for logged in users ?"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:454
+#: classes/class.wppizza.widgets.php:458
 #: classes/modules/mod.localization.common.php:882
 msgid "Shoppingcart"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:471
+#: classes/class.wppizza.widgets.php:475
 msgid "Category Page"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:472
+#: classes/class.wppizza.widgets.php:476
 msgid "Navigation"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:473
-#, fuzzy
+#: classes/class.wppizza.widgets.php:477
 msgid "Cart"
-msgstr "Shoppinglist"
+msgstr ""
 
-#: classes/class.wppizza.widgets.php:474
+#: classes/class.wppizza.widgets.php:478
 msgid "Orderpage"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:475
+#: classes/class.wppizza.widgets.php:479
 #: classes/modules/mod.layout.openingtimes_format.php:135
 msgid "Openingtimes"
 msgstr ""
 
-#: classes/class.wppizza.widgets.php:476
+#: classes/class.wppizza.widgets.php:480
 #: classes/modules/mod.settings.search.php:139
 #: classes/modules/mod.settings.search.php:144
 msgid "Search"
@@ -1703,26 +1665,23 @@ msgid "(if any)"
 msgstr ""
 
 #: classes/markup/email_print.php:178
-#, fuzzy
 msgid "edit"
 msgstr ""
-"Order Request status changed by "
-"bulk edit:"
 
 #: classes/markup/email_print.php:184
 msgid "preview"
 msgstr ""
 
 #: classes/markup/email_print.php:189
-#: classes/modules/mod.additives.additives.php:275
-#: classes/modules/mod.additives.allergens.php:349
-#: classes/modules/mod.additives.foodtype.php:330
-#: classes/modules/mod.meal_sizes.sizes.php:308
-#: classes/modules/mod.openingtimes.closed.php:218
-#: classes/modules/mod.openingtimes.custom.php:252
-#, fuzzy
+#: classes/modules/mod.additives.additives.php:282
+#: classes/modules/mod.additives.allergens.php:368
+#: classes/modules/mod.additives.foodtype.php:337
+#: classes/modules/mod.meal_sizes.sizes.php:315
+#: classes/modules/mod.openingtimes.closed.php:225
+#: classes/modules/mod.openingtimes.custom.php:259
+#: classes/modules/mod.openingtimes.holidays.php:306
 msgid "delete"
-msgstr "Delete"
+msgstr ""
 
 #: classes/markup/email_print.php:230
 #: classes/markup/email_print.php:270
@@ -1772,10 +1731,9 @@ msgid "Headers / Labels"
 msgstr ""
 
 #: classes/markup/email_print.php:377
-#: classes/modules/mod.orderhistory.orderhistory.php:1830
-#, fuzzy
+#: classes/modules/mod.orderhistory.orderhistory.php:1834
 msgid "Order Details"
-msgstr "Order Request details"
+msgstr ""
 
 #: classes/markup/email_print.php:379
 msgid "Columns"
@@ -1798,11 +1756,8 @@ msgid "Right Column All"
 msgstr ""
 
 #: classes/markup/email_print.php:420
-#, fuzzy
 msgid "Details"
 msgstr ""
-"Order Request  {order_number} "
-"details"
 
 #: classes/markup/email_print.php:434
 msgid ""
@@ -1813,14 +1768,13 @@ msgstr ""
 msgid "Blogname"
 msgstr ""
 
-#: classes/markup/email_print.php:1383
+#: classes/markup/email_print.php:1437
 #: templates/markup/pages/page.admin-order-history.php:54
 #: templates/markup/pages/page.admin-order-history.php:74
-#, fuzzy
 msgid "Order"
-msgstr "Order Request"
+msgstr ""
 
-#: classes/markup/loop.php:2378
+#: classes/markup/loop.php:2474
 msgid "Posts navigation"
 msgstr ""
 
@@ -1828,34 +1782,33 @@ msgstr ""
 msgid "Nothing here"
 msgstr ""
 
-#: classes/markup/pages.php:1652
-#: classes/markup/pages.php:1833
+#: classes/markup/pages.php:1659
+#: classes/markup/pages.php:1840
 msgid ""
 "Sorry, you are not allowed to "
 "access this page."
 msgstr ""
 
-#: classes/markup/pages.php:1876
-#, fuzzy
+#: classes/markup/pages.php:1883
 msgid "no orders found"
-msgstr "No Orders Requests found"
+msgstr ""
 
-#: classes/markup/pages.php:1968
+#: classes/markup/pages.php:1975
 msgid "view / print order"
 msgstr ""
 
-#: classes/markup/pages.php:1973
+#: classes/markup/pages.php:1980
 #, php-format
 msgid "delete order #%s"
 msgstr ""
 
-#: classes/markup/pages.php:2107
-#: classes/markup/pages.php:2109
+#: classes/markup/pages.php:2114
+#: classes/markup/pages.php:2116
 msgid "&laquo; Previous Page"
 msgstr ""
 
-#: classes/markup/pages.php:2158
-#: classes/markup/pages.php:2160
+#: classes/markup/pages.php:2165
+#: classes/markup/pages.php:2167
 msgid "Next Page &raquo;"
 msgstr ""
 
@@ -1871,25 +1824,40 @@ msgid ""
 "pages"
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:120
-#: classes/modules/mod.additives.additives.php:189
+#: classes/modules/mod.additives.additives.php:60
+#: classes/modules/mod.additives.allergens.php:60
+#: classes/modules/mod.additives.foodtype.php:60
+#: classes/modules/mod.meal_sizes.sizes.php:85
+#: classes/modules/mod.openingtimes.closed.php:80
+#: classes/modules/mod.openingtimes.custom.php:80
+#: classes/modules/mod.openingtimes.holidays.php:142
+#: classes/modules/mod.orderhistory.orderhistory.php:53
+#: classes/modules/mod.settings.smtp.php:169
+#: classes/modules/mod.templates.templates.php:49
+#: classes/modules/mod.tools.licenses.init.php:819
+#: classes/modules/mod.tools.sysinfo.phpinfo.php:53
+msgid "Access Denied"
+msgstr ""
+
+#: classes/modules/mod.additives.additives.php:127
+#: classes/modules/mod.additives.additives.php:196
 #: classes/subpages/subpage.additives.php:75
 #: classes/subpages/subpage.additives.php:77
 msgid "Additives"
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:194
+#: classes/modules/mod.additives.additives.php:201
 #: classes/subpages/subpage.additives.php:76
 msgid "Manage Additives"
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:196
+#: classes/modules/mod.additives.additives.php:203
 msgid ""
 "Some meals or beverages may "
 "contain additives."
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:197
+#: classes/modules/mod.additives.additives.php:204
 msgid ""
 "Add any possible additives (or any "
 "other notes for that matter) here "
@@ -1900,13 +1868,13 @@ msgid ""
 "item contains what additives"
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:198
+#: classes/modules/mod.additives.additives.php:205
 msgid ""
 "By default, additives will be "
 "sorted alphabetically."
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:199
+#: classes/modules/mod.additives.additives.php:206
 msgid ""
 "However, you can use the \"sort\" "
 "field to customise the sortorder. "
@@ -1914,59 +1882,56 @@ msgid ""
 "will be used to identify your "
 "choosen additives in the frontend "
 "so you want to make sure to have "
-"unique identifiers/sort id's"
+"unique identifiers/sort id's."
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:239
+#: classes/modules/mod.additives.additives.php:246
 msgid "add additive"
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:264
-#: classes/modules/mod.additives.allergens.php:268
-#: classes/modules/mod.additives.foodtype.php:268
+#: classes/modules/mod.additives.additives.php:271
+#: classes/modules/mod.additives.allergens.php:276
+#: classes/modules/mod.additives.foodtype.php:275
 msgid "sort"
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:264
-#: classes/modules/mod.additives.allergens.php:268
-#: classes/modules/mod.additives.foodtype.php:268
+#: classes/modules/mod.additives.additives.php:271
+#: classes/modules/mod.additives.allergens.php:276
+#: classes/modules/mod.additives.foodtype.php:275
 msgid "ident"
 msgstr ""
 
-#: classes/modules/mod.additives.additives.php:269
-#: classes/modules/mod.additives.allergens.php:273
-#: classes/modules/mod.additives.foodtype.php:273
-#, fuzzy
+#: classes/modules/mod.additives.additives.php:276
+#: classes/modules/mod.additives.allergens.php:281
+#: classes/modules/mod.additives.foodtype.php:280
 msgid "name"
 msgstr ""
-"Please enter a name for the credit "
-"card."
 
-#: classes/modules/mod.additives.additives.php:277
-#: classes/modules/mod.additives.allergens.php:351
-#: classes/modules/mod.additives.foodtype.php:332
-#: classes/modules/mod.meal_sizes.sizes.php:310
+#: classes/modules/mod.additives.additives.php:284
+#: classes/modules/mod.additives.allergens.php:370
+#: classes/modules/mod.additives.foodtype.php:339
+#: classes/modules/mod.meal_sizes.sizes.php:317
 msgid "in use"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:121
-#: classes/modules/mod.additives.allergens.php:190
-#: classes/modules/mod.additives.allergens.php:289
+#: classes/modules/mod.additives.allergens.php:128
+#: classes/modules/mod.additives.allergens.php:197
+#: classes/modules/mod.additives.allergens.php:297
 #: classes/subpages/subpage.additives.php:75
 msgid "Allergens"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:195
+#: classes/modules/mod.additives.allergens.php:202
 msgid "Manage Allergens"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:197
+#: classes/modules/mod.additives.allergens.php:204
 msgid ""
 "Some meals or beverages may - or "
 "may not - contain allergens."
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:198
+#: classes/modules/mod.additives.allergens.php:205
 msgid ""
 "Add any allergens here and select "
 "them at any meal / beverage that "
@@ -1976,13 +1941,13 @@ msgid ""
 "allergen."
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:199
+#: classes/modules/mod.additives.allergens.php:206
 msgid ""
 "Allergens will be listed before "
 "additives."
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:200
+#: classes/modules/mod.additives.allergens.php:207
 msgid ""
 "If you wish you can additionally "
 "add an icon in front of the "
@@ -1991,13 +1956,21 @@ msgid ""
 "on each page."
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:201
+#: classes/modules/mod.additives.allergens.php:208
+msgid ""
+"If \"icon in title\" is enabled, "
+"associated icons will also be "
+"displayed in the title of the menu "
+"item instead of its textual ident."
+msgstr ""
+
+#: classes/modules/mod.additives.allergens.php:209
 msgid ""
 "By default, allergens will be "
 "sorted alphabetically."
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:202
+#: classes/modules/mod.additives.allergens.php:210
 msgid ""
 "However, you can use the \"sort\" "
 "field to customise the sortorder. "
@@ -2005,163 +1978,167 @@ msgid ""
 "will be used to identify the "
 "allergens in the frontend so you "
 "want to make sure to have unique "
-"identifiers/sort id's"
+"identifiers/sort id's."
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:243
+#: classes/modules/mod.additives.allergens.php:251
 msgid "add allergen"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:278
-#: classes/modules/mod.additives.foodtype.php:278
+#: classes/modules/mod.additives.allergens.php:286
+#: classes/modules/mod.additives.foodtype.php:285
 msgid "icon"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:283
-#: classes/modules/mod.additives.foodtype.php:283
+#: classes/modules/mod.additives.allergens.php:291
+#: classes/modules/mod.additives.foodtype.php:290
 msgid "No Icon"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:291
+#: classes/modules/mod.additives.allergens.php:299
 msgid "Gluten"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:292
+#: classes/modules/mod.additives.allergens.php:300
 msgid "Lupin"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:293
+#: classes/modules/mod.additives.allergens.php:301
 msgid "Celery"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:294
+#: classes/modules/mod.additives.allergens.php:302
 msgid "Crustaceans"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:295
+#: classes/modules/mod.additives.allergens.php:303
 msgid "Milk/Lactose"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:296
+#: classes/modules/mod.additives.allergens.php:304
 msgid "Sulphites"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:297
+#: classes/modules/mod.additives.allergens.php:305
 msgid "Sesame"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:298
+#: classes/modules/mod.additives.allergens.php:306
 msgid "Molluscs"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:299
+#: classes/modules/mod.additives.allergens.php:307
 msgid "Mustard"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:300
+#: classes/modules/mod.additives.allergens.php:308
 msgid "Nuts"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:301
+#: classes/modules/mod.additives.allergens.php:309
 msgid "Eggs"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:302
+#: classes/modules/mod.additives.allergens.php:310
 msgid "Fish"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:303
+#: classes/modules/mod.additives.allergens.php:311
 msgid "Soybeans"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:304
+#: classes/modules/mod.additives.allergens.php:312
 msgid "Peanuts"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:309
+#: classes/modules/mod.additives.allergens.php:317
 msgid "Excl. Allergens"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:311
+#: classes/modules/mod.additives.allergens.php:319
 msgid "No Gluten"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:312
+#: classes/modules/mod.additives.allergens.php:320
 msgid "No Lupin"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:313
+#: classes/modules/mod.additives.allergens.php:321
 msgid "No Celery"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:314
+#: classes/modules/mod.additives.allergens.php:322
 msgid "No Crustaceans"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:315
+#: classes/modules/mod.additives.allergens.php:323
 msgid "No Milk/Lactose"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:316
+#: classes/modules/mod.additives.allergens.php:324
 msgid "No Sulphites"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:317
+#: classes/modules/mod.additives.allergens.php:325
 msgid "No Sesame"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:318
+#: classes/modules/mod.additives.allergens.php:326
 msgid "No Molluscs"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:319
+#: classes/modules/mod.additives.allergens.php:327
 msgid "No Mustard"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:320
+#: classes/modules/mod.additives.allergens.php:328
 msgid "No Nuts"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:321
+#: classes/modules/mod.additives.allergens.php:329
 msgid "No Eggs"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:322
+#: classes/modules/mod.additives.allergens.php:330
 msgid "No Fish"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:323
+#: classes/modules/mod.additives.allergens.php:331
 msgid "No Soybeans"
 msgstr ""
 
-#: classes/modules/mod.additives.allergens.php:324
+#: classes/modules/mod.additives.allergens.php:332
 msgid "No Peanuts"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:121
+#: classes/modules/mod.additives.allergens.php:360
+msgid "icon in title"
+msgstr ""
+
+#: classes/modules/mod.additives.foodtype.php:128
 #: classes/modules/mod.order_form.confirmationpage.php:277
-#: classes/modules/mod.order_form.orderpage.php:145
+#: classes/modules/mod.order_form.orderpage.php:146
 msgid "Type"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:190
+#: classes/modules/mod.additives.foodtype.php:197
 #: classes/subpages/subpage.additives.php:75
 msgid "Food Type"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:196
+#: classes/modules/mod.additives.foodtype.php:203
 msgid "Manage Type"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:198
+#: classes/modules/mod.additives.foodtype.php:205
 msgid ""
 "Some meals or beverages may be of "
 "a certain type you may wish to "
 "indicate alongside the menu item "
-"title"
+"title."
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:199
+#: classes/modules/mod.additives.foodtype.php:206
 msgid ""
 "Define the types you would like to "
 "have available for selection here "
@@ -2169,7 +2146,7 @@ msgid ""
 "the individual menu item pages."
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:200
+#: classes/modules/mod.additives.foodtype.php:207
 msgid ""
 "By default, selected types will be "
 "sorted alphabetically, but you can "
@@ -2177,7 +2154,7 @@ msgid ""
 "customise the sortorder."
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:201
+#: classes/modules/mod.additives.foodtype.php:208
 msgid ""
 "If a food type is associated with "
 "an icon, the icon will be "
@@ -2187,7 +2164,7 @@ msgid ""
 "over icon or identification"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:202
+#: classes/modules/mod.additives.foodtype.php:209
 msgid ""
 "Note: Food Types will only be "
 "shown next to the menu item title "
@@ -2195,51 +2172,51 @@ msgid ""
 "shortcodes elsewhere."
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:243
+#: classes/modules/mod.additives.foodtype.php:250
 msgid "add food type"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:289
+#: classes/modules/mod.additives.foodtype.php:296
 msgid "Spice Level"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:291
+#: classes/modules/mod.additives.foodtype.php:298
 msgid "Mild"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:292
+#: classes/modules/mod.additives.foodtype.php:299
 msgid "Medium"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:293
+#: classes/modules/mod.additives.foodtype.php:300
 msgid "Hot"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:294
+#: classes/modules/mod.additives.foodtype.php:301
 msgid "Very Hot"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:299
+#: classes/modules/mod.additives.foodtype.php:306
 msgid "Other"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:301
+#: classes/modules/mod.additives.foodtype.php:308
 msgid "Kosher"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:302
+#: classes/modules/mod.additives.foodtype.php:309
 msgid "Halal"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:303
+#: classes/modules/mod.additives.foodtype.php:310
 msgid "Vegetarian"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:304
+#: classes/modules/mod.additives.foodtype.php:311
 msgid "Vegan"
 msgstr ""
 
-#: classes/modules/mod.additives.foodtype.php:305
+#: classes/modules/mod.additives.foodtype.php:312
 msgid "Frozen"
 msgstr ""
 
@@ -2264,7 +2241,7 @@ msgid ""
 msgstr ""
 
 #: classes/modules/mod.layout.gateways.php:87
-#: classes/modules/mod.localization.common.php:1028
+#: classes/modules/mod.localization.common.php:1034
 #: classes/subpages/subpage.gateways.php:74
 #: classes/subpages/subpage.gateways.php:76
 msgid "Gateways"
@@ -2345,9 +2322,10 @@ msgid ""
 "In most cases, this will link to "
 "the single menu item, so you "
 "probably also want to set up the "
-"single item pages as <a href=\"%s"
-"\">described here</a> if you "
-"insert this link into the content."
+"single item pages as <a "
+"href=\"%s\">described here</a> if "
+"you insert this link into the "
+"content."
 msgstr ""
 
 #: classes/modules/mod.layout.general.php:117
@@ -2437,54 +2415,54 @@ msgid ""
 "added to the Media Library)"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:415
+#: classes/modules/mod.layout.items_sorting_category_display.php:403
 msgid ""
 "Items Sorting and Category Display"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:420
+#: classes/modules/mod.layout.items_sorting_category_display.php:408
 msgid "Menu items sort order"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:423
+#: classes/modules/mod.layout.items_sorting_category_display.php:411
 msgid ""
 "How are menu items sorted within a "
 "category"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:427
+#: classes/modules/mod.layout.items_sorting_category_display.php:415
 msgid ""
 "Do not display categories that "
 "have no menu items"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:430
+#: classes/modules/mod.layout.items_sorting_category_display.php:418
 msgid ""
 "will not display categories that "
 "have no menu items associated with "
-"them instead of \"no results found"
-"\""
+"them instead of \"no results "
+"found\""
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:434
+#: classes/modules/mod.layout.items_sorting_category_display.php:422
 msgid ""
 "Group, sort and display menu items "
 "by category"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:437
+#: classes/modules/mod.layout.items_sorting_category_display.php:425
 msgid ""
 "sorts by and displays categories "
 "in cart, order page and emails"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:441
+#: classes/modules/mod.layout.items_sorting_category_display.php:429
 msgid ""
 "Category display in order pages "
 "and emails"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:444
+#: classes/modules/mod.layout.items_sorting_category_display.php:432
 msgid ""
 "How would you like to display the "
 "categories in order pages and "
@@ -2492,11 +2470,11 @@ msgid ""
 "hierarchical category structure]"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:448
+#: classes/modules/mod.layout.items_sorting_category_display.php:436
 msgid "Category display in cart"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:451
+#: classes/modules/mod.layout.items_sorting_category_display.php:439
 msgid ""
 "How would you like to display the "
 "categories in the cart ? [as the "
@@ -2504,11 +2482,11 @@ msgid ""
 "you can adjust this separately]"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:455
+#: classes/modules/mod.layout.items_sorting_category_display.php:443
 msgid "Category style in html emails"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:458
+#: classes/modules/mod.layout.items_sorting_category_display.php:446
 #: classes/modules/mod.settings.multisite.php:521
 msgid ""
 "Some email services do not "
@@ -2518,46 +2496,45 @@ msgid ""
 "declarations here"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:462
+#: classes/modules/mod.layout.items_sorting_category_display.php:450
 msgid "Category Separator"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:485
+#: classes/modules/mod.layout.items_sorting_category_display.php:473
 msgid ""
 "Default (as set by \"Order\" "
 "attribute)"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:487
+#: classes/modules/mod.layout.items_sorting_category_display.php:475
 #: classes/subpages/subpage.customers.php:306
-#, fuzzy
 msgid "ID"
-msgstr "Missing card ID."
+msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:491
+#: classes/modules/mod.layout.items_sorting_category_display.php:479
 msgid "Ascending"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:492
+#: classes/modules/mod.layout.items_sorting_category_display.php:480
 msgid "Descending"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:518
-#: classes/modules/mod.layout.items_sorting_category_display.php:531
+#: classes/modules/mod.layout.items_sorting_category_display.php:506
+#: classes/modules/mod.layout.items_sorting_category_display.php:519
 msgid "full path"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:519
-#: classes/modules/mod.layout.items_sorting_category_display.php:532
+#: classes/modules/mod.layout.items_sorting_category_display.php:507
+#: classes/modules/mod.layout.items_sorting_category_display.php:520
 msgid "parent category"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:520
-#: classes/modules/mod.layout.items_sorting_category_display.php:533
+#: classes/modules/mod.layout.items_sorting_category_display.php:508
+#: classes/modules/mod.layout.items_sorting_category_display.php:521
 msgid "topmost category"
 msgstr ""
 
-#: classes/modules/mod.layout.items_sorting_category_display.php:530
+#: classes/modules/mod.layout.items_sorting_category_display.php:518
 msgid "do not display categories"
 msgstr ""
 
@@ -2689,8 +2666,8 @@ msgstr ""
 
 #: classes/modules/mod.layout.minicart.php:183
 msgid ""
-" add above set padding to another "
-"element *instead* of the body tag"
+"add above set padding to another "
+"element *instead* of the body tag."
 msgstr ""
 
 #: classes/modules/mod.layout.minicart.php:185
@@ -2721,7 +2698,7 @@ msgid "Bottom"
 msgstr ""
 
 #: classes/modules/mod.layout.miscellaneous.php:87
-#: classes/modules/mod.localization.common.php:1167
+#: classes/modules/mod.localization.common.php:1173
 #: classes/modules/mod.settings.miscellaneous.php:123
 #: classes/modules/mod.tools.miscellaneous.various.php:136
 #: classes/modules/mod.tools.miscellaneous.various.php:142
@@ -2766,20 +2743,43 @@ msgid ""
 msgstr ""
 
 #: classes/modules/mod.layout.miscellaneous.php:119
-msgid "Hide cart icon next to prices"
+msgid "Categories accordion"
+msgstr ""
+
+#: classes/modules/mod.layout.miscellaneous.php:122
+msgid ""
+"Display of multiple categories in "
+"an accordion type style, using "
+"category title as clickable "
+"element to expand list of menu "
+"items."
 msgstr ""
 
 #: classes/modules/mod.layout.miscellaneous.php:126
+msgid "Accordion style"
+msgstr ""
+
+#: classes/modules/mod.layout.miscellaneous.php:129
+msgid ""
+"Which style would you like to use "
+"for the accordion"
+msgstr ""
+
+#: classes/modules/mod.layout.miscellaneous.php:133
+msgid "Hide cart icon next to prices"
+msgstr ""
+
+#: classes/modules/mod.layout.miscellaneous.php:140
 msgid ""
 "Hide size name and cart icon if "
 "item has only one size"
 msgstr ""
 
-#: classes/modules/mod.layout.miscellaneous.php:133
+#: classes/modules/mod.layout.miscellaneous.php:147
 msgid "Stylable javascript alerts"
 msgstr ""
 
-#: classes/modules/mod.layout.miscellaneous.php:136
+#: classes/modules/mod.layout.miscellaneous.php:150
 msgid ""
 "Convert browser native javascript "
 "popup alert boxes to css stylable "
@@ -2788,11 +2788,18 @@ msgid ""
 "popups)"
 msgstr ""
 
-#: classes/modules/mod.layout.miscellaneous.php:168
+#: classes/modules/mod.layout.miscellaneous.php:182
 msgid ""
 "How long is it visible for before "
 "reverting back to displaying price "
 "[in ms]"
+msgstr ""
+
+#: classes/modules/mod.layout.miscellaneous.php:205
+#: classes/modules/mod.order_settings.order_update.php:387
+msgid ""
+"a (themeroller) style is already "
+"loaded / I provide my own style"
 msgstr ""
 
 #: classes/modules/mod.layout.openingtimes_format.php:85
@@ -3178,9 +3185,8 @@ msgid "order date"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:155
-#, fuzzy
 msgid "order id"
-msgstr "Order Request  ID"
+msgstr ""
 
 #: classes/modules/mod.localization.common.php:162
 msgid "payment due"
@@ -3199,7 +3205,7 @@ msgid "delivery type"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:193
-#: classes/subpages/subpage.reports.php:611
+#: classes/subpages/subpage.reports.php:628
 msgid "payment type"
 msgstr ""
 
@@ -3213,17 +3219,13 @@ msgid "transaction id"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:220
-#: classes/subpages/subpage.reports.php:576
+#: classes/subpages/subpage.reports.php:593
 msgid "total"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:227
-#, fuzzy
 msgid "refunded"
 msgstr ""
-"Order Request refunded emails are "
-"sent to customers when their "
-"orders are refunded."
 
 #: classes/modules/mod.localization.common.php:234
 msgid "delivery / pickup note"
@@ -3236,11 +3238,6 @@ msgstr ""
 #: classes/modules/mod.localization.common.php:243
 #: classes/modules/mod.localization.common.php:250
 msgid "currently unused"
-msgstr ""
-
-#: classes/modules/mod.localization.common.php:249
-#: classes/modules/mod.order_form.orderpage.php:543
-msgid "currency"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:266
@@ -3260,9 +3257,8 @@ msgid "cash"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:295
-#, fuzzy
 msgid "credit card"
-msgstr "Credit Card"
+msgstr ""
 
 #: classes/modules/mod.localization.common.php:310
 msgid "User Purchase History"
@@ -3630,8 +3626,8 @@ msgstr ""
 #: classes/modules/mod.localization.common.php:751
 msgid ""
 "(Sub)Totals: text delivery when "
-"set to \"Delivery Charges per item"
-"\" (if applicable)"
+"set to \"Delivery Charges per "
+"item\" (if applicable)"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:757
@@ -3753,95 +3749,103 @@ msgid ""
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:896
-msgid "empty cart button text"
+#, php-format
+msgid ""
+"text to display when shop closed "
+"for holidays. %s being replaced by "
+"next opening day"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:902
-msgid "view cart button text"
+msgid "empty cart button text"
 msgstr ""
 
 #: classes/modules/mod.localization.common.php:908
+msgid "view cart button text"
+msgstr ""
+
+#: classes/modules/mod.localization.common.php:914
 msgid ""
 "text to display when cart is empty"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:914
+#: classes/modules/mod.localization.common.php:920
 msgid ""
 "text to display when hovering over "
 "remove from cart icon"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:920
+#: classes/modules/mod.localization.common.php:926
 msgid ""
 "text of button in cart to proceed "
 "to order page"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:926
+#: classes/modules/mod.localization.common.php:932
 msgid ""
 "text of button in small carts "
 "(minicart etc) to proceed to order "
 "page"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:932
+#: classes/modules/mod.localization.common.php:938
 msgid ""
 "text in small carts (minicart etc) "
 "if shop closed"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:942
+#: classes/modules/mod.localization.common.php:948
 msgid "Templates Other"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:950
+#: classes/modules/mod.localization.common.php:956
 msgid "Label : \"Site Details\""
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:956
+#: classes/modules/mod.localization.common.php:962
 msgid "Label : \"Overview\""
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:962
+#: classes/modules/mod.localization.common.php:968
 msgid "Label : \"Customer Details\""
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:968
+#: classes/modules/mod.localization.common.php:974
 msgid "Label : \"Order Details\""
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:974
+#: classes/modules/mod.localization.common.php:980
 msgid ""
 "Label : \"Order\" - [1] First "
 "Column (e.g Quantity)"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:980
+#: classes/modules/mod.localization.common.php:986
 msgid ""
 "Label : \"Order\" - [2] Second "
 "Column (e.g Article)"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:986
+#: classes/modules/mod.localization.common.php:992
 msgid ""
 "Label : \"Order\" - [3] Third "
 "Column (e.g Price)"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:992
+#: classes/modules/mod.localization.common.php:998
 msgid "Label : \"Summary\""
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:998
+#: classes/modules/mod.localization.common.php:1004
 msgid "Overview -> User : \"Guest\""
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1004
+#: classes/modules/mod.localization.common.php:1010
 msgid ""
 "Overview -> User : \"Registered\""
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1010
+#: classes/modules/mod.localization.common.php:1016
 msgid ""
 "Footer (Email Templates): text "
 "after summary / totals [html "
@@ -3849,7 +3853,7 @@ msgid ""
 "newlines in plaintext output]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1017
+#: classes/modules/mod.localization.common.php:1023
 msgid ""
 "Footer (Print Templates): text "
 "after summary / totals [html "
@@ -3857,7 +3861,7 @@ msgid ""
 "newlines in plaintext output]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1036
+#: classes/modules/mod.localization.common.php:1042
 msgid ""
 "Displayed above gateway choices if "
 "those are displayed as full width "
@@ -3866,45 +3870,45 @@ msgid ""
 "dropdown. Edit css as required"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1036
+#: classes/modules/mod.localization.common.php:1042
 msgid ""
 "[only applicable if more than one "
 "gateway installed, activated and "
 "enabled]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1043
+#: classes/modules/mod.localization.common.php:1049
 msgid ""
 "label on order page when an order "
 "has been cancelled"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1050
+#: classes/modules/mod.localization.common.php:1056
 msgid ""
 "text on order page when an order "
 "has been cancelled"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1057
+#: classes/modules/mod.localization.common.php:1063
 msgid ""
 "label on order page when payment "
 "is being processed"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1064
+#: classes/modules/mod.localization.common.php:1070
 msgid ""
 "text on order page when an order "
 "is being processed [html allowed]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1071
+#: classes/modules/mod.localization.common.php:1077
 msgid ""
 "label on order page when payment "
 "has not yet been confirmed / is "
 "still pending"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1078
+#: classes/modules/mod.localization.common.php:1084
 #, php-format
 msgid ""
 "text on order page when payment "
@@ -3914,7 +3918,7 @@ msgid ""
 "[html allowed]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1085
+#: classes/modules/mod.localization.common.php:1091
 msgid ""
 "label on order page when payment "
 "has been accepted but is still "
@@ -3923,7 +3927,7 @@ msgid ""
 "final payment confirmation)."
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1092
+#: classes/modules/mod.localization.common.php:1098
 msgid ""
 "text on order page when payment "
 "has been accepted but is still "
@@ -3933,7 +3937,7 @@ msgid ""
 "allowed]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1099
+#: classes/modules/mod.localization.common.php:1105
 msgid ""
 "label on order page when payment "
 "has been confirmed (for gateways "
@@ -3941,7 +3945,7 @@ msgid ""
 "final payment confirmation)."
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1106
+#: classes/modules/mod.localization.common.php:1112
 msgid ""
 "text on order page when payment "
 "has been confirmed (for gateways "
@@ -3950,7 +3954,7 @@ msgid ""
 "allowed]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1113
+#: classes/modules/mod.localization.common.php:1119
 msgid ""
 "some gateways allow a distinct "
 "text to be displayed on their "
@@ -3959,7 +3963,7 @@ msgid ""
 "gateway)"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1120
+#: classes/modules/mod.localization.common.php:1126
 msgid ""
 "Fieldset label if your chosen "
 "payment gateway allows payment "
@@ -3968,11 +3972,11 @@ msgid ""
 "overlay windows)"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1131
+#: classes/modules/mod.localization.common.php:1137
 msgid "Widgets"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1139
+#: classes/modules/mod.localization.common.php:1145
 msgid ""
 "select default text/placeholder to "
 "display for navigation widget when "
@@ -3980,35 +3984,35 @@ msgid ""
 "placeholder]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1149
+#: classes/modules/mod.localization.common.php:1155
 msgid "User Profile"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1157
+#: classes/modules/mod.localization.common.php:1163
 msgid ""
 "Title above additional fields "
 "added/enabled"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1176
+#: classes/modules/mod.localization.common.php:1182
 msgid ""
 "Generic placeholder / initial "
 "select for dropdowns"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1182
+#: classes/modules/mod.localization.common.php:1188
 msgid ""
 "Generic placeholder when a "
 "checkbox was left un-checked"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1188
+#: classes/modules/mod.localization.common.php:1194
 msgid ""
 "Generic placeholder when a "
 "checkbox was checked"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1194
+#: classes/modules/mod.localization.common.php:1200
 #, php-format
 msgid ""
 "Admin bar \"New Order(s)\" "
@@ -4016,28 +4020,28 @@ msgid ""
 "replaced with %s]"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1200
+#: classes/modules/mod.localization.common.php:1206
 msgid ""
 "Link Label back to order page if a "
 "payment has failed"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1206
+#: classes/modules/mod.localization.common.php:1212
 msgid ""
 "Generic \"Back to Merchant Site\" "
 "Label"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1212
+#: classes/modules/mod.localization.common.php:1218
 msgid "Generic \"Error\" Label"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1218
+#: classes/modules/mod.localization.common.php:1224
 msgid ""
 "Generic \"Error Details\" Label"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1224
+#: classes/modules/mod.localization.common.php:1230
 msgid ""
 "Display \"Free\" - or whatever you "
 "set here - instead of price if "
@@ -4045,7 +4049,7 @@ msgid ""
 "WPPizza -> Layout)"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1231
+#: classes/modules/mod.localization.common.php:1237
 #, php-format
 msgid ""
 "Label for \"accept privacy\" "
@@ -4056,7 +4060,7 @@ msgid ""
 "in Wordpress->Settings->Privacy"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1238
+#: classes/modules/mod.localization.common.php:1244
 #, php-format
 msgid ""
 "Label if \"accept privacy\" "
@@ -4066,7 +4070,7 @@ msgid ""
 "Privacy is enabled) "
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1250
+#: classes/modules/mod.localization.common.php:1256
 msgid ""
 "Admin Order History - Order "
 "Statuses <a href=\"javascript:"
@@ -4074,55 +4078,55 @@ msgid ""
 "admin-help\">(see help)</a>"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1259
+#: classes/modules/mod.localization.common.php:1265
 msgid "Order Status : New"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1265
+#: classes/modules/mod.localization.common.php:1271
 msgid "Order Status : Acknowledged"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1271
+#: classes/modules/mod.localization.common.php:1277
 msgid "Order Status : On Hold"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1277
+#: classes/modules/mod.localization.common.php:1283
 msgid "Order Status : Processed"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1283
+#: classes/modules/mod.localization.common.php:1289
 msgid "Order Status : Delivered"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1289
+#: classes/modules/mod.localization.common.php:1295
 msgid "Order Status : Rejected"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1295
+#: classes/modules/mod.localization.common.php:1301
 msgid "Order Status : Refunded"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1302
+#: classes/modules/mod.localization.common.php:1308
 msgid "Order Status : Other"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1308
+#: classes/modules/mod.localization.common.php:1314
 msgid "Order Status : Custom 1"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1314
+#: classes/modules/mod.localization.common.php:1320
 msgid "Order Status : Custom 2"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1320
+#: classes/modules/mod.localization.common.php:1326
 msgid "Order Status : Custom 3"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1326
+#: classes/modules/mod.localization.common.php:1332
 msgid "Order Status : Custom 4"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1337
+#: classes/modules/mod.localization.common.php:1343
 msgid ""
 "Admin Order History - Custom "
 "Statuses <a href=\"javascript:"
@@ -4130,41 +4134,41 @@ msgid ""
 "admin-help\">(see help)</a>"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1345
+#: classes/modules/mod.localization.common.php:1351
 msgid "Custom Options Label"
 msgstr ""
 
-#: classes/modules/mod.localization.common.php:1351
+#: classes/modules/mod.localization.common.php:1357
 msgid ""
 "Custom Options [enter a comma "
 "separated list of options]"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:127
+#: classes/modules/mod.meal_sizes.sizes.php:133
 msgid "Size(s) and Price(s)"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:207
+#: classes/modules/mod.meal_sizes.sizes.php:213
 msgid "Size Options Available"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:212
+#: classes/modules/mod.meal_sizes.sizes.php:218
 msgid "Set Size Options"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:214
+#: classes/modules/mod.meal_sizes.sizes.php:220
 msgid ""
 "Define a selection of sizes that "
 "you want to make available for "
 "selection on a per item basis."
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:216
+#: classes/modules/mod.meal_sizes.sizes.php:222
 msgid ""
 "Example - adding a new size option:"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:217
+#: classes/modules/mod.meal_sizes.sizes.php:223
 msgid ""
 "To add a new option for a menu "
 "item of \"small, medium, large\" "
@@ -4173,34 +4177,34 @@ msgid ""
 "fields\" and click \"add\"."
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:218
+#: classes/modules/mod.meal_sizes.sizes.php:224
 msgid ""
 "In the resulting available options "
 "enter:"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:219
+#: classes/modules/mod.meal_sizes.sizes.php:225
 msgid ""
-"- the \"Admin Screen Label"
-"\" (optional, only for your own "
+"- the \"Admin Screen Label\" "
+"(optional, only for your own "
 "identification purposes)"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:220
+#: classes/modules/mod.meal_sizes.sizes.php:226
 msgid ""
 "- the \"Label [Frontend]\" (in "
 "this case this would be \"small\", "
 "\"medium\" and \"large\")"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:221
+#: classes/modules/mod.meal_sizes.sizes.php:227
 msgid ""
 "- some default price per size "
 "(this can always be overwritten on "
 "a per item basis)"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:223
+#: classes/modules/mod.meal_sizes.sizes.php:229
 msgid ""
 "As meals and beverages can come in "
 "different sizes, please add/edit "
@@ -4210,7 +4214,7 @@ msgid ""
 "item basis:"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:224
+#: classes/modules/mod.meal_sizes.sizes.php:230
 msgid ""
 "For your own sanity and easier "
 "managability now and in the "
@@ -4222,32 +4226,32 @@ msgid ""
 "Label\" for easier identification)"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:263
-#: classes/modules/mod.openingtimes.closed.php:153
-#: classes/modules/mod.openingtimes.custom.php:164
-#, fuzzy
+#: classes/modules/mod.meal_sizes.sizes.php:269
+#: classes/modules/mod.openingtimes.closed.php:160
+#: classes/modules/mod.openingtimes.custom.php:171
+#: classes/modules/mod.openingtimes.holidays.php:220
 msgid "add"
-msgstr "Add New Card"
+msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:264
+#: classes/modules/mod.meal_sizes.sizes.php:270
 msgid "how many size option fields ?"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:287
+#: classes/modules/mod.meal_sizes.sizes.php:293
 msgid "Admin Screen Label"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:289
+#: classes/modules/mod.meal_sizes.sizes.php:295
 msgid ""
 "optional, use to identify groups "
 "with the same frontend labels. "
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:294
+#: classes/modules/mod.meal_sizes.sizes.php:300
 msgid "Label [Frontend]"
 msgstr ""
 
-#: classes/modules/mod.meal_sizes.sizes.php:301
+#: classes/modules/mod.meal_sizes.sizes.php:307
 msgid "Default Prices"
 msgstr ""
 
@@ -4268,8 +4272,8 @@ msgstr ""
 msgid ""
 "check to be able to set SKUs for "
 "menu items [more options will be "
-"become available in \"%s -> Layout"
-"\" / \"%s -> Localization\"]"
+"become available in \"%s -> "
+"Layout\" / \"%s -> Localization\"]"
 msgstr ""
 
 #: classes/modules/mod.mixed.sku.php:575
@@ -4331,17 +4335,17 @@ msgstr ""
 
 #: classes/modules/mod.mixed.sku.php:723
 #: classes/modules/mod.order_settings.discounts.php:176
-#: classes/modules/mod.order_settings.order_update.php:399
+#: classes/modules/mod.order_settings.order_update.php:396
 msgid "off"
 msgstr ""
 
 #: classes/modules/mod.mixed.sku.php:726
-#: classes/modules/mod.order_settings.order_update.php:400
+#: classes/modules/mod.order_settings.order_update.php:397
 msgid "left"
 msgstr ""
 
 #: classes/modules/mod.mixed.sku.php:729
-#: classes/modules/mod.order_settings.order_update.php:401
+#: classes/modules/mod.order_settings.order_update.php:398
 msgid "right"
 msgstr ""
 
@@ -4414,22 +4418,22 @@ msgid ""
 "want to be open again !!"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:103
+#: classes/modules/mod.openingtimes.closed.php:110
 msgid "Closed"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:109
+#: classes/modules/mod.openingtimes.closed.php:116
 msgid "Manage Times Closed"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:111
+#: classes/modules/mod.openingtimes.closed.php:118
 msgid ""
 "If you are closed on certain days "
 "for a number of hours, enter them "
 "here."
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:112
+#: classes/modules/mod.openingtimes.closed.php:119
 msgid ""
 "E.g: if you are generally open on "
 "Tuesdays - as set above - from "
@@ -4441,7 +4445,7 @@ msgid ""
 "as well and so on."
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:113
+#: classes/modules/mod.openingtimes.closed.php:120
 msgid ""
 "Furthermore, do not enter times "
 "here that span midnight. If you "
@@ -4452,7 +4456,7 @@ msgid ""
 "to 1:00\"."
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:114
+#: classes/modules/mod.openingtimes.closed.php:121
 msgid ""
 "If you have setup any custom dates "
 "above (for example christmas or "
@@ -4462,7 +4466,7 @@ msgid ""
 "only to those dates."
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:115
+#: classes/modules/mod.openingtimes.closed.php:122
 msgid ""
 "Note: if you set anything here, it "
 "will not be reflected when "
@@ -4475,28 +4479,28 @@ msgid ""
 "etc as required)"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:205
+#: classes/modules/mod.openingtimes.closed.php:212
 msgid "Custom Dates Above (if any)"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:212
+#: classes/modules/mod.openingtimes.closed.php:219
 msgid "closed from"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.closed.php:215
+#: classes/modules/mod.openingtimes.closed.php:222
 #: classes/modules/mod.openingtimes.standard.php:139
 msgid "to"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:115
+#: classes/modules/mod.openingtimes.custom.php:122
 msgid "Custom Opening Times"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:121
+#: classes/modules/mod.openingtimes.custom.php:128
 msgid "Manage Custom Opening Times"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:123
+#: classes/modules/mod.openingtimes.custom.php:130
 msgid ""
 "Set any dates / days here where "
 "opening times differ from the "
@@ -4504,12 +4508,12 @@ msgid ""
 "holidays etc)."
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:124
+#: classes/modules/mod.openingtimes.custom.php:131
 #: classes/modules/mod.openingtimes.standard.php:106
 msgid "USE 24 HOUR CLOCK."
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:125
+#: classes/modules/mod.openingtimes.custom.php:132
 #: classes/modules/mod.openingtimes.standard.php:107
 msgid ""
 "If you are closed on a given day "
@@ -4518,7 +4522,7 @@ msgid ""
 "from 0:00 to 24:00"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:126
+#: classes/modules/mod.openingtimes.custom.php:133
 #: classes/modules/mod.openingtimes.standard.php:108
 msgid ""
 "Ensure that the Wordpress timezone "
@@ -4526,22 +4530,59 @@ msgid ""
 "correct"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:243
+#: classes/modules/mod.openingtimes.custom.php:250
 msgid "Open from"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:246
-#: classes/modules/mod.settings.smtp.php:364
+#: classes/modules/mod.openingtimes.custom.php:253
+#: classes/modules/mod.openingtimes.holidays.php:298
+#: classes/modules/mod.settings.smtp.php:370
 msgid "To"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:249
+#: classes/modules/mod.openingtimes.custom.php:256
+#: classes/modules/mod.openingtimes.holidays.php:303
 msgid "Every year"
 msgstr ""
 
-#: classes/modules/mod.openingtimes.custom.php:250
+#: classes/modules/mod.openingtimes.custom.php:257
+#: classes/modules/mod.openingtimes.holidays.php:304
 msgid ""
 "Repeat every year for this date"
+msgstr ""
+
+#: classes/modules/mod.openingtimes.holidays.php:172
+msgid "Holidays"
+msgstr ""
+
+#: classes/modules/mod.openingtimes.holidays.php:178
+msgid "Manage Holidays"
+msgstr ""
+
+#: classes/modules/mod.openingtimes.holidays.php:180
+msgid ""
+"Set ranges between 2 dates - first "
+"and last date - when your shop is "
+"closed (i.e for holidays or "
+"similar)."
+msgstr ""
+
+#: classes/modules/mod.openingtimes.holidays.php:181
+msgid ""
+"If your shop is closed only for "
+"one particular date, set both "
+"dates to be that same date."
+msgstr ""
+
+#: classes/modules/mod.openingtimes.holidays.php:182
+msgid ""
+"Will override any other opening "
+"times settings (but before any "
+"filters)."
+msgstr ""
+
+#: classes/modules/mod.openingtimes.holidays.php:293
+msgid "From"
 msgstr ""
 
 #: classes/modules/mod.openingtimes.standard.php:85
@@ -4585,7 +4626,7 @@ msgid ""
 "case, tick this box and save. You "
 "will get some additional "
 "formfields you can make available "
-"in that final form"
+"in that final form."
 msgstr ""
 
 #: classes/modules/mod.order_form.confirmationpage.php:107
@@ -4774,26 +4815,14 @@ msgid ""
 msgstr ""
 
 #: classes/modules/mod.order_form.confirmationpage.php:277
-#: classes/modules/mod.order_form.orderpage.php:138
-#: classes/modules/mod.order_form.orderpage.php:203
-#, fuzzy
+#: classes/modules/mod.order_form.orderpage.php:139
+#: classes/modules/mod.order_form.orderpage.php:206
 msgid "Enabled"
 msgstr ""
-"Select how you would like to "
-"display the billing address fields "
-"on the checkout form. "
-"<p><strong>Notes</strong>:</"
-"p><p>If taxes are enabled, this "
-"option cannot be changed from "
-"\"Full address\".</p><p>If set to "
-"\"No address fields\", you "
-"<strong>must</strong> disable "
-"\"zip code verification\" in your "
-"Stripe account.</p>"
 
 #: classes/modules/mod.order_form.confirmationpage.php:277
-#: classes/modules/mod.order_form.orderpage.php:139
-#: classes/modules/mod.order_form.orderpage.php:211
+#: classes/modules/mod.order_form.orderpage.php:140
+#: classes/modules/mod.order_form.orderpage.php:214
 msgid "Sort"
 msgstr ""
 
@@ -4802,12 +4831,9 @@ msgid "Label [html allowed]"
 msgstr ""
 
 #: classes/modules/mod.order_form.confirmationpage.php:277
-#: classes/modules/mod.order_form.orderpage.php:226
-#, fuzzy
+#: classes/modules/mod.order_form.orderpage.php:229
 msgid "Required"
 msgstr ""
-"Please fill out all required "
-"fields to continue your purchase."
 
 #: classes/modules/mod.order_form.confirmationpage.php:284
 #, php-format
@@ -4831,7 +4857,7 @@ msgid "select"
 msgstr ""
 
 #: classes/modules/mod.order_form.confirmationpage.php:324
-#: classes/modules/mod.order_form.orderpage.php:288
+#: classes/modules/mod.order_form.orderpage.php:296
 msgid "separate options with comma"
 msgstr ""
 
@@ -4864,11 +4890,12 @@ msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:107
 msgid ""
-"For \"selects\", the \"placeholder"
-"\" field can be used to replace "
-"the default \"please select\" ."
-"This will also be used as error "
-"message if a selection is required."
+"For \"selects\", the "
+"\"placeholder\" field can be used "
+"to replace the default \"please "
+"select\" .This will also be used "
+"as error message if a selection is "
+"required."
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:108
@@ -4881,13 +4908,21 @@ msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:109
 msgid ""
+"If you want to omit a field from "
+"the order form when it is not "
+"required, enable \"Omit if "
+"optional\"."
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:110
+msgid ""
 "Note: only the email can and "
 "should be used to send email "
 "notifications of the order to the "
 "customer (if enabled)."
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:110
+#: classes/modules/mod.order_form.orderpage.php:111
 msgid ""
 "Additionally, if you want to offer "
 "customers to be able to register a "
@@ -4901,47 +4936,44 @@ msgid ""
 "enabled too."
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:140
-#: classes/modules/mod.order_form.orderpage.php:219
+#: classes/modules/mod.order_form.orderpage.php:141
+#: classes/modules/mod.order_form.orderpage.php:222
 msgid "Label"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:140
-#: classes/modules/mod.order_form.orderpage.php:220
+#: classes/modules/mod.order_form.orderpage.php:141
+#: classes/modules/mod.order_form.orderpage.php:223
 msgid "Placeholder"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:141
-#, fuzzy
-msgid "Required:"
-msgstr ""
-"Please fill out all required "
-"fields to continue your purchase."
-
 #: classes/modules/mod.order_form.orderpage.php:142
-msgid "Prefill<br />[if known]"
+msgid "Required:"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:143
-msgid "Use when<br />Registering ?"
+msgid "Prefill<br />[if known]"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:144
+msgid "Use when<br />Registering ?"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:145
 msgid ""
 "add to email<br />subject line ?"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:145
+#: classes/modules/mod.order_form.orderpage.php:146
 msgid "Validation"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:212
-#: classes/modules/mod.order_form.orderpage.php:219
-#: classes/modules/mod.order_form.orderpage.php:228
-#: classes/modules/mod.order_form.orderpage.php:230
-#: classes/modules/mod.order_form.orderpage.php:237
-#: classes/modules/mod.order_form.orderpage.php:244
-#: classes/modules/mod.order_form.orderpage.php:251
+#: classes/modules/mod.order_form.orderpage.php:215
+#: classes/modules/mod.order_form.orderpage.php:222
+#: classes/modules/mod.order_form.orderpage.php:232
+#: classes/modules/mod.order_form.orderpage.php:235
+#: classes/modules/mod.order_form.orderpage.php:245
+#: classes/modules/mod.order_form.orderpage.php:252
+#: classes/modules/mod.order_form.orderpage.php:259
 #: classes/modules/mod.order_settings.delivery.php:275
 #: classes/modules/mod.order_settings.delivery.php:294
 #: classes/modules/mod.order_settings.discounts.php:192
@@ -4949,311 +4981,306 @@ msgstr ""
 msgid "N/A"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:218
+#: classes/modules/mod.order_form.orderpage.php:221
 msgid "Label / Placeholder"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:228
-msgid "on Delivery"
+#: classes/modules/mod.order_form.orderpage.php:232
+msgid "On Delivery"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:230
-msgid "on Pickup"
+#: classes/modules/mod.order_form.orderpage.php:235
+msgid "On Pickup"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:236
+#: classes/modules/mod.order_form.orderpage.php:238
+msgid "Omit if optional"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:244
 msgid "Prefill"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:243
+#: classes/modules/mod.order_form.orderpage.php:251
 msgid "On register"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:250
+#: classes/modules/mod.order_form.orderpage.php:258
 msgid "in subject line"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:257
+#: classes/modules/mod.order_form.orderpage.php:265
 msgid "Type / Validation"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:312
+#: classes/modules/mod.order_form.orderpage.php:320
 msgid "Parameters"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:515
+#: classes/modules/mod.order_form.orderpage.php:524
 msgid "email"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:516
+#: classes/modules/mod.order_form.orderpage.php:525
 msgid "url"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:517
-#: classes/subpages/subpage.reports.php:554
+#: classes/modules/mod.order_form.orderpage.php:526
+#: classes/subpages/subpage.reports.php:569
 msgid "date"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:518
+#: classes/modules/mod.order_form.orderpage.php:527
 msgid "date ISO"
 msgstr ""
 
-#: classes/modules/mod.order_form.orderpage.php:519
-#, fuzzy
-msgid "number"
-msgstr ""
-"Order Request  {order_number} "
-"details"
-
-#: classes/modules/mod.order_form.orderpage.php:520
-msgid "digits"
-msgstr ""
-
-#: classes/modules/mod.order_form.orderpage.php:521
-msgid "min length"
-msgstr ""
-
-#: classes/modules/mod.order_form.orderpage.php:522
-msgid "max length"
-msgstr ""
-
-#: classes/modules/mod.order_form.orderpage.php:523
-msgid "rangelength"
-msgstr ""
-
-#: classes/modules/mod.order_form.orderpage.php:524
-msgid "min"
-msgstr ""
-
-#: classes/modules/mod.order_form.orderpage.php:525
-msgid "max"
-msgstr ""
-
-#: classes/modules/mod.order_form.orderpage.php:526
-msgid "range"
-msgstr ""
-
-#: classes/modules/mod.order_form.orderpage.php:527
-msgid "step"
-msgstr ""
-
 #: classes/modules/mod.order_form.orderpage.php:528
-msgid "equal to"
+msgid "number"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:529
-msgid "remote"
+msgid "digits"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:530
+msgid "min length"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:531
-msgid "alphanumeric"
+msgid "max length"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:532
-msgid "max words"
+msgid "rangelength"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:533
-msgid "min words"
+msgid "min"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:534
-msgid "range words"
+msgid "max"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:535
-msgid "accept"
+msgid "range"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:536
-msgid "bankaccount NL"
+msgid "step"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:537
-msgid "bankorgiroaccount NL"
+msgid "equal to"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:538
-msgid "bic"
-msgstr ""
-
-#: classes/modules/mod.order_form.orderpage.php:539
-msgid "cif ES"
+msgid "remote"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:540
-msgid "cpf BR"
+msgid "alphanumeric"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:541
-msgid "creditcard"
+msgid "max words"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:542
-msgid "creditcard types"
+msgid "min words"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:543
+msgid "range words"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:544
-msgid "date FA"
+msgid "accept"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:545
-msgid "date ITA"
+msgid "bankaccount NL"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:546
-msgid "date NL"
+msgid "bankorgiroaccount NL"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:547
-#, fuzzy
-msgid "extension"
+msgid "bic"
 msgstr ""
-"The Stripe extension for Easy "
-"Digital Downloads supports Stripe "
-"Connect for easier setup and "
-"improved security. %1$sClick here"
-"%2$s to learn more about "
-"connecting your Stripe account."
 
 #: classes/modules/mod.order_form.orderpage.php:548
-msgid "giroaccount NL"
+msgid "cif ES"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:549
-msgid "iban"
+msgid "cpf BR"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:550
-msgid "integer"
+msgid "creditcard"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:551
-msgid "ipv4"
+msgid "creditcard types"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:552
-msgid "ipv6"
+msgid "currency"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:553
-msgid "lettersonly"
+msgid "date FA"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:554
-msgid "letters w. basic punc"
+msgid "date ITA"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:555
-msgid "mobile NL"
+msgid "date NL"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:556
-msgid "mobile UK"
+msgid "extension"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:557
-msgid "nieES"
+msgid "giroaccount NL"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:558
-msgid "nifES"
+msgid "iban"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:559
-msgid "not equal to"
+msgid "integer"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:560
-msgid "no whitespace"
+msgid "ipv4"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:561
-msgid "parameters"
+msgid "ipv6"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:562
-msgid "phone NL"
+msgid "lettersonly"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:563
-msgid "phone UK"
+msgid "letters w. basic punc"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:564
-msgid "phone US"
+msgid "mobile NL"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:565
-msgid "phones UK"
+msgid "mobile UK"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:566
-msgid "postalcode CA"
+msgid "nieES"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:567
-msgid "postalcode BR"
+msgid "nifES"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:568
-msgid "postalcode IT"
+msgid "not equal to"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:569
-msgid "postalcode NL"
+msgid "no whitespace"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:570
-msgid "postcode UK"
+msgid "parameters"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:571
-msgid "require_from_group"
+msgid "phone NL"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:572
-msgid "skip_or_fill_minimum"
+msgid "phone UK"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:573
-msgid "state US"
+msgid "phone US"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:574
-#, fuzzy
-msgid "time"
+msgid "phones UK"
 msgstr ""
-"Unable to update your account at "
-"this time, please try again later"
 
 #: classes/modules/mod.order_form.orderpage.php:575
-msgid "time12h"
+msgid "postalcode CA"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:576
-msgid "url2"
+msgid "postalcode BR"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:577
-msgid "vinUS"
+msgid "postalcode IT"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:578
-msgid "zipcodeUS"
+msgid "postalcode NL"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:579
-msgid "ziprange"
+msgid "postcode UK"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:580
+msgid "require_from_group"
 msgstr ""
 
 #: classes/modules/mod.order_form.orderpage.php:581
+msgid "skip_or_fill_minimum"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:582
+msgid "state US"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:583
+msgid "time"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:584
+msgid "time12h"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:585
+msgid "url2"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:586
+msgid "vinUS"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:587
+msgid "zipcodeUS"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:588
+msgid "ziprange"
+msgstr ""
+
+#: classes/modules/mod.order_form.orderpage.php:590
 msgid "decimal"
 msgstr ""
 
 #: classes/modules/mod.order_settings.delivery.php:91
 #: classes/modules/mod.order_settings.delivery.php:96
-#: classes/modules/mod.orderhistory.orderhistory.php:1335
+#: classes/modules/mod.orderhistory.orderhistory.php:1339
 msgid "Delivery"
 msgstr ""
 
@@ -5765,8 +5792,8 @@ msgstr ""
 #: classes/modules/mod.order_settings.global.php:178
 #: classes/modules/mod.order_settings.global.php:215
 msgid ""
-"Show Order Details on \"Thank You"
-"\" page"
+"Show Order Details on \"Thank "
+"You\" page"
 msgstr ""
 
 #: classes/modules/mod.order_settings.global.php:180
@@ -5784,8 +5811,7 @@ msgstr ""
 #: classes/modules/mod.order_settings.global.php:190
 msgid ""
 "Note: A currency must be set if "
-"you want to accept credit card "
-"payments"
+"you want to accept online payments"
 msgstr ""
 
 #: classes/modules/mod.order_settings.global.php:197
@@ -5903,12 +5929,6 @@ msgid ""
 "Additionally add a distinct "
 "\"empty cart\" button alongside "
 "the \"checkout\" button"
-msgstr ""
-
-#: classes/modules/mod.order_settings.order_update.php:390
-msgid ""
-"a (themeroller) style is already "
-"loaded / I provide my own style"
 msgstr ""
 
 #: classes/modules/mod.order_settings.pickup.php:93
@@ -6253,7 +6273,7 @@ msgstr ""
 
 #: classes/modules/mod.order_settings.taxes.php:131
 #: classes/modules/mod.order_settings.taxes.php:136
-#: classes/modules/mod.orderhistory.orderhistory.php:1327
+#: classes/modules/mod.orderhistory.orderhistory.php:1331
 msgid "Taxes"
 msgstr ""
 
@@ -6391,37 +6411,36 @@ msgstr ""
 
 #: classes/modules/mod.order_settings.tips.php:128
 #: includes/global.helper.functions.inc.php:236
-#, fuzzy
 msgid "Default"
-msgstr "Default"
+msgstr ""
 
 #: classes/modules/mod.order_settings.tips.php:130
 msgid "Add Percentage selection"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:152
+#: classes/modules/mod.orderhistory.orderhistory.php:158
 msgid "Order not found"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:162
+#: classes/modules/mod.orderhistory.orderhistory.php:168
 msgid ""
 "This order has already been "
 "refunded"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:187
+#: classes/modules/mod.orderhistory.orderhistory.php:193
 msgid "Payment Refunded"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:241
+#: classes/modules/mod.orderhistory.orderhistory.php:247
 msgid "Refund Failed"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:372
+#: classes/modules/mod.orderhistory.orderhistory.php:378
 msgid "(delete order caps required)"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:413
+#: classes/modules/mod.orderhistory.orderhistory.php:419
 msgid ""
 "Sorry, you do not have the "
 "required \"Delete Order\" "
@@ -6429,150 +6448,133 @@ msgid ""
 "completed."
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:415
-msgid ""
-"Sorry, this order does not exist."
-msgstr ""
-
-#: classes/modules/mod.orderhistory.orderhistory.php:434
+#: classes/modules/mod.orderhistory.orderhistory.php:440
 msgid "Done. Page will be updated."
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:533
-#, fuzzy
+#: classes/modules/mod.orderhistory.orderhistory.php:539
 msgid "order deleted"
-msgstr "Order Request deleted"
+msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:633
-#: classes/modules/mod.orderhistory.orderhistory.php:1692
+#: classes/modules/mod.orderhistory.orderhistory.php:639
+#: classes/modules/mod.orderhistory.orderhistory.php:1696
 msgid "add notes"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:633
-#: classes/modules/mod.orderhistory.orderhistory.php:1695
+#: classes/modules/mod.orderhistory.orderhistory.php:639
+#: classes/modules/mod.orderhistory.orderhistory.php:1699
 msgid "view notes"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:634
-#: classes/modules/mod.orderhistory.orderhistory.php:1727
+#: classes/modules/mod.orderhistory.orderhistory.php:640
+#: classes/modules/mod.orderhistory.orderhistory.php:1731
 msgid "ok"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:994
+#: classes/modules/mod.orderhistory.orderhistory.php:998
 #, php-format
 msgid "Orders for user \"%s\""
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1042
+#: classes/modules/mod.orderhistory.orderhistory.php:1046
 #: classes/subpages/subpage.customers.php:389
 msgid "no results found"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1238
-#: classes/modules/mod.orderhistory.orderhistory.php:1520
+#: classes/modules/mod.orderhistory.orderhistory.php:1242
+#: classes/modules/mod.orderhistory.orderhistory.php:1524
 msgid "Unconfirmed"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1247
+#: classes/modules/mod.orderhistory.orderhistory.php:1251
 msgid "On"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1311
-#, fuzzy
+#: classes/modules/mod.orderhistory.orderhistory.php:1315
 msgid "Items"
 msgstr ""
-"There are some issues with the "
-"items on your shoppinglist (shown "
-"above). Please go back to the "
-"shoppinglist page and resolve "
-"these issues before checking out."
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1318
+#: classes/modules/mod.orderhistory.orderhistory.php:1322
 msgid "Discount"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1326
+#: classes/modules/mod.orderhistory.orderhistory.php:1330
 msgid "Included"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1339
-#: classes/modules/mod.orderhistory.orderhistory.php:1341
+#: classes/modules/mod.orderhistory.orderhistory.php:1343
+#: classes/modules/mod.orderhistory.orderhistory.php:1345
 msgid "Handling"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1347
+#: classes/modules/mod.orderhistory.orderhistory.php:1351
 msgid "Free Delivery"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1355
+#: classes/modules/mod.orderhistory.orderhistory.php:1359
 msgid "pickup by customer"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1397
-#: classes/modules/mod.orderhistory.orderhistory.php:1665
+#: classes/modules/mod.orderhistory.orderhistory.php:1401
+#: classes/modules/mod.orderhistory.orderhistory.php:1669
 msgid "User Id"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1398
-#: classes/modules/mod.orderhistory.orderhistory.php:1666
+#: classes/modules/mod.orderhistory.orderhistory.php:1402
+#: classes/modules/mod.orderhistory.orderhistory.php:1670
 #: classes/subpages/subpage.customers.php:463
 msgid "Show orders for user"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1512
+#: classes/modules/mod.orderhistory.orderhistory.php:1516
 #: classes/modules/mod.tools.privacy.erase.php:143
 #: classes/subpages/subpage.order_history.php:212
-#, fuzzy
 msgid "Failed"
 msgstr ""
-"The preapproved payment failed to "
-"be charged. View order details for "
-"further details."
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1543
+#: classes/modules/mod.orderhistory.orderhistory.php:1547
 #, php-format
 msgid "Refund in %s"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1557
-#, fuzzy
+#: classes/modules/mod.orderhistory.orderhistory.php:1561
 msgid "Updated"
-msgstr "Card successfully updated."
-
-#: classes/modules/mod.orderhistory.orderhistory.php:1613
-msgid "view order"
 msgstr ""
 
 #: classes/modules/mod.orderhistory.orderhistory.php:1617
+msgid "view order"
+msgstr ""
+
+#: classes/modules/mod.orderhistory.orderhistory.php:1621
 msgid "view details"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1642
+#: classes/modules/mod.orderhistory.orderhistory.php:1646
 msgid "delete order"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1654
+#: classes/modules/mod.orderhistory.orderhistory.php:1658
 msgid "Print order"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1682
+#: classes/modules/mod.orderhistory.orderhistory.php:1686
 msgid "Mark order as completed"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1726
+#: classes/modules/mod.orderhistory.orderhistory.php:1730
 msgid "notes:"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1821
-#: classes/subpages/subpage.reports.php:305
+#: classes/modules/mod.orderhistory.orderhistory.php:1825
+#: classes/subpages/subpage.reports.php:328
 msgid "Summary"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1832
+#: classes/modules/mod.orderhistory.orderhistory.php:1836
 msgid "Error Details"
 msgstr ""
 
-#: classes/modules/mod.orderhistory.orderhistory.php:1842
+#: classes/modules/mod.orderhistory.orderhistory.php:1846
 msgid "Value"
 msgstr ""
 
@@ -6946,8 +6948,8 @@ msgstr ""
 #: classes/modules/mod.settings.new_orders_notify.php:198
 msgid ""
 "Admin Bar Notifications: Shows "
-"visual notifications in \"Admin Bar"
-"\" if there are any new orders."
+"visual notifications in \"Admin "
+"Bar\" if there are any new orders."
 msgstr ""
 
 #: classes/modules/mod.settings.new_orders_notify.php:199
@@ -7058,11 +7060,9 @@ msgid ""
 msgstr ""
 
 #: classes/modules/mod.settings.permalinks.php:74
-#, fuzzy, php-format
+#, php-format
 msgid "%s"
 msgstr ""
-"Order Request #%1$s was placed on "
-"%2$s and is currently %3$s."
 
 #: classes/modules/mod.settings.permalinks.php:126
 #: classes/modules/mod.settings.permalinks.php:131
@@ -7086,14 +7086,14 @@ msgstr ""
 
 #: classes/modules/mod.settings.permalinks.php:146
 msgid ""
-"only used and relevant when using "
+"Only used and relevant when using "
 "widget or shortcode to display "
 "wppizza category navigation !!!"
 msgstr ""
 
 #: classes/modules/mod.settings.permalinks.php:147
 msgid ""
-"page cannot be used as static post "
+"Page cannot be used as static post "
 "page (wp settings) or have any "
 "children"
 msgstr ""
@@ -7104,17 +7104,17 @@ msgstr ""
 
 #: classes/modules/mod.settings.permalinks.php:156
 msgid ""
-"only used and relevant when "
+"Only used and relevant when "
 "actually linking to a single item "
-"from anywhere"
+"from anywhere."
 msgstr ""
 
 #: classes/modules/mod.settings.permalinks.php:157
 msgid ""
-"defaults to \"wppizza\" if left "
+"Defaults to \"wppizza\" if left "
 "empty. Any value used here can not "
 "be used in by any other custom "
-"post type"
+"post type."
 msgstr ""
 
 #: classes/modules/mod.settings.permalinks.php:158
@@ -7145,7 +7145,7 @@ msgstr ""
 #: classes/modules/mod.settings.permalinks.php:196
 #: classes/modules/mod.settings.permalinks.php:205
 msgid ""
-"when changing this setting, you "
+"When changing this setting, you "
 "MUST re-save your permalink "
 "settings"
 msgstr ""
@@ -7168,18 +7168,18 @@ msgid ""
 "\"%s\" site"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:198
+#: classes/modules/mod.settings.smtp.php:204
 msgid "use SMTP"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:203
+#: classes/modules/mod.settings.smtp.php:209
 #, php-format
 msgid ""
 "use SMTP for sending %s related "
 "emails"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:205
+#: classes/modules/mod.settings.smtp.php:211
 #, php-format
 msgid ""
 "To use SMTP for any %s related "
@@ -7187,64 +7187,64 @@ msgid ""
 "appropriate."
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:206
+#: classes/modules/mod.settings.smtp.php:212
 msgid ""
 "Make sure you test your settings "
 "by using the SMTP test provided."
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:207
+#: classes/modules/mod.settings.smtp.php:213
 #, php-format
 msgid ""
 "Please note, only %s emails will "
 "be affected"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:214
+#: classes/modules/mod.settings.smtp.php:220
 msgid "Use SMTP"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:217
+#: classes/modules/mod.settings.smtp.php:223
 #, php-format
 msgid ""
 "check to use SMTP when sending %s "
 "related emails"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:221
+#: classes/modules/mod.settings.smtp.php:227
 msgid "SMTP Host"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:228
+#: classes/modules/mod.settings.smtp.php:234
 msgid "SMTP Port"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:235
+#: classes/modules/mod.settings.smtp.php:241
 msgid "SMTP Encryption"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:242
+#: classes/modules/mod.settings.smtp.php:248
 msgid "SMTP Authentication"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:245
+#: classes/modules/mod.settings.smtp.php:251
 msgid ""
 "check to enable authentication"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:249
+#: classes/modules/mod.settings.smtp.php:255
 msgid "SMTP Username"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:256
+#: classes/modules/mod.settings.smtp.php:262
 msgid "SMTP Password"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:263
+#: classes/modules/mod.settings.smtp.php:269
 msgid "SMTP Debug"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:266
+#: classes/modules/mod.settings.smtp.php:272
 msgid ""
 "This must be OFF on production "
 "servers. Only use this to output "
@@ -7255,50 +7255,50 @@ msgid ""
 "debugging."
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:266
+#: classes/modules/mod.settings.smtp.php:272
 msgid ""
 "Note: Having this enabled will "
 "stop all/any orders from "
 "completing."
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:270
+#: classes/modules/mod.settings.smtp.php:276
 msgid "SMTP Test"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:273
+#: classes/modules/mod.settings.smtp.php:279
 msgid ""
 "To test your smtp settings, enter "
 "your email address on the left and "
-"<a href=\"javascript:void(0)\" id="
-"\"wppizza_smtp_test\">click here</"
-"a>. results will appear below"
+"<a href=\"javascript:void(0)\" "
+"id=\"wppizza_smtp_test\">click "
+"here</a>. results will appear below"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:315
+#: classes/modules/mod.settings.smtp.php:321
 msgid "No Encryption"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:316
+#: classes/modules/mod.settings.smtp.php:322
 msgid "SSL"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:317
+#: classes/modules/mod.settings.smtp.php:323
 msgid "TLS"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:340
+#: classes/modules/mod.settings.smtp.php:346
 msgid "no password set"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:341
+#: classes/modules/mod.settings.smtp.php:347
 msgid ""
 "a password has been set. enter a "
 "new password to change the current "
 "password"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:351
+#: classes/modules/mod.settings.smtp.php:357
 msgid ""
 "WARNING: you do not seem to have "
 "open ssl installed. your smtp "
@@ -7307,7 +7307,7 @@ msgid ""
 "could pose a security risk"
 msgstr ""
 
-#: classes/modules/mod.settings.smtp.php:353
+#: classes/modules/mod.settings.smtp.php:359
 msgid ""
 "Note: if you move or clone this "
 "wppizza installation to another "
@@ -7317,95 +7317,100 @@ msgid ""
 "config.php's are identical."
 msgstr ""
 
-#: classes/modules/mod.templates.templates.php:64
+#: classes/modules/mod.templates.templates.php:70
 msgid ""
 " Sorry, you must have at least one "
 "completed order for the preview to "
 "work."
 msgstr ""
 
-#: classes/modules/mod.templates.templates.php:145
+#: classes/modules/mod.templates.templates.php:151
 msgid ""
 "you did not select anything to "
 "display ?!"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:663
+#: classes/modules/mod.tools.licenses.init.php:666
+#: classes/shared/wppizza.edd.inc.php:206
 msgid "Enter your Licence Key"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:664
+#: classes/modules/mod.tools.licenses.init.php:667
+#: classes/shared/wppizza.edd.inc.php:207
+#: classes/shared/wppizza.edd.inc.php:379
+#: classes/shared/wppizza.edd.inc.php:381
 msgid "Licence Key"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:675
+#: classes/modules/mod.tools.licenses.init.php:678
+#: classes/shared/wppizza.edd.inc.php:214
 msgid "Activate Licence"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:675
+#: classes/modules/mod.tools.licenses.init.php:678
+#: classes/shared/wppizza.edd.inc.php:216
 msgid "De-Activate Licence"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:723
+#: classes/modules/mod.tools.licenses.init.php:726
 msgid "Licence in-active"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:726
+#: classes/modules/mod.tools.licenses.init.php:729
+#: classes/shared/wppizza.edd.inc.php:222
 msgid "Licence active"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:729
+#: classes/modules/mod.tools.licenses.init.php:732
 msgid "Licence Status"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:732
+#: classes/modules/mod.tools.licenses.init.php:735
 msgid "Licence Status unknown"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:742
+#: classes/modules/mod.tools.licenses.init.php:745
 msgid ""
 "Empty licence key field on de-"
 "activation"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:747
+#: classes/modules/mod.tools.licenses.init.php:750
 #, php-format
 msgid ""
 "This licence key expires on %s"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:750
+#: classes/modules/mod.tools.licenses.init.php:753
 #, php-format
 msgid ""
 "This licence key expired on %s"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:850
+#: classes/modules/mod.tools.licenses.init.php:862
 msgid "Invalid Nonce"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:860
+#: classes/modules/mod.tools.licenses.init.php:872
 msgid "No Licence Key entered"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:1011
-#: classes/shared/wppizza.edd.inc.php:214
+#: classes/modules/mod.tools.licenses.init.php:1023
 #: classes/shared/wppizza.edd.inc.php:396
 msgid "Activate License"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:1011
-#: classes/shared/wppizza.edd.inc.php:216
+#: classes/modules/mod.tools.licenses.init.php:1023
 msgid "De-Activate License"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:1058
-#: classes/modules/mod.tools.licenses.init.php:1071
-#: classes/modules/mod.tools.licenses.init.php:1105
+#: classes/modules/mod.tools.licenses.init.php:1070
+#: classes/modules/mod.tools.licenses.init.php:1083
+#: classes/modules/mod.tools.licenses.init.php:1117
 msgid "Licences"
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:1088
+#: classes/modules/mod.tools.licenses.init.php:1100
 msgid ""
 "Entering and activating the "
 "licence is optional, but if you "
@@ -7414,7 +7419,7 @@ msgid ""
 "and/or updates."
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:1089
+#: classes/modules/mod.tools.licenses.init.php:1101
 msgid ""
 "Changing an existing key will "
 "automatically de-activate the old "
@@ -7422,7 +7427,7 @@ msgid ""
 "your new key."
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:1090
+#: classes/modules/mod.tools.licenses.init.php:1102
 msgid ""
 "To ensure backwards compatibility "
 "licence key settings might "
@@ -7433,7 +7438,7 @@ msgid ""
 "set there."
 msgstr ""
 
-#: classes/modules/mod.tools.licenses.init.php:1091
+#: classes/modules/mod.tools.licenses.init.php:1103
 msgid ""
 "Note: you will only receive update "
 "notifications if these have not "
@@ -7588,8 +7593,9 @@ msgid ""
 "Do not mark an order as \"FAILED\" "
 "if there are errors sending emails "
 "to the *shops* email address as "
-"set in \"%s -> Order Settings"
-"\" [\"Prepaid\" orders only]"
+"set in \"%s -> Order Settings\" "
+"[\"Prepaid\" i.e Credit Card etc "
+"orders only]"
 msgstr ""
 
 #: classes/modules/mod.tools.miscellaneous.various.php:176
@@ -7638,9 +7644,10 @@ msgstr ""
 
 #: classes/modules/mod.tools.miscellaneous.various.php:189
 msgid ""
-"if you select \"delete images too"
-"\", all featured images used for "
-"any menu items will be deleted too"
+"if you select \"delete images "
+"too\", all featured images used "
+"for any menu items will be deleted "
+"too"
 msgstr ""
 
 #: classes/modules/mod.tools.miscellaneous.various.php:190
@@ -7770,11 +7777,8 @@ msgid "Delete images too"
 msgstr ""
 
 #: classes/modules/mod.tools.privacy.erase.php:92
-#, fuzzy
 msgid "No Action"
 msgstr ""
-"Your Preapproved Payment Requires "
-"Action"
 
 #: classes/modules/mod.tools.privacy.erase.php:95
 msgid "Anonymise Order Data"
@@ -7797,17 +7801,12 @@ msgid "Completed"
 msgstr ""
 
 #: classes/modules/mod.tools.privacy.erase.php:125
-#, fuzzy
 msgid "Refunded"
 msgstr ""
-"Order Request refunded emails are "
-"sent to customers when their "
-"orders are refunded."
 
 #: classes/modules/mod.tools.privacy.erase.php:131
-#, fuzzy
 msgid "Cancelled"
-msgstr "Cancelled"
+msgstr ""
 
 #: classes/modules/mod.tools.privacy.erase.php:137
 msgid "Rejected"
@@ -8027,8 +8026,8 @@ msgstr ""
 
 #: classes/modules/mod.tools.privacy.general.php:400
 msgid ""
-"Personal Data - \"Keep Browser Data"
-"\""
+"Personal Data - \"Keep Browser "
+"Data\""
 msgstr ""
 
 #: classes/modules/mod.tools.privacy.general.php:400
@@ -8044,8 +8043,8 @@ msgstr ""
 
 #: classes/modules/mod.tools.privacy.general.php:401
 msgid ""
-"Personal Data - \"Keep IP Addresses"
-"\""
+"Personal Data - \"Keep IP "
+"Addresses\""
 msgstr ""
 
 #: classes/modules/mod.tools.privacy.general.php:401
@@ -8131,8 +8130,8 @@ msgid ""
 "privacy functions are stored "
 "encrypted in the database "
 "utilizing the standard - but "
-"unique to every site - <code>"
-"\"SECURE_AUTH_SALT\"</code> "
+"unique to every site - "
+"<code>\"SECURE_AUTH_SALT\"</code> "
 "constant defined in your wp-config."
 "php."
 msgstr ""
@@ -8142,11 +8141,11 @@ msgid ""
 "If for one reason or another you "
 "need to move existing ordesr from "
 "this site to another you must "
-"*add* the string from your <code>"
-"\"SECURE_AUTH_SALT\"</code> "
+"*add* the string from your "
+"<code>\"SECURE_AUTH_SALT\"</code> "
 "constant from *this* sites wp-"
-"config.php as <code>"
-"\"WPPIZZA_CRYPT_KEY\"</code> "
+"config.php as "
+"<code>\"WPPIZZA_CRYPT_KEY\"</code> "
 "constant to the *new* sites wp-"
 "config.php"
 msgstr ""
@@ -8158,9 +8157,9 @@ msgid ""
 "following: "
 "<code>define(\"SECURE_AUTH_SALT\", "
 "\"abcdefghifklmn\");</code> *add* "
-"<code>\"define(\"WPPIZZA_CRYPT_KEY"
-"\", \"abcdefghifklmn\");\"</code> "
-"to the *new* sites wp-config.php"
+"<code>\"define(\"WPPIZZA_CRYPT_KEY\", "
+"\"abcdefghifklmn\");\"</code> to "
+"the *new* sites wp-config.php"
 msgstr ""
 
 #: classes/modules/mod.tools.privacy.general.php:415
@@ -8178,10 +8177,11 @@ msgid ""
 "comments regarding the above, "
 "please use the ususal channels "
 "(preferably the <a href=\"https://"
-"www.wp-pizza.com/support/\" target="
-"\"_blank\">\"Support forum\"</a> "
-"in this case to make conversations "
-"about this topic visible to anyone)"
+"www.wp-pizza.com/support/\" "
+"target=\"_blank\">\"Support "
+"forum\"</a> in this case to make "
+"conversations about this topic "
+"visible to anyone)"
 msgstr ""
 
 #: classes/modules/mod.tools.privacy.general.php:428
@@ -8197,10 +8197,11 @@ msgstr ""
 
 #: classes/modules/mod.tools.privacy.general.php:431
 msgid ""
-"Please refer to the <a href="
-"\"javascript:void(0)\" class="
-"\"wppizza-show-admin-help\">help "
-"screen</a> for more details."
+"Please refer to the <a "
+"href=\"javascript:void(0)\" "
+"class=\"wppizza-show-admin-"
+"help\">help screen</a> for more "
+"details."
 msgstr ""
 
 #: classes/modules/mod.tools.privacy.general.php:436
@@ -8235,11 +8236,11 @@ msgstr ""
 msgid "System Info"
 msgstr ""
 
-#: classes/modules/mod.tools.sysinfo.phpinfo.php:139
+#: classes/modules/mod.tools.sysinfo.phpinfo.php:145
 msgid "PHP Configuration"
 msgstr ""
 
-#: classes/modules/mod.tools.sysinfo.phpinfo.php:165
+#: classes/modules/mod.tools.sysinfo.phpinfo.php:171
 msgid "show php configuration"
 msgstr ""
 
@@ -8247,30 +8248,16 @@ msgstr ""
 msgid "Plugin Parameters"
 msgstr ""
 
-#: classes/shared/wppizza.edd.inc.php:206
-msgid "Enter your License Key"
-msgstr ""
-
-#: classes/shared/wppizza.edd.inc.php:207
-#: classes/shared/wppizza.edd.inc.php:379
-#: classes/shared/wppizza.edd.inc.php:381
-msgid "License Key"
-msgstr ""
-
-#: classes/shared/wppizza.edd.inc.php:222
-msgid "License active"
-msgstr ""
-
 #: classes/shared/wppizza.edd.inc.php:225
 msgid "License in-active"
 msgstr ""
 
 #: classes/shared/wppizza.edd.inc.php:228
-msgid "License Status"
+msgid "Licence status"
 msgstr ""
 
 #: classes/shared/wppizza.edd.inc.php:231
-msgid "License Status unknown"
+msgid "Licence status unknown"
 msgstr ""
 
 #: classes/shared/wppizza.edd.inc.php:239
@@ -8361,8 +8348,9 @@ msgstr ""
 msgid ""
 "There is a new version of %1$s "
 "available. <a target=\"_blank\" "
-"class=\"thickbox\" href=\"%2$s"
-"\">View version %3$s details</a>."
+"class=\"thickbox\" "
+"href=\"%2$s\">View version %3$s "
+"details</a>."
 msgstr ""
 
 #: classes/shared/wppizza.edd.plugin.updater.1.6.php:185
@@ -8370,19 +8358,20 @@ msgstr ""
 msgid ""
 "There is a new version of %1$s "
 "available. <a target=\"_blank\" "
-"class=\"thickbox\" href=\"%2$s"
-"\">View version %3$s details</a> "
-"or <a href=\"%4$s\">update now</a>."
+"class=\"thickbox\" "
+"href=\"%2$s\">View version %3$s "
+"details</a> or <a "
+"href=\"%4$s\">update now</a>."
 msgstr ""
 
 #: classes/shared/wppizza.edd.plugin.updater.1.6.php:340
-#: classes/shared/wppizza.edd.plugin.updater.latest.php:531
+#: classes/shared/wppizza.edd.plugin.updater.latest.php:532
 msgid ""
 "You do not have permission to "
 "install plugin updates"
 msgstr ""
 
-#: classes/shared/wppizza.edd.plugin.updater.latest.php:279
+#: classes/shared/wppizza.edd.plugin.updater.latest.php:280
 #, php-format
 msgid ""
 "There is a new version of %1$s "
@@ -8390,7 +8379,7 @@ msgid ""
 "details%4$s."
 msgstr ""
 
-#: classes/shared/wppizza.edd.plugin.updater.latest.php:287
+#: classes/shared/wppizza.edd.plugin.updater.latest.php:288
 #, php-format
 msgid ""
 "There is a new version of %1$s "
@@ -8424,15 +8413,15 @@ msgstr ""
 #: includes/global.plugin_dev.helpers.inc.php:1266
 msgid ""
 "Note: Some options will have more "
-"details in the <a href="
-"\"javascript:void(0)\" class="
-"\"wppizza-show-admin-help\">help "
-"screen</a>"
+"details in the <a "
+"href=\"javascript:void(0)\" "
+"class=\"wppizza-show-admin-"
+"help\">help screen</a>"
 msgstr ""
 
 #: classes/subpages/subpage.access_rights.php:231
 #: classes/subpages/subpage.additives.php:326
-#: classes/subpages/subpage.gateways.php:499
+#: classes/subpages/subpage.gateways.php:512
 #: classes/subpages/subpage.layout.php:202
 #: classes/subpages/subpage.localization.php:201
 #: classes/subpages/subpage.meal_sizes.php:321
@@ -8448,7 +8437,7 @@ msgstr ""
 
 #: classes/subpages/subpage.access_rights.php:233
 #: classes/subpages/subpage.additives.php:328
-#: classes/subpages/subpage.gateways.php:501
+#: classes/subpages/subpage.gateways.php:514
 #: classes/subpages/subpage.layout.php:204
 #: classes/subpages/subpage.localization.php:203
 #: classes/subpages/subpage.meal_sizes.php:323
@@ -8479,11 +8468,8 @@ msgid "Search Customers"
 msgstr ""
 
 #: classes/subpages/subpage.customers.php:308
-#, fuzzy
 msgid "Name"
 msgstr ""
-"Please enter a name for the credit "
-"card."
 
 #: classes/subpages/subpage.customers.php:312
 msgid "Orders / Items"
@@ -8522,11 +8508,11 @@ msgstr ""
 msgid "&middot; Gateways"
 msgstr ""
 
-#: classes/subpages/subpage.gateways.php:480
+#: classes/subpages/subpage.gateways.php:493
 msgid "show options"
 msgstr ""
 
-#: classes/subpages/subpage.gateways.php:483
+#: classes/subpages/subpage.gateways.php:496
 msgid "enabled Y/N"
 msgstr ""
 
@@ -8637,146 +8623,129 @@ msgstr ""
 msgid "&middot; Order Settings"
 msgstr ""
 
-#: classes/subpages/subpage.posts.php:184
+#: classes/subpages/subpage.posts.php:196
 msgid "Options"
 msgstr ""
 
-#: classes/subpages/subpage.posts.php:255
+#: classes/subpages/subpage.posts.php:267
 msgid "Prices"
 msgstr ""
 
-#: classes/subpages/subpage.posts.php:317
+#: classes/subpages/subpage.posts.php:329
 msgid "Image"
 msgstr ""
 
-#: classes/subpages/subpage.posts.php:353
+#: classes/subpages/subpage.posts.php:365
 msgid "Item Price(s)"
 msgstr ""
 
-#: classes/subpages/subpage.posts.php:429
+#: classes/subpages/subpage.posts.php:441
 msgid "Edit this item inline"
 msgstr ""
 
-#: classes/subpages/subpage.posts.php:437
+#: classes/subpages/subpage.posts.php:449
 msgid "Quick&nbsp;Edit"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:83
-#: classes/subpages/subpage.reports.php:85
+#: classes/subpages/subpage.reports.php:89
+#: classes/subpages/subpage.reports.php:91
 msgid "Reports"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:84
+#: classes/subpages/subpage.reports.php:90
 msgid "Manage Reports"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:86
+#: classes/subpages/subpage.reports.php:92
 msgid "&middot; Reports"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:262
+#: classes/subpages/subpage.reports.php:285
 msgid "Export All"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:262
+#: classes/subpages/subpage.reports.php:285
 msgid "Export Range"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:278
+#: classes/subpages/subpage.reports.php:301
+#: classes/subpages/subpage.reports.php:310
 msgid "Custom Range"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:287
-msgid "Custom range"
-msgstr ""
-
-#: classes/subpages/subpage.reports.php:290
+#: classes/subpages/subpage.reports.php:313
 msgid "Go"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:552
+#: classes/subpages/subpage.reports.php:567
 msgid "sales by dates"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:554
+#: classes/subpages/subpage.reports.php:569
 msgid ""
-"sales value(incl. taxes, charges "
-"and discounts)"
+"sales value(incl. taxes, charges, "
+"discounts, tips)"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:554
+#: classes/subpages/subpage.reports.php:569
 msgid "items order value"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:554
+#: classes/subpages/subpage.reports.php:569
 msgid "number of items sold"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:554
+#: classes/subpages/subpage.reports.php:569
 msgid "tax on order"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:587
+#: classes/subpages/subpage.reports.php:569
+msgid "tips"
+msgstr ""
+
+#: classes/subpages/subpage.reports.php:604
 msgid "sales by item"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:589
+#: classes/subpages/subpage.reports.php:606
 msgid "quantity"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:589
+#: classes/subpages/subpage.reports.php:606
 msgid "item"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:589
-#: classes/subpages/subpage.reports.php:613
-#: classes/subpages/subpage.reports.php:628
-#: classes/subpages/subpage.reports.php:643
+#: classes/subpages/subpage.reports.php:606
+#: classes/subpages/subpage.reports.php:630
+#: classes/subpages/subpage.reports.php:645
+#: classes/subpages/subpage.reports.php:660
 msgid "total value"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:613
+#: classes/subpages/subpage.reports.php:630
 msgid "type"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:626
-#, fuzzy
+#: classes/subpages/subpage.reports.php:643
 msgid "order status"
-msgstr "Order Request status."
+msgstr ""
 
-#: classes/subpages/subpage.reports.php:628
-#, fuzzy
+#: classes/subpages/subpage.reports.php:645
 msgid "status"
 msgstr ""
-"Order Request status set to %s."
 
-#: classes/subpages/subpage.reports.php:628
-#: classes/subpages/subpage.reports.php:643
+#: classes/subpages/subpage.reports.php:645
+#: classes/subpages/subpage.reports.php:660
 msgid "count"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:641
+#: classes/subpages/subpage.reports.php:658
 msgid "custom options"
 msgstr ""
 
-#: classes/subpages/subpage.reports.php:643
-#, fuzzy
+#: classes/subpages/subpage.reports.php:660
 msgid "option"
 msgstr ""
-"If you choose this option, Stripe "
-"will not charge the customer right "
-"away after checkout, and the "
-"payment status will be set to "
-"preapproved in Easy Digital "
-"Downloads. You (as the admin) can "
-"then manually change the status to "
-"Complete by going to Payment "
-"History and changing the status of "
-"the payment to Complete. Once you "
-"change it to Complete, the "
-"customer will be charged. Note "
-"that most typical stores will not "
-"need this option."
 
 #: classes/subpages/subpage.settings.php:71
 msgid "Global Settings"
@@ -8787,10 +8756,8 @@ msgid "Manage Settings"
 msgstr ""
 
 #: classes/subpages/subpage.settings.php:73
-#, fuzzy
 msgid "Settings"
 msgstr ""
-"Configure the Stripe settings"
 
 #: classes/subpages/subpage.settings.php:74
 msgid "&middot; Settings"
@@ -8839,31 +8806,31 @@ msgstr ""
 msgid "Privacy (GDPR)"
 msgstr ""
 
-#: includes/global.formatting.functions.inc.php:436
+#: includes/global.formatting.functions.inc.php:437
 msgid "Mondays"
 msgstr ""
 
-#: includes/global.formatting.functions.inc.php:437
+#: includes/global.formatting.functions.inc.php:438
 msgid "Tuesdays"
 msgstr ""
 
-#: includes/global.formatting.functions.inc.php:438
+#: includes/global.formatting.functions.inc.php:439
 msgid "Wednesdays"
 msgstr ""
 
-#: includes/global.formatting.functions.inc.php:439
+#: includes/global.formatting.functions.inc.php:440
 msgid "Thursdays"
 msgstr ""
 
-#: includes/global.formatting.functions.inc.php:440
+#: includes/global.formatting.functions.inc.php:441
 msgid "Fridays"
 msgstr ""
 
-#: includes/global.formatting.functions.inc.php:441
+#: includes/global.formatting.functions.inc.php:442
 msgid "Saturdays"
 msgstr ""
 
-#: includes/global.formatting.functions.inc.php:442
+#: includes/global.formatting.functions.inc.php:443
 msgid "Sundays"
 msgstr ""
 
@@ -8875,906 +8842,905 @@ msgstr ""
 msgid "Grid"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:581
-#, fuzzy
+#: includes/global.helper.functions.inc.php:602
 msgid "NEW"
-msgstr "New Card Earnings"
+msgstr ""
 
-#: includes/global.helper.functions.inc.php:639
+#: includes/global.helper.functions.inc.php:660
 msgid "Plaintext"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:640
+#: includes/global.helper.functions.inc.php:661
 msgid "HTML"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:906
+#: includes/global.helper.functions.inc.php:927
 msgid "--select--"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:909
+#: includes/global.helper.functions.inc.php:930
 msgid "Afghanistan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:910
+#: includes/global.helper.functions.inc.php:931
 msgid "Albania"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:911
+#: includes/global.helper.functions.inc.php:932
 msgid "Algeria"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:912
+#: includes/global.helper.functions.inc.php:933
 msgid "American Samoa"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:913
+#: includes/global.helper.functions.inc.php:934
 msgid "Andorra"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:914
+#: includes/global.helper.functions.inc.php:935
 msgid "Angola"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:915
+#: includes/global.helper.functions.inc.php:936
 msgid "Anguilla"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:916
+#: includes/global.helper.functions.inc.php:937
 msgid "Antigua and Barbuda"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:917
+#: includes/global.helper.functions.inc.php:938
 msgid "Argentina"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:918
+#: includes/global.helper.functions.inc.php:939
 msgid "Armenia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:919
+#: includes/global.helper.functions.inc.php:940
 msgid "Aruba"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:920
+#: includes/global.helper.functions.inc.php:941
 msgid "Australia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:921
+#: includes/global.helper.functions.inc.php:942
 msgid "Austria"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:922
+#: includes/global.helper.functions.inc.php:943
 msgid "Azerbaijan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:923
+#: includes/global.helper.functions.inc.php:944
 msgid "Bahamas"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:924
+#: includes/global.helper.functions.inc.php:945
 msgid "Bahrain"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:925
+#: includes/global.helper.functions.inc.php:946
 msgid "Bangladesh"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:926
+#: includes/global.helper.functions.inc.php:947
 msgid "Barbados"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:927
+#: includes/global.helper.functions.inc.php:948
 msgid "Belarus"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:928
+#: includes/global.helper.functions.inc.php:949
 msgid "Belgium"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:929
+#: includes/global.helper.functions.inc.php:950
 msgid "Belize"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:930
+#: includes/global.helper.functions.inc.php:951
 msgid "Benin"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:931
+#: includes/global.helper.functions.inc.php:952
 msgid "Bermuda"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:932
+#: includes/global.helper.functions.inc.php:953
 msgid "Bhutan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:933
+#: includes/global.helper.functions.inc.php:954
 msgid "Bolivia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:934
+#: includes/global.helper.functions.inc.php:955
 msgid "Bosnia and Herzegovina"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:935
+#: includes/global.helper.functions.inc.php:956
 msgid "Botswana"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:936
+#: includes/global.helper.functions.inc.php:957
 msgid "Brazil"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:937
+#: includes/global.helper.functions.inc.php:958
 msgid "Brunei Darussalam"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:938
+#: includes/global.helper.functions.inc.php:959
 msgid "Bulgaria"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:939
+#: includes/global.helper.functions.inc.php:960
 msgid "Burkina Faso"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:940
+#: includes/global.helper.functions.inc.php:961
 msgid "Burundi"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:941
+#: includes/global.helper.functions.inc.php:962
 msgid "Cambodia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:942
+#: includes/global.helper.functions.inc.php:963
 msgid "Cameroon"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:943
+#: includes/global.helper.functions.inc.php:964
 msgid "Canada"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:944
+#: includes/global.helper.functions.inc.php:965
 msgid "Cape Verde"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:945
+#: includes/global.helper.functions.inc.php:966
 msgid "Cayman Islands"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:946
+#: includes/global.helper.functions.inc.php:967
 msgid "Central African Republic"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:947
+#: includes/global.helper.functions.inc.php:968
 msgid "Chad"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:948
+#: includes/global.helper.functions.inc.php:969
 msgid "Chile"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:949
+#: includes/global.helper.functions.inc.php:970
 msgid "China"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:950
+#: includes/global.helper.functions.inc.php:971
 msgid "Colombia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:951
+#: includes/global.helper.functions.inc.php:972
 msgid "Comoros"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:952
+#: includes/global.helper.functions.inc.php:973
 msgid ""
 "Congo - Democratic Republic of the"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:953
+#: includes/global.helper.functions.inc.php:974
 msgid "Congo - Republic of the"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:954
+#: includes/global.helper.functions.inc.php:975
 msgid "Cook Islands"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:955
+#: includes/global.helper.functions.inc.php:976
 msgid "Costa Rica"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:956
+#: includes/global.helper.functions.inc.php:977
 msgid "Cote D'Ivory"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:957
+#: includes/global.helper.functions.inc.php:978
 msgid "Croatia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:958
+#: includes/global.helper.functions.inc.php:979
 msgid "Cuba"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:959
+#: includes/global.helper.functions.inc.php:980
 msgid "Cyprus"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:960
+#: includes/global.helper.functions.inc.php:981
 msgid "Czech Republic"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:961
+#: includes/global.helper.functions.inc.php:982
 msgid "Denmark"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:962
+#: includes/global.helper.functions.inc.php:983
 msgid "Djibouti"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:963
+#: includes/global.helper.functions.inc.php:984
 msgid "Dominica"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:964
+#: includes/global.helper.functions.inc.php:985
 msgid "Dominican Republic"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:965
+#: includes/global.helper.functions.inc.php:986
 msgid "Ecuador"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:966
+#: includes/global.helper.functions.inc.php:987
 msgid "Egypt"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:967
+#: includes/global.helper.functions.inc.php:988
 msgid "El Salvador"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:968
+#: includes/global.helper.functions.inc.php:989
 msgid "Equatorial Guinea"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:969
+#: includes/global.helper.functions.inc.php:990
 msgid "Eritrea"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:970
+#: includes/global.helper.functions.inc.php:991
 msgid "Estonia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:971
+#: includes/global.helper.functions.inc.php:992
 msgid "Ethiopia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:972
+#: includes/global.helper.functions.inc.php:993
 msgid "Falkland Islands / Malvinas"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:973
+#: includes/global.helper.functions.inc.php:994
 msgid "Faroe Islands"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:974
+#: includes/global.helper.functions.inc.php:995
 msgid "Fiji"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:975
+#: includes/global.helper.functions.inc.php:996
 msgid "Finland"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:976
+#: includes/global.helper.functions.inc.php:997
 msgid "France"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:977
+#: includes/global.helper.functions.inc.php:998
 msgid "French Guiana"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:978
+#: includes/global.helper.functions.inc.php:999
 msgid "French Polynesia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:979
+#: includes/global.helper.functions.inc.php:1000
 msgid "Gabon"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:980
+#: includes/global.helper.functions.inc.php:1001
 msgid "Gambia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:981
+#: includes/global.helper.functions.inc.php:1002
 msgid "Georgia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:982
+#: includes/global.helper.functions.inc.php:1003
 msgid "Germany"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:983
+#: includes/global.helper.functions.inc.php:1004
 msgid "Ghana"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:984
+#: includes/global.helper.functions.inc.php:1005
 msgid "Gibraltar"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:985
+#: includes/global.helper.functions.inc.php:1006
 msgid "Greece"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:986
+#: includes/global.helper.functions.inc.php:1007
 msgid "Greenland"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:987
+#: includes/global.helper.functions.inc.php:1008
 msgid "Grenada"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:988
+#: includes/global.helper.functions.inc.php:1009
 msgid "Guadeloupe"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:989
+#: includes/global.helper.functions.inc.php:1010
 msgid "Guam"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:990
+#: includes/global.helper.functions.inc.php:1011
 msgid "Guatemala"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:991
+#: includes/global.helper.functions.inc.php:1012
 msgid "Guernsey"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:992
+#: includes/global.helper.functions.inc.php:1013
 msgid "Guinea"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:993
+#: includes/global.helper.functions.inc.php:1014
 msgid "Guinea-Bissau"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:994
+#: includes/global.helper.functions.inc.php:1015
 msgid "Guyana"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:995
+#: includes/global.helper.functions.inc.php:1016
 msgid "Haiti"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:996
+#: includes/global.helper.functions.inc.php:1017
 msgid "Honduras"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:997
+#: includes/global.helper.functions.inc.php:1018
 msgid "Hong Kong"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:998
+#: includes/global.helper.functions.inc.php:1019
 msgid "Hungary"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:999
+#: includes/global.helper.functions.inc.php:1020
 msgid "Iceland"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1000
+#: includes/global.helper.functions.inc.php:1021
 msgid "India"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1001
+#: includes/global.helper.functions.inc.php:1022
 msgid "Indonesia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1002
+#: includes/global.helper.functions.inc.php:1023
 msgid "Iran"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1003
+#: includes/global.helper.functions.inc.php:1024
 msgid "Iraq"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1004
+#: includes/global.helper.functions.inc.php:1025
 msgid "Ireland"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1005
+#: includes/global.helper.functions.inc.php:1026
 msgid "Isle of Man"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1006
+#: includes/global.helper.functions.inc.php:1027
 msgid "Israel"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1007
+#: includes/global.helper.functions.inc.php:1028
 msgid "Italy"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1008
+#: includes/global.helper.functions.inc.php:1029
 msgid "Jamaica"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1009
+#: includes/global.helper.functions.inc.php:1030
 msgid "Japan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1010
+#: includes/global.helper.functions.inc.php:1031
 msgid "Jersey"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1011
+#: includes/global.helper.functions.inc.php:1032
 msgid "Jordan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1012
+#: includes/global.helper.functions.inc.php:1033
 msgid "Kazakhstan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1013
+#: includes/global.helper.functions.inc.php:1034
 msgid "Kenya"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1014
+#: includes/global.helper.functions.inc.php:1035
 msgid "Korea North"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1015
+#: includes/global.helper.functions.inc.php:1036
 msgid "Korea South"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1016
+#: includes/global.helper.functions.inc.php:1037
 msgid "Kuwait"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1017
+#: includes/global.helper.functions.inc.php:1038
 msgid "Kyrgyzstan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1018
+#: includes/global.helper.functions.inc.php:1039
 msgid "People's Democratic Republic"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1019
+#: includes/global.helper.functions.inc.php:1040
 msgid "Latvia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1020
+#: includes/global.helper.functions.inc.php:1041
 msgid "Lebanon"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1021
+#: includes/global.helper.functions.inc.php:1042
 msgid "Lesotho"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1022
+#: includes/global.helper.functions.inc.php:1043
 msgid "Liberia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1023
+#: includes/global.helper.functions.inc.php:1044
 msgid "Libya"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1024
+#: includes/global.helper.functions.inc.php:1045
 msgid "Liechtenstein"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1025
+#: includes/global.helper.functions.inc.php:1046
 msgid "Lithuania"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1026
+#: includes/global.helper.functions.inc.php:1047
 msgid "Luxembourg"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1027
+#: includes/global.helper.functions.inc.php:1048
 msgid "Macao"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1028
+#: includes/global.helper.functions.inc.php:1049
 msgid "Macedonia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1029
+#: includes/global.helper.functions.inc.php:1050
 msgid "Madagascar"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1030
+#: includes/global.helper.functions.inc.php:1051
 msgid "Malawi"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1031
+#: includes/global.helper.functions.inc.php:1052
 msgid "Malaysia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1032
+#: includes/global.helper.functions.inc.php:1053
 msgid "Maldives"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1033
+#: includes/global.helper.functions.inc.php:1054
 msgid "Mali"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1034
+#: includes/global.helper.functions.inc.php:1055
 msgid "Malta"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1035
+#: includes/global.helper.functions.inc.php:1056
 msgid "Martinique"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1036
+#: includes/global.helper.functions.inc.php:1057
 msgid "Mauritania"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1037
+#: includes/global.helper.functions.inc.php:1058
 msgid "Mauritius"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1038
+#: includes/global.helper.functions.inc.php:1059
 msgid "Mexico"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1039
+#: includes/global.helper.functions.inc.php:1060
 msgid "Micronesia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1040
+#: includes/global.helper.functions.inc.php:1061
 msgid "Moldova"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1041
+#: includes/global.helper.functions.inc.php:1062
 msgid "Monaco"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1042
+#: includes/global.helper.functions.inc.php:1063
 msgid "Mongolia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1043
+#: includes/global.helper.functions.inc.php:1064
 msgid "Montenegro"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1044
+#: includes/global.helper.functions.inc.php:1065
 msgid "Montserrat"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1045
+#: includes/global.helper.functions.inc.php:1066
 msgid "Morocco"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1046
+#: includes/global.helper.functions.inc.php:1067
 msgid "Mozambique"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1047
+#: includes/global.helper.functions.inc.php:1068
 msgid "Namibia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1048
+#: includes/global.helper.functions.inc.php:1069
 msgid "Nauru"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1049
+#: includes/global.helper.functions.inc.php:1070
 msgid "Nepal"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1050
+#: includes/global.helper.functions.inc.php:1071
 msgid "Netherlands"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1051
+#: includes/global.helper.functions.inc.php:1072
 msgid "Netherlands Antilles"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1052
+#: includes/global.helper.functions.inc.php:1073
 msgid "New Caledonia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1053
+#: includes/global.helper.functions.inc.php:1074
 msgid "New Zealand"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1054
+#: includes/global.helper.functions.inc.php:1075
 msgid "Nicaragua"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1055
+#: includes/global.helper.functions.inc.php:1076
 msgid "Niger"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1056
+#: includes/global.helper.functions.inc.php:1077
 msgid "Nigeria"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1057
+#: includes/global.helper.functions.inc.php:1078
 msgid "Norfolk Island"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1058
+#: includes/global.helper.functions.inc.php:1079
 msgid "Northern Mariana Islands"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1059
+#: includes/global.helper.functions.inc.php:1080
 msgid "Norway"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1060
+#: includes/global.helper.functions.inc.php:1081
 msgid "Oman"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1061
+#: includes/global.helper.functions.inc.php:1082
 msgid "Pakistan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1062
+#: includes/global.helper.functions.inc.php:1083
 msgid "Palau"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1063
+#: includes/global.helper.functions.inc.php:1084
 msgid "Palestine"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1064
+#: includes/global.helper.functions.inc.php:1085
 msgid "Panama"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1065
+#: includes/global.helper.functions.inc.php:1086
 msgid "Papua New Guinea"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1066
+#: includes/global.helper.functions.inc.php:1087
 msgid "Paraguay"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1067
+#: includes/global.helper.functions.inc.php:1088
 msgid "Peru"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1068
+#: includes/global.helper.functions.inc.php:1089
 msgid "Philippines"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1069
+#: includes/global.helper.functions.inc.php:1090
 msgid "Poland"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1070
+#: includes/global.helper.functions.inc.php:1091
 msgid "Portugal"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1071
+#: includes/global.helper.functions.inc.php:1092
 msgid "Puerto Rico"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1072
+#: includes/global.helper.functions.inc.php:1093
 msgid "Qatar"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1073
+#: includes/global.helper.functions.inc.php:1094
 msgid "Reunion"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1074
+#: includes/global.helper.functions.inc.php:1095
 msgid "Romania"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1075
+#: includes/global.helper.functions.inc.php:1096
 msgid "Russia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1076
+#: includes/global.helper.functions.inc.php:1097
 msgid "Rwanda"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1077
+#: includes/global.helper.functions.inc.php:1098
 msgid "Saint Kitts and Nevis"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1078
+#: includes/global.helper.functions.inc.php:1099
 msgid "Saint Lucia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1079
+#: includes/global.helper.functions.inc.php:1100
 msgid "Saint Pierre and Miquelon"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1080
+#: includes/global.helper.functions.inc.php:1101
 msgid ""
 "Saint Vincent and the Grenadines"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1081
+#: includes/global.helper.functions.inc.php:1102
 msgid "Samoa"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1082
+#: includes/global.helper.functions.inc.php:1103
 msgid "San Marino"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1083
+#: includes/global.helper.functions.inc.php:1104
 msgid "Sao Tome and Principe"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1084
+#: includes/global.helper.functions.inc.php:1105
 msgid "Saudi Arabia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1085
+#: includes/global.helper.functions.inc.php:1106
 msgid "Senegal"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1086
+#: includes/global.helper.functions.inc.php:1107
 msgid "Serbia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1087
+#: includes/global.helper.functions.inc.php:1108
 msgid "Seychelles"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1088
+#: includes/global.helper.functions.inc.php:1109
 msgid "Sierra Leone"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1089
+#: includes/global.helper.functions.inc.php:1110
 msgid "Singapore"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1090
+#: includes/global.helper.functions.inc.php:1111
 msgid "Slovakia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1091
+#: includes/global.helper.functions.inc.php:1112
 msgid "Slovenia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1092
+#: includes/global.helper.functions.inc.php:1113
 msgid "Solomon Islands"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1093
+#: includes/global.helper.functions.inc.php:1114
 msgid "Somalia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1094
+#: includes/global.helper.functions.inc.php:1115
 msgid "South Africa"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1095
+#: includes/global.helper.functions.inc.php:1116
 msgid "Spain"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1096
+#: includes/global.helper.functions.inc.php:1117
 msgid "Sri Lanka"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1097
+#: includes/global.helper.functions.inc.php:1118
 msgid "Sudan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1098
+#: includes/global.helper.functions.inc.php:1119
 msgid "Suriname"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1099
+#: includes/global.helper.functions.inc.php:1120
 msgid "Swaziland"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1100
+#: includes/global.helper.functions.inc.php:1121
 msgid "Sweden"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1101
+#: includes/global.helper.functions.inc.php:1122
 msgid "Switzerland"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1102
+#: includes/global.helper.functions.inc.php:1123
 msgid "Syria"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1103
+#: includes/global.helper.functions.inc.php:1124
 msgid "Taiwan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1104
+#: includes/global.helper.functions.inc.php:1125
 msgid "Tajikistan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1105
+#: includes/global.helper.functions.inc.php:1126
 msgid "Tanzania"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1106
+#: includes/global.helper.functions.inc.php:1127
 msgid "Thailand"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1107
+#: includes/global.helper.functions.inc.php:1128
 msgid "Timor-Leste"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1108
+#: includes/global.helper.functions.inc.php:1129
 msgid "Togo"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1109
+#: includes/global.helper.functions.inc.php:1130
 msgid "Tonga"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1110
+#: includes/global.helper.functions.inc.php:1131
 msgid "Trinidad and Tobago"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1111
+#: includes/global.helper.functions.inc.php:1132
 msgid "Tunisia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1112
+#: includes/global.helper.functions.inc.php:1133
 msgid "Turkey"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1113
+#: includes/global.helper.functions.inc.php:1134
 msgid "Turkmenistan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1114
+#: includes/global.helper.functions.inc.php:1135
 msgid "Turks and Caicos Islands"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1115
+#: includes/global.helper.functions.inc.php:1136
 msgid "Uganda"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1116
+#: includes/global.helper.functions.inc.php:1137
 msgid "Ukraine"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1117
+#: includes/global.helper.functions.inc.php:1138
 msgid "United Arab Emirates"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1118
+#: includes/global.helper.functions.inc.php:1139
 msgid "United Kingdom"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1119
+#: includes/global.helper.functions.inc.php:1140
 msgid "United States"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1120
+#: includes/global.helper.functions.inc.php:1141
 msgid "Uruguay"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1121
+#: includes/global.helper.functions.inc.php:1142
 msgid "Uzbekistan"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1122
+#: includes/global.helper.functions.inc.php:1143
 msgid "Vanuatu"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1123
+#: includes/global.helper.functions.inc.php:1144
 msgid "Venezuela"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1124
+#: includes/global.helper.functions.inc.php:1145
 msgid "Vietnam"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1125
+#: includes/global.helper.functions.inc.php:1146
 msgid "Virgin Islands, British"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1126
+#: includes/global.helper.functions.inc.php:1147
 msgid "Virgin Islands, US"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1127
+#: includes/global.helper.functions.inc.php:1148
 msgid "Yemen"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1128
+#: includes/global.helper.functions.inc.php:1149
 msgid "Zambia"
 msgstr ""
 
-#: includes/global.helper.functions.inc.php:1129
+#: includes/global.helper.functions.inc.php:1150
 msgid "Zimbabwe"
 msgstr ""
 
@@ -9824,9 +9790,8 @@ msgid "Purchase History"
 msgstr ""
 
 #: templates/markup/global/login.php:24
-#, fuzzy
 msgid "Cancel"
-msgstr "Cancel"
+msgstr ""
 
 #: templates/markup/global/login.php:49
 msgid "Lost Password"
@@ -9839,11 +9804,8 @@ msgstr ""
 
 #: templates/markup/pages/page.admin-order-history.php:53
 #: templates/markup/pages/page.admin-order-history.php:73
-#, fuzzy
 msgid "Customer"
 msgstr ""
-"Order Request details manually "
-"sent to customer."
 
 #: templates/markup/pages/page.admin-order-history.php:55
 #: templates/markup/pages/page.admin-order-history.php:75
