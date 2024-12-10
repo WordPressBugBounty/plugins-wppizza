@@ -48,8 +48,8 @@ class WPPIZZA_MARKUP_PAGES{
 		add_filter('pre_wp_nav_menu', array($this, 'remove_filter_thankyoupage_title'), 10, 2 );//don't change title in nav menu
 		add_filter('wp_nav_menu_items', array($this, 'reapply_filter_thankyoupage_title'), 10, 2 );// re-apply title filter after nav menu
 
-		/** set content **/
-		add_filter('the_content', array($this, 'thankyoupage_content'), 10, 2);
+		/** set content since 3.19.2: set in markup attribute - filter kept here for reference **/
+		//add_filter('the_content', array($this, 'thankyoupage_content'), 10, 2);
 	}
 
 	/******************************************************************************
@@ -241,24 +241,24 @@ class WPPIZZA_MARKUP_PAGES{
 	}
 
 
-	/***************************************
-		[change content in page of thank you page after order
-		- if $_GET['wpptx'] or $_GET['wppcltx']   ]
-	***************************************/
-	function thankyoupage_content($content){
-		global $wppizza_options, $post;
-		$orderpage_id = $wppizza_options['order_settings']['orderpage'];
-
-		if (is_object($post) && $orderpage_id == $post->ID && is_page( $post->ID )  && isset($_GET[WPPIZZA_TRANSACTION_GET_PREFIX]) ) {
-			$content = self::markup('thankyoupage');
-	    }
-
-		if (is_object($post) &&  $orderpage_id == $post->ID && is_page( $post->ID )  && isset($_GET[WPPIZZA_TRANSACTION_CANCEL_PREFIX]) ) {
-			$content = self::markup('ordercancelled');
-	    }
-
-	return $content;
-	}
+#	/***************************************
+#		[change content in page of thank you page after order
+#		- if $_GET['wpptx'] or $_GET['wppcltx']   ]
+#	***************************************/
+#	function thankyoupage_content($content){
+#		global $wppizza_options, $post;
+#		$orderpage_id = $wppizza_options['order_settings']['orderpage'];
+#
+#		if (is_object($post) && $orderpage_id == $post->ID && is_page( $post->ID )  && isset($_GET[WPPIZZA_TRANSACTION_GET_PREFIX]) ) {
+#			$content = self::markup('thankyoupage');
+#	    }
+#
+#		if (is_object($post) &&  $orderpage_id == $post->ID && is_page( $post->ID )  && isset($_GET[WPPIZZA_TRANSACTION_CANCEL_PREFIX]) ) {
+#			$content = self::markup('ordercancelled');
+#	    }
+#
+#	return $content;
+#	}
 
 	/***************************************
 		[add some localized js variables for validations]
@@ -311,7 +311,24 @@ class WPPIZZA_MARKUP_PAGES{
 		[apply attributes]
 	***************************************/
 	function markup($type, $atts = null, $is_admin = false){
-		global $wppizza_options;
+		global $wppizza_options, $post;
+
+		/*
+			since 3.19.2:
+			instead of altering 'the_content' which may cauase issue if other plugins or the theme itself filters it
+			we are simply changing the type attribute now 
+		*/
+		if (is_object($post) && $wppizza_options['order_settings']['orderpage'] == $post->ID && is_page( $post->ID )) {
+			//thank you 
+			if(isset($_GET[WPPIZZA_TRANSACTION_GET_PREFIX])){
+				$type = 'thankyoupage';
+			}
+			//cancel
+			if(isset($_GET[WPPIZZA_TRANSACTION_CANCEL_PREFIX])){
+				$type = 'ordercancelled';
+			}			
+		}
+
 
 		/* merge localization */
 		$txt = $wppizza_options['confirmation_form']['localization'] + $wppizza_options['localization'];
