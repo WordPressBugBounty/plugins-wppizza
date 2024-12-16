@@ -2,8 +2,8 @@
 #* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 #* Plugin Name: WPPizza
 #* Plugin URI: https://wordpress.org/extend/plugins/wppizza/
-#* Description: A Restaurant Plugin (not only for Pizza)  
-#* Version: 3.19.2
+#* Description: A Restaurant Plugin (not only for Pizza)
+#* Version: 3.19.3
 #* Requires PHP: 5.3+
 #* Author: ollybach
 #* Author URI: https://www.wp-pizza.com
@@ -51,11 +51,17 @@ if ( ! defined( 'ABSPATH' ) ) {exit();}
 *
 *	@since v3.10
 *	major version number of plugin
-*	[for convenience in plugin/theme development]
 *
+*	@since v3.19.3
+*	[for convenience in plugin/theme development]
+*	allow constant overrides to enable beta versions for example
 ***************************************************************/
-define('WPPIZZA_VERSION', '3.19.2');
-define('WPPIZZA_VERSION_MAJOR', '3');
+if(!defined('WPPIZZA_VERSION')){
+	define('WPPIZZA_VERSION', '3.19.3');
+}
+if(!defined('WPPIZZA_VERSION_MAJOR')){
+	define('WPPIZZA_VERSION_MAJOR', '3');
+}
 
 /***************************************************************
 *
@@ -75,7 +81,7 @@ if (!class_exists( 'WPPIZZA' )){
 		private static $instance;
 
 		/*
-			setting properties 
+			setting properties
 			to make php 8.2+ / 9.0 happy...
 		*/
 		public $dbcookie;
@@ -101,6 +107,7 @@ if (!class_exists( 'WPPIZZA' )){
 		public $admin_dashboard_widgets;
 		public $sales_data;
 		public $user;
+		public $tips;
 		public $db;
 		public $order;
 		public $cron;
@@ -117,9 +124,9 @@ if (!class_exists( 'WPPIZZA' )){
 
 
 		function __construct() {
-		
-			/* 
-				some - somewhat inconsequentiial - setup actions to provide some useful links perhaps 
+
+			/*
+				some - somewhat inconsequentiial - setup actions to provide some useful links perhaps
 				in the WP admin plugin page (wp-admin/plugins.php) for this plugin
 				@since 3.16
 			*/
@@ -147,8 +154,6 @@ if (!class_exists( 'WPPIZZA' )){
 
 				self::$instance = new WPPIZZA;
 
-				/**load text domain**/
-				add_action( 'init', array( self::$instance, 'load_plugin_textdomain'));
 				/**load custom functions.php - if exists**/
 				add_action( 'after_setup_theme', array( self::$instance, 'load_custom_functions'));
 
@@ -157,7 +162,7 @@ if (!class_exists( 'WPPIZZA' )){
     			/**include all required files **/
 				self::$instance->requires();
 				/**cookies**/
-				self::$instance->dbcookie					= new WPPIZZA_DBCOOKIE();				
+				self::$instance->dbcookie					= new WPPIZZA_DBCOOKIE();
 				/**sessions**/
 				self::$instance->session					= new WPPIZZA_SESSIONS();
 				/**categories**/
@@ -205,11 +210,13 @@ if (!class_exists( 'WPPIZZA' )){
 
 				/**
 					user login / out/ register forms
-					upadate details form
+					update details form
 					registration emails / redirects
+					tips
 					etc
 				**/
 				self::$instance->user						= new WPPIZZA_USER();/* login form, registration, emails etc */
+				self::$instance->tips						= new WPPIZZA_TIPS();/* tips options / values */
 				self::$instance->db							= new WPPIZZA_DB();/* query insert update delete etc    */
 				self::$instance->order						= new WPPIZZA_ORDER();/*     */
 				self::$instance->cron						= new WPPIZZA_CRON();/*  wppizza wp cronjobs   */
@@ -243,33 +250,6 @@ if (!class_exists( 'WPPIZZA' )){
 		    }
 		}
 
-	    /*************************************************************************************
-	    * load text domain on init.
-		* @since 3.0
-		* @return void
-	    *************************************************************************************/
-	  	public function load_plugin_textdomain(){
-	  		/*
-	  		NOTE: BOTH only required on admin as frontend strings get added to wppizza->localization (options table) on intall
-	  		and are subsequently used from there.
-	  		localization is split for convenience to enable frontend localization into more languages
-	  		without having to translate the whole backend too (although that would be ideal of course)
-	  		Filterable since 3.19.1
-	  		*/
-	  		$plugin_text_domain_path =  apply_filters('wppizza_filter_textdomain_path', dirname(plugin_basename( __FILE__ ) ) . '/lang');
-	  		if(is_admin()){
-	        	// admin localization strings
-	        	load_plugin_textdomain('wppizza-admin', false, $plugin_text_domain_path );
-	        	// load after admin to insert default localization strings
-	        	load_plugin_textdomain('wppizza', false, $plugin_text_domain_path );
-	  		}else{
-	        	// frontend dev constants - not loaded by default (but can be enabled by constant) as it's kind of overkill loading these for very little benefit,
-	        	if(WPPIZZA_DEV_LOAD_TEXTDOMAIN){
-	        		load_plugin_textdomain('wppizza_dev', false, $plugin_text_domain_path );
-	        	}
-	  		}
-	    }
-
 		/*************************************************************************************
 		 * Include our required files / classes
 		 *
@@ -288,12 +268,12 @@ if (!class_exists( 'WPPIZZA' )){
 		 * @return array
 		 *************************************************************************************/
 		function plugin_action_links($links, $file) {
-			
+
 			if (($file === plugin_basename(__FILE__) ) && (current_user_can('manage_options'))) {
 				$settings = '<a href="'. admin_url('edit.php?post_type=wppizza&page=order_settings') .'">'. esc_html__('Order Settings', 'wppizza-admin') .'</a>';
 				array_unshift($links, $settings);
 			}
-		
+
 		return $links;
 		}
 
@@ -303,9 +283,9 @@ if (!class_exists( 'WPPIZZA' )){
 		 * @access private
 		 * @since 3.16
 		 * @return array
-		 *************************************************************************************/		
+		 *************************************************************************************/
 		function plugin_meta_links($links, $file) {
-			
+
 			if ($file === plugin_basename(__FILE__)) {
 				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://docs.wp-pizza.com/getting-started/?section=setup" title="'. esc_attr__('Getting started', 'wppizza-admin') .'">'. esc_html__('Getting started', 'wppizza-admin') .'</a>';
 				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://docs.wp-pizza.com" title="'. esc_attr__('Documentation', 'wppizza-admin') .'">'. esc_html__('Documentation', 'wppizza-admin') .'</a>';
@@ -313,10 +293,10 @@ if (!class_exists( 'WPPIZZA' )){
 				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/plugins/wppizza/#developers" title="'. esc_attr__('Changelog', 'wppizza-admin') .'">'. esc_html__('Changelog', 'wppizza-admin') .'</a>';
 				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/support/plugin/wppizza/reviews/?rate=5#new-post" title="'. esc_attr__('Click here to rate and review this plugin on WordPress.org', 'wppizza-admin') .'">'. esc_html__('Rate this plugin', 'wppizza-admin') .'&nbsp;&raquo;</a>';
 			}
-			
+
 		return $links;
-		}		
-		
+		}
+
 	}
 }
 

@@ -142,7 +142,7 @@ class WPPIZZA_MODULE_TOOLS_SYSINFO_PHPINFO{
 
 		/*section*/
 		if($sections){
-			$settings['sections'][$this->section_key] =  __('PHP Configuration', 'wppizza-locale');
+			$settings['sections'][$this->section_key] =  __('PHP Configuration', 'wppizza-admin');
 		}
 
 		/*help*/
@@ -168,7 +168,7 @@ class WPPIZZA_MODULE_TOOLS_SYSINFO_PHPINFO{
 	------------------------------------------------------------------------------*/
 	function admin_options_fields_settings($wppizza_options, $options_key, $field, $label, $description){
 		if($field=='php_config'){
-			echo "<h2><a href='javascript:void(0)' id='wppizza_show_php_vars' class='button'>".__('show php configuration', 'wppizza-locale')."</a></h2>";
+			echo "<h2><a href='javascript:void(0)' id='wppizza_show_php_vars' class='button'>".__('show php configuration', 'wppizza-admin')."</a></h2>";
 			echo"<div id='wppizza_php_info'></div>";
 		}
 	}

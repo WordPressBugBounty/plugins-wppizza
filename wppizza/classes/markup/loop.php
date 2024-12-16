@@ -728,7 +728,11 @@ class WPPIZZA_MARKUP_MENU_ITEMS{
 				add sizes, prices (as 'value') / formatted prices (as 'price') , labels (as size)- overwriting original price meta
 			*/
 			foreach($wppizza_metadata['prices'] as $price_key=>$price){
-				$parameters['posts'][$key]->wppizza_data['prices'][$price_key] = array('value'=>$price, 'price'=>wppizza_format_price($price, $currency_symbol, $attributes['currency_price']), 'size'=>$wppizza_options['sizes'][$wppizza_metadata['sizes']][$price_key]['lbl'] );		//$wppizza_options['sizes']
+				$parameters['posts'][$key]->wppizza_data['prices'][$price_key] = array(
+					'value' => $price, 
+					'price' => wppizza_format_price($price, $currency_symbol, $attributes['currency_price']), 
+					'size' => $wppizza_options['sizes'][$wppizza_metadata['sizes']][$price_key]['lbl'] 
+				);		//$wppizza_options['sizes']
 
 			}
 
@@ -1940,7 +1944,8 @@ class WPPIZZA_MARKUP_MENU_ITEMS{
 				$category = wppizza_force_first_category();
 			}
 
-
+			/* add to cart trigger class if set */
+			$addtocarttriggerclass = 'add-to-cart';
 
 			/********************
 				main, large currency symbol position
@@ -1994,12 +1999,16 @@ class WPPIZZA_MARKUP_MENU_ITEMS{
 				add id's, classes, titels
 			*/
 			foreach($prices as $key=>$price){
-				/*id consists of prefix - category id - post id - selected sizes - seleted size*/
-				$prices[$key]['id'] = ''.WPPIZZA_SLUG.'-'.$post->blog_id.'-'.$category['id'].'-'.$post->ID.'-'.$sizes_id.'-'.$key.'';
+
+				$idComponents = array($post->blog_id, $category['id'], $post->ID, $sizes_id, $key);
+				
+				/*id consists of prefix - blogid - category id - post id - selected sizes - seleted size*/
+				$prices[$key]['id'] = ''.WPPIZZA_SLUG.'-'.implode('-', $idComponents).'';
+
 
 				/*class price, allow add to cart if enabled and not viewonly in shortcode*/
 				$prices[$key]['class_price'] = ''.WPPIZZA_SLUG.'-article-price '.WPPIZZA_SLUG.'-article-price-'.$sizes_id.'-'.$key.' '.WPPIZZA_SLUG.'-price-'.$post->ID.'-'.$key.'';
-				$prices[$key]['class_price'] .= ( empty($wppizza_options['layout']['disable_online_order']) && empty($parameters['global']['include']['viewonly']) ) ? ' '.WPPIZZA_SLUG.'-add-to-cart' : '' ;
+				$prices[$key]['class_price'] .= ( empty($wppizza_options['layout']['disable_online_order']) && empty($parameters['global']['include']['viewonly']) ) ? ' '.WPPIZZA_SLUG.'-'.$addtocarttriggerclass.'' : '' ;
 				$prices[$key]['class_price'] .= (!empty($wppizza_options['layout']['disable_online_order']) || !empty($parameters['global']['include']['viewonly'])) ? ' '.WPPIZZA_SLUG.'-article-price-viewonly' : '' ;
 
 				/* class for span surrounding price - empty by default,but filterable !*/
@@ -2017,6 +2026,23 @@ class WPPIZZA_MARKUP_MENU_ITEMS{
 
 				/**set to "free" if zero */
 				$prices[$key]['price'] =  (empty($price['value']) && !empty($wppizza_options['prices_format']['localize_zero_price']) && !empty($wppizza_options['localization']['localize_zero_price'])  ) ?  $wppizza_options['localization']['localize_zero_price'] : $price['price'] ;
+
+
+				/** 
+					data-attributes since v3.19.3
+					currently id only, but can be expanded by adding to this array 
+					by filter here or with the wppizza_filter_post_prices if we need to in the future
+				**/
+				$data_attributes = apply_filters( 'wppizza_filter_loop_data_attributes', array(					
+					/* raw id without any prefixes, dot separated */
+					'id' => implode('.', $idComponents),
+				), $idComponents );
+				$attributes = array();
+				foreach($data_attributes as $attKey => $attribute){
+					$attributes[$attKey] = 'data-'.wppizza_alpha_only($attKey).'="'.esc_html($attribute).'"';
+				}
+				$prices[$key]['data'] =  ' '.implode(' ', $attributes).' ';
+				
 
 			}
 
@@ -2588,7 +2614,7 @@ class WPPIZZA_MARKUP_MENU_ITEMS{
 			$markup.='<input type="button" id="'.WPPIZZA_SLUG.'-add-to-cart-select_'.$blog_id.'-'.$category_id.'-'.$atts['id'].'" class="'.WPPIZZA_SLUG.'-add-to-cart-select '.WPPIZZA_SLUG.'-add-to-cart-btn" value="'.$add_item_to_cart_button_label.'" />';
 		 }else{
 			/*direct selection*/
-			$markup.='<input type="button" id="'.WPPIZZA_SLUG.'-'.$blog_id.'-'.$category_id.'-'.$atts['id'].'-'.$size.'-'.$selectedPrice.'" class="'.WPPIZZA_SLUG.'-add-to-cart '.WPPIZZA_SLUG.'-add-to-cart-btn" value="'.$add_item_to_cart_button_label.'" />';
+			$markup.='<input type="button" id="'.WPPIZZA_SLUG.'-'.$blog_id.'-'.$category_id.'-'.$atts['id'].'-'.$size.'-'.$selectedPrice.'" class="'.WPPIZZA_SLUG.'-'.$addtocarttriggerclass.' '.WPPIZZA_SLUG.'-add-to-cart-btn" value="'.$add_item_to_cart_button_label.'" />';
 		 }
 		$markup.='</span>';
 

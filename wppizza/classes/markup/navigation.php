@@ -44,7 +44,7 @@ class WPPIZZA_MARKUP_NAVIGATION{
 		[apply attributes]
 	***************************************/
 	function attributes($atts = null){
-		global $wppizza_options;
+		global $wppizza_options, $wp_query;
 
 		extract(shortcode_atts(array('title' => ''), $atts));
 		$child_of=0;
@@ -69,7 +69,8 @@ class WPPIZZA_MARKUP_NAVIGATION{
 		  'show_option_none'   => empty($atts['as_dropdown']) ? __('Nothing here') : $wppizza_options['localization']['widget_navigation_dropdown_placeholder']  ,
 		  'hide_empty'   => 1,
 		  'echo'   => 0 ,				// keep as variable
-		  'walker'	=> ( !empty($atts['as_dropdown']) ? new WPPIZZA_Walker_CategoryDropdown() : new WPPIZZA_Walker_Category() )/* set (filterable) walkers for dropdown or (current dummy) for normal list*/
+		  'walker'	=> ( !empty($atts['as_dropdown']) ? new WPPIZZA_Walker_CategoryDropdown() : new WPPIZZA_Walker_Category() ),/* set (filterable) walkers for dropdown or (current dummy) for normal list*/
+		  'current_category' => (isset($wp_query->query_vars['term']) ? $wp_query->query_vars['term'] : '' ),	//added in 3.19.3 as custom arg		
 		);
 
 		/***add a filter if required*****/
@@ -102,6 +103,10 @@ class WPPIZZA_MARKUP_NAVIGATION{
 	*********************/
 	$class = array();
 	$class[] = ''.WPPIZZA_PREFIX.'-categories';
+	if(!empty($atts['as_dropdown'])){
+	$class[] = ''.WPPIZZA_PREFIX.'-dd-categories';	
+	}
+
 	/*
 		allow class filtering
 		implode for output

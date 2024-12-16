@@ -65,16 +65,6 @@ function wppizza_validate_ip_or_userid($str){
 return $res;
 }
 /*****************************************************
-* Validates ISO currency
-* @str the input to check
-/******************************************************/
-function wppizza_validate_iso_currency($str){
-	$str=strtoupper($str);
-	$str=preg_replace("/[^A-Z]/","",$str);
-	$str=substr($str,0,3);
-return $str;
-}
-/*****************************************************
 * Simple phonenumber validation allowing for +
 * @str the input to check
 * @ret sanitised phone
@@ -438,6 +428,10 @@ return $str;
 ******************************************************/
 function wppizza_validate_24hourtime($str){
 	$t=explode(":",$str);
+
+	//sanitise: if no minutes were set , set to 0
+	if(!isset($t[1])){$t[1] = 0;}
+
 	/**first make them abs int*/
 	$hr=abs((int)$t[0]);
 	$min=abs((int)$t[1]);

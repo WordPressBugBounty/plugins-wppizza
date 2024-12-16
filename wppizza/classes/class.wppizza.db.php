@@ -1911,17 +1911,17 @@ class WPPIZZA_DB{
 		$order_details				= '';
 		$order_status 				= 'NEW';
 		$order_ini 					= maybe_serialize(apply_filters('wppizza_filter_add_to_order_ini',$order_session));
-		$order_no_of_items 			= $order_session['summary']['number_of_items'];
-		$order_items_total 			= $order_session['summary']['total_price_items'];
-		$order_discount 			= $order_session['summary']['discount'];
+		$order_no_of_items 			= !empty($order_session['summary']['number_of_items']) ? $order_session['summary']['number_of_items'] : 0 ;
+		$order_items_total 			= !empty($order_session['summary']['total_price_items']) ? $order_session['summary']['total_price_items'] : 0 ;
+		$order_discount 			= !empty($order_session['summary']['discount']) ? $order_session['summary']['discount'] : 0 ;
 		$order_taxes 				= !empty($order_session['summary']['taxes']) ?  $order_session['summary']['taxes'] : 0 ;
 		$order_taxes_included 		= !empty($order_session['param']['tax_included']) ?  'Y' : 'N' ;
-		$order_delivery_charges 	= $order_session['summary']['delivery_charges'];
-		$order_handling_charges 	= $order_session['summary']['handling_charges'];
-		$order_surcharges 			= $order_session['summary']['surcharges'];		
-		$order_tips 				= $order_session['summary']['tips'];
+		$order_delivery_charges 	= !empty($order_session['summary']['delivery_charges']) ? $order_session['summary']['delivery_charges'] : 0 ;
+		$order_handling_charges 	= !empty($order_session['summary']['handling_charges']) ? $order_session['summary']['handling_charges'] : 0 ;
+		$order_surcharges 			= !empty($order_session['summary']['total_surcharges']) ? $order_session['summary']['total_surcharges'] : 0 ;		
+		$order_tips 				= !empty($order_session['summary']['tips']) ? $order_session['summary']['tips'] : 0 ;
 		$order_self_pickup 			= !empty($order_session['summary']['self_pickup']) ?  'Y' : 'N' ;
-		$order_total 				= $order_session['summary']['total'];
+		$order_total 				= !empty($order_session['summary']['total']) ? $order_session['summary']['total'] : 0 ;
 		$order_refund 				= 0;
 		$customer_ini 				= maybe_serialize($customer_data);/* allow arbitrary array data to be added/stored  in customer_ini (i.e user session) to - perhaps -	save some additional values without outputting them anywhere by default */
 		$payment_status 			= 'INITIALIZED';
@@ -1937,7 +1937,7 @@ class WPPIZZA_DB{
 		$session_id 				= session_id();
 		$email 						= !empty($cemail) ? wppizza_maybe_encrypt_decrypt($cemail, true, 190, true) : '' ;//store email encrypted using WPPIZZA_CRYPT_KEY (so it can be decrypted for db queries - notably privacy export)
 		$ip_address 				= ( empty($wppizza_options['tools']['privacy']) || (!empty($wppizza_options['tools']['privacy']) && !empty($wppizza_options['tools']['privacy_keep_ip_address'])) ) ? $_SERVER['REMOTE_ADDR'] : wppizza_anonymize_data('ip_address', $_SERVER['REMOTE_ADDR']) ;//store ip addresses anonimised if privacy enabled unless specifically set
-		$user_defined 				= maybe_serialize(apply_filters('wppizza_db_column_user_defined','', $order_session, $user_session));/* a text field that can be freely used - serialized if necessary*/
+		#$user_defined 				= maybe_serialize(apply_filters('wppizza_db_column_user_defined','', $order_session, $user_session));/* a text field that can be freely used - serialized if necessary*/# removed as of 3.19.3
 		$user_data					= wppizza_userdata();
 
 		/*
@@ -1964,6 +1964,7 @@ class WPPIZZA_DB{
 		$order_data['order_taxes_included'] = array('data' => $order_taxes_included, 'type' => '%s' );
 		$order_data['order_delivery_charges'] = array('data' => $order_delivery_charges, 'type' => '%f' );
 		$order_data['order_handling_charges'] = array('data' => $order_handling_charges, 'type' => '%f' );
+		$order_data['order_surcharges'] = array('data' => $order_surcharges, 'type' => '%f' );		
 		$order_data['order_tips'] = array('data' => $order_tips, 'type' => '%f' );
 		$order_data['order_self_pickup'] = array('data' => $order_self_pickup, 'type' => '%s' );
 		$order_data['order_total'] = array('data' => $order_total, 'type' => '%s' );
@@ -1982,9 +1983,7 @@ class WPPIZZA_DB{
 		$order_data['email'] = array('data' => $email, 'type' => '%s' );
 		$order_data['ip_address'] = array('data' => $ip_address, 'type' => '%s' );
 		$order_data['user_data'] = array('data' => $user_data, 'type' => '%s' );
-		$order_data['user_defined'] = array('data' => $user_defined, 'type' => '%s' );
-
-
+		#$order_data['user_defined'] = array('data' => $user_defined, 'type' => '%s' );#removed as of 3.19.3
 
 		/**
 			added filtering - not used in plugin

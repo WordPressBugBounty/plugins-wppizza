@@ -145,21 +145,21 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('order date', 'wppizza-admin'),
+				'label'=>__('Order Date', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_label_order_order_id';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('order id', 'wppizza-admin'),
+				'label'=>__('Order ID', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_label_order_payment_outstanding';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('payment due', 'wppizza-admin'),
+				'label'=>__('Payment Due', 'wppizza-admin'),
 				'description'=>array()
 			));
 
@@ -167,7 +167,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('unconfirmed payment', 'wppizza-admin'),
+				'label'=>__('Unconfirmed Payment', 'wppizza-admin'),
 				'description'=>array()
 			));
 
@@ -175,7 +175,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('confirmed payment', 'wppizza-admin'),
+				'label'=>__('Confirmed Payment', 'wppizza-admin'),
 				'description'=>array()
 			));
 
@@ -183,21 +183,21 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('delivery type', 'wppizza-admin'),
+				'label'=>__('Delivery Type', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_label_order_payment_type';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('payment type', 'wppizza-admin'),
+				'label'=>__('Payment Type', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_label_order_payment_method';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('payment method (i.e Cash or CC)', 'wppizza-admin'),
+				'label'=>__('Payment Method (i.e Cash or CC)', 'wppizza-admin'),
 				'description'=>array()
 			));
 			//$field = 'order_paid_by';
@@ -210,28 +210,28 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('transaction id', 'wppizza-admin'),
+				'label'=>__('Transaction ID', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_label_order_total';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('total', 'wppizza-admin'),
+				'label'=>__('Total', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_label_order_refund';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('refunded', 'wppizza-admin'),
+				'label'=>__('Refunded', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_label_order_delivery_pickup_note';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('delivery / pickup note', 'wppizza-admin'),
+				'label'=>__('Delivery / Pickup note', 'wppizza-admin'),
 				'description'=>array()
 			));
 
@@ -239,15 +239,15 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('user id', 'wppizza-admin'),
-				'description'=>array(__('currently unused', 'wppizza-admin'))
+				'label'=>__('User ID', 'wppizza-admin'),
+				'description'=>array(__('[currently unused]', 'wppizza-admin'))
 			));
 			$field = 'common_label_order_currency';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
 				'label'=>__('Currency', 'wppizza-admin'),
-				'description'=>array(__('currently unused', 'wppizza-admin'))
+				'description'=>array(__('[currently unused]', 'wppizza-admin'))
 			));
 		}
 
@@ -271,28 +271,28 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('delivery', 'wppizza-admin'),
+				'label'=>__('Delivery', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_value_order_pickup';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('pickup', 'wppizza-admin'),
+				'label'=>__('Pickup', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_value_order_cash';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('cash', 'wppizza-admin'),
+				'label'=>__('Cash', 'wppizza-admin'),
 				'description'=>array()
 			));
 			$field = 'common_value_order_credit_card';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('credit card', 'wppizza-admin'),
+				'label'=>__('Credit Card', 'wppizza-admin'),
 				'description'=>array()
 			));
 		}

@@ -30,8 +30,8 @@ if (!class_exists('WPPIZZA_Walker_CategoryDropdown')) {/* pluggable */
 	    	$cat_link = get_category_link( $category->term_id );
 			// Get the URL of this category
 	    	$cat_slug =  $category->slug ;    	
-			// Get the url
-			$query_slug = get_query_var('pagename');
+			// selected category
+			$query_slug = $args['current_category'];
 	
 			$output .= '<option class="'.WPPIZZA_SLUG.'-level-'.$depth.'" value="'.$cat_link.'"';
 			

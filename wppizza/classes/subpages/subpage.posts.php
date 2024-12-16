@@ -459,8 +459,12 @@ class WPPIZZA_POSTS{
 	function wppizza_save_quick_edit_data($post_id, $post){
 	 // verify if this is an auto save routine.
 	  if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {return $post_id;}
+
+	  //only run on inline (quickedit) save
+	  if ( !isset($_POST['action']) || $_POST['action'] != 'inline-save' ) {return $post_id;}
+
 	  // Check permissions
-	  if ( isset($_POST['post_type'])  && WPPIZZA_POST_TYPE == $_POST['post_type'] ) {
+	  if ( isset($_POST['post_type'])  && WPPIZZA_POST_TYPE == $_POST['post_type']  ) {
 	    if ( !current_user_can( 'edit_page', $post_id ) )
 	      return $post_id;
 	  } else {

@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/
 						/*********
 							create markup row | columns for this item
 						**********/
-						$menu_item['tr_']= '<tr id="'.$id_row_prefix . $key.'" class="'.$item['classes']['tr'].'">';
+						$menu_item['tr_']= '<tr data-'.WPPIZZA_SLUG.'id="'. $key . '" id="' . $id_row_prefix . $key . '" class="'.$item['classes']['tr'].'">';
 
 							/* columns */
 							$menu_item_columns['item_td_quantity']	= '<td class="'.$class_quantity_td.'">'.$item['quantity'].'</td>';

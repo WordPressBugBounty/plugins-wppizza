@@ -106,8 +106,8 @@ class WPPIZZA_MARKUP_TOTALS{
 		**/
 		if(!empty($atts['viewcart'])){
 			/*create view cart button */
-			$viewcart=true;
-			$viewcart_class=''.WPPIZZA_PREFIX.'-totals-viewcart';
+			$viewcart = true;
+			$viewcart_class = ''.WPPIZZA_PREFIX.'-totals-viewcart';
 			//$viewcart_title = $wppizza_options['localization']['view_cart'];
 			
 			/*create hidden cart span */

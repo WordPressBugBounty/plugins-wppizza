@@ -403,7 +403,10 @@ class WPPIZZA_HELPERS{
 					foreach($columns as $column_key=>$column_detail){
 						/* get parameters for this column */
 						foreach($column_detail['fields'] as $field_key){
-							$itemised_row[] = $arr[$field_key];
+							//skip if not set 
+							if(isset($arr[$field_key])){
+								$itemised_row[] = $arr[$field_key];
+							}
 						}
 					}
 					/* space row parameters */
@@ -462,9 +465,12 @@ class WPPIZZA_HELPERS{
 
 							/* get parameters for this column */
 							foreach($column_detail['fields'] as $field_key){
-								/* only if not email */
-								$parameter_id = ($template_type=='emails') ? '' : ' id="'.$field_key.'-'.$itemKey.'" class="'.$field_key.'" ';
-								$column_parameters[] = '<span '.$parameter_id.'>'.$arr[$field_key].'</span>';
+								//skip if not set 
+								if(isset($arr[$field_key])){								
+									/* only if not email */
+									$parameter_id = ($template_type=='emails') ? '' : ' id="'.$field_key.'-'.$itemKey.'" class="'.$field_key.'" ';
+									$column_parameters[] = '<span '.$parameter_id.'>'.$arr[$field_key].'</span>';
+								}
 							}
 							/* implode parameters for this column for output */
 							$menu_item['column_'.$column_key.''] = implode(' ',$column_parameters).PHP_EOL;

@@ -220,6 +220,12 @@ if ( ! defined( 'ABSPATH' ) ) exit();/*Exit if accessed directly*/
 		if(!defined('WPPIZZA_TRANSACTION_CANCEL_PREFIX')){
 			define('WPPIZZA_TRANSACTION_CANCEL_PREFIX', 'wppcltx');/*prefix for get variable to *cancel* order - will have order hash as value*/
 		}
+		if(!defined('WPPIZZA_GET_DELIVERY')){
+			define('WPPIZZA_GET_DELIVERY', 'delivery');/*get variable to set if we want to set session to delivery*/
+		}
+		if(!defined('WPPIZZA_GET_PICKUP')){
+			define('WPPIZZA_GET_PICKUP', 'pickup');/*get variable to set if we want to set to pickup*/
+		}		
 		/**********************************************************************
 			LANGUAGE CONSTANTS
 		**********************************************************************/		

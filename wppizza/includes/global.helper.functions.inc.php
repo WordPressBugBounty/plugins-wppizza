@@ -709,172 +709,6 @@ function wppizza_force_first_category($with_key = false){
 	}
 }
 
-/***********************************************************
-	wppizza currencies
-***********************************************************/
-function wppizza_currencies($selected='',$returnValue=null){
-	$items['---none---']='';
-	$items['USD']='$';
-	$items['GBP']='£';
-	$items['EUR']='€';
-	$items['CAD']='$';
-	$items['CHF']='CHF';
-	$items['ALL']='Lek';
-	$items['AFN']='&#1547;';
-	$items['ARS']='$';
-	$items['AWG']='ƒ';
-	$items['AUD']='$';
-	$items['AZN']='&#1084;';
-	$items['BSD']='$';
-	$items['BBD']='$';
-	$items['BYR']='p.';
-	$items['BZD']='BZ$';
-	$items['BMD']='$';
-	$items['BOB']='$b';
-	$items['BAM']='KM';
-	$items['BWP']='P';
-	$items['BGN']='&#1083;&#1074;';
-	$items['BRL']='R$';
-	$items['BND']='$';
-	$items['KHR']='&#6107;';
-	$items['KYD']='$';
-	$items['CLP']='$';
-	$items['CNY']='¥';
-	$items['RMB']='¥';
-	$items['COP']='$';
-	$items['CRC']='¢';
-	$items['HRK']='kn';
-	$items['CUP']='&#8369;';
-	$items['CZK']='K&#269;';
-	$items['DKK']='kr';
-	$items['DOP']='RD$';
-	$items['XCD']='$';
-	$items['EGP']='£';
-	$items['SVC']='$';
-	$items['EEK']='kr';
-	$items['FKP']='£';
-	$items['FJD']='$';
-	$items['GHC']='¢';
-	$items['GIP']='£';
-	$items['GTQ']='Q';
-	$items['GGP']='£';
-	$items['GYD']='$';
-	$items['HNL']='L';
-	$items['HKD']='$';
-	$items['HUF']='Ft';
-	$items['ISK']='kr';
-	$items['IDR']='Rp';
-	$items['INR']='&#8377;';
-	$items['IRR']='&#65020;';
-	$items['IMP']='£';
-	$items['ILS']='&#8362;';
-	$items['JMD']='J$';
-	$items['JPY']='¥';
-	$items['JEP']='£';
-	$items['KZT']='&#8376;';
-	$items['KGS']='&#1083;';
-	$items['LAK']='&#8365;';
-	$items['LVL']='Ls';
-	$items['LBP']='£';
-	$items['LRD']='$';
-	$items['LTL']='Lt';
-	$items['MKD']='&#1076;';
-	$items['MYR']='&#82;';
-	$items['MUR']='&#8360;';
-	$items['MXN']='$';
-	$items['MNT']='&#8366;';
-	$items['MZN']='MT';
-	$items['NAD']='$';
-	$items['NPR']='&#8360;';
-	$items['ANG']='ƒ';
-	$items['NZD']='$';
-	$items['NIO']='C$';
-	$items['NGN']='&#8358;';
-	$items['KPW']='&#8361;';
-	$items['NOK']='kr';
-	$items['OMR']='&#65020;';
-	$items['PKR']='&#8360;';
-	$items['PAB']='B/.';
-	$items['PYG']='Gs';
-	$items['PEN']='S/.';
-	$items['PHP']='&#8369;';
-	$items['PLN']='&#122;&#322;';
-	$items['QAR']='&#65020;';
-	$items['RON']='lei';
-	$items['RUB']='&#1088;';
-	$items['SHP']='£';
-	$items['SAR']='&#65020;';
-	$items['RSD']='&#1056;&#1057;&#1044;';
-	$items['RSD-ALT']='RSD';//hyphens and anything thereafter will be stripped to get the right ISO in frontend
-	$items['SCR']='&#8360;';
-	$items['SGD']='$';
-	$items['SBD']='$';
-	$items['SOS']='S';
-	$items['ZAR']='R';
-	$items['KRW']='&#8361;';
-	$items['LKR']='&#8360;';
-	$items['SEK']='kr';
-	$items['SRD']='$';
-	$items['SYP']='£';
-	$items['TWD']='NT$';
-	$items['THB']='&#3647;';
-	$items['TTD']='TT$';
-	$items['TRL']='£';
-	$items['TVD']='$';
-	$items['UAH']='&#8372;';
-	$items['UYU']='$U';
-	$items['UZS']='&#1083;';
-	$items['VEF']='Bs';
-	$items['VND']='&#8363;';
-	$items['YER']='&#65020;';
-	$items['ZWD']='Z$';
-	$items['TRY']='&#8378;';
-	$items['TND']='&#1583;&#46;&#1578;';
-	$items['TND-ALT']='DT';
-	$items['AED']='&#1583;&#46;&#1573;';
-	$items['AOA']='Kz';
-	$items['BDT']='Tk';
-	$items['BHD']='BD';
-	$items['CVE']='$';
-	$items['DZD']='&#1583;&#1580;';
-	$items['DZD-ALT']='DA';
-	$items['ERN']='Nfk';
-	$items['ERN-ALT']='&#4755;&#4693;&#4939;';
-	$items['ETB']='Br';
-	$items['GNF']='FG';
-	$items['KWD']='&#1603;';
-	$items['LYD']='LD';
-	$items['MAD']='&#1583;&#46;&#1605;&#46;';
-	$items['MDL']='leu';
-	$items['MGA']='Ar';
-	$items['MMK']='K';
-	$items['MOP']='MOP$';
-	$items['MRO']='UM';
-	$items['MVR']='Rf';
-	$items['MVR-ALT']='&#1923;';
-	$items['MWK']='MK';
-	$items['PGK']='K';
-	$items['SDG']='&#1580;&#46;&#1587;&#46;';
-	$items['SLL']='Le';
-	$items['STD']='Db';
-	$items['XPF']='F';
-	$items['CFP']='F';
-
-	$items = apply_filters('wppizza_filter_currencies',$items);
-
-	if(!$returnValue){
-	ksort($items);
-    foreach($items as $key=>$val){
-    	if($key==$selected){$d=' selected="selected"';}else{$d='';}
-		$options[]=array('selected'=>''.$d.'','value'=>''.$val.'','id'=>''.$key.'');
-    }}
-    if($selected!='' && $returnValue){
-    	$options=array('key'=>$selected,'val'=>$items[$selected]);
-    }
-	return $options;
-}
-
-
 /****************************************************
 	 explode string by multiple delimiters
 	@since 3.10.5
@@ -904,7 +738,6 @@ function wppizza_multiexplode($delimiters = array(), $string = ''){
 	 without selector
 ****************************************************/
 function wppizza_country_info($key = false, $value = false, $selector = false, $exclude = false){
-
 	/*
 		defining some address formats
 		principally to define if
@@ -924,230 +757,235 @@ function wppizza_country_info($key = false, $value = false, $selector = false, $
 
 	/* include selector */
 	if($selector){
-		$country_info['SELECT']=array('name' => __('--select--','wppizza-admin'), 'ISO' => '', 'ISO2' => '', 'prefix' => '', 'address_format'=> array());
+		$country_info['SELECT']=array('name' => __('-- Select --','wppizza-admin'), 'ISO' => '', 'ISO2' => '', 'currency'=> array(), 'prefix' => '', 'address_format'=> array());
 	}
 
-	$country_info['AFG'] = array('name' => __('Afghanistan','wppizza-admin'), 'ISO' => 'AFG', 'ISO2' => 'AF', 'prefix' => '93', 'address_format' => $address_format[0]);
-	$country_info['ALB'] = array('name' => __('Albania','wppizza-admin'), 'ISO' => 'ALB', 'ISO2' => 'AL', 'prefix' => '355', 'address_format' => $address_format[0]);
-	$country_info['DZA'] = array('name' => __('Algeria','wppizza-admin'), 'ISO' => 'DZA', 'ISO2' => 'DZ', 'prefix' => '213', 'address_format' => $address_format[0]);
-	$country_info['ASM'] = array('name' => __('American Samoa','wppizza-admin'), 'ISO' => 'ASM', 'ISO2' => 'AS', 'prefix' => '1684', 'address_format' => $address_format[0]);
-	$country_info['AND'] = array('name' => __('Andorra','wppizza-admin'), 'ISO' => 'AND', 'ISO2' => 'AD', 'prefix' => '376', 'address_format' => $address_format[0]);
-	$country_info['AGO'] = array('name' => __('Angola','wppizza-admin'), 'ISO' => 'AGO', 'ISO2' => 'AO', 'prefix' => '244', 'address_format' => $address_format[0]);
-	$country_info['AIA'] = array('name' => __('Anguilla','wppizza-admin'), 'ISO' => 'AIA', 'ISO2' => 'AI', 'prefix' => '1264', 'address_format' => $address_format[0]);
-	$country_info['ATG'] = array('name' => __('Antigua and Barbuda','wppizza-admin'), 'ISO' => 'ATG', 'ISO2' => 'AG', 'prefix' => '1268', 'address_format' => $address_format[0]);
-	$country_info['ARG'] = array('name' => __('Argentina','wppizza-admin'), 'ISO' => 'ARG', 'ISO2' => 'AR', 'prefix' => '54', 'address_format' => $address_format[0]);
-	$country_info['ARM'] = array('name' => __('Armenia','wppizza-admin'), 'ISO' => 'ARM', 'ISO2' => 'AM', 'prefix' => '374', 'address_format' => $address_format[0]);
-	$country_info['ABW'] = array('name' => __('Aruba','wppizza-admin'), 'ISO' => 'ABW', 'ISO2' => 'AW', 'prefix' => '297', 'address_format' => $address_format[0]);
-	$country_info['AUS'] = array('name' => __('Australia','wppizza-admin'), 'ISO' => 'AUS', 'ISO2' => 'AU', 'prefix' => '61', 'address_format' => $address_format[1]);
-	$country_info['AUT'] = array('name' => __('Austria','wppizza-admin'), 'ISO' => 'AUT', 'ISO2' => 'AT', 'prefix' => '43', 'address_format' => $address_format[0]);
-	$country_info['AZE'] = array('name' => __('Azerbaijan','wppizza-admin'), 'ISO' => 'AZE', 'ISO2' => 'AZ', 'prefix' => '994', 'address_format' => $address_format[0]);
-	$country_info['BHS'] = array('name' => __('Bahamas','wppizza-admin'), 'ISO' => 'BHS', 'ISO2' => 'BS', 'prefix' => '1242', 'address_format' => $address_format[0]);
-	$country_info['BHR'] = array('name' => __('Bahrain','wppizza-admin'), 'ISO' => 'BHR', 'ISO2' => 'BH', 'prefix' => '973', 'address_format' => $address_format[0]);
-	$country_info['BGD'] = array('name' => __('Bangladesh','wppizza-admin'), 'ISO' => 'BGD', 'ISO2' => 'BD', 'prefix' => '880', 'address_format' => $address_format[0]);
-	$country_info['BRB'] = array('name' => __('Barbados','wppizza-admin'), 'ISO' => 'BRB', 'ISO2' => 'BB', 'prefix' => '1246', 'address_format' => $address_format[0]);
-	$country_info['BLR'] = array('name' => __('Belarus','wppizza-admin'), 'ISO' => 'BLR', 'ISO2' => 'BY', 'prefix' => '375', 'address_format' => $address_format[0]);
-	$country_info['BEL'] = array('name' => __('Belgium','wppizza-admin'), 'ISO' => 'BEL', 'ISO2' => 'BE', 'prefix' => '32', 'address_format' => $address_format[0]);
-	$country_info['BLZ'] = array('name' => __('Belize','wppizza-admin'), 'ISO' => 'BLZ', 'ISO2' => 'BZ', 'prefix' => '501', 'address_format' => $address_format[0]);
-	$country_info['BEN'] = array('name' => __('Benin','wppizza-admin'), 'ISO' => 'BEN', 'ISO2' => 'BJ', 'prefix' => '229', 'address_format' => $address_format[0]);
-	$country_info['BMU'] = array('name' => __('Bermuda','wppizza-admin'), 'ISO' => 'BMU', 'ISO2' => 'BM', 'prefix' => '1441', 'address_format' => $address_format[0]);
-	$country_info['BTN'] = array('name' => __('Bhutan','wppizza-admin'), 'ISO' => 'BTN', 'ISO2' => 'BT', 'prefix' => '975', 'address_format' => $address_format[0]);
-	$country_info['BOL'] = array('name' => __('Bolivia','wppizza-admin'), 'ISO' => 'BOL', 'ISO2' => 'BO', 'prefix' => '591', 'address_format' => $address_format[0]);
-	$country_info['BIH'] = array('name' => __('Bosnia and Herzegovina','wppizza-admin'), 'ISO' => 'BIH', 'ISO2' => 'BA', 'prefix' => '387', 'address_format' => $address_format[0]);
-	$country_info['BWA'] = array('name' => __('Botswana','wppizza-admin'), 'ISO' => 'BWA', 'ISO2' => 'BW', 'prefix' => '267', 'address_format' => $address_format[0]);
-	$country_info['BRA'] = array('name' => __('Brazil','wppizza-admin'), 'ISO' => 'BRA', 'ISO2' => 'BR', 'prefix' => '55', 'address_format' => $address_format[0]);
-	$country_info['BRN'] = array('name' => __('Brunei Darussalam','wppizza-admin'), 'ISO' => 'BRN', 'ISO2' => 'BN', 'prefix' => '673', 'address_format' => $address_format[0]);
-	$country_info['BGR'] = array('name' => __('Bulgaria','wppizza-admin'), 'ISO' => 'BGR', 'ISO2' => 'BG', 'prefix' => '359', 'address_format' => $address_format[0]);
-	$country_info['BFA'] = array('name' => __('Burkina Faso','wppizza-admin'), 'ISO' => 'BFA', 'ISO2' => 'BF', 'prefix' => '226', 'address_format' => $address_format[0]);
-	$country_info['BDI'] = array('name' => __('Burundi','wppizza-admin'), 'ISO' => 'BDI', 'ISO2' => 'BI', 'prefix' => '257', 'address_format' => $address_format[0]);
-	$country_info['KHM'] = array('name' => __('Cambodia','wppizza-admin'), 'ISO' => 'KHM', 'ISO2' => 'KH', 'prefix' => '855', 'address_format' => $address_format[0]);
-	$country_info['CMR'] = array('name' => __('Cameroon','wppizza-admin'), 'ISO' => 'CMR', 'ISO2' => 'CM', 'prefix' => '237', 'address_format' => $address_format[0]);
-	$country_info['CAN'] = array('name' => __('Canada','wppizza-admin'), 'ISO' => 'CAN', 'ISO2' => 'CA', 'prefix' => '1', 'address_format' => $address_format[1]);
-	$country_info['CPV'] = array('name' => __('Cape Verde','wppizza-admin'), 'ISO' => 'CPV', 'ISO2' => 'CV', 'prefix' => '238', 'address_format' => $address_format[0]);
-	$country_info['CYM'] = array('name' => __('Cayman Islands','wppizza-admin'), 'ISO' => 'CYM', 'ISO2' => 'KY', 'prefix' => '1345', 'address_format' => $address_format[0]);
-	$country_info['CAF'] = array('name' => __('Central African Republic','wppizza-admin'), 'ISO' => 'CAF', 'ISO2' => 'CF', 'prefix' => '236', 'address_format' => $address_format[0]);
-	$country_info['TCD'] = array('name' => __('Chad','wppizza-admin'), 'ISO' => 'TCD', 'ISO2' => 'TD', 'prefix' => '235', 'address_format' => $address_format[0]);
-	$country_info['CHL'] = array('name' => __('Chile','wppizza-admin'), 'ISO' => 'CHL', 'ISO2' => 'CL', 'prefix' => '56', 'address_format' => $address_format[0]);
-	$country_info['CHN'] = array('name' => __('China','wppizza-admin'), 'ISO' => 'CHN', 'ISO2' => 'CN', 'prefix' => '86', 'address_format' => $address_format[0]);
-	$country_info['COL'] = array('name' => __('Colombia','wppizza-admin'), 'ISO' => 'COL', 'ISO2' => 'CO', 'prefix' => '57', 'address_format' => $address_format[0]);
-	$country_info['COM'] = array('name' => __('Comoros','wppizza-admin'), 'ISO' => 'COM', 'ISO2' => 'KM', 'prefix' => '269', 'address_format' => $address_format[0]);
-	$country_info['COD'] = array('name' => __('Congo - Democratic Republic of the','wppizza-admin'), 'ISO' => 'COD', 'ISO2' => 'CG', 'prefix' => '243', 'address_format' => $address_format[0]);
-	$country_info['COG'] = array('name' => __('Congo - Republic of the','wppizza-admin'), 'ISO' => 'COG', 'ISO2' => 'CD', 'prefix' => '242', 'address_format' => $address_format[0]);
-	$country_info['COK'] = array('name' => __('Cook Islands','wppizza-admin'), 'ISO' => 'COK', 'ISO2' => 'CK', 'prefix' => '682', 'address_format' => $address_format[0]);
-	$country_info['CRI'] = array('name' => __('Costa Rica','wppizza-admin'), 'ISO' => 'CRI', 'ISO2' => 'CR', 'prefix' => '506', 'address_format' => $address_format[0]);
-	$country_info['CIV'] = array('name' => __('Cote D\'Ivory','wppizza-admin'), 'ISO' => 'CIV', 'ISO2' => 'CI', 'prefix' => '225', 'address_format' => $address_format[0]);
-	$country_info['HRV'] = array('name' => __('Croatia','wppizza-admin'), 'ISO' => 'HRV', 'ISO2' => 'HR', 'prefix' => '385', 'address_format' => $address_format[0]);
-	$country_info['CUB'] = array('name' => __('Cuba','wppizza-admin'), 'ISO' => 'CUB', 'ISO2' => 'CU', 'prefix' => '53', 'address_format' => $address_format[0]);
-	$country_info['CYP'] = array('name' => __('Cyprus','wppizza-admin'), 'ISO' => 'CYP', 'ISO2' => 'CY', 'prefix' => '357', 'address_format' => $address_format[0]);
-	$country_info['CZE'] = array('name' => __('Czech Republic','wppizza-admin'), 'ISO' => 'CZE', 'ISO2' => 'CZ', 'prefix' => '420', 'address_format' => $address_format[0]);
-	$country_info['DNK'] = array('name' => __('Denmark','wppizza-admin'), 'ISO' => 'DNK', 'ISO2' => 'DK', 'prefix' => '45', 'address_format' => $address_format[0]);
-	$country_info['DJI'] = array('name' => __('Djibouti','wppizza-admin'), 'ISO' => 'DJI', 'ISO2' => 'DJ', 'prefix' => '253', 'address_format' => $address_format[0]);
-	$country_info['DMA'] = array('name' => __('Dominica','wppizza-admin'), 'ISO' => 'DMA', 'ISO2' => 'DM', 'prefix' => '1767', 'address_format' => $address_format[0]);
-	$country_info['DOM'] = array('name' => __('Dominican Republic','wppizza-admin'), 'ISO' => 'DOM', 'ISO2' => 'DO', 'prefix' => '18', 'address_format' => $address_format[0]);
-	$country_info['ECU'] = array('name' => __('Ecuador','wppizza-admin'), 'ISO' => 'ECU', 'ISO2' => 'EC', 'prefix' => '593', 'address_format' => $address_format[0]);
-	$country_info['EGY'] = array('name' => __('Egypt','wppizza-admin'), 'ISO' => 'EGY', 'ISO2' => 'EG', 'prefix' => '20', 'address_format' => $address_format[0]);
-	$country_info['SLV'] = array('name' => __('El Salvador','wppizza-admin'), 'ISO' => 'SLV', 'ISO2' => 'SV', 'prefix' => '503', 'address_format' => $address_format[0]);
-	$country_info['GNQ'] = array('name' => __('Equatorial Guinea','wppizza-admin'), 'ISO' => 'GNQ', 'ISO2' => 'GQ', 'prefix' => '240', 'address_format' => $address_format[0]);
-	$country_info['ERI'] = array('name' => __('Eritrea','wppizza-admin'), 'ISO' => 'ERI', 'ISO2' => 'ER', 'prefix' => '291', 'address_format' => $address_format[0]);
-	$country_info['EST'] = array('name' => __('Estonia','wppizza-admin'), 'ISO' => 'EST', 'ISO2' => 'EE', 'prefix' => '372', 'address_format' => $address_format[0]);
-	$country_info['ETH'] = array('name' => __('Ethiopia','wppizza-admin'), 'ISO' => 'ETH', 'ISO2' => 'ET', 'prefix' => '251', 'address_format' => $address_format[0]);
-	$country_info['FLK'] = array('name' => __('Falkland Islands / Malvinas','wppizza-admin'), 'ISO' => 'FLK', 'ISO2' => 'FK', 'prefix' => '500', 'address_format' => $address_format[0]);
-	$country_info['FRO'] = array('name' => __('Faroe Islands','wppizza-admin'), 'ISO' => 'FRO', 'ISO2' => 'FO', 'prefix' => '298', 'address_format' => $address_format[0]);
-	$country_info['FJI'] = array('name' => __('Fiji','wppizza-admin'), 'ISO' => 'FJI', 'ISO2' => 'FJ', 'prefix' => '679', 'address_format' => $address_format[0]);
-	$country_info['FIN'] = array('name' => __('Finland','wppizza-admin'), 'ISO' => 'FIN', 'ISO2' => 'FI', 'prefix' => '358', 'address_format' => $address_format[0]);
-	$country_info['FRA'] = array('name' => __('France','wppizza-admin'), 'ISO' => 'FRA', 'ISO2' => 'FR', 'prefix' => '33', 'address_format' => $address_format[0]);
-	$country_info['GUF'] = array('name' => __('French Guiana','wppizza-admin'), 'ISO' => 'GUF', 'ISO2' => 'GF', 'prefix' => '594', 'address_format' => $address_format[0]);
-	$country_info['PYF'] = array('name' => __('French Polynesia','wppizza-admin'), 'ISO' => 'PYF', 'ISO2' => 'PF', 'prefix' => '689', 'address_format' => $address_format[0]);
-	$country_info['GAB'] = array('name' => __('Gabon','wppizza-admin'), 'ISO' => 'GAB', 'ISO2' => 'GA', 'prefix' => '241', 'address_format' => $address_format[0]);
-	$country_info['GMB'] = array('name' => __('Gambia','wppizza-admin'), 'ISO' => 'GMB', 'ISO2' => 'GM', 'prefix' => '220', 'address_format' => $address_format[0]);
-	$country_info['GEO'] = array('name' => __('Georgia','wppizza-admin'), 'ISO' => 'GEO', 'ISO2' => 'GE', 'prefix' => '995', 'address_format' => $address_format[0]);
-	$country_info['DEU'] = array('name' => __('Germany','wppizza-admin'), 'ISO' => 'DEU', 'ISO2' => 'DE', 'prefix' => '49', 'address_format' => $address_format[0]);
-	$country_info['GHA'] = array('name' => __('Ghana','wppizza-admin'), 'ISO' => 'GHA', 'ISO2' => 'GH', 'prefix' => '233', 'address_format' => $address_format[0]);
-	$country_info['GIB'] = array('name' => __('Gibraltar','wppizza-admin'), 'ISO' => 'GIB', 'ISO2' => 'GI', 'prefix' => '350', 'address_format' => $address_format[0]);
-	$country_info['GRC'] = array('name' => __('Greece','wppizza-admin'), 'ISO' => 'GRC', 'ISO2' => 'GR', 'prefix' => '30', 'address_format' => $address_format[0]);
-	$country_info['GRL'] = array('name' => __('Greenland','wppizza-admin'), 'ISO' => 'GRL', 'ISO2' => 'GL', 'prefix' => '299', 'address_format' => $address_format[0]);
-	$country_info['GRD'] = array('name' => __('Grenada','wppizza-admin'), 'ISO' => 'GRD', 'ISO2' => 'GD', 'prefix' => '1473', 'address_format' => $address_format[0]);
-	$country_info['GLP'] = array('name' => __('Guadeloupe','wppizza-admin'), 'ISO' => 'GLP', 'ISO2' => 'GP', 'prefix' => '590', 'address_format' => $address_format[0]);
-	$country_info['GUM'] = array('name' => __('Guam','wppizza-admin'), 'ISO' => 'GUM', 'ISO2' => 'GU', 'prefix' => '1671', 'address_format' => $address_format[0]);
-	$country_info['GTM'] = array('name' => __('Guatemala','wppizza-admin'), 'ISO' => 'GTM', 'ISO2' => 'GT', 'prefix' => '502', 'address_format' => $address_format[0]);
-	$country_info['GGY'] = array('name' => __('Guernsey','wppizza-admin'), 'ISO' => 'GGY', 'ISO2' => 'GG', 'prefix' => '44', 'address_format' => $address_format[0]);
-	$country_info['GIN'] = array('name' => __('Guinea','wppizza-admin'), 'ISO' => 'GIN', 'ISO2' => 'GN', 'prefix' => '224', 'address_format' => $address_format[0]);
-	$country_info['GNB'] = array('name' => __('Guinea-Bissau','wppizza-admin'), 'ISO' => 'GNB', 'ISO2' => 'GW', 'prefix' => '245', 'address_format' => $address_format[0]);
-	$country_info['GUY'] = array('name' => __('Guyana','wppizza-admin'), 'ISO' => 'GUY', 'ISO2' => 'GY', 'prefix' => '592', 'address_format' => $address_format[0]);
-	$country_info['HTI'] = array('name' => __('Haiti','wppizza-admin'), 'ISO' => 'HTI', 'ISO2' => 'HT', 'prefix' => '509', 'address_format' => $address_format[0]);
-	$country_info['HND'] = array('name' => __('Honduras','wppizza-admin'), 'ISO' => 'HND', 'ISO2' => 'HN', 'prefix' => '504', 'address_format' => $address_format[0]);
-	$country_info['HKG'] = array('name' => __('Hong Kong','wppizza-admin'), 'ISO' => 'HKG', 'ISO2' => 'HK', 'prefix' => '852', 'address_format' => $address_format[0]);
-	$country_info['HUN'] = array('name' => __('Hungary','wppizza-admin'), 'ISO' => 'HUN', 'ISO2' => 'HU', 'prefix' => '36', 'address_format' => $address_format[0]);
-	$country_info['ISL'] = array('name' => __('Iceland','wppizza-admin'), 'ISO' => 'ISL', 'ISO2' => 'IS', 'prefix' => '354', 'address_format' => $address_format[0]);
-	$country_info['IND'] = array('name' => __('India','wppizza-admin'), 'ISO' => 'IND', 'ISO2' => 'IN', 'prefix' => '91', 'address_format' => $address_format[0]);
-	$country_info['IDN'] = array('name' => __('Indonesia','wppizza-admin'), 'ISO' => 'IDN', 'ISO2' => 'ID', 'prefix' => '62', 'address_format' => $address_format[0]);
-	$country_info['IRN'] = array('name' => __('Iran','wppizza-admin'), 'ISO' => 'IRN', 'ISO2' => 'IR', 'prefix' => '98', 'address_format' => $address_format[0]);
-	$country_info['IRQ'] = array('name' => __('Iraq','wppizza-admin'), 'ISO' => 'IRQ', 'ISO2' => 'IQ', 'prefix' => '964', 'address_format' => $address_format[0]);
-	$country_info['IRL'] = array('name' => __('Ireland','wppizza-admin'), 'ISO' => 'IRL', 'ISO2' => 'IE', 'prefix' => '353', 'address_format' => $address_format[0]);
-	$country_info['IMN'] = array('name' => __('Isle of Man','wppizza-admin'), 'ISO' => 'IMN', 'ISO2' => 'IM', 'prefix' => '44', 'address_format' => $address_format[0]);
-	$country_info['ISR'] = array('name' => __('Israel','wppizza-admin'), 'ISO' => 'ISR', 'ISO2' => 'IL', 'prefix' => '972', 'address_format' => $address_format[0]);
-	$country_info['ITA'] = array('name' => __('Italy','wppizza-admin'), 'ISO' => 'ITA', 'ISO2' => 'IT', 'prefix' => '39', 'address_format' => $address_format[0]);
-	$country_info['JAM'] = array('name' => __('Jamaica','wppizza-admin'), 'ISO' => 'JAM', 'ISO2' => 'JM', 'prefix' => '1876', 'address_format' => $address_format[0]);
-	$country_info['JPN'] = array('name' => __('Japan','wppizza-admin'), 'ISO' => 'JPN', 'ISO2' => 'JP', 'prefix' => '81', 'address_format' => $address_format[0]);
-	$country_info['JEY'] = array('name' => __('Jersey','wppizza-admin'), 'ISO' => 'JEY', 'ISO2' => 'JE', 'prefix' => '44', 'address_format' => $address_format[0]);
-	$country_info['JOR'] = array('name' => __('Jordan','wppizza-admin'), 'ISO' => 'JOR', 'ISO2' => 'JO', 'prefix' => '962', 'address_format' => $address_format[0]);
-	$country_info['KAZ'] = array('name' => __('Kazakhstan','wppizza-admin'), 'ISO' => 'KAZ', 'ISO2' => 'KZ', 'prefix' => '7', 'address_format' => $address_format[0]);
-	$country_info['KEN'] = array('name' => __('Kenya','wppizza-admin'), 'ISO' => 'KEN', 'ISO2' => 'KE', 'prefix' => '254', 'address_format' => $address_format[0]);
-	$country_info['PRK'] = array('name' => __('Korea North','wppizza-admin'), 'ISO' => 'PRK', 'ISO2' => 'KP', 'prefix' => '850', 'address_format' => $address_format[0]);
-	$country_info['KOR'] = array('name' => __('Korea South','wppizza-admin'), 'ISO' => 'KOR', 'ISO2' => 'KR', 'prefix' => '82', 'address_format' => $address_format[0]);
-	$country_info['KWT'] = array('name' => __('Kuwait','wppizza-admin'), 'ISO' => 'KWT', 'ISO2' => 'KW', 'prefix' => '965', 'address_format' => $address_format[0]);
-	$country_info['KGZ'] = array('name' => __('Kyrgyzstan','wppizza-admin'), 'ISO' => 'KGZ', 'ISO2' => 'KG', 'prefix' => '996', 'address_format' => $address_format[0]);
-	$country_info['LAO'] = array('name' => __('People\'s Democratic Republic','wppizza-admin'), 'ISO' => 'LAO', 'ISO2' => 'LA', 'prefix' => '856', 'address_format' => $address_format[0]);
-	$country_info['LVA'] = array('name' => __('Latvia','wppizza-admin'), 'ISO' => 'LVA', 'ISO2' => 'LV', 'prefix' => '371', 'address_format' => $address_format[0]);
-	$country_info['LBN'] = array('name' => __('Lebanon','wppizza-admin'), 'ISO' => 'LBN', 'ISO2' => 'LB', 'prefix' => '961', 'address_format' => $address_format[0]);
-	$country_info['LSO'] = array('name' => __('Lesotho','wppizza-admin'), 'ISO' => 'LSO', 'ISO2' => 'LS', 'prefix' => '266', 'address_format' => $address_format[0]);
-	$country_info['LBR'] = array('name' => __('Liberia','wppizza-admin'), 'ISO' => 'LBR', 'ISO2' => 'LR', 'prefix' => '231', 'address_format' => $address_format[0]);
-	$country_info['LBY'] = array('name' => __('Libya','wppizza-admin'), 'ISO' => 'LBY', 'ISO2' => 'LY', 'prefix' => '218', 'address_format' => $address_format[0]);
-	$country_info['LIE'] = array('name' => __('Liechtenstein','wppizza-admin'), 'ISO' => 'LIE', 'ISO2' => 'LI', 'prefix' => '423', 'address_format' => $address_format[0]);
-	$country_info['LTU'] = array('name' => __('Lithuania','wppizza-admin'), 'ISO' => 'LTU', 'ISO2' => 'LT', 'prefix' => '370', 'address_format' => $address_format[0]);
-	$country_info['LUX'] = array('name' => __('Luxembourg','wppizza-admin'), 'ISO' => 'LUX', 'ISO2' => 'LU', 'prefix' => '352', 'address_format' => $address_format[0]);
-	$country_info['MAC'] = array('name' => __('Macao','wppizza-admin'), 'ISO' => 'MAC', 'ISO2' => 'MO', 'prefix' => '853', 'address_format' => $address_format[0]);
-	$country_info['MKD'] = array('name' => __('Macedonia','wppizza-admin'), 'ISO' => 'MKD', 'ISO2' => 'MK', 'prefix' => '389', 'address_format' => $address_format[0]);
-	$country_info['MDG'] = array('name' => __('Madagascar','wppizza-admin'), 'ISO' => 'MDG', 'ISO2' => 'MG', 'prefix' => '261', 'address_format' => $address_format[0]);
-	$country_info['MWI'] = array('name' => __('Malawi','wppizza-admin'), 'ISO' => 'MWI', 'ISO2' => 'MW', 'prefix' => '265', 'address_format' => $address_format[0]);
-	$country_info['MYS'] = array('name' => __('Malaysia','wppizza-admin'), 'ISO' => 'MYS', 'ISO2' => 'MY', 'prefix' => '60', 'address_format' => $address_format[0]);
-	$country_info['MDV'] = array('name' => __('Maldives','wppizza-admin'), 'ISO' => 'MDV', 'ISO2' => 'MV', 'prefix' => '960', 'address_format' => $address_format[0]);
-	$country_info['MLI'] = array('name' => __('Mali','wppizza-admin'), 'ISO' => 'MLI', 'ISO2' => 'ML', 'prefix' => '223', 'address_format' => $address_format[0]);
-	$country_info['MLT'] = array('name' => __('Malta','wppizza-admin'), 'ISO' => 'MLT', 'ISO2' => 'MT', 'prefix' => '356', 'address_format' => $address_format[0]);
-	$country_info['MTQ'] = array('name' => __('Martinique','wppizza-admin'), 'ISO' => 'MTQ', 'ISO2' => 'MQ', 'prefix' => '596', 'address_format' => $address_format[0]);
-	$country_info['MRT'] = array('name' => __('Mauritania','wppizza-admin'), 'ISO' => 'MRT', 'ISO2' => 'MR', 'prefix' => '222', 'address_format' => $address_format[0]);
-	$country_info['MUS'] = array('name' => __('Mauritius','wppizza-admin'), 'ISO' => 'MUS', 'ISO2' => 'MU', 'prefix' => '230', 'address_format' => $address_format[0]);
-	$country_info['MEX'] = array('name' => __('Mexico','wppizza-admin'), 'ISO' => 'MEX', 'ISO2' => 'MX', 'prefix' => '52', 'address_format' => $address_format[0]);
-	$country_info['FSM'] = array('name' => __('Micronesia','wppizza-admin'), 'ISO' => 'FSM', 'ISO2' => 'FM', 'prefix' => '691', 'address_format' => $address_format[0]);
-	$country_info['MDA'] = array('name' => __('Moldova','wppizza-admin'), 'ISO' => 'MDA', 'ISO2' => 'MD', 'prefix' => '373', 'address_format' => $address_format[0]);
-	$country_info['MCO'] = array('name' => __('Monaco','wppizza-admin'), 'ISO' => 'MCO', 'ISO2' => 'MC', 'prefix' => '377', 'address_format' => $address_format[0]);
-	$country_info['MNG'] = array('name' => __('Mongolia','wppizza-admin'), 'ISO' => 'MNG', 'ISO2' => 'MN', 'prefix' => '976', 'address_format' => $address_format[0]);
-	$country_info['MNE'] = array('name' => __('Montenegro','wppizza-admin'), 'ISO' => 'MNE', 'ISO2' => 'ME', 'prefix' => '382', 'address_format' => $address_format[0]);
-	$country_info['MSR'] = array('name' => __('Montserrat','wppizza-admin'), 'ISO' => 'MSR', 'ISO2' => 'MS', 'prefix' => '1664', 'address_format' => $address_format[0]);
-	$country_info['MAR'] = array('name' => __('Morocco','wppizza-admin'), 'ISO' => 'MAR', 'ISO2' => 'MA', 'prefix' => '212', 'address_format' => $address_format[0]);
-	$country_info['MOZ'] = array('name' => __('Mozambique','wppizza-admin'), 'ISO' => 'MOZ', 'ISO2' => 'MZ', 'prefix' => '258', 'address_format' => $address_format[0]);
-	$country_info['NAM'] = array('name' => __('Namibia','wppizza-admin'), 'ISO' => 'NAM', 'ISO2' => 'NA', 'prefix' => '264', 'address_format' => $address_format[0]);
-	$country_info['NRU'] = array('name' => __('Nauru','wppizza-admin'), 'ISO' => 'NRU', 'ISO2' => 'NR', 'prefix' => '674', 'address_format' => $address_format[0]);
-	$country_info['NPL'] = array('name' => __('Nepal','wppizza-admin'), 'ISO' => 'NPL', 'ISO2' => 'NP', 'prefix' => '977', 'address_format' => $address_format[0]);
-	$country_info['NLD'] = array('name' => __('Netherlands','wppizza-admin'), 'ISO' => 'NLD', 'ISO2' => 'NL', 'prefix' => '31', 'address_format' => $address_format[0]);
-	$country_info['ANT'] = array('name' => __('Netherlands Antilles','wppizza-admin'), 'ISO' => 'ANT', 'ISO2' => 'AN', 'prefix' => '599', 'address_format' => $address_format[0]);
-	$country_info['NCL'] = array('name' => __('New Caledonia','wppizza-admin'), 'ISO' => 'NCL', 'ISO2' => 'NC', 'prefix' => '687', 'address_format' => $address_format[0]);
-	$country_info['NZL'] = array('name' => __('New Zealand','wppizza-admin'), 'ISO' => 'NZL', 'ISO2' => 'NZ', 'prefix' => '64', 'address_format' => $address_format[1]);
-	$country_info['NIC'] = array('name' => __('Nicaragua','wppizza-admin'), 'ISO' => 'NIC', 'ISO2' => 'NI', 'prefix' => '505', 'address_format' => $address_format[0]);
-	$country_info['NER'] = array('name' => __('Niger','wppizza-admin'), 'ISO' => 'NER', 'ISO2' => 'NE', 'prefix' => '227', 'address_format' => $address_format[0]);
-	$country_info['NGA'] = array('name' => __('Nigeria','wppizza-admin'), 'ISO' => 'NGA', 'ISO2' => 'NG', 'prefix' => '234', 'address_format' => $address_format[0]);
-	$country_info['NFK'] = array('name' => __('Norfolk Island','wppizza-admin'), 'ISO' => 'NFK', 'ISO2' => 'NF', 'prefix' => '672', 'address_format' => $address_format[0]);
-	$country_info['MNP'] = array('name' => __('Northern Mariana Islands','wppizza-admin'), 'ISO' => 'MNP', 'ISO2' => 'MP', 'prefix' => '1670', 'address_format' => $address_format[0]);
-	$country_info['NOR'] = array('name' => __('Norway','wppizza-admin'), 'ISO' => 'NOR', 'ISO2' => 'NO', 'prefix' => '47', 'address_format' => $address_format[0]);
-	$country_info['OMN'] = array('name' => __('Oman','wppizza-admin'), 'ISO' => 'OMN', 'ISO2' => 'OM', 'prefix' => '968', 'address_format' => $address_format[0]);
-	$country_info['PAK'] = array('name' => __('Pakistan','wppizza-admin'), 'ISO' => 'PAK', 'ISO2' => 'PK', 'prefix' => '92', 'address_format' => $address_format[0]);
-	$country_info['PLW'] = array('name' => __('Palau','wppizza-admin'), 'ISO' => 'PLW', 'ISO2' => 'PW', 'prefix' => '680', 'address_format' => $address_format[0]);
-	$country_info['PSE'] = array('name' => __('Palestine','wppizza-admin'), 'ISO' => 'PSE', 'ISO2' => 'PS', 'prefix' => '970', 'address_format' => $address_format[0]);
-	$country_info['PAN'] = array('name' => __('Panama','wppizza-admin'), 'ISO' => 'PAN', 'ISO2' => 'PA', 'prefix' => '507', 'address_format' => $address_format[0]);
-	$country_info['PNG'] = array('name' => __('Papua New Guinea','wppizza-admin'), 'ISO' => 'PNG', 'ISO2' => 'PG', 'prefix' => '675', 'address_format' => $address_format[0]);
-	$country_info['PRY'] = array('name' => __('Paraguay','wppizza-admin'), 'ISO' => 'PRY', 'ISO2' => 'PY', 'prefix' => '595', 'address_format' => $address_format[0]);
-	$country_info['PER'] = array('name' => __('Peru','wppizza-admin'), 'ISO' => 'PER', 'ISO2' => 'PE', 'prefix' => '51', 'address_format' => $address_format[0]);
-	$country_info['PHL'] = array('name' => __('Philippines','wppizza-admin'), 'ISO' => 'PHL', 'ISO2' => 'PH', 'prefix' => '63', 'address_format' => $address_format[0]);
-	$country_info['POL'] = array('name' => __('Poland','wppizza-admin'), 'ISO' => 'POL', 'ISO2' => 'PL', 'prefix' => '48', 'address_format' => $address_format[0]);
-	$country_info['PRT'] = array('name' => __('Portugal','wppizza-admin'), 'ISO' => 'PRT', 'ISO2' => 'PT', 'prefix' => '351', 'address_format' => $address_format[0]);
-	$country_info['PRI'] = array('name' => __('Puerto Rico','wppizza-admin'), 'ISO' => 'PRI', 'ISO2' => 'PR', 'prefix' => '1939', 'address_format' => $address_format[0]);
-	$country_info['QAT'] = array('name' => __('Qatar','wppizza-admin'), 'ISO' => 'QAT', 'ISO2' => 'QA', 'prefix' => '974', 'address_format' => $address_format[0]);
-	$country_info['REU'] = array('name' => __('Reunion','wppizza-admin'), 'ISO' => 'REU', 'ISO2' => 'RE', 'prefix' => '262', 'address_format' => $address_format[0]);
-	$country_info['ROU'] = array('name' => __('Romania','wppizza-admin'), 'ISO' => 'ROU', 'ISO2' => 'RO', 'prefix' => '40', 'address_format' => $address_format[0]);
-	$country_info['RUS'] = array('name' => __('Russia','wppizza-admin'), 'ISO' => 'RUS', 'ISO2' => 'RU', 'prefix' => '7', 'address_format' => $address_format[0]);
-	$country_info['RWA'] = array('name' => __('Rwanda','wppizza-admin'), 'ISO' => 'RWA', 'ISO2' => 'RW', 'prefix' => '250', 'address_format' => $address_format[0]);
-	$country_info['KNA'] = array('name' => __('Saint Kitts and Nevis','wppizza-admin'), 'ISO' => 'KNA', 'ISO2' => 'KN', 'prefix' => '1869', 'address_format' => $address_format[0]);
-	$country_info['LCA'] = array('name' => __('Saint Lucia','wppizza-admin'), 'ISO' => 'LCA', 'ISO2' => 'LC', 'prefix' => '1758', 'address_format' => $address_format[0]);
-	$country_info['SPM'] = array('name' => __('Saint Pierre and Miquelon','wppizza-admin'), 'ISO' => 'SPM', 'ISO2' => 'PM', 'prefix' => '508', 'address_format' => $address_format[0]);
-	$country_info['VCT'] = array('name' => __('Saint Vincent and the Grenadines','wppizza-admin'), 'ISO' => 'VCT', 'ISO2' => 'VC', 'prefix' => '1784', 'address_format' => $address_format[0]);
-	$country_info['WSM'] = array('name' => __('Samoa','wppizza-admin'), 'ISO' => 'WSM', 'ISO2' => 'WS', 'prefix' => '685', 'address_format' => $address_format[0]);
-	$country_info['SMR'] = array('name' => __('San Marino','wppizza-admin'), 'ISO' => 'SMR', 'ISO2' => 'SM', 'prefix' => '378', 'address_format' => $address_format[0]);
-	$country_info['STP'] = array('name' => __('Sao Tome and Principe','wppizza-admin'), 'ISO' => 'STP', 'ISO2' => 'ST', 'prefix' => '239', 'address_format' => $address_format[0]);
-	$country_info['SAU'] = array('name' => __('Saudi Arabia','wppizza-admin'), 'ISO' => 'SAU', 'ISO2' => 'SA', 'prefix' => '966', 'address_format' => $address_format[0]);
-	$country_info['SEN'] = array('name' => __('Senegal','wppizza-admin'), 'ISO' => 'SEN', 'ISO2' => 'SN', 'prefix' => '221', 'address_format' => $address_format[0]);
-	$country_info['SRB'] = array('name' => __('Serbia','wppizza-admin'), 'ISO' => 'SRB', 'ISO2' => 'RS', 'prefix' => '381', 'address_format' => $address_format[0]);
-	$country_info['SYC'] = array('name' => __('Seychelles','wppizza-admin'), 'ISO' => 'SYC', 'ISO2' => 'SC', 'prefix' => '248', 'address_format' => $address_format[0]);
-	$country_info['SLE'] = array('name' => __('Sierra Leone','wppizza-admin'), 'ISO' => 'SLE', 'ISO2' => 'SL', 'prefix' => '232', 'address_format' => $address_format[0]);
-	$country_info['SGP'] = array('name' => __('Singapore','wppizza-admin'), 'ISO' => 'SGP', 'ISO2' => 'SG', 'prefix' => '65', 'address_format' => $address_format[0]);
-	$country_info['SVK'] = array('name' => __('Slovakia','wppizza-admin'), 'ISO' => 'SVK', 'ISO2' => 'SK', 'prefix' => '421', 'address_format' => $address_format[0]);
-	$country_info['SVN'] = array('name' => __('Slovenia','wppizza-admin'), 'ISO' => 'SVN', 'ISO2' => 'SI', 'prefix' => '386', 'address_format' => $address_format[0]);
-	$country_info['SLB'] = array('name' => __('Solomon Islands','wppizza-admin'), 'ISO' => 'SLB', 'ISO2' => 'SB', 'prefix' => '677', 'address_format' => $address_format[0]);
-	$country_info['SOM'] = array('name' => __('Somalia','wppizza-admin'), 'ISO' => 'SOM', 'ISO2' => 'SO', 'prefix' => '252', 'address_format' => $address_format[0]);
-	$country_info['ZAF'] = array('name' => __('South Africa','wppizza-admin'), 'ISO' => 'ZAF', 'ISO2' => 'ZA', 'prefix' => '27', 'address_format' => $address_format[0]);
-	$country_info['ESP'] = array('name' => __('Spain','wppizza-admin'), 'ISO' => 'ESP', 'ISO2' => 'ES', 'prefix' => '34', 'address_format' => $address_format[0]);
-	$country_info['LKA'] = array('name' => __('Sri Lanka','wppizza-admin'), 'ISO' => 'LKA', 'ISO2' => 'LK', 'prefix' => '94', 'address_format' => $address_format[0]);
-	$country_info['SDN'] = array('name' => __('Sudan','wppizza-admin'), 'ISO' => 'SDN', 'ISO2' => 'SD', 'prefix' => '249', 'address_format' => $address_format[0]);
-	$country_info['SUR'] = array('name' => __('Suriname','wppizza-admin'), 'ISO' => 'SUR', 'ISO2' => 'SR', 'prefix' => '597', 'address_format' => $address_format[0]);
-	$country_info['SWZ'] = array('name' => __('Swaziland','wppizza-admin'), 'ISO' => 'SWZ', 'ISO2' => 'SZ', 'prefix' => '268', 'address_format' => $address_format[0]);
-	$country_info['SWE'] = array('name' => __('Sweden','wppizza-admin'), 'ISO' => 'SWE', 'ISO2' => 'SE', 'prefix' => '46', 'address_format' => $address_format[0]);
-	$country_info['CHE'] = array('name' => __('Switzerland','wppizza-admin'), 'ISO' => 'CHE', 'ISO2' => 'CH', 'prefix' => '41', 'address_format' => $address_format[0]);
-	$country_info['SYR'] = array('name' => __('Syria','wppizza-admin'), 'ISO' => 'SYR', 'ISO2' => 'SY', 'prefix' => '963', 'address_format' => $address_format[0]);
-	$country_info['TWN'] = array('name' => __('Taiwan','wppizza-admin'), 'ISO' => 'TWN', 'ISO2' => 'TW', 'prefix' => '886', 'address_format' => $address_format[0]);
-	$country_info['TJK'] = array('name' => __('Tajikistan','wppizza-admin'), 'ISO' => 'TJK', 'ISO2' => 'TJ', 'prefix' => '992', 'address_format' => $address_format[0]);
-	$country_info['TZA'] = array('name' => __('Tanzania','wppizza-admin'), 'ISO' => 'TZA', 'ISO2' => 'TZ', 'prefix' => '255', 'address_format' => $address_format[0]);
-	$country_info['THA'] = array('name' => __('Thailand','wppizza-admin'), 'ISO' => 'THA', 'ISO2' => 'TH', 'prefix' => '66', 'address_format' => $address_format[0]);
-	$country_info['TLS'] = array('name' => __('Timor-Leste','wppizza-admin'), 'ISO' => 'TLS', 'ISO2' => 'TL', 'prefix' => '670', 'address_format' => $address_format[0]);
-	$country_info['TGO'] = array('name' => __('Togo','wppizza-admin'), 'ISO' => 'TGO', 'ISO2' => 'TG', 'prefix' => '228', 'address_format' => $address_format[0]);
-	$country_info['TON'] = array('name' => __('Tonga','wppizza-admin'), 'ISO' => 'TON', 'ISO2' => 'TO', 'prefix' => '676', 'address_format' => $address_format[0]);
-	$country_info['TTO'] = array('name' => __('Trinidad and Tobago','wppizza-admin'), 'ISO' => 'TTO', 'ISO2' => 'TT', 'prefix' => '1868', 'address_format' => $address_format[0]);
-	$country_info['TUN'] = array('name' => __('Tunisia','wppizza-admin'), 'ISO' => 'TUN', 'ISO2' => 'TN', 'prefix' => '216', 'address_format' => $address_format[0]);
-	$country_info['TUR'] = array('name' => __('Turkey','wppizza-admin'), 'ISO' => 'TUR', 'ISO2' => 'TR', 'prefix' => '90', 'address_format' => $address_format[0]);
-	$country_info['TKM'] = array('name' => __('Turkmenistan','wppizza-admin'), 'ISO' => 'TKM', 'ISO2' => 'TM', 'prefix' => '993', 'address_format' => $address_format[0]);
-	$country_info['TCA'] = array('name' => __('Turks and Caicos Islands','wppizza-admin'), 'ISO' => 'TCA', 'ISO2' => 'TC', 'prefix' => '1649', 'address_format' => $address_format[0]);
-	$country_info['UGA'] = array('name' => __('Uganda','wppizza-admin'), 'ISO' => 'UGA', 'ISO2' => 'UG', 'prefix' => '256', 'address_format' => $address_format[0]);
-	$country_info['UKR'] = array('name' => __('Ukraine','wppizza-admin'), 'ISO' => 'UKR', 'ISO2' => 'UA', 'prefix' => '380', 'address_format' => $address_format[0]);
-	$country_info['ARE'] = array('name' => __('United Arab Emirates','wppizza-admin'), 'ISO' => 'ARE', 'ISO2' => 'AE', 'prefix' => '971', 'address_format' => $address_format[0]);
-	$country_info['GBR'] = array('name' => __('United Kingdom','wppizza-admin'), 'ISO' => 'GBR', 'ISO2' => 'GB', 'prefix' => '44', 'address_format' => $address_format[1]);
-	$country_info['USA'] = array('name' => __('United States','wppizza-admin'), 'ISO' => 'USA', 'ISO2' => 'US', 'prefix' => '1', 'address_format' => $address_format[1]);
-	$country_info['URY'] = array('name' => __('Uruguay','wppizza-admin'), 'ISO' => 'URY', 'ISO2' => 'UY', 'prefix' => '598', 'address_format' => $address_format[0]);
-	$country_info['UZB'] = array('name' => __('Uzbekistan','wppizza-admin'), 'ISO' => 'UZB', 'ISO2' => 'UZ', 'prefix' => '998', 'address_format' => $address_format[0]);
-	$country_info['VUT'] = array('name' => __('Vanuatu','wppizza-admin'), 'ISO' => 'VUT', 'ISO2' => 'VU', 'prefix' => '678', 'address_format' => $address_format[0]);
-	$country_info['VEN'] = array('name' => __('Venezuela','wppizza-admin'), 'ISO' => 'VEN', 'ISO2' => 'VE', 'prefix' => '58', 'address_format' => $address_format[0]);
-	$country_info['VNM'] = array('name' => __('Vietnam','wppizza-admin'), 'ISO' => 'VNM', 'ISO2' => 'VN', 'prefix' => '84', 'address_format' => $address_format[0]);
-	$country_info['VGB'] = array('name' => __('Virgin Islands, British','wppizza-admin'), 'ISO' => 'VGB', 'ISO2' => 'VG', 'prefix' => '1284', 'address_format' => $address_format[0]);
-	$country_info['VIR'] = array('name' => __('Virgin Islands, US','wppizza-admin'), 'ISO' => 'VIR', 'ISO2' => 'VI', 'prefix' => '1340', 'address_format' => $address_format[0]);
-	$country_info['YEM'] = array('name' => __('Yemen','wppizza-admin'), 'ISO' => 'YEM', 'ISO2' => 'YE', 'prefix' => '967', 'address_format' => $address_format[0]);
-	$country_info['ZMB'] = array('name' => __('Zambia','wppizza-admin'), 'ISO' => 'ZMB', 'ISO2' => 'ZM', 'prefix' => '260', 'address_format' => $address_format[0]);
-	$country_info['ZWE'] = array('name' => __('Zimbabwe','wppizza-admin'), 'ISO' => 'ZWE', 'ISO2' => 'ZW', 'prefix' => '263', 'address_format' => $address_format[0]);
+
+	$country_info['AFG'] = array('name' => __('Afghanistan', 'wppizza-admin'), 'ISO' => 'AFG', 'ISO2' => 'AF', 'currency' => array('AFN'), 'prefix' => '93', 'address_format' => $address_format[0]); 
+	$country_info['ALB'] = array('name' => __('Albania', 'wppizza-admin'), 'ISO' => 'ALB', 'ISO2' => 'AL', 'currency' => array('ALL'), 'prefix' => '355', 'address_format' => $address_format[0]); 
+	$country_info['DZA'] = array('name' => __('Algeria', 'wppizza-admin'), 'ISO' => 'DZA', 'ISO2' => 'DZ', 'currency' => array('DZD'), 'prefix' => '213', 'address_format' => $address_format[0]); 
+	$country_info['ASM'] = array('name' => __('American Samoa', 'wppizza-admin'), 'ISO' => 'ASM', 'ISO2' => 'AS', 'currency' => array('USD'), 'prefix' => '1684', 'address_format' => $address_format[0]); 
+	$country_info['AND'] = array('name' => __('Andorra', 'wppizza-admin'), 'ISO' => 'AND', 'ISO2' => 'AD', 'currency' => array('EUR'), 'prefix' => '376', 'address_format' => $address_format[0]); 
+	$country_info['AGO'] = array('name' => __('Angola', 'wppizza-admin'), 'ISO' => 'AGO', 'ISO2' => 'AO', 'currency' => array('AOA'), 'prefix' => '244', 'address_format' => $address_format[0]); 
+	$country_info['AIA'] = array('name' => __('Anguilla', 'wppizza-admin'), 'ISO' => 'AIA', 'ISO2' => 'AI', 'currency' => array('XCD'), 'prefix' => '1264', 'address_format' => $address_format[0]); 
+	$country_info['ATG'] = array('name' => __('Antigua and Barbuda', 'wppizza-admin'), 'ISO' => 'ATG', 'ISO2' => 'AG', 'currency' => array('XCD'), 'prefix' => '1268', 'address_format' => $address_format[0]); 
+	$country_info['ARG'] = array('name' => __('Argentina', 'wppizza-admin'), 'ISO' => 'ARG', 'ISO2' => 'AR', 'currency' => array('ARS'), 'prefix' => '54', 'address_format' => $address_format[0]); 
+	$country_info['ARM'] = array('name' => __('Armenia', 'wppizza-admin'), 'ISO' => 'ARM', 'ISO2' => 'AM', 'currency' => array('AMD'), 'prefix' => '374', 'address_format' => $address_format[0]); 
+	$country_info['ABW'] = array('name' => __('Aruba', 'wppizza-admin'), 'ISO' => 'ABW', 'ISO2' => 'AW', 'currency' => array('AWG'), 'prefix' => '297', 'address_format' => $address_format[0]); 
+	$country_info['AUS'] = array('name' => __('Australia', 'wppizza-admin'), 'ISO' => 'AUS', 'ISO2' => 'AU', 'currency' => array('AUD'), 'prefix' => '61', 'address_format' => $address_format[1]); 
+	$country_info['AUT'] = array('name' => __('Austria', 'wppizza-admin'), 'ISO' => 'AUT', 'ISO2' => 'AT', 'currency' => array('EUR'), 'prefix' => '43', 'address_format' => $address_format[0]); 
+	$country_info['AZE'] = array('name' => __('Azerbaijan', 'wppizza-admin'), 'ISO' => 'AZE', 'ISO2' => 'AZ', 'currency' => array('AZN'), 'prefix' => '994', 'address_format' => $address_format[0]); 
+	$country_info['BHS'] = array('name' => __('Bahamas', 'wppizza-admin'), 'ISO' => 'BHS', 'ISO2' => 'BS', 'currency' => array('BSD'), 'prefix' => '1242', 'address_format' => $address_format[0]); 
+	$country_info['BHR'] = array('name' => __('Bahrain', 'wppizza-admin'), 'ISO' => 'BHR', 'ISO2' => 'BH', 'currency' => array('BHD'), 'prefix' => '973', 'address_format' => $address_format[0]); 
+	$country_info['BGD'] = array('name' => __('Bangladesh', 'wppizza-admin'), 'ISO' => 'BGD', 'ISO2' => 'BD', 'currency' => array('BDT'), 'prefix' => '880', 'address_format' => $address_format[0]); 
+	$country_info['BRB'] = array('name' => __('Barbados', 'wppizza-admin'), 'ISO' => 'BRB', 'ISO2' => 'BB', 'currency' => array('BBD'), 'prefix' => '1246', 'address_format' => $address_format[0]); 
+	$country_info['BLR'] = array('name' => __('Belarus', 'wppizza-admin'), 'ISO' => 'BLR', 'ISO2' => 'BY', 'currency' => array('BYN'), 'prefix' => '375', 'address_format' => $address_format[0]); 
+	$country_info['BEL'] = array('name' => __('Belgium', 'wppizza-admin'), 'ISO' => 'BEL', 'ISO2' => 'BE', 'currency' => array('EUR'), 'prefix' => '32', 'address_format' => $address_format[0]); 
+	$country_info['BLZ'] = array('name' => __('Belize', 'wppizza-admin'), 'ISO' => 'BLZ', 'ISO2' => 'BZ', 'currency' => array('BZD'), 'prefix' => '501', 'address_format' => $address_format[0]); 
+	$country_info['BEN'] = array('name' => __('Benin', 'wppizza-admin'), 'ISO' => 'BEN', 'ISO2' => 'BJ', 'currency' => array('XOF'), 'prefix' => '229', 'address_format' => $address_format[0]); 
+	$country_info['BMU'] = array('name' => __('Bermuda', 'wppizza-admin'), 'ISO' => 'BMU', 'ISO2' => 'BM', 'currency' => array('BMD'), 'prefix' => '1441', 'address_format' => $address_format[0]); 
+	$country_info['BTN'] = array('name' => __('Bhutan', 'wppizza-admin'), 'ISO' => 'BTN', 'ISO2' => 'BT', 'currency' => array('BTN'), 'prefix' => '975', 'address_format' => $address_format[0]); 
+	$country_info['BOL'] = array('name' => __('Bolivia', 'wppizza-admin'), 'ISO' => 'BOL', 'ISO2' => 'BO', 'currency' => array('BOB'), 'prefix' => '591', 'address_format' => $address_format[0]); 
+	$country_info['BIH'] = array('name' => __('Bosnia and Herzegovina', 'wppizza-admin'), 'ISO' => 'BIH', 'ISO2' => 'BA', 'currency' => array('BAM'), 'prefix' => '387', 'address_format' => $address_format[0]); 
+	$country_info['BWA'] = array('name' => __('Botswana', 'wppizza-admin'), 'ISO' => 'BWA', 'ISO2' => 'BW', 'currency' => array('BWP'), 'prefix' => '267', 'address_format' => $address_format[0]); 
+	$country_info['BRA'] = array('name' => __('Brazil', 'wppizza-admin'), 'ISO' => 'BRA', 'ISO2' => 'BR', 'currency' => array('BRL'), 'prefix' => '55', 'address_format' => $address_format[0]); 
+	$country_info['BRN'] = array('name' => __('Brunei Darussalam', 'wppizza-admin'), 'ISO' => 'BRN', 'ISO2' => 'BN', 'currency' => array('BND'), 'prefix' => '673', 'address_format' => $address_format[0]); 
+	$country_info['BGR'] = array('name' => __('Bulgaria', 'wppizza-admin'), 'ISO' => 'BGR', 'ISO2' => 'BG', 'currency' => array('BGN'), 'prefix' => '359', 'address_format' => $address_format[0]); 
+	$country_info['BFA'] = array('name' => __('Burkina Faso', 'wppizza-admin'), 'ISO' => 'BFA', 'ISO2' => 'BF', 'currency' => array('XOF'), 'prefix' => '226', 'address_format' => $address_format[0]); 
+	$country_info['BDI'] = array('name' => __('Burundi', 'wppizza-admin'), 'ISO' => 'BDI', 'ISO2' => 'BI', 'currency' => array('BIF'), 'prefix' => '257', 'address_format' => $address_format[0]); 
+	$country_info['KHM'] = array('name' => __('Cambodia', 'wppizza-admin'), 'ISO' => 'KHM', 'ISO2' => 'KH', 'currency' => array('KHR'), 'prefix' => '855', 'address_format' => $address_format[0]); 
+	$country_info['CMR'] = array('name' => __('Cameroon', 'wppizza-admin'), 'ISO' => 'CMR', 'ISO2' => 'CM', 'currency' => array('XAF'), 'prefix' => '237', 'address_format' => $address_format[0]); 
+	$country_info['CAN'] = array('name' => __('Canada', 'wppizza-admin'), 'ISO' => 'CAN', 'ISO2' => 'CA', 'currency' => array('CAD'), 'prefix' => '1', 'address_format' => $address_format[1]); 
+	$country_info['CPV'] = array('name' => __('Cape Verde', 'wppizza-admin'), 'ISO' => 'CPV', 'ISO2' => 'CV', 'currency' => array('CVE'), 'prefix' => '238', 'address_format' => $address_format[0]); 
+	$country_info['CYM'] = array('name' => __('Cayman Islands', 'wppizza-admin'), 'ISO' => 'CYM', 'ISO2' => 'KY', 'currency' => array('KYD'), 'prefix' => '1345', 'address_format' => $address_format[0]); 
+	$country_info['CAF'] = array('name' => __('Central African Republic', 'wppizza-admin'), 'ISO' => 'CAF', 'ISO2' => 'CF', 'currency' => array('XAF'), 'prefix' => '236', 'address_format' => $address_format[0]); 
+	$country_info['TCD'] = array('name' => __('Chad', 'wppizza-admin'), 'ISO' => 'TCD', 'ISO2' => 'TD', 'currency' => array('XAF'), 'prefix' => '235', 'address_format' => $address_format[0]); 
+	$country_info['CHL'] = array('name' => __('Chile', 'wppizza-admin'), 'ISO' => 'CHL', 'ISO2' => 'CL', 'currency' => array('CLP'), 'prefix' => '56', 'address_format' => $address_format[0]); 
+	$country_info['CHN'] = array('name' => __('China', 'wppizza-admin'), 'ISO' => 'CHN', 'ISO2' => 'CN', 'currency' => array('CNY'), 'prefix' => '86', 'address_format' => $address_format[0]); 
+	$country_info['COL'] = array('name' => __('Colombia', 'wppizza-admin'), 'ISO' => 'COL', 'ISO2' => 'CO', 'currency' => array('COP'), 'prefix' => '57', 'address_format' => $address_format[0]); 
+	$country_info['COM'] = array('name' => __('Comoros', 'wppizza-admin'), 'ISO' => 'COM', 'ISO2' => 'KM', 'currency' => array('KMF'), 'prefix' => '269', 'address_format' => $address_format[0]); 
+	$country_info['COD'] = array('name' => __('Congo - Democratic Republic of the', 'wppizza-admin'), 'ISO' => 'COD', 'ISO2' => 'CG', 'currency' => array('CDF'), 'prefix' => '243', 'address_format' => $address_format[0]); 
+	$country_info['COG'] = array('name' => __('Congo - Republic of the', 'wppizza-admin'), 'ISO' => 'COG', 'ISO2' => 'CD', 'currency' => array('CDF'), 'prefix' => '242', 'address_format' => $address_format[0]); 
+	$country_info['COK'] = array('name' => __('Cook Islands', 'wppizza-admin'), 'ISO' => 'COK', 'ISO2' => 'CK', 'currency' => array('NZD'), 'prefix' => '682', 'address_format' => $address_format[0]); 
+	$country_info['CRI'] = array('name' => __('Costa Rica', 'wppizza-admin'), 'ISO' => 'CRI', 'ISO2' => 'CR', 'currency' => array('CRC'), 'prefix' => '506', 'address_format' => $address_format[0]); 
+	$country_info['CIV'] = array('name' => __('Cote D\'Ivory', 'wppizza-admin'), 'ISO' => 'CIV', 'ISO2' => 'CI', 'currency' => array('XOF'), 'prefix' => '225', 'address_format' => $address_format[0]); 
+	$country_info['HRV'] = array('name' => __('Croatia', 'wppizza-admin'), 'ISO' => 'HRV', 'ISO2' => 'HR', 'currency' => array('HRK'), 'prefix' => '385', 'address_format' => $address_format[0]); 
+	$country_info['CUB'] = array('name' => __('Cuba', 'wppizza-admin'), 'ISO' => 'CUB', 'ISO2' => 'CU', 'currency' => array('CUP'), 'prefix' => '53', 'address_format' => $address_format[0]); 
+	$country_info['CYP'] = array('name' => __('Cyprus', 'wppizza-admin'), 'ISO' => 'CYP', 'ISO2' => 'CY', 'currency' => array('EUR'), 'prefix' => '357', 'address_format' => $address_format[0]); 
+	$country_info['CZE'] = array('name' => __('Czech Republic', 'wppizza-admin'), 'ISO' => 'CZE', 'ISO2' => 'CZ', 'currency' => array('CZK'), 'prefix' => '420', 'address_format' => $address_format[0]); 
+	$country_info['DNK'] = array('name' => __('Denmark', 'wppizza-admin'), 'ISO' => 'DNK', 'ISO2' => 'DK', 'currency' => array('DKK'), 'prefix' => '45', 'address_format' => $address_format[0]); 
+	$country_info['DJI'] = array('name' => __('Djibouti', 'wppizza-admin'), 'ISO' => 'DJI', 'ISO2' => 'DJ', 'currency' => array('DJF'), 'prefix' => '253', 'address_format' => $address_format[0]); 
+	$country_info['DMA'] = array('name' => __('Dominica', 'wppizza-admin'), 'ISO' => 'DMA', 'ISO2' => 'DM', 'currency' => array('XCD'), 'prefix' => '1767', 'address_format' => $address_format[0]); 
+	$country_info['DOM'] = array('name' => __('Dominican Republic', 'wppizza-admin'), 'ISO' => 'DOM', 'ISO2' => 'DO', 'currency' => array('DOP'), 'prefix' => '18', 'address_format' => $address_format[0]); 
+	$country_info['ECU'] = array('name' => __('Ecuador', 'wppizza-admin'), 'ISO' => 'ECU', 'ISO2' => 'EC', 'currency' => array('USD'), 'prefix' => '593', 'address_format' => $address_format[0]); 
+	$country_info['EGY'] = array('name' => __('Egypt', 'wppizza-admin'), 'ISO' => 'EGY', 'ISO2' => 'EG', 'currency' => array('EGP'), 'prefix' => '20', 'address_format' => $address_format[0]); 
+	$country_info['SLV'] = array('name' => __('El Salvador', 'wppizza-admin'), 'ISO' => 'SLV', 'ISO2' => 'SV', 'currency' => array('SVC'), 'prefix' => '503', 'address_format' => $address_format[0]); 
+	$country_info['GNQ'] = array('name' => __('Equatorial Guinea', 'wppizza-admin'), 'ISO' => 'GNQ', 'ISO2' => 'GQ', 'currency' => array('XAF'), 'prefix' => '240', 'address_format' => $address_format[0]); 
+	$country_info['ERI'] = array('name' => __('Eritrea', 'wppizza-admin'), 'ISO' => 'ERI', 'ISO2' => 'ER', 'currency' => array('ERN'), 'prefix' => '291', 'address_format' => $address_format[0]); 
+	$country_info['EST'] = array('name' => __('Estonia', 'wppizza-admin'), 'ISO' => 'EST', 'ISO2' => 'EE', 'currency' => array('EUR'), 'prefix' => '372', 'address_format' => $address_format[0]); 
+	$country_info['ETH'] = array('name' => __('Ethiopia', 'wppizza-admin'), 'ISO' => 'ETH', 'ISO2' => 'ET', 'currency' => array('ETB'), 'prefix' => '251', 'address_format' => $address_format[0]); 
+	$country_info['FLK'] = array('name' => __('Falkland Islands / Malvinas', 'wppizza-admin'), 'ISO' => 'FLK', 'ISO2' => 'FK', 'currency' => array('FKP'), 'prefix' => '500', 'address_format' => $address_format[0]); 
+	$country_info['FRO'] = array('name' => __('Faroe Islands', 'wppizza-admin'), 'ISO' => 'FRO', 'ISO2' => 'FO', 'currency' => array('DKK'), 'prefix' => '298', 'address_format' => $address_format[0]); 
+	$country_info['FJI'] = array('name' => __('Fiji', 'wppizza-admin'), 'ISO' => 'FJI', 'ISO2' => 'FJ', 'currency' => array('FJD'), 'prefix' => '679', 'address_format' => $address_format[0]); 
+	$country_info['FIN'] = array('name' => __('Finland', 'wppizza-admin'), 'ISO' => 'FIN', 'ISO2' => 'FI', 'currency' => array('EUR'), 'prefix' => '358', 'address_format' => $address_format[0]); 
+	$country_info['FRA'] = array('name' => __('France', 'wppizza-admin'), 'ISO' => 'FRA', 'ISO2' => 'FR', 'currency' => array('EUR'), 'prefix' => '33', 'address_format' => $address_format[0]); 
+	$country_info['GUF'] = array('name' => __('French Guiana', 'wppizza-admin'), 'ISO' => 'GUF', 'ISO2' => 'GF', 'currency' => array('EUR'), 'prefix' => '594', 'address_format' => $address_format[0]); 
+	$country_info['PYF'] = array('name' => __('French Polynesia', 'wppizza-admin'), 'ISO' => 'PYF', 'ISO2' => 'PF', 'currency' => array('XPF'), 'prefix' => '689', 'address_format' => $address_format[0]); 
+	$country_info['GAB'] = array('name' => __('Gabon', 'wppizza-admin'), 'ISO' => 'GAB', 'ISO2' => 'GA', 'currency' => array('XAF'), 'prefix' => '241', 'address_format' => $address_format[0]); 
+	$country_info['GMB'] = array('name' => __('Gambia', 'wppizza-admin'), 'ISO' => 'GMB', 'ISO2' => 'GM', 'currency' => array('GMD'), 'prefix' => '220', 'address_format' => $address_format[0]); 
+	$country_info['GEO'] = array('name' => __('Georgia', 'wppizza-admin'), 'ISO' => 'GEO', 'ISO2' => 'GE', 'currency' => array('GEL'), 'prefix' => '995', 'address_format' => $address_format[0]); 
+	$country_info['DEU'] = array('name' => __('Germany', 'wppizza-admin'), 'ISO' => 'DEU', 'ISO2' => 'DE', 'currency' => array('EUR'), 'prefix' => '49', 'address_format' => $address_format[0]); 
+	$country_info['GHA'] = array('name' => __('Ghana', 'wppizza-admin'), 'ISO' => 'GHA', 'ISO2' => 'GH', 'currency' => array('GHS'), 'prefix' => '233', 'address_format' => $address_format[0]); 
+	$country_info['GIB'] = array('name' => __('Gibraltar', 'wppizza-admin'), 'ISO' => 'GIB', 'ISO2' => 'GI', 'currency' => array('GIP'), 'prefix' => '350', 'address_format' => $address_format[0]); 
+	$country_info['GRC'] = array('name' => __('Greece', 'wppizza-admin'), 'ISO' => 'GRC', 'ISO2' => 'GR', 'currency' => array('EUR'), 'prefix' => '30', 'address_format' => $address_format[0]); 
+	$country_info['GRL'] = array('name' => __('Greenland', 'wppizza-admin'), 'ISO' => 'GRL', 'ISO2' => 'GL', 'currency' => array('DKK'), 'prefix' => '299', 'address_format' => $address_format[0]); 
+	$country_info['GRD'] = array('name' => __('Grenada', 'wppizza-admin'), 'ISO' => 'GRD', 'ISO2' => 'GD', 'currency' => array('XCD'), 'prefix' => '1473', 'address_format' => $address_format[0]); 
+	$country_info['GLP'] = array('name' => __('Guadeloupe', 'wppizza-admin'), 'ISO' => 'GLP', 'ISO2' => 'GP', 'currency' => array('EUR'), 'prefix' => '590', 'address_format' => $address_format[0]); 
+	$country_info['GUM'] = array('name' => __('Guam', 'wppizza-admin'), 'ISO' => 'GUM', 'ISO2' => 'GU', 'currency' => array('USD'), 'prefix' => '1671', 'address_format' => $address_format[0]); 
+	$country_info['GTM'] = array('name' => __('Guatemala', 'wppizza-admin'), 'ISO' => 'GTM', 'ISO2' => 'GT', 'currency' => array('GTQ'), 'prefix' => '502', 'address_format' => $address_format[0]); 
+	$country_info['GGY'] = array('name' => __('Guernsey', 'wppizza-admin'), 'ISO' => 'GGY', 'ISO2' => 'GG', 'currency' => array('GGP'), 'prefix' => '44', 'address_format' => $address_format[0]); 
+	$country_info['GIN'] = array('name' => __('Guinea', 'wppizza-admin'), 'ISO' => 'GIN', 'ISO2' => 'GN', 'currency' => array('GNF'), 'prefix' => '224', 'address_format' => $address_format[0]); 
+	$country_info['GNB'] = array('name' => __('Guinea-Bissau', 'wppizza-admin'), 'ISO' => 'GNB', 'ISO2' => 'GW', 'currency' => array('XOF'), 'prefix' => '245', 'address_format' => $address_format[0]); 
+	$country_info['GUY'] = array('name' => __('Guyana', 'wppizza-admin'), 'ISO' => 'GUY', 'ISO2' => 'GY', 'currency' => array('GYD'), 'prefix' => '592', 'address_format' => $address_format[0]); 
+	$country_info['HTI'] = array('name' => __('Haiti', 'wppizza-admin'), 'ISO' => 'HTI', 'ISO2' => 'HT', 'currency' => array('HTG'), 'prefix' => '509', 'address_format' => $address_format[0]); 
+	$country_info['HND'] = array('name' => __('Honduras', 'wppizza-admin'), 'ISO' => 'HND', 'ISO2' => 'HN', 'currency' => array('HNL'), 'prefix' => '504', 'address_format' => $address_format[0]); 
+	$country_info['HKG'] = array('name' => __('Hong Kong', 'wppizza-admin'), 'ISO' => 'HKG', 'ISO2' => 'HK', 'currency' => array('HKD'), 'prefix' => '852', 'address_format' => $address_format[0]); 
+	$country_info['HUN'] = array('name' => __('Hungary', 'wppizza-admin'), 'ISO' => 'HUN', 'ISO2' => 'HU', 'currency' => array('HUF'), 'prefix' => '36', 'address_format' => $address_format[0]); 
+	$country_info['ISL'] = array('name' => __('Iceland', 'wppizza-admin'), 'ISO' => 'ISL', 'ISO2' => 'IS', 'currency' => array('ISK'), 'prefix' => '354', 'address_format' => $address_format[0]); 
+	$country_info['IND'] = array('name' => __('India', 'wppizza-admin'), 'ISO' => 'IND', 'ISO2' => 'IN', 'currency' => array('INR'), 'prefix' => '91', 'address_format' => $address_format[0]); 
+	$country_info['IDN'] = array('name' => __('Indonesia', 'wppizza-admin'), 'ISO' => 'IDN', 'ISO2' => 'ID', 'currency' => array('IDR'), 'prefix' => '62', 'address_format' => $address_format[0]); 
+	$country_info['IRN'] = array('name' => __('Iran', 'wppizza-admin'), 'ISO' => 'IRN', 'ISO2' => 'IR', 'currency' => array('IRR'), 'prefix' => '98', 'address_format' => $address_format[0]); 
+	$country_info['IRQ'] = array('name' => __('Iraq', 'wppizza-admin'), 'ISO' => 'IRQ', 'ISO2' => 'IQ', 'currency' => array('IQD'), 'prefix' => '964', 'address_format' => $address_format[0]); 
+	$country_info['IRL'] = array('name' => __('Ireland', 'wppizza-admin'), 'ISO' => 'IRL', 'ISO2' => 'IE', 'currency' => array('EUR'), 'prefix' => '353', 'address_format' => $address_format[0]); 
+	$country_info['IMN'] = array('name' => __('Isle of Man', 'wppizza-admin'), 'ISO' => 'IMN', 'ISO2' => 'IM', 'currency' => array('IMP'), 'prefix' => '44', 'address_format' => $address_format[0]); 
+	$country_info['ISR'] = array('name' => __('Israel', 'wppizza-admin'), 'ISO' => 'ISR', 'ISO2' => 'IL', 'currency' => array('ILS'), 'prefix' => '972', 'address_format' => $address_format[0]); 
+	$country_info['ITA'] = array('name' => __('Italy', 'wppizza-admin'), 'ISO' => 'ITA', 'ISO2' => 'IT', 'currency' => array('EUR'), 'prefix' => '39', 'address_format' => $address_format[0]); 
+	$country_info['JAM'] = array('name' => __('Jamaica', 'wppizza-admin'), 'ISO' => 'JAM', 'ISO2' => 'JM', 'currency' => array('JMD'), 'prefix' => '1876', 'address_format' => $address_format[0]); 
+	$country_info['JPN'] = array('name' => __('Japan', 'wppizza-admin'), 'ISO' => 'JPN', 'ISO2' => 'JP', 'currency' => array('JPY'), 'prefix' => '81', 'address_format' => $address_format[0]); 
+	$country_info['JEY'] = array('name' => __('Jersey', 'wppizza-admin'), 'ISO' => 'JEY', 'ISO2' => 'JE', 'currency' => array('JEP'), 'prefix' => '44', 'address_format' => $address_format[0]); 
+	$country_info['JOR'] = array('name' => __('Jordan', 'wppizza-admin'), 'ISO' => 'JOR', 'ISO2' => 'JO', 'currency' => array('JOD'), 'prefix' => '962', 'address_format' => $address_format[0]); 
+	$country_info['KAZ'] = array('name' => __('Kazakhstan', 'wppizza-admin'), 'ISO' => 'KAZ', 'ISO2' => 'KZ', 'currency' => array('KZT'), 'prefix' => '7', 'address_format' => $address_format[0]); 
+	$country_info['KEN'] = array('name' => __('Kenya', 'wppizza-admin'), 'ISO' => 'KEN', 'ISO2' => 'KE', 'currency' => array('KES'), 'prefix' => '254', 'address_format' => $address_format[0]); 
+	$country_info['PRK'] = array('name' => __('Korea North', 'wppizza-admin'), 'ISO' => 'PRK', 'ISO2' => 'KP', 'currency' => array('KPW'), 'prefix' => '850', 'address_format' => $address_format[0]); 
+	$country_info['KOR'] = array('name' => __('Korea South', 'wppizza-admin'), 'ISO' => 'KOR', 'ISO2' => 'KR', 'currency' => array('KRW'), 'prefix' => '82', 'address_format' => $address_format[0]); 
+	$country_info['KWT'] = array('name' => __('Kuwait', 'wppizza-admin'), 'ISO' => 'KWT', 'ISO2' => 'KW', 'currency' => array('KWD'), 'prefix' => '965', 'address_format' => $address_format[0]); 
+	$country_info['KGZ'] = array('name' => __('Kyrgyzstan', 'wppizza-admin'), 'ISO' => 'KGZ', 'ISO2' => 'KG', 'currency' => array('KGS'), 'prefix' => '996', 'address_format' => $address_format[0]); 
+	$country_info['LAO'] = array('name' => __('People\'s Democratic Republic', 'wppizza-admin'), 'ISO' => 'LAO', 'ISO2' => 'LA', 'currency' => array('LAK'), 'prefix' => '856', 'address_format' => $address_format[0]); 
+	$country_info['LVA'] = array('name' => __('Latvia', 'wppizza-admin'), 'ISO' => 'LVA', 'ISO2' => 'LV', 'currency' => array('EUR'), 'prefix' => '371', 'address_format' => $address_format[0]); 
+	$country_info['LBN'] = array('name' => __('Lebanon', 'wppizza-admin'), 'ISO' => 'LBN', 'ISO2' => 'LB', 'currency' => array('LBP'), 'prefix' => '961', 'address_format' => $address_format[0]); 
+	$country_info['LSO'] = array('name' => __('Lesotho', 'wppizza-admin'), 'ISO' => 'LSO', 'ISO2' => 'LS', 'currency' => array('LSL','ZAR'), 'prefix' => '266', 'address_format' => $address_format[0]); 
+	$country_info['LBR'] = array('name' => __('Liberia', 'wppizza-admin'), 'ISO' => 'LBR', 'ISO2' => 'LR', 'currency' => array('LRD'), 'prefix' => '231', 'address_format' => $address_format[0]); 
+	$country_info['LBY'] = array('name' => __('Libya', 'wppizza-admin'), 'ISO' => 'LBY', 'ISO2' => 'LY', 'currency' => array('LYD'), 'prefix' => '218', 'address_format' => $address_format[0]); 
+	$country_info['LIE'] = array('name' => __('Liechtenstein', 'wppizza-admin'), 'ISO' => 'LIE', 'ISO2' => 'LI', 'currency' => array('CHF'), 'prefix' => '423', 'address_format' => $address_format[0]); 
+	$country_info['LTU'] = array('name' => __('Lithuania', 'wppizza-admin'), 'ISO' => 'LTU', 'ISO2' => 'LT', 'currency' => array('EUR'), 'prefix' => '370', 'address_format' => $address_format[0]); 
+	$country_info['LUX'] = array('name' => __('Luxembourg', 'wppizza-admin'), 'ISO' => 'LUX', 'ISO2' => 'LU', 'currency' => array('EUR'), 'prefix' => '352', 'address_format' => $address_format[0]); 
+	$country_info['MAC'] = array('name' => __('Macao', 'wppizza-admin'), 'ISO' => 'MAC', 'ISO2' => 'MO', 'currency' => array('MOP'), 'prefix' => '853', 'address_format' => $address_format[0]); 
+	$country_info['MKD'] = array('name' => __('Macedonia', 'wppizza-admin'), 'ISO' => 'MKD', 'ISO2' => 'MK', 'currency' => array('MKD'), 'prefix' => '389', 'address_format' => $address_format[0]); 
+	$country_info['MDG'] = array('name' => __('Madagascar', 'wppizza-admin'), 'ISO' => 'MDG', 'ISO2' => 'MG', 'currency' => array('MGA'), 'prefix' => '261', 'address_format' => $address_format[0]); 
+	$country_info['MWI'] = array('name' => __('Malawi', 'wppizza-admin'), 'ISO' => 'MWI', 'ISO2' => 'MW', 'currency' => array('MWK'), 'prefix' => '265', 'address_format' => $address_format[0]); 
+	$country_info['MYS'] = array('name' => __('Malaysia', 'wppizza-admin'), 'ISO' => 'MYS', 'ISO2' => 'MY', 'currency' => array('MYR'), 'prefix' => '60', 'address_format' => $address_format[0]); 
+	$country_info['MDV'] = array('name' => __('Maldives', 'wppizza-admin'), 'ISO' => 'MDV', 'ISO2' => 'MV', 'currency' => array('MVR'), 'prefix' => '960', 'address_format' => $address_format[0]); 
+	$country_info['MLI'] = array('name' => __('Mali', 'wppizza-admin'), 'ISO' => 'MLI', 'ISO2' => 'ML', 'currency' => array('XOF'), 'prefix' => '223', 'address_format' => $address_format[0]); 
+	$country_info['MLT'] = array('name' => __('Malta', 'wppizza-admin'), 'ISO' => 'MLT', 'ISO2' => 'MT', 'currency' => array('EUR'), 'prefix' => '356', 'address_format' => $address_format[0]); 
+	$country_info['MTQ'] = array('name' => __('Martinique', 'wppizza-admin'), 'ISO' => 'MTQ', 'ISO2' => 'MQ', 'currency' => array('EUR'), 'prefix' => '596', 'address_format' => $address_format[0]); 
+	$country_info['MRT'] = array('name' => __('Mauritania', 'wppizza-admin'), 'ISO' => 'MRT', 'ISO2' => 'MR', 'currency' => array('MRU'), 'prefix' => '222', 'address_format' => $address_format[0]); 
+	$country_info['MUS'] = array('name' => __('Mauritius', 'wppizza-admin'), 'ISO' => 'MUS', 'ISO2' => 'MU', 'currency' => array('MUR'), 'prefix' => '230', 'address_format' => $address_format[0]); 
+	$country_info['MEX'] = array('name' => __('Mexico', 'wppizza-admin'), 'ISO' => 'MEX', 'ISO2' => 'MX', 'currency' => array('MXN'), 'prefix' => '52', 'address_format' => $address_format[0]); 
+	$country_info['FSM'] = array('name' => __('Micronesia', 'wppizza-admin'), 'ISO' => 'FSM', 'ISO2' => 'FM', 'currency' => array('USD'), 'prefix' => '691', 'address_format' => $address_format[0]); 
+	$country_info['MDA'] = array('name' => __('Moldova', 'wppizza-admin'), 'ISO' => 'MDA', 'ISO2' => 'MD', 'currency' => array('MDL'), 'prefix' => '373', 'address_format' => $address_format[0]); 
+	$country_info['MCO'] = array('name' => __('Monaco', 'wppizza-admin'), 'ISO' => 'MCO', 'ISO2' => 'MC', 'currency' => array('EUR'), 'prefix' => '377', 'address_format' => $address_format[0]); 
+	$country_info['MNG'] = array('name' => __('Mongolia', 'wppizza-admin'), 'ISO' => 'MNG', 'ISO2' => 'MN', 'currency' => array('MNT'), 'prefix' => '976', 'address_format' => $address_format[0]); 
+	$country_info['MNE'] = array('name' => __('Montenegro', 'wppizza-admin'), 'ISO' => 'MNE', 'ISO2' => 'ME', 'currency' => array('EUR'), 'prefix' => '382', 'address_format' => $address_format[0]); 
+	$country_info['MSR'] = array('name' => __('Montserrat', 'wppizza-admin'), 'ISO' => 'MSR', 'ISO2' => 'MS', 'currency' => array('XCD'), 'prefix' => '1664', 'address_format' => $address_format[0]); 
+	$country_info['MAR'] = array('name' => __('Morocco', 'wppizza-admin'), 'ISO' => 'MAR', 'ISO2' => 'MA', 'currency' => array('MAD'), 'prefix' => '212', 'address_format' => $address_format[0]); 
+	$country_info['MOZ'] = array('name' => __('Mozambique', 'wppizza-admin'), 'ISO' => 'MOZ', 'ISO2' => 'MZ', 'currency' => array('MZN'), 'prefix' => '258', 'address_format' => $address_format[0]); 
+	$country_info['NAM'] = array('name' => __('Namibia', 'wppizza-admin'), 'ISO' => 'NAM', 'ISO2' => 'NA', 'currency' => array('NAD','ZAR'), 'prefix' => '264', 'address_format' => $address_format[0]); 
+	$country_info['NRU'] = array('name' => __('Nauru', 'wppizza-admin'), 'ISO' => 'NRU', 'ISO2' => 'NR', 'currency' => array('AUD'), 'prefix' => '674', 'address_format' => $address_format[0]); 
+	$country_info['NPL'] = array('name' => __('Nepal', 'wppizza-admin'), 'ISO' => 'NPL', 'ISO2' => 'NP', 'currency' => array('NPR'), 'prefix' => '977', 'address_format' => $address_format[0]); 
+	$country_info['NLD'] = array('name' => __('Netherlands', 'wppizza-admin'), 'ISO' => 'NLD', 'ISO2' => 'NL', 'currency' => array('EUR'), 'prefix' => '31', 'address_format' => $address_format[0]); 
+	$country_info['ANT'] = array('name' => __('Netherlands Antilles', 'wppizza-admin'), 'ISO' => 'ANT', 'ISO2' => 'AN', 'currency' => array('ANG'), 'prefix' => '599', 'address_format' => $address_format[0]); 
+	$country_info['NCL'] = array('name' => __('New Caledonia', 'wppizza-admin'), 'ISO' => 'NCL', 'ISO2' => 'NC', 'currency' => array('XPF'), 'prefix' => '687', 'address_format' => $address_format[0]); 
+	$country_info['NZL'] = array('name' => __('New Zealand', 'wppizza-admin'), 'ISO' => 'NZL', 'ISO2' => 'NZ', 'currency' => array('NZD'), 'prefix' => '64', 'address_format' => $address_format[1]); 
+	$country_info['NIC'] = array('name' => __('Nicaragua', 'wppizza-admin'), 'ISO' => 'NIC', 'ISO2' => 'NI', 'currency' => array('NIO'), 'prefix' => '505', 'address_format' => $address_format[0]); 
+	$country_info['NER'] = array('name' => __('Niger', 'wppizza-admin'), 'ISO' => 'NER', 'ISO2' => 'NE', 'currency' => array('XOF'), 'prefix' => '227', 'address_format' => $address_format[0]); 
+	$country_info['NGA'] = array('name' => __('Nigeria', 'wppizza-admin'), 'ISO' => 'NGA', 'ISO2' => 'NG', 'currency' => array('NGN'), 'prefix' => '234', 'address_format' => $address_format[0]); 
+	$country_info['NFK'] = array('name' => __('Norfolk Island', 'wppizza-admin'), 'ISO' => 'NFK', 'ISO2' => 'NF', 'currency' => array('AUD'), 'prefix' => '672', 'address_format' => $address_format[0]); 
+	$country_info['MNP'] = array('name' => __('Northern Mariana Islands', 'wppizza-admin'), 'ISO' => 'MNP', 'ISO2' => 'MP', 'currency' => array('USD'), 'prefix' => '1670', 'address_format' => $address_format[0]); 
+	$country_info['NOR'] = array('name' => __('Norway', 'wppizza-admin'), 'ISO' => 'NOR', 'ISO2' => 'NO', 'currency' => array('NOK'), 'prefix' => '47', 'address_format' => $address_format[0]); 
+	$country_info['OMN'] = array('name' => __('Oman', 'wppizza-admin'), 'ISO' => 'OMN', 'ISO2' => 'OM', 'currency' => array('OMR'), 'prefix' => '968', 'address_format' => $address_format[0]); 
+	$country_info['PAK'] = array('name' => __('Pakistan', 'wppizza-admin'), 'ISO' => 'PAK', 'ISO2' => 'PK', 'currency' => array('PKR'), 'prefix' => '92', 'address_format' => $address_format[0]); 
+	$country_info['PLW'] = array('name' => __('Palau', 'wppizza-admin'), 'ISO' => 'PLW', 'ISO2' => 'PW', 'currency' => array('USD'), 'prefix' => '680', 'address_format' => $address_format[0]); 
+	$country_info['PSE'] = array('name' => __('Palestine', 'wppizza-admin'), 'ISO' => 'PSE', 'ISO2' => 'PS', 'currency' => array(''), 'prefix' => '970', 'address_format' => $address_format[0]); 
+	$country_info['PAN'] = array('name' => __('Panama', 'wppizza-admin'), 'ISO' => 'PAN', 'ISO2' => 'PA', 'currency' => array('PAB'), 'prefix' => '507', 'address_format' => $address_format[0]); 
+	$country_info['PNG'] = array('name' => __('Papua New Guinea', 'wppizza-admin'), 'ISO' => 'PNG', 'ISO2' => 'PG', 'currency' => array('PGK'), 'prefix' => '675', 'address_format' => $address_format[0]); 
+	$country_info['PRY'] = array('name' => __('Paraguay', 'wppizza-admin'), 'ISO' => 'PRY', 'ISO2' => 'PY', 'currency' => array('PYG'), 'prefix' => '595', 'address_format' => $address_format[0]); 
+	$country_info['PER'] = array('name' => __('Peru', 'wppizza-admin'), 'ISO' => 'PER', 'ISO2' => 'PE', 'currency' => array('PEN'), 'prefix' => '51', 'address_format' => $address_format[0]); 
+	$country_info['PHL'] = array('name' => __('Philippines', 'wppizza-admin'), 'ISO' => 'PHL', 'ISO2' => 'PH', 'currency' => array('PHP'), 'prefix' => '63', 'address_format' => $address_format[0]); 
+	$country_info['POL'] = array('name' => __('Poland', 'wppizza-admin'), 'ISO' => 'POL', 'ISO2' => 'PL', 'currency' => array('PLN'), 'prefix' => '48', 'address_format' => $address_format[0]); 
+	$country_info['PRT'] = array('name' => __('Portugal', 'wppizza-admin'), 'ISO' => 'PRT', 'ISO2' => 'PT', 'currency' => array('EUR'), 'prefix' => '351', 'address_format' => $address_format[0]); 
+	$country_info['PRI'] = array('name' => __('Puerto Rico', 'wppizza-admin'), 'ISO' => 'PRI', 'ISO2' => 'PR', 'currency' => array('USD'), 'prefix' => '1939', 'address_format' => $address_format[0]); 
+	$country_info['QAT'] = array('name' => __('Qatar', 'wppizza-admin'), 'ISO' => 'QAT', 'ISO2' => 'QA', 'currency' => array('QAR'), 'prefix' => '974', 'address_format' => $address_format[0]); 
+	$country_info['REU'] = array('name' => __('Reunion', 'wppizza-admin'), 'ISO' => 'REU', 'ISO2' => 'RE', 'currency' => array('EUR'), 'prefix' => '262', 'address_format' => $address_format[0]); 
+	$country_info['ROU'] = array('name' => __('Romania', 'wppizza-admin'), 'ISO' => 'ROU', 'ISO2' => 'RO', 'currency' => array('RON'), 'prefix' => '40', 'address_format' => $address_format[0]); 
+	$country_info['RUS'] = array('name' => __('Russia', 'wppizza-admin'), 'ISO' => 'RUS', 'ISO2' => 'RU', 'currency' => array('RUB'), 'prefix' => '7', 'address_format' => $address_format[0]); 
+	$country_info['RWA'] = array('name' => __('Rwanda', 'wppizza-admin'), 'ISO' => 'RWA', 'ISO2' => 'RW', 'currency' => array('RWF'), 'prefix' => '250', 'address_format' => $address_format[0]); 
+	$country_info['KNA'] = array('name' => __('Saint Kitts and Nevis', 'wppizza-admin'), 'ISO' => 'KNA', 'ISO2' => 'KN', 'currency' => array('XCD'), 'prefix' => '1869', 'address_format' => $address_format[0]); 
+	$country_info['LCA'] = array('name' => __('Saint Lucia', 'wppizza-admin'), 'ISO' => 'LCA', 'ISO2' => 'LC', 'currency' => array('XCD'), 'prefix' => '1758', 'address_format' => $address_format[0]); 
+	$country_info['SPM'] = array('name' => __('Saint Pierre and Miquelon', 'wppizza-admin'), 'ISO' => 'SPM', 'ISO2' => 'PM', 'currency' => array('EUR'), 'prefix' => '508', 'address_format' => $address_format[0]); 
+	$country_info['VCT'] = array('name' => __('Saint Vincent and the Grenadines', 'wppizza-admin'), 'ISO' => 'VCT', 'ISO2' => 'VC', 'currency' => array('XCD'), 'prefix' => '1784', 'address_format' => $address_format[0]); 
+	$country_info['WSM'] = array('name' => __('Samoa', 'wppizza-admin'), 'ISO' => 'WSM', 'ISO2' => 'WS', 'currency' => array('WST'), 'prefix' => '685', 'address_format' => $address_format[0]); 
+	$country_info['SMR'] = array('name' => __('San Marino', 'wppizza-admin'), 'ISO' => 'SMR', 'ISO2' => 'SM', 'currency' => array('EUR'), 'prefix' => '378', 'address_format' => $address_format[0]); 
+	$country_info['STP'] = array('name' => __('Sao Tome and Principe', 'wppizza-admin'), 'ISO' => 'STP', 'ISO2' => 'ST', 'currency' => array('STN'), 'prefix' => '239', 'address_format' => $address_format[0]); 
+	$country_info['SAU'] = array('name' => __('Saudi Arabia', 'wppizza-admin'), 'ISO' => 'SAU', 'ISO2' => 'SA', 'currency' => array('SAR'), 'prefix' => '966', 'address_format' => $address_format[0]); 
+	$country_info['SEN'] = array('name' => __('Senegal', 'wppizza-admin'), 'ISO' => 'SEN', 'ISO2' => 'SN', 'currency' => array('XOF'), 'prefix' => '221', 'address_format' => $address_format[0]); 
+	$country_info['SRB'] = array('name' => __('Serbia', 'wppizza-admin'), 'ISO' => 'SRB', 'ISO2' => 'RS', 'currency' => array('RSD'), 'prefix' => '381', 'address_format' => $address_format[0]); 
+	$country_info['SYC'] = array('name' => __('Seychelles', 'wppizza-admin'), 'ISO' => 'SYC', 'ISO2' => 'SC', 'currency' => array('SCR'), 'prefix' => '248', 'address_format' => $address_format[0]); 
+	$country_info['SLE'] = array('name' => __('Sierra Leone', 'wppizza-admin'), 'ISO' => 'SLE', 'ISO2' => 'SL', 'currency' => array('SLL'), 'prefix' => '232', 'address_format' => $address_format[0]); 
+	$country_info['SGP'] = array('name' => __('Singapore', 'wppizza-admin'), 'ISO' => 'SGP', 'ISO2' => 'SG', 'currency' => array('SGD'), 'prefix' => '65', 'address_format' => $address_format[0]); 
+	$country_info['SVK'] = array('name' => __('Slovakia', 'wppizza-admin'), 'ISO' => 'SVK', 'ISO2' => 'SK', 'currency' => array('EUR'), 'prefix' => '421', 'address_format' => $address_format[0]); 
+	$country_info['SVN'] = array('name' => __('Slovenia', 'wppizza-admin'), 'ISO' => 'SVN', 'ISO2' => 'SI', 'currency' => array('EUR'), 'prefix' => '386', 'address_format' => $address_format[0]); 
+	$country_info['SLB'] = array('name' => __('Solomon Islands', 'wppizza-admin'), 'ISO' => 'SLB', 'ISO2' => 'SB', 'currency' => array('SBD'), 'prefix' => '677', 'address_format' => $address_format[0]); 
+	$country_info['SOM'] = array('name' => __('Somalia', 'wppizza-admin'), 'ISO' => 'SOM', 'ISO2' => 'SO', 'currency' => array('SOS'), 'prefix' => '252', 'address_format' => $address_format[0]); 
+	$country_info['ZAF'] = array('name' => __('South Africa', 'wppizza-admin'), 'ISO' => 'ZAF', 'ISO2' => 'ZA', 'currency' => array('ZAR'), 'prefix' => '27', 'address_format' => $address_format[0]); 
+	$country_info['ESP'] = array('name' => __('Spain', 'wppizza-admin'), 'ISO' => 'ESP', 'ISO2' => 'ES', 'currency' => array('EUR'), 'prefix' => '34', 'address_format' => $address_format[0]); 
+	$country_info['LKA'] = array('name' => __('Sri Lanka', 'wppizza-admin'), 'ISO' => 'LKA', 'ISO2' => 'LK', 'currency' => array('LKR'), 'prefix' => '94', 'address_format' => $address_format[0]); 
+	$country_info['SDN'] = array('name' => __('Sudan', 'wppizza-admin'), 'ISO' => 'SDN', 'ISO2' => 'SD', 'currency' => array('SDG'), 'prefix' => '249', 'address_format' => $address_format[0]); 
+	$country_info['SUR'] = array('name' => __('Suriname', 'wppizza-admin'), 'ISO' => 'SUR', 'ISO2' => 'SR', 'currency' => array('SRD'), 'prefix' => '597', 'address_format' => $address_format[0]); 
+	$country_info['SWZ'] = array('name' => __('Swaziland', 'wppizza-admin'), 'ISO' => 'SWZ', 'ISO2' => 'SZ', 'currency' => array('SZL'), 'prefix' => '268', 'address_format' => $address_format[0]); 
+	$country_info['SWE'] = array('name' => __('Sweden', 'wppizza-admin'), 'ISO' => 'SWE', 'ISO2' => 'SE', 'currency' => array('SEK'), 'prefix' => '46', 'address_format' => $address_format[0]); 
+	$country_info['CHE'] = array('name' => __('Switzerland', 'wppizza-admin'), 'ISO' => 'CHE', 'ISO2' => 'CH', 'currency' => array('CHF'), 'prefix' => '41', 'address_format' => $address_format[0]); 
+	$country_info['SYR'] = array('name' => __('Syria', 'wppizza-admin'), 'ISO' => 'SYR', 'ISO2' => 'SY', 'currency' => array('SYP'), 'prefix' => '963', 'address_format' => $address_format[0]); 
+	$country_info['TWN'] = array('name' => __('Taiwan', 'wppizza-admin'), 'ISO' => 'TWN', 'ISO2' => 'TW', 'currency' => array('TWD'), 'prefix' => '886', 'address_format' => $address_format[0]); 
+	$country_info['TJK'] = array('name' => __('Tajikistan', 'wppizza-admin'), 'ISO' => 'TJK', 'ISO2' => 'TJ', 'currency' => array('TJS'), 'prefix' => '992', 'address_format' => $address_format[0]); 
+	$country_info['TZA'] = array('name' => __('Tanzania', 'wppizza-admin'), 'ISO' => 'TZA', 'ISO2' => 'TZ', 'currency' => array('TZS'), 'prefix' => '255', 'address_format' => $address_format[0]); 
+	$country_info['THA'] = array('name' => __('Thailand', 'wppizza-admin'), 'ISO' => 'THA', 'ISO2' => 'TH', 'currency' => array('THB'), 'prefix' => '66', 'address_format' => $address_format[0]); 
+	$country_info['TLS'] = array('name' => __('Timor-Leste', 'wppizza-admin'), 'ISO' => 'TLS', 'ISO2' => 'TL', 'currency' => array('USD'), 'prefix' => '670', 'address_format' => $address_format[0]); 
+	$country_info['TGO'] = array('name' => __('Togo', 'wppizza-admin'), 'ISO' => 'TGO', 'ISO2' => 'TG', 'currency' => array('XOF'), 'prefix' => '228', 'address_format' => $address_format[0]); 
+	$country_info['TON'] = array('name' => __('Tonga', 'wppizza-admin'), 'ISO' => 'TON', 'ISO2' => 'TO', 'currency' => array('TOP'), 'prefix' => '676', 'address_format' => $address_format[0]); 
+	$country_info['TTO'] = array('name' => __('Trinidad and Tobago', 'wppizza-admin'), 'ISO' => 'TTO', 'ISO2' => 'TT', 'currency' => array('TTD'), 'prefix' => '1868', 'address_format' => $address_format[0]); 
+	$country_info['TUN'] = array('name' => __('Tunisia', 'wppizza-admin'), 'ISO' => 'TUN', 'ISO2' => 'TN', 'currency' => array('TND'), 'prefix' => '216', 'address_format' => $address_format[0]); 
+	$country_info['TUR'] = array('name' => __('Turkey', 'wppizza-admin'), 'ISO' => 'TUR', 'ISO2' => 'TR', 'currency' => array('TRY'), 'prefix' => '90', 'address_format' => $address_format[0]); 
+	$country_info['TKM'] = array('name' => __('Turkmenistan', 'wppizza-admin'), 'ISO' => 'TKM', 'ISO2' => 'TM', 'currency' => array('TMT'), 'prefix' => '993', 'address_format' => $address_format[0]); 
+	$country_info['TCA'] = array('name' => __('Turks and Caicos Islands', 'wppizza-admin'), 'ISO' => 'TCA', 'ISO2' => 'TC', 'currency' => array('USD'), 'prefix' => '1649', 'address_format' => $address_format[0]); 
+	$country_info['UGA'] = array('name' => __('Uganda', 'wppizza-admin'), 'ISO' => 'UGA', 'ISO2' => 'UG', 'currency' => array('UGX'), 'prefix' => '256', 'address_format' => $address_format[0]); 
+	$country_info['UKR'] = array('name' => __('Ukraine', 'wppizza-admin'), 'ISO' => 'UKR', 'ISO2' => 'UA', 'currency' => array('UAH'), 'prefix' => '380', 'address_format' => $address_format[0]); 
+	$country_info['ARE'] = array('name' => __('United Arab Emirates', 'wppizza-admin'), 'ISO' => 'ARE', 'ISO2' => 'AE', 'currency' => array('AED'), 'prefix' => '971', 'address_format' => $address_format[0]); 
+	$country_info['GBR'] = array('name' => __('United Kingdom', 'wppizza-admin'), 'ISO' => 'GBR', 'ISO2' => 'GB', 'currency' => array('GBP'), 'prefix' => '44', 'address_format' => $address_format[1]); 
+	$country_info['USA'] = array('name' => __('United States', 'wppizza-admin'), 'ISO' => 'USA', 'ISO2' => 'US', 'currency' => array('USD'), 'prefix' => '1', 'address_format' => $address_format[1]); 
+	$country_info['URY'] = array('name' => __('Uruguay', 'wppizza-admin'), 'ISO' => 'URY', 'ISO2' => 'UY', 'currency' => array('UYU'), 'prefix' => '598', 'address_format' => $address_format[0]); 
+	$country_info['UZB'] = array('name' => __('Uzbekistan', 'wppizza-admin'), 'ISO' => 'UZB', 'ISO2' => 'UZ', 'currency' => array('UZS'), 'prefix' => '998', 'address_format' => $address_format[0]); 
+	$country_info['VUT'] = array('name' => __('Vanuatu', 'wppizza-admin'), 'ISO' => 'VUT', 'ISO2' => 'VU', 'currency' => array('VUV'), 'prefix' => '678', 'address_format' => $address_format[0]); 
+	$country_info['VEN'] = array('name' => __('Venezuela', 'wppizza-admin'), 'ISO' => 'VEN', 'ISO2' => 'VE', 'currency' => array('VEF'), 'prefix' => '58', 'address_format' => $address_format[0]); 
+	$country_info['VNM'] = array('name' => __('Vietnam', 'wppizza-admin'), 'ISO' => 'VNM', 'ISO2' => 'VN', 'currency' => array('VND'), 'prefix' => '84', 'address_format' => $address_format[0]); 
+	$country_info['VGB'] = array('name' => __('Virgin Islands, British', 'wppizza-admin'), 'ISO' => 'VGB', 'currency' => array('USD'), 'ISO2' => 'VG', 'prefix' => '1284', 'address_format' => $address_format[0]);
+	$country_info['VIR'] = array('name' => __('Virgin Islands, US', 'wppizza-admin'), 'ISO' => 'VIR', 'currency' => array('USD'), 'ISO2' => 'VI', 'prefix' => '1340', 'address_format' => $address_format[0]);
+	$country_info['YEM'] = array('name' => __('Yemen', 'wppizza-admin'), 'ISO' => 'YEM', 'ISO2' => 'YE', 'currency' => array('YER'), 'prefix' => '967', 'address_format' => $address_format[0]); 
+	$country_info['ZMB'] = array('name' => __('Zambia', 'wppizza-admin'), 'ISO' => 'ZMB', 'ISO2' => 'ZM', 'currency' => array('ZMW'), 'prefix' => '260', 'address_format' => $address_format[0]); 
+	$country_info['ZWE'] = array('name' => __('Zimbabwe', 'wppizza-admin'), 'ISO' => 'ZWE', 'ISO2' => 'ZW', 'currency' => array('ZWD'), 'prefix' => '263', 'address_format' => $address_format[0]); 
+	
+
+
+
 
 	/*
 		exclude some keys if set
@@ -1219,8 +1057,6 @@ function wppizza_country_info($key = false, $value = false, $selector = false, $
 
 return $res;
 }
-
-
 /*******************************************************
 *
 *	match a string between tags
@@ -1965,5 +1801,42 @@ function wppizza_ui_styles(){
 	);
 	sort($uiStyles);
 return $uiStyles;
+}
+
+/*******************************************************************
+*	[write to error log]
+*	@since > 3.19
+*	@param mixed
+*	@param bool
+*	@param mixed
+*	@return void
+*******************************************************************/
+function wppizza_log($data, $clear_log = true, $trace = true){
+	if(!empty($clear_log)){
+		$dblog = WP_CONTENT_DIR . '/debug.log';
+		file_put_contents($dblog, ' -- WPPIZZA : CLEAR LOG -- '.PHP_EOL);
+	}
+	
+	$fn_trace = empty($trace) ? 'wppizza_log()' : 'wppizza_log() called by: "'.debug_backtrace(!DEBUG_BACKTRACE_PROVIDE_OBJECT|DEBUG_BACKTRACE_IGNORE_ARGS,2)[1]['function'].'"';
+	error_log(print_r($fn_trace, true));
+	error_log(print_r($data, true));
+return;
+}
+
+
+/*************************************************************
+	get (major) plugin version of order when it was made
+	as some values stored my differ (order history, sales data etc)
+	@since 4.x
+*************************************************************/
+function wppizza_order_plugin_version($ver = WPPIZZA_VERSION){
+	
+	if(empty($ver)){
+		$ver = 0;	
+	}else{
+		$ver = explode('.', $ver)[0];	
+	}
+	
+return (int)$ver;//return as integer
 }
 ?>

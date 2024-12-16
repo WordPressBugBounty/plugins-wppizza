@@ -1867,13 +1867,26 @@ class WPPIZZA_SESSIONS{
 
 	return bool
 	******************************************************/
-	function set_pickup($is_pickup){
-		$_SESSION[$this->session_key_cart]['self_pickup'] = $is_pickup;
+	function set_pickup($isPickup){
+		
+		global $wppizza_options;
+		//force pickup if no delivery offered
+		$_forcePickup = $wppizza_options['order_settings']['delivery_selected']=='no_delivery' ? true : false;
+		//force delivery if pickup disabled
+		$_forceDelivery = empty($wppizza_options['order_settings']['order_pickup'])  ? true : false;
+			
+		//force pickup
+		if($_forcePickup){ $isPickup = true; }
+		//force delivery
+		if($_forceDelivery){ $isPickup = false; }
+		//if it's neither, use the $isPickup parameter passed to function
+
+		$_SESSION[$this->session_key_cart]['self_pickup'] = $isPickup;
 
 		/* allow to run action on change from pickup to delivery and vice versa*/
-		do_action('wppizza_on_pickup_delivery_change', $is_pickup);
+		do_action('wppizza_on_pickup_delivery_change', $isPickup);
 
-	return $is_pickup;
+	return $isPickup;
 	}
 	/*******************************************************
 
@@ -1929,10 +1942,14 @@ class WPPIZZA_SESSIONS{
 		[get sessioned user data formfield inputs etc]
 
 	******************************************************/
-	function get_userdata() {
-			$session_userdata = isset($_SESSION[$this->session_key_userdata]) ? $_SESSION[$this->session_key_userdata] : array();
-		return $session_userdata;
+	function get_userdata($key = false) {
+		$session_userdata = isset($_SESSION[$this->session_key_userdata]) ? $_SESSION[$this->session_key_userdata] : array();
+		if(!empty($key)){
+			$session_userdata = isset($_SESSION[$this->session_key_userdata][$key]) ? $_SESSION[$this->session_key_userdata][$key] : 'undefined' ;//using undefined here as the value may well be false, null etc 		
+		}
+	return $session_userdata;
 	}
+
 
 	/*******************************************************
 		[set sessioned user data - for 3rd party plugins]

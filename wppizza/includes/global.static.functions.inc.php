@@ -28,21 +28,24 @@ return $debug;
 function wppizza_major_version(){
 	static $version = null;
 	if($version === null){
-
- 		if ( version_compare( WPPIZZA_VERSION, '3', '>=' ) ) {
-           	$version = 3;
-           	return $version;
-        }
- 		/* future versions */
- 		if ( version_compare( WPPIZZA_VERSION, '4', '>=' ) ) {
-           	$version = 4;
-           	return $version;
-        }
- 		/* future versions */
+ 		
+ 		/* future versions 5+ */
  		if ( version_compare( WPPIZZA_VERSION, '5', '>=' ) ) {
            	$version = 5;
            	return $version;
         }
+ 		/* version <> 4  */
+ 		if ( version_compare( WPPIZZA_VERSION, '4', '>=' ) ) {
+           	$version = 4;
+           	return $version;
+        }
+        /* version <> 3  */
+ 		if ( version_compare( WPPIZZA_VERSION, '3', '>=' ) ) {
+           	$version = 3;
+           	return $version;
+        }
+        /* all other , treat like v2 */
+        $version = 2;
 	}
 return $version;
 }
@@ -160,12 +163,13 @@ function wppizza_is_orderpage(){
 			if called from ajax and distinctly set to be checkout or not posting
 			$_POST['vars']['isCheckout'] without having a post object
 		**/
-		if( !is_object($post) && empty($post->ID) && defined('DOING_AJAX') && DOING_AJAX && isset($_POST['vars']['isCheckout'])){
+		if( !is_object($post) && empty($post->ID) && defined('DOING_AJAX') && DOING_AJAX && ( isset($_POST['vars']['isCheckout']) ) ){
 			// js may return a true/false string
-			if(filter_var($_POST['vars']['isCheckout'], FILTER_VALIDATE_BOOLEAN)){
+			if( ( isset($_POST['vars']['isCheckout']) && filter_var($_POST['vars']['isCheckout'], FILTER_VALIDATE_BOOLEAN) ) ){
 				$is_orderpage = true;
 			}
 		}
+
 	}
 
 return $is_orderpage;
@@ -432,7 +436,59 @@ function wppizza_get_menu_items() {
 
 	return $wppizza_menu_items;
 }
+/***********************************************************
+	get wppizza menu items by category->size , all menu items by cat, size with meta data
+	@since 3.19.3
+	@return array
+***********************************************************/
+function wppizza_items() {
+	
+	static $wppizza_menu_items = null;
+	
+	if($wppizza_menu_items === null){
+		//blog
+		global $blog_id;
+		
+		//init array
+		$wppizza_menu_items = array();
+		
+		//get all menu items (i.e wppizza custom post type)
+		$menu_items = wppizza_get_menu_items();
+		
+		//loop through wppizza posts
+		foreach($menu_items as $menu_item){
+			//get meta data
+			$meta = apply_filters('wppizza_filter_meta', get_post_meta($menu_item->ID, WPPIZZA_POST_TYPE, true ), $menu_item->ID);
+			
+			//get category ids
+			$terms = wp_get_post_terms( $menu_item->ID, WPPIZZA_TAXONOMY);			
+			foreach($terms as $term){				
+				foreach($meta['prices'] as $sizeId => $price){
+					
+					//id
+					$idArray = array('blogId' => $blog_id, 'catId' => $term -> term_id, 'postId' => $menu_item -> ID, 'sizesId' => $meta['sizes'], 'sizeId' => $sizeId); 
+					$itemKey = implode('.', $idArray );					
+					
+					//add to array
+					$wppizza_menu_items[$itemKey] = array(
+						'blogId' =>  	$blog_id,
+						'catId' =>		$term -> term_id,
+						'catIds' =>  	( !empty($terms) ? wppizza_array_column($terms, 'term_id' ) : array() ) , //( !empty($terms) ? implode(',', wppizza_array_column($terms, 'term_id' )) : '' ),
+						'postId' =>  	$menu_item -> ID,
+						'sizesId' =>  	$meta['sizes'],
+						'sizeId' =>  	$sizeId,
+						'price' =>  	$price,
+						'tax_tier' => 	( empty($meta['item_tax_alt'] ) ? 0 : $meta['item_tax_alt'] ),
+						'max_qty' => 	'',//max selectable (empty string or negative for unlimited )
+						'meta' => 		$meta,					
+					);
+				}
+			}			
+		}
+	}
 
+return $wppizza_menu_items;
+}
 /***********************************************************
 	get all wppizza additives
 ***********************************************************/
@@ -1460,6 +1516,9 @@ function wppizza_get_shop_status(){
 
 
 	if($shop_status === null){
+
+		global $wppizza_options	;
+		
 		/*
 			only get get next opening / closing time
 			as well as current open/closed status of shop
@@ -1469,7 +1528,14 @@ function wppizza_get_shop_status(){
 		$shop_status = wppizza_get_openingtimes($args);
 		//seconds between now and next status change
 		$remaining_seconds = round($shop_status['next']['ts'] - WPPIZZA_WP_TIME);
-		//next
+
+		//cal relative d/h/m/s
+		$_daysout = floor($remaining_seconds / 86400);
+		$_hoursout = floor(($remaining_seconds - $_daysout * 86400)/ 3600);
+		$_minutesout = floor(($remaining_seconds - $_daysout * 86400 - $_hoursout * 3600) / 60);
+		$_secondsout = $remaining_seconds - $_daysout * 86400 - $_hoursout * 3600 - $_minutesout * 60;
+
+		//next - absoluts
 		$shop_status['next']['remaining'] = 	array(
 			'ms' => round($remaining_seconds * 1000),
 			'sec' => $remaining_seconds,
@@ -1477,7 +1543,16 @@ function wppizza_get_shop_status(){
 			'hrs' => floor($remaining_seconds / 3600 ),
 			'days' => floor($remaining_seconds / 86400 ),
 		);		
-		
+		//next -relative
+		$shop_status['next']['relative'] = 	array(
+			'sec' => $_secondsout,
+			'min' => $_minutesout,
+			'hrs' => $_hoursout,
+			'days' => $_daysout,
+		);
+
+		//to distinctly identify it was forced closed
+		$shop_status['force_closed'] = ( !empty($wppizza_options['openingtimes']['close_shop_now']) ? true : false );		
 	}
 return $shop_status;
 }

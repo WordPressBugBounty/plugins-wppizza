@@ -175,7 +175,7 @@ class WPPIZZA_MODULE_TOOLS_MISCELLANEOUS{
 				'description'=>array(
 					'<span class="wppizza-highlight">'.__('If you receive notifications at your Wordpress admin email address, that emails of orders to the shop failed, enable this option to still have those orders appear in your "Order History".','wppizza-admin').'</span>',
 					'<span class="wppizza-highlight">'.__('However, you would be well advised to only temporarily enable this option while the underlying email problems are being fixed as per the error messages received.').'</span>',
-					'<span>'.sprintf(__('Details of the error encountered can also be found in the "logs/" directory of the %s plugin as well as in your Wordpress/Server debug/error log','wppizza-admin'), WPPIZZA_NAME).'</span>',
+					'<span>'.sprintf(__('Details of the error encountered can also be found in the "logs/" directory of the %s plugin as well as in your Wordpress/Server debug/error log', 'wppizza-admin'), WPPIZZA_NAME).'</span>',
 				)
 			));
 

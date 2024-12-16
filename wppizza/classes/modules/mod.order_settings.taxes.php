@@ -187,7 +187,7 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TAXES{
 			$settings['fields'][$this->section_key][$field] = array( __('Tax Rounding', 'wppizza-admin'), array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('Typically any decimal fractions of applicable taxes are rounded up. Tick this box if your tax laws allow for "natural" rounding (i.e rounding down if fractions are below .5)', 'wppizza-admin'),
+				'label'=>__('If enabled, decimal fractions are rounded naturally (i.e rounding down if fractions are below .5). If your applicable tax laws require fractions alwasy to be rounded up uncheck this box.', 'wppizza-admin'),
 				'description'=>array()
 			));
 
@@ -198,10 +198,6 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TAXES{
 				'label'=>'',
 				'description'=>array()
 			));
-
-
-
-
 
 		}
 
@@ -297,7 +293,7 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TAXES{
 		$options[$this->settings_page]['item_tax'] = 20;
 		$options[$this->settings_page]['item_tax_alt'] = 10;
 		$options[$this->settings_page]['item_tax_alt_2'] = 0;
-		$options[$this->settings_page]['taxes_round_natural'] = false;
+		$options[$this->settings_page]['taxes_round_natural'] = true;
 		$options[$this->settings_page]['taxes_display'] = 1;
 		$options[$this->settings_page]['taxes_included'] = false;
 		$options[$this->settings_page]['shipping_tax'] = false;

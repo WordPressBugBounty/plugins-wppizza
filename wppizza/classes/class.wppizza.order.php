@@ -384,6 +384,7 @@ class WPPIZZA_ORDER{
 				$order_results['sections']['summary'][$sKey][$cKey]['value'] = $cArr['value'];
 				$order_results['sections']['summary'][$sKey][$cKey]['value_formatted'] = $cArr['value_formatted'];
 				$order_results['sections']['summary'][$sKey][$cKey]['class_ident'] = !empty($cArr['class_ident']) ? $cArr['class_ident'] : '' ;
+				$order_results['sections']['summary'][$sKey][$cKey]['fullwidth'] = !empty($cArr['fullwidth']) ? true : false ;
 			}
 		}}
 
@@ -2656,7 +2657,7 @@ return $customer_parameters;
 				$summary['delivery_charges'][0]['sort']				=	40;
 				$summary['delivery_charges'][0]['class_ident']			=	'delivery';
 				$summary['delivery_charges'][0]['label']				=	!empty($order_values['summary']['delivery_charges']) ? $blog_options['localization']['delivery_charges'] : $blog_options['localization']['free_delivery'] ;
-				$summary['delivery_charges'][0]['value']				=	$order_values['summary']['delivery_charges'] ;
+				$summary['delivery_charges'][0]['value']				=	!empty($order_values['summary']['delivery_charges']) ? $order_values['summary']['delivery_charges'] : 0 ;
 				$summary['delivery_charges'][0]['value_formatted']		=	!empty($order_values['summary']['delivery_charges']) ? wppizza_format_price($order_values['summary']['delivery_charges'], $currency) : ' ' ;/* add space to force empty td in templates*/
 			}
 		}
@@ -2806,7 +2807,7 @@ return $customer_parameters;
 			$summary['total_price_items'][0]['sort']			=	10;
 			$summary['total_price_items'][0]['class_ident']		=	'total-items';
 			$summary['total_price_items'][0]['label']			=	$blog_options['localization']['order_items'];
-			$summary['total_price_items'][0]['value']			=	$order_values['summary']['total_price_items'] ;
+			$summary['total_price_items'][0]['value']			=	!empty($order_values['summary']['total_price_items']) ? $order_values['summary']['total_price_items'] : 0 ;
 			$summary['total_price_items'][0]['value_formatted']	=	!empty($order_values['summary']['total_price_items']) ? wppizza_format_price($order_values['summary']['total_price_items'], $currency) : '' ;
 		}
 
@@ -2884,7 +2885,7 @@ return $customer_parameters;
 						tip as percentages enabled end
 					************************************/
 
-					$summary['tips'][0]['value']				=	$order_values['summary']['tips'] ;
+					$summary['tips'][0]['value']				=	!empty($order_values['summary']['tips']) ? $order_values['summary']['tips'] : 0 ;
 					$required_attribute = '';
 					/* is pickup */
 					if(!empty($order_values['summary']['self_pickup']) && !empty($ctips_options['required_on_pickup']) ){
@@ -2895,6 +2896,7 @@ return $customer_parameters;
 						$required_attribute = 'required = "required" ';
 					}
 					$value = ($order_values['summary']['tips']!== false) ? wppizza_format_price($order_values['summary']['tips'], null) : '' ;
+					
 					/* wrap in div for possible error messages */
 					$summary['tips'][0]['value_formatted']  = '<div><input id="'. $ctips_key .'" name="'. $ctips_key.'"  type="text" value="' . $value . '" placeholder="' .$ctips_options['placeholder'] . '"  ' . $required_attribute . ' /></div>';
 				}

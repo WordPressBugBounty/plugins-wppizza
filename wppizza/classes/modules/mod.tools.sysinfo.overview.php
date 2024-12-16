@@ -132,7 +132,9 @@ function wppizza_system_info(){
 	$qtbl = $wpdb->get_results( "SHOW FULL COLUMNS FROM ".$table_name."" );
 	foreach($qtbl as $i=> $colObj){
 		$tbl_columns[$i] = $colObj->Field ;
-		if(in_array($colObj->Field, array('customer_details','customer_ini','order_details','order_ini','order_taxes_included','order_self_pickup','order_status','order_status_user_defined','hash','payment_status','transaction_id','transaction_details','transaction_errors','display_errors','initiator','mail_sent','mail_error','notes','session_id','ip_address','user_data','user_defined') ) && substr($colObj->Collation,0, 7) != strtolower('utf8mb4')){
+		//some columns removed in 3.19.3
+		$column_array = array('customer_details','customer_ini','order_details','order_ini','order_taxes_included','order_self_pickup','order_status','order_status_user_defined','hash','payment_status','transaction_id','transaction_details','transaction_errors','display_errors','initiator','mail_sent','mail_error','notes','session_id','ip_address','user_data');
+		if(in_array($colObj->Field, $column_array ) && substr($colObj->Collation,0, 7) != strtolower('utf8mb4')){
 			$tbl_columns[$i] .= ' CHECK COLLATION ['.$colObj->Collation.']';
 		}
 	}

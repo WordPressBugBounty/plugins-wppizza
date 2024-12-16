@@ -689,7 +689,7 @@ class WPPIZZA_SCRIPTS_AND_STYLES{
 
 		/** feedback add to cart**/
 		if($wppizza_options['layout']['jquery_fb_add_to_cart']!=''){
-			$miscOptions['itm']['fbatc'] = $wppizza_options['localization']['jquery_fb_add_to_cart_info'];
+			$miscOptions['itm']['fbatc'] = html_entity_decode($wppizza_options['localization']['jquery_fb_add_to_cart_info']);
 			$miscOptions['itm']['fbatcms'] = $wppizza_options['layout']['jquery_fb_add_to_cart_ms'];
 		}
 
@@ -729,7 +729,7 @@ class WPPIZZA_SCRIPTS_AND_STYLES{
 			filterable individually!
 		*****************************/
 		$jsExtend = array();
-		$jsExtend = apply_filters('wppizza_filter_js_extend', $jsExtend);
+		$jsExtend = apply_filters('wppizza_filter_js_extend', $jsExtend, $localize);
 		/*
 			add to localized script
 		*/

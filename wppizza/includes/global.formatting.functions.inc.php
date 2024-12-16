@@ -1,17 +1,6 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/ ?>
 <?php
 /*******************************************************************
-*	[rounding precisions]
-*******************************************************************/
-function wppizza_currency_precision(){
-	global $wppizza_options;
-	$precision = (!empty($wppizza_options['prices_format']['hide_decimals'])) ? 0 : 2;
-	if(defined('WPPIZZA_DECIMALS')){
-		$precision=(int)WPPIZZA_DECIMALS;
-	}
-return $precision;
-}
-/*******************************************************************
 *
 *	[round natural - $precision => no of decimals]
 *	expects float / dec as input
@@ -34,7 +23,7 @@ function wppizza_round_up( $value, $fractions = false){
 	}else{
 		$precision = wppizza_currency_precision();
 	}
-    
+  
     $pow = pow ( 10, $precision );
     /*
     	lets start by rounding things somewhat sensibly
@@ -46,8 +35,14 @@ function wppizza_round_up( $value, $fractions = false){
    	$value = (string)($value * $pow)/$pow ;
    	$format_precision = ($precision + 5);
    	$value = number_format($value, $format_precision,'.', '');
-	$powXvalue = round($pow * $value);//round again or ceil(2.4900000*100) will actually return 250 for example
-
+   	
+	//$powXvalue = round($pow * $value);//round again or ceil(2.4900000*100) will actually return 250 for example
+	
+	
+	//since php 8. something this powXvalue issue above does not appear to be the case anymore, so lets do a simple ceil here
+	$powXvalue = ceil($pow * $value);
+	
+	//error_log('wppizza_round_up FN ['.$precision.' / '.$pow.']: ' .$powXvalue .'| '.$r.'') ; 
 
     $rounded = ( ceil ( $powXvalue ) + ceil ( $powXvalue - ceil ( $powXvalue ) ) ) / $pow;
 
@@ -74,124 +69,6 @@ function wppizza_round_up( $value, $fractions = false){
 		return $str;
 	}
 /*****************************************************************
-	i18n number price formatted with/out decimals
-*****************************************************************/
-function wppizza_output_format_price($str){
-	global $wppizza_options;
-
-	if(trim($str)!=''){
-		
-		$decimals = wppizza_currency_precision();
-		
-		$str=number_format_i18n($str, $decimals);
-	
-	}
-	/**allow filtering**/
-	$str=apply_filters('wppizza_filter_output_format_price', $str);
-
-	return $str;
-}
-/*****************************************************************
-	i18n number price formatted with/out decimals and currrency
-	$set_currency_position should be left or right if set
-*****************************************************************/
-function wppizza_format_price($value, $currency = false, $set_currency_position = false, $decimals = null){
-	global $wppizza_options;
-
-	//skip the rest if there's no value (but allow for 0/zero !)
-	if($value == '' || $value === null){
-		return '';	
-	}
-	
-	$value=trim($value);
-
-	/*
-		allow filtering of decimals to be displayed
-		to  also support omitting any trailing zero's
-		instead of hiding decimls for example (as that would also affect rounding !)
-	*/
-	$number_format_auto = apply_filters('wppizza_format_price_auto', false);
-
-
-	/**
-		omit currency entirely if null
-	**/
-	if($currency!==null){
-		/*currency symbol*/
-		$currency = empty($currency) ? $wppizza_options['order_settings']['currency_symbol'] : $currency;
-		/*currency position*/
-		$currency_position = ($set_currency_position === false) ? $wppizza_options['prices_format']['currency_symbol_position'] : $set_currency_position;
-		/*currency symbol spacing*/
-		$currency_spacing = empty($wppizza_options['prices_format']['currency_symbol_spacing']) ? '' : ' ';
-	}
-
-	if($value!=''){
-
-
-
-		/*
-			distinctly set decimal places
-		*/
-		if($decimals !== null){
-
-			$value=number_format_i18n($value,(int)$decimals);
-
-		}
-
-		/*
-			use decimal places as set for this blog
-		*/
-		else{
-			/*
-				set to hide
-			*/
-			if($wppizza_options['prices_format']['hide_decimals']){
-
-				$value=number_format_i18n($value, 0);
-
-			}
-			else{
-				/*
-					set to 2 or distinctly by WPPIZZA_DECIMALS;
-				*/
-				$decimals=2;
-				if(defined('WPPIZZA_DECIMALS')){
-					$decimals=(int)WPPIZZA_DECIMALS;
-				}
-
-				//omit all/any trailing zerors with a max of defined
-				if($number_format_auto){
-					//decimals length
-					$auto_decimals = strlen(substr(strrchr($value, "."), 1));
-					$standard_decimals = $decimals;
-					/* get lowest as we should never have more decimals than defined*/
-					$decimals = min($auto_decimals, $standard_decimals);
-					/* format  */
-					$value = number_format_i18n($value,$decimals);
-				}
-				else{
-					$value = number_format_i18n($value,$decimals);
-				}
-
-
-			}
-		}
-
-	}
-
-	/**omit currency entirely if null**/
-	if($currency!==null){
-		if($currency_position==='left'){
-			$value=$currency . $currency_spacing . $value;
-		}
-		if($currency_position==='right'){
-			$value= $value . $currency_spacing . $currency;
-		}
-	}
-
-	return $value;
-}
-/*****************************************************************
 	localize percent values including % sign
 *****************************************************************/
 //function wppizza_format_percent($value){
@@ -202,33 +79,6 @@ function wppizza_format_price($value, $currency = false, $set_currency_position 
 
 //return $value;
 //}
-/*****************************************************************
-	format price with decimals to minor currency
-	@since 3.12.2
-*****************************************************************/
-function wppizza_format_minor_currency($amount){
-	/*
-		due to php precisions settings (i suspect) a decimal amount might be missing a penny/cent
-		when converted to integer
-
-		i.e ((int)(18.90*100)) actually results in 1889 - at least on some servers
-
-		so lets make sure this does not happen with this function by using float and even round
-		 - just to be sure
-	*/
-	$amount = round((float)($amount*100));
-
-
-return $amount;
-}
-/*****************************************************************
-	revert from minor currency back to major currency
-	@since 3.13.4
-*****************************************************************/
-function wppizza_revert_minor_currency($amount, $decimals = 2){
-	$amount = round((float)($amount / 100), $decimals);
-return $amount;
-}
 /*****************************************************************
 	localize percent values with or without % sign
 *****************************************************************/
@@ -244,48 +94,15 @@ function wppizza_output_format_percent($value, $add_percent_sign = false){
 
 return $value;
 }
-/*****************************************************************
-	format prices as float value. no currency, no localization
-	usually a bit overkill, as the values passed should already be floats
-	but let's rather be safe than sorry
-*****************************************************************/
-function wppizza_format_price_float($value, $round = true){
-
-	$value = trim($value);
-
-	if($value==''){return 0;}
-
-	if($value!=''){
-		$value=preg_replace('/[^0-9.,]*/','',$value);/*first get  rid of all chrs that should definitely not be in there*/
-		$value=str_replace(array('.',','),'#',$value);/*make string we can explode*/
-		$floatArray=explode('#',$value);/*explode so we know the last bit might be decimals*/
-		$exLength=count($floatArray);
-
-		/**make a proper float**/
-		$value_as_float='';
-		for($i=0;$i<$exLength;$i++){
-			if($i>0 && $i==($exLength-1)){
-				$value_as_float.='.';//add decimal point if needed
-			}
-			$value_as_float.=''.$floatArray[$i].'';
-		}
-		$value_as_float=(float)$value_as_float;
-
-		/**round if required*/
-		if($round){	
-			$decimals = wppizza_currency_precision();
-			$value=round($value_as_float,$decimals);
-		}else{
-			$value = $value_as_float;
-		}
-
-	}
-	return $value;
-}
 /****************************************************************************
 *	[decode entities]
 ****************************************************************************/
 function wppizza_decode_entities($str, $decodeNCRs = true){
+
+		//ignore anything that's an array here
+		if(is_array($str)){
+			return $str;
+		}
 
 		//avoid some potential php notices/warning
 		if($str === null || $str === false  || $str === ''){

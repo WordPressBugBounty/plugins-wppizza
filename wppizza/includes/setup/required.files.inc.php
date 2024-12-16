@@ -8,6 +8,9 @@
 			/** include some globally available validation functions **/
 			require_once(WPPIZZA_PATH .'includes/global.validation.functions.inc.php');
 
+			/** currency formatting **/
+			require_once(WPPIZZA_PATH .'includes/global.currency.prices.functions.inc.php');
+
 			/** include miscellaneous globally available helper functions **/
 			require_once(WPPIZZA_PATH .'includes/global.helper.functions.inc.php');
 
@@ -19,6 +22,9 @@
 
 			/** include globally available formatting functions **/
 			require_once(WPPIZZA_PATH .'includes/global.formatting.functions.inc.php');
+
+			/** i18n - translations **/
+			require_once(WPPIZZA_PATH .'classes/class.wppizza.i18n.php');
 			
 			/** using cookies/db entries instead of php sessions **/
 			require_once(WPPIZZA_PATH .'classes/class.wppizza.dbcookie.php');			
@@ -207,6 +213,10 @@
 			**************************************/
 			require_once(WPPIZZA_PATH .'classes/class.wppizza.user.php');
 
+			/**************************************
+				[include tips class - (markup/calculations/options) ]
+			**************************************/
+			require_once(WPPIZZA_PATH .'classes/class.wppizza.tips.php');
 
 			/**************************************
 				[include shortcode and markup classes]

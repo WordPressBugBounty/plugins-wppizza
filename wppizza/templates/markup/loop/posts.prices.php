@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/
 
 			foreach($prices as $key=>$price){
 
-				$markup['post_price_'.$key.'_'] = '<li id="' . $price['id'] . '" class="' . $price['class_price'] . '" ' . $price['title'] . '>';
+				$markup['post_price_'.$key.'_'] = '<li id="' . $price['id'] . '" class="' . $price['class_price'] . '" ' . $price['title'] . ' '.$prices[$key]['data'].'>';
 
 					/*price - i18n formatted*/
 					$markup['post_price_'.$key.'_span'] = '<span class="' . $price['class_price_span'] . '">' . $price['price'] . '</span>';

@@ -24,6 +24,12 @@ class WPPIZZA_ACTIONS{
 	function __construct() {
 
 		/**********************************************************
+			[set pickup / delivery per _GET frontend only]
+		***********************************************************/
+		if(!is_admin()){
+			add_action('init', array($this, 'set_pickup_by_get'));
+		}
+		/**********************************************************
 			[(try to make sure) to not cache order page - let's run this quite late]
 			[wp is the earliest hook to get post->ID to check if we are actually on orderpage
 		***********************************************************/
@@ -36,6 +42,52 @@ class WPPIZZA_ACTIONS{
 		add_action('wp_ajax_wppizza_json', array($this, 'wppizza_ajax'));
 		add_action('wp_ajax_nopriv_wppizza_json', array($this, 'wppizza_ajax') );
 	}
+
+	/**************************************************************
+	*
+	*
+	* 	[allow setting of pickup or delivery using get parameters]
+	*	@since 3.19.3
+	*
+	***************************************************************/
+	public function set_pickup_by_get(){
+		global 	$wppizza_options;
+
+		
+		#ignore any of this if only delivery offered or pickup is disabled
+		if(
+			$wppizza_options['order_settings']['delivery_selected'] == 'no_delivery' || 
+			empty($wppizza_options['order_settings']['order_pickup']) 			
+		){
+			return;
+		}
+		
+		# skip also, if no related get parameter or both are set for no good reason
+		if( !isset($_GET[WPPIZZA_GET_DELIVERY]) && !isset($_GET[WPPIZZA_GET_PICKUP]) || (isset($_GET[WPPIZZA_GET_DELIVERY]) && isset($_GET[WPPIZZA_GET_PICKUP]) )  ){
+			return;	
+		}
+		
+		//get current url
+    	$current_url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+    	
+    	//strip pickup/delivery get var 
+    	$strip_get_var = isset($_GET[WPPIZZA_GET_DELIVERY]) ? WPPIZZA_GET_DELIVERY : WPPIZZA_GET_PICKUP;
+		$redirect_url = preg_replace('/(&|\?)'.$strip_get_var.'=?[^&]*&/', '$1', preg_replace('/(&|\?)'.$strip_get_var.'=?[^&]*$/', '', $current_url)) . PHP_EOL;
+
+		if(!empty($redirect_url)){//just to be safe, 
+
+			//set session
+			$isPickup = isset($_GET[WPPIZZA_GET_DELIVERY]) ? false : true;
+			$set_pickup = WPPIZZA()->session->set_pickup($isPickup);
+			
+			//redirect
+			header("Location: ".htmlspecialchars($redirect_url)."");
+			die();
+		}
+		
+	return;
+	}
+
 	/**************************************************************
 	*
 	*
