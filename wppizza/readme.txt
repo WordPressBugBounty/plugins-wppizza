@@ -7,8 +7,8 @@ Tags: pizzeria, restaurant, restaurant menu, food menu, food ordering, online or
 Requires PHP: 5.3+
 Requires at least: PHP 5.3+, MySql 5.5+, WP 3.3+ 
 Tested up to: 6.7
-Version: 3.19.3
-Stable tag: 3.19.3
+Version: 3.19.4
+Stable tag: 3.19.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -162,6 +162,12 @@ Note: Allergen/Foodtype Icons included with this plugin can be used on your site
 "Double Ring" Loading Icon SVG (v3.13+) generated at <a href="https://loading.io/spinner/double-ring">loading.io</a>  
 
 == Changelog ==
+
+
+3.19.4  
+* Added: action hooks before pickup/delivery via _GET parameter redirections 
+* Tweak: now requires distinct enabling of pickup/delivery via _GET parameter (WPPizza->Order Settings)  
+18th December 2024  
 
 3.19.3  
 * General: Some Maintenance/ Tidy up  

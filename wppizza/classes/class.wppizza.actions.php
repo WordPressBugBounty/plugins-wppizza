@@ -27,7 +27,7 @@ class WPPIZZA_ACTIONS{
 			[set pickup / delivery per _GET frontend only]
 		***********************************************************/
 		if(!is_admin()){
-			add_action('init', array($this, 'set_pickup_by_get'));
+			add_action('init', array($this, 'set_pickup_by_get'), 10);
 		}
 		/**********************************************************
 			[(try to make sure) to not cache order page - let's run this quite late]
@@ -52,7 +52,11 @@ class WPPIZZA_ACTIONS{
 	***************************************************************/
 	public function set_pickup_by_get(){
 		global 	$wppizza_options;
-
+		
+		#not enabled 
+		if( empty($wppizza_options['order_settings']['getvar_pickup_choice'] ) ){
+			return;	
+		}
 		
 		#ignore any of this if only delivery offered or pickup is disabled
 		if(
@@ -76,11 +80,30 @@ class WPPIZZA_ACTIONS{
 
 		if(!empty($redirect_url)){//just to be safe, 
 
-			//set session
-			$isPickup = isset($_GET[WPPIZZA_GET_DELIVERY]) ? false : true;
-			$set_pickup = WPPIZZA()->session->set_pickup($isPickup);
+			#skip session settings etc if nothing actually changed
+			$currentIsPickup = wppizza_is_pickup();
+			if(  
+				( $currentIsPickup && isset($_GET[WPPIZZA_GET_DELIVERY]) ) || 
+				( !$currentIsPickup && isset($_GET[WPPIZZA_GET_PICKUP]) )
+			){
+				//set session
+				$isPickup = isset($_GET[WPPIZZA_GET_DELIVERY]) ? false : true;
+				$set_pickup = WPPIZZA()->session->set_pickup($isPickup);
+				
+				//checkout page ?
+				$isCheckout = wppizza_is_checkout();
+				
+				//allow to run an action before redirecting and before recalculating session data
+				do_action('wppizza_on_set_pickup_by_get', $isPickup, $isCheckout);
+				
+				//recalc session (output unused)
+				$do_cart = WPPIZZA()-> session -> sort_and_calculate_cart($isCheckout, true, __FUNCTION__);
+				
+				//allow to run an action before redirecting but after recalculating session data
+				do_action('wppizza_on_session_set_pickup_by_get', $isPickup, $isCheckout);			
+			}
 			
-			//redirect
+			//but always redirect removing get var
 			header("Location: ".htmlspecialchars($redirect_url)."");
 			die();
 		}

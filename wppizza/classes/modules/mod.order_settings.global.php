@@ -180,6 +180,12 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_GLOBAL{
 					__('Enable to show full order details on "thank you" page after payment', 'wppizza-admin')
 				)
 			);
+			$settings['help'][$this->section_key][] = array(
+				'label'=>__('Delivery or Pickup by url parameter', 'wppizza-admin'),
+				'description'=>array(
+					__('You can override the default \'pickup\' and \'delivery\' parameters by setting the \'WPPIZZA_GET_PICKUP\' and \'WPPIZZA_GET_DELIVERY\' constants as required.', 'wppizza-admin')
+				)
+			);
 		}
 		/*fields*/
 		if($fields){
@@ -216,6 +222,13 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_GLOBAL{
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
 				'label'=>__('Will add any order details after your thank you text on successful order.', 'wppizza-admin'),
+				'description'=>array()
+			));
+			$field = 'getvar_pickup_choice';
+			$settings['fields'][$this->section_key][$field] = array( __('Delivery or Pickup by parameter', 'wppizza-admin'), array(
+				'value_key'=>$field,
+				'option_key'=>$this->settings_page,
+				'label'=>__('Enable delivery/pickup to be selected by appending \'?delivery\' or \'?pickup\' parameter to a URL.', 'wppizza-admin'),
 				'description'=>array()
 			));
 		}
@@ -275,6 +288,14 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_GLOBAL{
 			echo "</label>";
 			echo"".$description."";
 		}
+
+		if($field=='getvar_pickup_choice'){
+			echo "<label>";
+				echo "<input name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' type='checkbox'  ". checked($wppizza_options[$options_key][$field],true,false)." value='1' />";
+				echo "".$label."";
+			echo "</label>";
+			echo"".$description."";
+		}	
 	}
 	/*------------------------------------------------------------------------------
 	#	[insert default option on install]
@@ -290,6 +311,7 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_GLOBAL{
 		$options[$this->settings_page]['orderpage_exclude'] = true;
 		$options[$this->settings_page]['append_internal_id_to_transaction_id'] = false;
 		$options[$this->settings_page]['gateway_showorder_on_thankyou'] = true;
+		$options[$this->settings_page]['getvar_pickup_choice'] = false;
 
 	return $options;
 	}
@@ -310,13 +332,13 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_GLOBAL{
 		********************************/
 		if(isset($_POST[''.WPPIZZA_SLUG.'_'.$this->settings_page.''])){
 			$options[$this->settings_page]['currency'] = strtoupper($input[$this->settings_page]['currency']);
-				$currency_symbol=wppizza_currencies($input[$this->settings_page]['currency'],true);
+				$currency_symbol = wppizza_currencies($input[$this->settings_page]['currency'],true);
 			$options[$this->settings_page]['currency_symbol'] = $currency_symbol['val'];
 			$options[$this->settings_page]['orderpage'] = !empty($input[$this->settings_page]['orderpage']) ? (int)$input[$this->settings_page]['orderpage'] : false;
 			$options[$this->settings_page]['orderpage_exclude']=!empty($input[$this->settings_page]['orderpage_exclude']) ? true : false;
 			$options[$this->settings_page]['append_internal_id_to_transaction_id'] = !empty($input[$this->settings_page]['append_internal_id_to_transaction_id']) ? true : false;
 			$options[$this->settings_page]['gateway_showorder_on_thankyou'] = !empty($input[$this->settings_page]['gateway_showorder_on_thankyou']) ? true : false;
-
+			$options[$this->settings_page]['getvar_pickup_choice'] = !empty($input[$this->settings_page]['getvar_pickup_choice']) ? true : false;
 		}
 	return $options;
 	}
