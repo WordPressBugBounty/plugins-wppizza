@@ -680,9 +680,6 @@ function wppizza_format_price($value, $currency = false, $set_currency_position 
 
 	/**omit currency entirely if null**/
 	if($currency !== null){
-
-#error_log('C: '.print_r($currency, true));
-
 		if($currency_position === 'left'){
 			$value = $currency . $currency_spacing . $value;
 		}
@@ -690,7 +687,7 @@ function wppizza_format_price($value, $currency = false, $set_currency_position 
 			$value = $value . $currency_spacing . $currency;
 		}
 	}
-#error_log('V: '.print_r($value, true));
+
 	return $value;
 }
 /*****************************************************************

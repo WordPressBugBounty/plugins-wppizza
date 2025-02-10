@@ -482,7 +482,10 @@ class WPPIZZA_SCRIPTS_AND_STYLES{
 		if(!empty($post->ID)){
 			$localize['pid'] = $post->ID;
 		}
-
+		//if  $post->ID is empty (ajax calls) , lets try and take it from posted vars
+		if(!isset($localize['pid']) && !empty($_POST['pid']) && is_numeric($_POST['pid'])){
+			$localize['pid'] = (int)$_POST['pid'];	
+		}
 		/*****************************
 
 			set flag to indicate we are on checkout page

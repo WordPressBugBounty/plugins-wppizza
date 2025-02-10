@@ -294,6 +294,10 @@ class WPPIZZA_CATEGORIES_SORTED{
 			get wppizza taxonomy parents 
 		*************************************************/		
 		function wppizza_get_taxonomy_parents($cat_id, $separator = '/', $path='full', $link = false, $nicename = false, $visited = array() ){
+
+			/* add spaces around separator */
+			$separator = $separator !='' ? ' '.trim($separator).' ' : ' ';
+
 			/* off */
 			if($path == 'none'){return '';}
 			

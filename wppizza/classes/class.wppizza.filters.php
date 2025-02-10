@@ -46,14 +46,17 @@ class WPPIZZA_FILTERS{
 		/****filter order dates ******/
 		add_filter( 'wppizza_filter_order_date', array( $this, 'wppizza_filter_order_date'),10);
 
-
 		/***dont put "WPPizza Categories" in title tag */
 		add_filter( 'wp_title', array( $this, 'wppizza_filter_title_tag'),20,3);
-
 
 		/***filter tax display */
 		add_filter( 'wppizza_filter_combine_taxes', array( $this, 'wppizza_filter_combine_taxes'));
 
+		/***filter meta data (round prices if hiding decimals for example) (Note: not only applied in loop) */
+		add_filter( 'wppizza_filter_loop_meta', array( $this, 'filter_meta_data'), 10, 2);//legacy
+		add_filter( 'wppizza_filter_meta', array( $this, 'filter_meta_data'), 10, 2);//alias of wppizza_filter_loop_meta
+		
+		add_filter( 'wppizza_filter_price_rounding', array( $this, 'apply_price_rounding'));//single prices (floats/integers) round as needed
 
 
 		/****************************************************
@@ -982,7 +985,42 @@ class WPPIZZA_FILTERS{
 
 	return $tax_display;
 	}
-
+	/*******************************************************************************
+	*
+	*
+	*	[filter meta data 
+	*
+	*
+	*******************************************************************************/
+	function filter_meta_data($meta_data, $post_id){
+		global $wppizza_options;
+		/*
+			if we are hiding all decimals, round the value
+		*/
+		if($wppizza_options['prices_format']['hide_decimals']){
+			foreach($meta_data['prices'] as $k => $price){
+				$meta_data['prices'][$k] = $this -> apply_price_rounding($price);
+			}
+		}
+	return $meta_data;
+	}
+	/*******************************************************************************
+	*
+	*
+	*	[filter individual prices (rounding if removing decimels)
+	*
+	*
+	*******************************************************************************/	
+	function apply_price_rounding($price){
+		global $wppizza_options;
+		/*
+			if we are hiding all decimals, round the value
+		*/
+		if($wppizza_options['prices_format']['hide_decimals']){
+			$price = round($price, 0);
+		}
+	return $price;
+	}	
 }
 /***************************************************************
 *

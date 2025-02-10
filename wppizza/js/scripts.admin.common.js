@@ -52,9 +52,9 @@ jQuery(document).ready(function($){
 		var self=$(this);
 		var selId=self.val();
 		var fieldArray=self.attr('name').replace("[sizes]","");
-		var classId=self.attr('class').split(" ").pop(-1);
 
-		jQuery.post(ajaxurl , {action :'wppizza_admin_menu_items_ajax',vars:{'field':'sizeschanged','id':selId,'inpname':fieldArray,'classId':classId}}, function(response) {
+		jQuery.post(ajaxurl , {action :'wppizza_admin_menu_items_ajax',vars:{'field':'sizeschanged','id':selId,'inpname':fieldArray}}, function(response) {
+
 			$.each(response.element,function(e,v){
 				if(typeof response.inp[e]!=='undefined'){
 					var findElementById=self.closest('#wppizza').find(v);

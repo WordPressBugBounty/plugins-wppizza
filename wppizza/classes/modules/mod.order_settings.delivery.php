@@ -193,7 +193,7 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_DELIVERY{
 						}
 						if($k=='minimum_total'){
 							echo" ".__('Free delivery when total order value reaches', 'wppizza-admin').":";
-							echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$field."][".$k."][min_total]' size='3' type='text' value='".wppizza_output_format_price($wppizza_options[$options_key][$field][$k]['min_total'])."' />";
+							echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$field."][".$k."][min_total]' size='3' type='text' value='". ( $wppizza_options[$options_key][$field][$k]['min_total'] === 'n/a' ? 'n/a' : wppizza_output_format_price($wppizza_options[$options_key][$field][$k]['min_total']) )."' />";
 							echo"<div style='margin-left:20px'>";
 							echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$field."][".$k."][deliver_below_total]' type='checkbox' ". checked($v['deliver_below_total'],true,false)." value='1' />";
 							echo" ".__('Deliver even when total order value is below minimum (the difference between total and "Minimum Total" above will be added to the Total as "Delivery Charges")', 'wppizza-admin')."";
@@ -456,6 +456,10 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_DELIVERY{
 						}
 					}
 					if($k=='minimum_total'){
+						//allow n/a to alwasy apply delivery charges
+						if($input[$this->settings_page]['delivery'][$k]['min_total'] == 'n/a'){
+							$options[$this->settings_page]['delivery'][$k]['min_total'] = 'n/a';
+						}						
 						$options[$this->settings_page]['delivery'][$k]['deliver_below_total']=!empty($input[$this->settings_page]['delivery'][$k]['deliver_below_total']) ? true : false;
 						$options[$this->settings_page]['delivery'][$k]['deliverycharges_below_total']=wppizza_validate_float_only($input[$this->settings_page]['delivery'][$k]['deliverycharges_below_total']);
 					}

@@ -428,7 +428,10 @@ table.wppizza-order-itemised td.wppizza-item-category{padding:7px 7px;font-weigh
 table.wppizza-order-itemised td.wppizza-item-update>span.ui-spinner{width:60px;}
 table.wppizza-order-itemised td.wppizza-item-update>span.ui-spinner > .ui-spinner-button{position:absolute;}
 table.wppizza-order-itemised td.wppizza-item-update>span.ui-spinner > .ui-spinner-button:after{border:none}
-table.wppizza-order-itemised td.wppizza-item-update>span.ui-spinner>input{margin:0!important;padding: 5px; padding-right: 0;border:none;width:100%}
+table.wppizza-order-itemised td.wppizza-item-update>span.ui-spinner > input{margin:0 !important;padding: 5px; padding-right: 0;border:none;width:100%}
+
+
+
 /* thumbnail checkout/thankyou*/
 table.wppizza-order-itemised td.wppizza-item-article > .wppizza-item-thumbnail, table.wppizza-order-itemised td.wppizza-item-article > .wppizza-item-no-thumbnail{position: relative;width: 40px;height: 30px;line-height: 30px;display: inline-block;text-align: center;margin: 0 5px;vertical-align: middle;padding:0;}
 table.wppizza-order-itemised td.wppizza-item-article > .wppizza-item-thumbnail > img{position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; padding: 0; max-width: 40px; max-height: 30px;}
@@ -471,16 +474,18 @@ table.wppizza-order-summary .wppizza-tips .tips_pc:after{content:')'}
 table.wppizza-order-summary .wppizza-total{border-top:1px solid #CECECE}
 table.wppizza-order-summary .wppizza-total>td{font-weight:600;}
 
-
 /* allow wrapping of article name in cart */
 .wppizza-cart table.wppizza-order-itemised tr.wppizza-item-row>td.wppizza-item-article, table.wppizza-order-itemised .wppizza-item-article-th{white-space:normal;}
-
 
 /*
 	min order note order page
 */
 #wppizza-order-wrap-orderpage .wppizza-min-order{color:#FF0000; font-size:130%; display:block;text-align:center}
 
+/*
+	wrapper orderpage to write itemised and summary fieldsets into
+*/
+#wppizza-order-wrapper{display: inline-block;}
 
 /**********************************************************
 *
@@ -489,7 +494,8 @@ table.wppizza-order-summary .wppizza-total>td{font-weight:600;}
 ***********************************************************/
 .wppizza-fieldset{border: 1px dotted #CECECE; padding: 10px;margin-bottom:35px}
 .wppizza-fieldset > legend{margin: 0 20px;padding: 10px 20px; font-weight: 600; width: auto; border: none; background-color: inherit;}
-
+.wppizza-fieldset > legend > a{text-decoration: underline;font-style: italic;font-size: 70%;margin: auto 10px;}
+.wppizza-fieldset > legend > a:hover{text-decoration: none;}
 /***********************************************************
 *
 *	validation required/errors | try again links

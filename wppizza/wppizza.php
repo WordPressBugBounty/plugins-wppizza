@@ -3,7 +3,7 @@
 #* Plugin Name: WPPizza
 #* Plugin URI: https://wordpress.org/extend/plugins/wppizza/
 #* Description: A Restaurant Plugin (not only for Pizza)
-#* Version: 3.19.4
+#* Version: 3.19.5
 #* Requires PHP: 5.3+
 #* Author: ollybach
 #* Author URI: https://www.wp-pizza.com
@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {exit();}
 *	allow constant overrides to enable beta versions for example
 ***************************************************************/
 if(!defined('WPPIZZA_VERSION')){
-	define('WPPIZZA_VERSION', '3.19.4');
+	define('WPPIZZA_VERSION', '3.19.5');
 }
 if(!defined('WPPIZZA_VERSION_MAJOR')){
 	define('WPPIZZA_VERSION_MAJOR', '3');

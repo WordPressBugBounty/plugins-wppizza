@@ -114,14 +114,17 @@ class WPPIZZA_HELPERS{
 		[get enabled formfiels main order form - filterable]
 
 	***************************************/
-	function enabled_formfields($keys_only = false, $enabled_only = true, $omit_tips = false, $caller = false){
+	function enabled_formfields($keys_only = false, $enabled_only = true, $omit_keys = false, $caller = false){
 		global $wppizza_options;
 
-		/* omit tips if necessary*/
-		if($omit_tips){
+		/* 
+			if $omit_keys === true, exclude tips. 
+			if $omit_keys is an array, exclude those .
+			if  if necessary
+		*/
+		if(!empty($omit_keys) &&  $omit_keys === true){
 			unset($wppizza_options['order_form']['ctips']);
 		}
-		//if($wppizza_options==0){return;}
 
 		/*
 			just to lose some potential php notices
@@ -194,6 +197,13 @@ class WPPIZZA_HELPERS{
 			$enabled_formfields[''.WPPIZZA_SLUG.'_profile_update'] 	= ''.WPPIZZA_SLUG.'_profile_update';
 			$enabled_formfields[''.WPPIZZA_SLUG.'_account'] 			= ''.WPPIZZA_SLUG.'_account';
 			$enabled_formfields[''.WPPIZZA_SLUG.'_gateway_selected'] 	= ''.WPPIZZA_SLUG.'_gateway_selected';
+		}
+
+		/* omit defined array keys */
+		if(!empty($omit_keys) &&  is_array($omit_keys)){
+			foreach($omit_keys as $oKey){
+				unset($enabled_formfields[$oKey]);
+			}
 		}
 
 	return $enabled_formfields;

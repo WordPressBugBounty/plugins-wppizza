@@ -48,8 +48,6 @@ class WPPIZZA_MARKUP_PAGES{
 		add_filter('pre_wp_nav_menu', array($this, 'remove_filter_thankyoupage_title'), 10, 2 );//don't change title in nav menu
 		add_filter('wp_nav_menu_items', array($this, 'reapply_filter_thankyoupage_title'), 10, 2 );// re-apply title filter after nav menu
 
-		/** set content since 3.19.2: set in markup attribute - filter kept here for reference **/
-		//add_filter('the_content', array($this, 'thankyoupage_content'), 10, 2);
 	}
 
 	/******************************************************************************
@@ -239,26 +237,6 @@ class WPPIZZA_MARKUP_PAGES{
     	add_filter( 'the_title', array($this, 'thankyoupage_title'), 10, 2 );
     return $items;
 	}
-
-
-#	/***************************************
-#		[change content in page of thank you page after order
-#		- if $_GET['wpptx'] or $_GET['wppcltx']   ]
-#	***************************************/
-#	function thankyoupage_content($content){
-#		global $wppizza_options, $post;
-#		$orderpage_id = $wppizza_options['order_settings']['orderpage'];
-#
-#		if (is_object($post) && $orderpage_id == $post->ID && is_page( $post->ID )  && isset($_GET[WPPIZZA_TRANSACTION_GET_PREFIX]) ) {
-#			$content = self::markup('thankyoupage');
-#	    }
-#
-#		if (is_object($post) &&  $orderpage_id == $post->ID && is_page( $post->ID )  && isset($_GET[WPPIZZA_TRANSACTION_CANCEL_PREFIX]) ) {
-#			$content = self::markup('ordercancelled');
-#	    }
-#
-#	return $content;
-#	}
 
 	/***************************************
 		[add some localized js variables for validations]

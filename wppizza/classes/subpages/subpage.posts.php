@@ -147,18 +147,27 @@ class WPPIZZA_POSTS{
 		/******************************************************
 			[prize tier selection has been changed->add relevant price options input fields]
 		******************************************************/
-		if($_POST['vars']['field']=='sizeschanged' && $_POST['vars']['id']!='' && isset($_POST['vars']['inpname']) &&  $_POST['vars']['inpname']!=''){
-
+		if($_POST['vars']['field']=='sizeschanged' && $_POST['vars']['id']!='' && isset($_POST['vars']['inpname']) &&  $_POST['vars']['inpname'] != '' ){
 
 			$set_size_id=(int)$_POST['vars']['id'];
 			/**sizes**/
 			$sizes='';
 			if(is_array($wppizza_options['sizes'][$set_size_id])){
-				foreach($wppizza_options['sizes'][$set_size_id] as $a=>$b){
-					/*if we change the ingredient pricetier, do not use default prices , but just empty ??? what is this doing and why is it here ??? need to find out at some point**/
-					if(isset($_POST['vars']['classId']) && $_POST['vars']['classId']=='ingredients'){$price='';}else{$price=$b['price'];}
-					$sizes.="<input name='".$_POST['vars']['inpname']."[prices][]' type='text' size='5' value='".$price."'>";
-			}}
+				
+				foreach($wppizza_options['sizes'][$set_size_id] as $a => $b){
+					/*
+						if we use this function in 3rd party plugins (e.g if the name != WPPIZZA_SLUG) 
+						to output wppizza price tiers on a page, omit preset prices
+					*/
+					//sanitise
+					$inpNameIdent = wppizza_validate_alpha_only($_POST['vars']['inpname']);
+					//omit prices
+					$price = $inpNameIdent == WPPIZZA_SLUG ? wppizza_output_format_price($b['price']) : '' ;
+					
+					$sizes.="<input name='".WPPIZZA_SLUG."[prices][]' type='text' size='5' value='".$price."' />";
+					
+				}
+			}
 			$obj['inp']['sizes']=$sizes;
 			$obj['element']['sizes']='.'.WPPIZZA_SLUG.'_pricetiers';/**html element (by class name) to empty and replace with new input boxes**/
 
@@ -167,7 +176,7 @@ class WPPIZZA_POSTS{
 			$obj=apply_filters('wppizza_ajax_action_admin_sizeschanged', $obj, $set_size_id);
 
 			print"".json_encode($obj)."";
-			exit();
+		exit();
 		}
 
 	}
