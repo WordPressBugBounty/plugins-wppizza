@@ -382,7 +382,15 @@ function wppizza_alpha_only($str, $args = false){
 
 return $str;
 }
-
+/*****************************************************
+* Sanitising html input field names (allowing for arrays)
+* Validates to a-zA_Z0-9 underscore, hyphens, brackets
+* @str the input to check,
+******************************************************/
+function wppizza_sanitize_input_name($str){
+	$str=preg_replace("/[^a-zA-Z0-9\-_\[\]:]/","",$str);
+return $str;
+}
 /*****************************************************
 * alias of wppizza_alpha_only with arguments set
 * @since 3.7

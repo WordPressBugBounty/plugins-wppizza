@@ -160,11 +160,11 @@ class WPPIZZA_POSTS{
 						to output wppizza price tiers on a page, omit preset prices
 					*/
 					//sanitise
-					$inpNameIdent = wppizza_validate_alpha_only($_POST['vars']['inpname']);
+					$inpNameIdent = wppizza_sanitize_input_name($_POST['vars']['inpname']);
 					//omit prices
 					$price = $inpNameIdent == WPPIZZA_SLUG ? wppizza_output_format_price($b['price']) : '' ;
 					
-					$sizes.="<input name='".WPPIZZA_SLUG."[prices][]' type='text' size='5' value='".$price."' />";
+					$sizes.="<input name='".$inpNameIdent."[prices][]' type='text' size='5' value='".$price."' />";
 					
 				}
 			}
