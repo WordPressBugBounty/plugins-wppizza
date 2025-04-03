@@ -681,7 +681,7 @@ class WPPIZZA_ORDER_EXECUTE{
 			/** let's make up some COD transaction id */
 			$update_db_values['transaction_id'] 	= array('type'=> '%s', 'data' => $tx_id );
 			/** save errors */
-			$update_db_values['transaction_errors'] = array('type'=> '%s', 'data' => $this->tx_errors($order_id, $tx_details) );
+			$update_db_values['transaction_errors'] = array('type'=> '%s', 'data' => $this->capture_tx_errors($order_id, $tx_errors) );
 			/** display errors, if any **/
 			$update_db_values['display_errors'] = array('type'=> '%s', 'data' => maybe_serialize($tx_errors) );
 			/* set status, FAILED */

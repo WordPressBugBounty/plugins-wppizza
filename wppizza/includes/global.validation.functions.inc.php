@@ -42,6 +42,63 @@ function wppizza_validate_int_only($str, $args = false){
 return $str;
 }
 /*****************************************************
+* Validates integer - allow for empty value
+* @str the input to check
+* @arr some args we can pass on (currenly only max/min supported)
+* @since 3.19.7
+/******************************************************/
+function wppizza_validate_integer($str, $allow_empty = true){
+	$str = preg_replace("/[^0-9]/","",$str);
+	//alwasy set to integer if empty not allowed
+	if(!$allow_empty){
+		$str = (int)$str;	
+	}else{
+		//set a now empty (not zero !) value to false
+		$str = is_numeric($str) ? (int)$str : false ;
+	}
+return $str;
+}
+/*****************************************************
+* Recursively remove any key from a (multidimensional) array
+*
+* @param array 
+* @param array | string . If array, 'in_array' comparison. If string, callback function on value   
+* @param bool in_array comparison: strict (or not) 
+*
+* @return array with all keys unset as defined
+* @since 3.19.7
+/******************************************************/
+function wppizza_array_recursive_unset_by_value(array &$array, $callback = array(), $strict = true){
+    foreach ($array as $key => &$value) {
+        /* 
+        	recurse 
+        */
+        if (is_array($value)) {
+            $value = wppizza_array_recursive_unset_by_value($value, $callback);
+        }
+        /*
+        	keep/unset
+        */
+        else{
+        	/*
+        		(default: strict) 'in_array' comparison 
+        	*/
+        	if(is_array($callback)){
+	        	if(in_array($value, $callback , $strict )){
+					unset($array[$key]);
+	        	}
+        	}
+        	/*
+        		callback , should return 'true' on value to remove
+        	*/
+        	if(is_string($callback) && is_callable($callback) && $callback($value) === true ){
+				unset($array[$key]);
+        	}
+        }
+    }
+ return $array;
+}
+/*****************************************************
 * Validates an ip address or (registered) wordpress user id
 * return empty str if 0 is entered (to not return unregistered(0) user id's)
 * @str the input to check
@@ -486,7 +543,7 @@ function wppizza_validate_array($arr = array(), $validation_function_value = 'wp
 		if $arr is in fact not an array, but a str
 		we assume it's comma separated and explode it into array
 	**/
-	if(!is_array($arr) && trim($arr) != '' ){
+	if(!is_array($arr) && trim((string)$arr) != '' ){
 		$arr = explode(',',$arr);
 	}
 
@@ -567,9 +624,9 @@ return $isValid;
 * returns serialized value no html etc
 ******************************************************/
 /** set serialize to true to serialize the resulting array to store somewhere */
-function wppizza_sanitize_post_vars($arr, $serialize = false){
+function wppizza_sanitize_post_vars($arr, $serialize = false, $validation_function = 'wppizza_sanitize_post_vars_recursive'){
 	if(is_array($arr)){
-		array_walk_recursive($arr, 'wppizza_sanitize_post_vars_recursive');
+		array_walk_recursive($arr, $validation_function);
 	}
 	if($serialize){
 		return esc_sql(serialize($arr));

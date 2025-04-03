@@ -1054,19 +1054,41 @@ class WPPIZZA_SESSIONS{
 				$is_checkout && //only initialize when going to order page the first time
 				!isset($_SESSION[$this->session_key_userdata]['ctips']) && // tips were never set yet
 				$wppizza_options['order_settings']['tips_display'] > 1 && // displaying percentage tips to start off with
-				!empty($wppizza_options['order_settings']['tips_percentage_default'])//a default percentage value >0 is set
+				(!empty($wppizza_options['order_settings']['tips_percentage_default']) || !empty($wppizza_options['order_settings']['tips_value_default']))//a default percentage or absolute value >0 is set
 			){
+				
+					/*
+						tip type: percent
+					*/
+					$_SESSION[$this->session_key_userdata]['ctips_type'] = 'pc';
 
 					/*
 						force tips percentage selected  to be set
 					*/
-					$_SESSION[$this->session_key_userdata]['ctips_pc'] = $wppizza_options['order_settings']['tips_percentage_default'];
+					$_SESSION[$this->session_key_userdata]['ctips_pc'] = abs((float)$wppizza_options['order_settings']['tips_percentage_default']);
 
 					/*
 						force tips session to be set
 					*/
-					$_SESSION[$this->session_key_userdata]['ctips'] = $total_before_tips * ($wppizza_options['order_settings']['tips_percentage_default'] / 100 );
-
+					$_SESSION[$this->session_key_userdata]['ctips'] = $total_before_tips * (abs((float)$wppizza_options['order_settings']['tips_percentage_default']) / 100 );
+					
+					
+					/********** value default - if set - overrides percentage ******************/ 
+					if(!empty($wppizza_options['order_settings']['tips_value_default'])){
+						/*
+							tip type: absolute value
+						*/
+						$_SESSION[$this->session_key_userdata]['ctips_type'] = 'val';
+						/*
+							force tips value selected  to be set
+						*/						
+						$_SESSION[$this->session_key_userdata]['ctips_pc'] = abs((float)$wppizza_options['order_settings']['tips_value_default']);						
+						/*
+							force tips value selected  to be set
+						*/						
+						$_SESSION[$this->session_key_userdata]['ctips'] = abs((float)$wppizza_options['order_settings']['tips_value_default']);							
+						
+					}
 
 			}
 			/*
@@ -1077,11 +1099,21 @@ class WPPIZZA_SESSIONS{
 				$wppizza_options['order_settings']['tips_display'] > 1 && // displaying percentage tips to start off with
 				!empty($_SESSION[$this->session_key_userdata]['ctips_pc'])//a default percentage value of >0 is set
 			){
-
+					
 					/*
-						update tips session
+						calculate depending on tip type (init, percent or absolute value)
 					*/
-					$_SESSION[$this->session_key_userdata]['ctips'] = $total_before_tips * ($_SESSION[$this->session_key_userdata]['ctips_pc'] / 100 );
+					//init 
+					$_SESSION[$this->session_key_userdata]['ctips'] = 0;
+					
+					//percentage tips
+					if($_SESSION[$this->session_key_userdata]['ctips_type'] == 'pc'){
+						$_SESSION[$this->session_key_userdata]['ctips'] = $total_before_tips * (abs((float)$_SESSION[$this->session_key_userdata]['ctips_pc']) / 100 );	
+					}
+					//absolute tips
+					if($_SESSION[$this->session_key_userdata]['ctips_type'] == 'val'){
+						$_SESSION[$this->session_key_userdata]['ctips'] = abs((float)$_SESSION[$this->session_key_userdata]['ctips_pc']);
+					}
 
 			}
 
@@ -1290,7 +1322,9 @@ class WPPIZZA_SESSIONS{
 	    	//if it's it's not actually available/enabled, use the first one we have
 	    	if(!isset($wppizza_options['gateways'][$sessiongw])){
 
-	    		$all_available_gateways = $wppizza_options['gateways'];
+	    		// verify it exists to avoid notices on install
+	    		$all_available_gateways = isset($wppizza_options['gateways']) ? $wppizza_options['gateways'] : array() ;
+
 	    		//make sure there is at least one available
 	    		if(!empty($all_available_gateways)){
 	    			reset($all_available_gateways);
@@ -2134,7 +2168,20 @@ class WPPIZZA_SESSIONS{
 		}else{
 			unset($_SESSION[$this->session_key_userdata][$key]);
 		}
-
+		/*
+			capture tips predefined type (init, pc or val)
+		*/
+		$key = 'ctips_type';
+		if(isset($posted_vars[$key])){
+			if(empty($posted_vars[$key])){
+				unset($_SESSION[$this->session_key_userdata][$key]);
+			}else{
+				$_SESSION[$this->session_key_userdata][$key] = $posted_vars[$key];
+			}
+		}else{
+			unset($_SESSION[$this->session_key_userdata][$key]);
+		}		
+		
 	return ;
 	}
 

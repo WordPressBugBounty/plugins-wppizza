@@ -1881,9 +1881,38 @@ if(useAccordion){
 
 				// currency decimals - defaults to 2
 				var decimals = (typeof wppizzaCartJson['currency'].decimals !== 'undefined') ?  wppizzaCartJson['currency'].decimals : 2 ;
+				
+				
+				//percentage or value 
+				var tipType = $(this).find(':selected').data('type');
 
-				// calc tip based on total before tip, 2 decimals max
-				var new_tip = ($(this).val() == '' || $(this).val() == 0 ) ? 0 : total_before_tips * ($(this).val() / 100 );
+
+				/*
+					init -- option
+				*/
+				if(tipType == 'init' ){
+					var new_tip = 0;
+				}
+				/*
+					percentage option
+				*/
+				else if(tipType == 'pc' ){
+					// calc tip based on total before tip, 2 decimals max
+					var new_tip = ($(this).val() == '' || $(this).val() == 0 ) ? 0 : total_before_tips * ($(this).val() / 100 );
+				}
+				/*
+					absolute option
+				*/
+				else if(tipType == 'val' ){
+					// calc tip based on total before tip, 2 decimals max
+					var new_tip = parseFloat($(this).val());
+				}
+				/*
+					invalid -> set to 0
+				*/
+				else{
+					var new_tip = 0;	
+				}				
 				new_tip = new_tip.toFixed(decimals);
 
 				/*
@@ -1911,17 +1940,20 @@ if(useAccordion){
 				//num = validate.toFixed(2);
 				self.val(validate);
 			});
+			
 			/*******************************
 			*	get current tip value set
 			*******************************/
 			var tips_input=$('#ctips');
 			var tips_percent_select = $('#ctips_pc');
 			var current_tips=tips_input.val();
+			
 			/*******************************
 			*	get current tip value set on focus
 			*******************************/
-			$(document).on('focus', '#ctips', function(e){
+			$(document).on('focus', '#ctips, #ctips_pc', function(e){
 				current_tips=$(this).val();
+
 				/*
 					if we focus on the tips input to enter the value manually
 					unset the dropdown tips percentage
@@ -1960,17 +1992,22 @@ if(useAccordion){
 
 			var self = $(this);
 			var entered_tips=$('#ctips').val();
+			//percentage(pc) or value(val) - sanitised. defaults to value(val) if not set
+			var tipType = $('#ctips_pc').find(':selected').data('type');
+			tipType = typeof tipType !== 'undefined' ? tipType.toLowerCase().replace(/[^a-z]/g, '') : 'val' ;
 
 			/**
 				only update/refresh if the value has actually changed
 			**/
 			if( current_tips != entered_tips ){
 				var data = $('#'+pluginSlug+'-send-order').serialize();
+				//add tip type
+				data +='&ctips_type='+tipType;
 				/*stop double clicks*/
 				self.attr('disabled', 'true');
 				/*show loading*/
 				addLoadingDiv();
-				jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'addtips','data':data, 'isCheckout': isCheckout}, ext : wppizza.extend}, function(response) {
+				jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'addtips','data':data, 'tipType':tipType, 'isCheckout': isCheckout}, ext : wppizza.extend}, function(response) {
 
 					/*replace cart contents*/
 					if(typeof response.cart_markup!=='undefined'){

@@ -7,8 +7,8 @@ Tags: pizzeria, restaurant, restaurant menu, food menu, food ordering, online or
 Requires PHP: 5.3+
 Requires at least: PHP 5.3+, MySql 5.5+, WP 3.3+ 
 Tested up to: 6.7
-Version: 3.19.6
-Stable tag: 3.19.6
+Version: 3.19.7
+Stable tag: 3.19.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -162,6 +162,17 @@ Note: Allergen/Foodtype Icons included with this plugin can be used on your site
 "Double Ring" Loading Icon SVG (v3.13+) generated at <a href="https://loading.io/spinner/double-ring">loading.io</a>  
 
 == Changelog ==
+
+3.19.7  
+* Added: allow for absolute values in tips dropdown selection  
+* Tweak: minor css changes in popup boxes  
+* Tweak: minor css changes in tips fields    
+* Fix: some potential php notices eliminated 
+* Fix: misspelled function name, potentially causing fatal errors in edge cases  
+* Dev: Adding some more globally available validation functions
+* Dev: Adding more flexibility to some globally available validation functions
+* Dev: Improved plugin development helper function (wppizza_phi_validate)  
+2nd April 2025  
 
 3.19.6  
 * Fix: Some input sanitisation unnecessarily strict potentially causing problems  

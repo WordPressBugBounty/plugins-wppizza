@@ -111,6 +111,23 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TIPS{
 				'description'=>array()
 			));
 
+
+			$field = 'tips_value_options';
+			$settings['fields'][$this->section_key][$field] = array( __('Fixed values selectable', 'wppizza-admin'), array(
+				'value_key'=>$field,
+				'option_key'=>$this->settings_page,
+				'label'=>__('Enter comma separated fixed (decimal) values you want to make available for easy selection to the customer (use "." if you need decimal fractions)', 'wppizza-admin'),
+				'description'=>array()
+			));
+
+			$field = 'tips_value_default';
+			$settings['fields'][$this->section_key][$field] = array( __('Default fixed value', 'wppizza-admin'), array(
+				'value_key'=>$field,
+				'option_key'=>$this->settings_page,
+				'label'=>__('Enter a preselected tips fixed value.', 'wppizza-admin').' <span class="wppizza-highlight">'.__('Must be one of the selectable (decimal) values above (or 0 to ignore).', 'wppizza-admin').'</span> <span>'.__('Takes precedence over percentage defaults.', 'wppizza-admin').'</span>',
+				'description'=>array()
+			));
+
 		}
 
 		return $settings;
@@ -127,7 +144,11 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TIPS{
 				// tips input value shown - default, as normal
 				echo "".__('Default', 'wppizza-admin')."<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' type='radio'  ".checked($wppizza_options[$options_key][$field], 1, false)." value='1' /> ";
 				// adding percentage dropdown to choose from next to Tips label
-				echo "".__('Add Percentage selection', 'wppizza-admin')."<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' type='radio'  ".checked($wppizza_options[$options_key][$field],2,false)." value='2' /> ";
+				echo "".__('Add percentage selection', 'wppizza-admin')."<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' type='radio'  ".checked($wppizza_options[$options_key][$field],2,false)." value='2' /> ";
+				// adding fixed value dropdown to choose from next to Tips label
+				echo "".__('Add fixed value selection', 'wppizza-admin')."<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' type='radio'  ".checked($wppizza_options[$options_key][$field],3,false)." value='3' /> ";
+				// adding fixed value and percentage dropdown to choose from next to Tips label
+				echo "".__('Add percentage and fixed value selection', 'wppizza-admin')."<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' type='radio'  ".checked($wppizza_options[$options_key][$field],4,false)." value='4' /> ";
 
 				// tips input value hidden, only percentage dropdown shown - currently not implemented (might not ever get implemented in fact)
 				//echo "".__('Percentages Only', 'wppizza-admin')."<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' type='radio'  ".checked($wppizza_options[$options_key][$field],3,false)." value='3' /> ";
@@ -153,8 +174,22 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TIPS{
 			echo"".$description."";
 		}
 
-
-
+		if($field=='tips_value_options'){
+			echo "<label>";
+				echo "<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' size='15' type='text' value='".implode(',',$wppizza_options[$options_key][$field])."' />";
+				echo "".$label."";
+			echo "</label>";
+			echo"".$description."";
+		}
+		
+		if($field=='tips_value_default'){
+			echo "<label>";
+				echo "<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' size='1' type='text' value='".$wppizza_options[$options_key][$field]."' />";
+				echo "".$label."";
+			echo "</label>";
+			echo"".$description."";
+		}
+	
 	}
 
 	/*------------------------------------------------------------------------------
@@ -168,7 +203,8 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TIPS{
 		$options[$this->settings_page]['tips_display'] = 1;
 		$options[$this->settings_page]['tips_percentage_options'] = array(5,10,15,20);
 		$options[$this->settings_page]['tips_percentage_default'] = 0;
-
+		$options[$this->settings_page]['tips_value_options'] = array(1,2.50,5);
+		$options[$this->settings_page]['tips_value_default'] = 0;
 
 
 
@@ -190,9 +226,13 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TIPS{
 			settings
 		*/
 		if(isset($_POST[''.WPPIZZA_SLUG.'_'.$this->settings_page.''])){
-			$options[$this->settings_page]['tips_display'] = in_array($input[$this->settings_page]['tips_display'], array(1,2)) ? absint($input[$this->settings_page]['tips_display']) : 1;
+			$options[$this->settings_page]['tips_display'] = in_array($input[$this->settings_page]['tips_display'], array(1,2,3,4)) ? absint($input[$this->settings_page]['tips_display']) : 1;
 			$options[$this->settings_page]['tips_percentage_options']=  array_unique(wppizza_validate_array($input[$this->settings_page]['tips_percentage_options'],'wppizza_validate_float_pc'));
 			$options[$this->settings_page]['tips_percentage_default']= ( in_array(wppizza_validate_float_pc($input[$this->settings_page]['tips_percentage_default']), $options[$this->settings_page]['tips_percentage_options'])) ? wppizza_validate_float_pc($input[$this->settings_page]['tips_percentage_default']) : 0 ;
+
+			$options[$this->settings_page]['tips_value_options']=  array_unique(wppizza_validate_array($input[$this->settings_page]['tips_value_options'],'wppizza_format_price_float'));
+			$options[$this->settings_page]['tips_value_default']= ( in_array(wppizza_validate_float_pc($input[$this->settings_page]['tips_value_default']), $options[$this->settings_page]['tips_value_options'])) ? wppizza_validate_float_pc($input[$this->settings_page]['tips_value_default']) : 0 ;
+
 		}
 
 	return $options;

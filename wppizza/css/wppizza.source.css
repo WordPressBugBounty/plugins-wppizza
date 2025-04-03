@@ -118,7 +118,7 @@ body > .wppizza-loading, body > .wppizza-load-redirect{background-attachment: fi
 }
 
 #wppizzaAlertBox p {
-	padding:20px 10px;
+	padding:10px 10px 5px;
 	text-align:center;
 	vertical-align:middle;
 	margin:0;
@@ -464,7 +464,8 @@ table.wppizza-order-summary td:nth-child(2){text-align:right;white-space:nowrap}
 table.wppizza-order-summary td >span {vertical-align: middle;}
 /* tips as input / tips percentage select*/
 table.wppizza-order-summary .wppizza-tips input#ctips{width:75px; text-align:right}
-table.wppizza-order-summary .wppizza-tips select#ctips_pc{width:60px; float: right; padding:0 2px; margin:0 2px; height: 20px;}
+table.wppizza-order-summary .wppizza-tips div.wppizza-tips-select{display: inline-block;vertical-align: middle;}
+table.wppizza-order-summary .wppizza-tips select#ctips_pc{width:60px; float: right; padding:0 2px; margin:0 2px}
 /* tips percentage select label*/
 table.wppizza-order-summary .wppizza-tips .tips_pc{padding:0 2px; margin:0;}
 table.wppizza-order-summary .wppizza-tips .tips_pc:before{content:'('}

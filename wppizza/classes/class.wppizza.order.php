@@ -694,7 +694,7 @@ public static function site_details_formatted($order = array(), $tpl_args = fals
 	/* get anew from current blog if not set with order */
 	$order['blog_info'] = isset($order['blog_info']) ? $order['blog_info'] : wppizza_get_blog_details();
 	$order['blog_options'] = isset($order['blog_options']) ? $order['blog_options'] : $wppizza_options;
-	
+
 
 	/*
 		blog id
@@ -1302,7 +1302,7 @@ public static function general_ordervars_formatted($order = false, $tpl_args = f
 		}else{
 			/* get user data */
 			$wp_user_data =  !empty($order['wp_user_id']) ? get_userdata( $order['wp_user_id'] ) : array() ;
-			$wp_user_display_name =  !empty($wp_user_data->data->display_name) ? ':'.$wp_user_data->data->display_name.'' : ''; 
+			$wp_user_display_name =  !empty($wp_user_data->data->display_name) ? ':'.$wp_user_data->data->display_name.'' : '';
 
 			$order_parameters['wp_user_id']['class_ident'] = 'user-id';
 			$order_parameters['wp_user_id']['value'] = $order['wp_user_id'];
@@ -2315,10 +2315,10 @@ return $customer_parameters;
 
 		/*
 			map some values for convenience
-		*/		
+		*/
 		$oItems = isset($order['order_ini']['items']) ? $order['order_ini']['items'] : $order['items'];//account for some inconsistencies
 		$multiple_taxrates =  isset($order['order_ini']['summary']['multiple_taxrates']) ? $order['order_ini']['summary']['multiple_taxrates'] : $order['items']['multiple_taxrates'] ;//account for some inconsistencies
-		$blog_options = !empty($order['blog_options']) ?  $order['blog_options'] : $wppizza_options ;		
+		$blog_options = !empty($order['blog_options']) ?  $order['blog_options'] : $wppizza_options ;
 		$currency = !empty($order['order_ini']['param']['currency']) ? wppizza_decode_entities($order['order_ini']['param']['currency']) : wppizza_decode_entities($blog_options['order_settings']['currency']) ;
 
 		if(!empty($oItems)){
@@ -2747,7 +2747,7 @@ return $customer_parameters;
 
 								// add taxrate to array of taxrates that exist
 								$taxRatesApplied[''.$val['rate'].''] = $key;
-								
+
 								// add tax display output
 								$summary['taxes'][$key]['sort']							=	!empty($taxes_included) ?  20 : 60 ;/*after items if taxes added, before tips if taxes included*/
 								$summary['taxes'][$key]['class_ident']					=	'tax-'.$key.'';
@@ -2845,41 +2845,85 @@ return $customer_parameters;
 					$summary['tips'][0]['class_ident']			=	'tips';
 					$summary['tips'][0]['label']				=	'<span>'.$blog_options['localization']['tips'].'</span>';
 
+
 					/************************************
 						tip as percentages enabled, add after label
 					************************************/
-					if($blog_options['order_settings']['tips_display'] > 1 && !empty($blog_options['order_settings']['tips_percentage_options'])){
+					if($blog_options['order_settings']['tips_display'] > 1 && ( !empty($blog_options['order_settings']['tips_percentage_options']) || !empty($blog_options['order_settings']['tips_value_options']) )){
 
-						/*
+						//init zero option
+						$tips_options = array();
+
+						$zero_option_selected = ( isset($_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc]) && $_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc] == 0 ) ? true : false;
+						$zero_option_value = 0;
+						$tips_options[] = '<option value="'.$zero_option_value.'" '.selected($zero_option_selected, true ,false).' data-type="val">'.wppizza_format_price($zero_option_value, null).'</option>';
+
+
+
+						/* add select element */
+						$summary['tips'][0]['label']  .= '<div class="'.WPPIZZA_SLUG.'-tips-select"><select id="'. $ctips_pc .'" name="'. $ctips_pc.'" >';
+
+						/* make first option an empty value (shown as --) that gets selected if tip is entered manually */
+						$summary['tips'][0]['label'] .= '<option value="" data-type="init">--</option>';
+
+
+						/********************************************************
+							Fixed Values
+							filter tips_value_options to remove the 0 if it was entered
+							and then add it distinctly and sort
+						********************************************************/
+						if(!empty($blog_options['order_settings']['tips_value_options']) && in_array($blog_options['order_settings']['tips_display'], array(3, 4))){
+							$tips_value_options = array_filter($blog_options['order_settings']['tips_value_options']);//remove any zero option that was set
+							#$tips_value_options[] = 0;//alwasy (re)add the 0 option
+							/* sort */
+							asort($tips_value_options);
+
+							/* percentages dropdown */
+							foreach($tips_value_options as $value){
+
+								/* was ths percentage options selected ? */
+								$selected = ( !empty($_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc]) && $_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc] == $value && $_SESSION[WPPIZZA_SLUG.'_userdata']['ctips_type'] == 'val' ) ? true : false;
+
+								/* add options */
+								$tips_options[] = '<option value="'.$value.'" '.selected($selected, true ,false).' data-type="val">'.wppizza_format_price($value).'</option>';
+
+							}
+						}
+
+						/********************************************************
+							PERCENTAGES
 							to always add the 0% option and not double up on it
 							filter tips_percentage_options to remove the 0 if it was entered
 							and then add it distinctly and sort
-						*/
-						$tips_percentage_options = array_filter($blog_options['order_settings']['tips_percentage_options']);//remove any zero option that was set
-						$tips_percentage_options[] = 0;//alwasy (re)add the 0 option
-						/* sort */
-						asort($tips_percentage_options);
+						********************************************************/
+						if(!empty($blog_options['order_settings']['tips_percentage_options']) && in_array($blog_options['order_settings']['tips_display'], array(2, 4))){
+							$tips_percentage_options = array_filter($blog_options['order_settings']['tips_percentage_options']);//remove any zero option that was set
+							//$tips_percentage_options[] = 0;//alwasy (re)add the 0 option
+							/* sort */
+							asort($tips_percentage_options);
 
+							/* percentages dropdown */
+							foreach($tips_percentage_options as $value){
 
-						$summary['tips'][0]['label']  .= '<select id="'. $ctips_pc .'" name="'. $ctips_pc.'" >';
+								/* was ths percentage options selected ? */
+								$selected = ( !empty($_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc]) && $_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc] == $value && $_SESSION[WPPIZZA_SLUG.'_userdata']['ctips_type'] == 'pc') ? true : false;
+
+								/* add options */
+								$tips_options[] = '<option value="'.$value.'" '.selected($selected, true ,false).' data-type="pc">'.wppizza_output_format_percent($value, true).'</option>';
+							}
+						}
+
 
 						/*
-							percentages dropdown
-							make first option an empty value (shown as --) that gets selected if tip is entered manually
+							add options
 						*/
-						/* add select element */
-						$summary['tips'][0]['label'] .= '<option value="">--</option>';
-
-						foreach($tips_percentage_options as $value){
-
-							/* was ths percentage options selected ? */
-							$selected = ( !empty($_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc]) && $_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc] == $value ) ? true : false;
-
-							/* add options */
-							$summary['tips'][0]['label'] .= '<option value="'.$value.'" '.selected($selected, true ,false).'>'.wppizza_output_format_percent($value, true).'</option>';
+						foreach($tips_options as $tips_option){
+							$summary['tips'][0]['label'] .=	$tips_option;
 						}
+
+
 						/* close select element */
-						$summary['tips'][0]['label']  .= '</select>';
+						$summary['tips'][0]['label']  .= '</select></div>';
 					}
 					/************************************
 						tip as percentages enabled end
@@ -2896,7 +2940,7 @@ return $customer_parameters;
 						$required_attribute = 'required = "required" ';
 					}
 					$value = ($order_values['summary']['tips']!== false) ? wppizza_format_price($order_values['summary']['tips'], null) : '' ;
-					
+
 					/* wrap in div for possible error messages */
 					$summary['tips'][0]['value_formatted']  = '<div><input id="'. $ctips_key .'" name="'. $ctips_key.'"  type="text" value="' . $value . '" placeholder="' .$ctips_options['placeholder'] . '"  ' . $required_attribute . ' /></div>';
 				}

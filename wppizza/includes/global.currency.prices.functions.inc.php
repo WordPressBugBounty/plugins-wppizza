@@ -521,7 +521,7 @@ return $str;
 function wppizza_output_format_price($str){
 	global $wppizza_options;
 
-	if(trim($str)!=''){
+	if(trim((string)$str)!=''){
 		
 		$decimals = wppizza_currency_precision();
 		
@@ -544,13 +544,10 @@ function wppizza_format_price($value, $currency = false, $set_currency_position 
 	if(is_array($value)){
 		return $value;
 	}
-	$value = trim($value);
+	$value = trim((string)$value);
 	if(!is_numeric($value) ){//$value == '' || $value === null || $value === false || 
 		return '';	
 	}
-
-#error_log('V: '.print_r($value, true));
-#error_log('C: '.print_r($currency, true));
 
 	if( WPPIZZA_VERSION == '4.0.0-BETA' ){
 		
@@ -701,7 +698,7 @@ function wppizza_format_price_float($value, $round = true){
 
 	$value = trim($value);
 
-	if($value!=''){
+	if($value !='' ){
 		
 		$value=preg_replace('/[^0-9.,]*/','',$value);/*first get  rid of all chrs that should definitely not be in there*/
 		$value=str_replace(array('.',','),'#',$value);/*make string we can explode*/

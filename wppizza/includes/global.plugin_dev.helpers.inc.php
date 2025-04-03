@@ -195,11 +195,41 @@ function wppizza_phi_validate($plugin_slug, $plugin_options, $plugin_settings, $
 
 		}
 
-		/*
-			check for suboptions
-			but also saving parent
-		*/
-		if(isset($field_parameters['options']) && is_array($field_parameters['options'])){
+		// 'options' is a string (when using 'custom' type ) 'option_keys' is an array of values we want to validate and save
+		if(isset($field_parameters['options']) && !is_array($field_parameters['options'])){// && isset($field_parameters['option_keys']) && is_array($field_parameters['option_keys'])
+			
+			if(isset($_POST[$post_slug][$settings_page][$field_key])){
+	
+				/*
+					raw post val
+				*/
+				$_posted = $_POST[$post_slug][$settings_page][$field_key] ;
+				
+				/*
+					no specific validation callback supplied, use 'wppizza_sanitize_posted_var' default
+				*/
+				$callback = empty($field_parameters['validation_callback']) || !is_callable( $field_parameters['validation_callback'] ) ? 'wppizza_sanitize_posted_var' : $field_parameters['validation_callback'] ;
+				
+				/*
+					recursively sanitise
+				*/
+				array_walk_recursive(
+					$_posted, 
+					function( &$item, $key, $cb){$item = $cb($item);},
+					$cb = $callback,
+				);
+	
+				/*
+					set sanitised values
+				*/
+				$update_options[$settings_page][$field_key] = $_posted;		
+			}
+		}
+
+			
+		//'regular' options 
+		if( isset($field_parameters['options']) && is_array($field_parameters['options'])){
+
 			$iteration = 0;
 			foreach($field_parameters['options'] as $option_key => $option_parameters){
 

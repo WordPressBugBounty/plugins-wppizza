@@ -266,8 +266,8 @@ class WPPIZZA_MODULE_MEAL_SIZES_SIZES{
 			echo"</div>";
 			/** add new button **/
 			echo"<div id='wppizza-".$field."-add' class='wppizza_admin_add'>";
-				echo "<input type='button' id='wppizza_add_".$field."' class='button' value='".__('add', 'wppizza-admin')."' />";
-				echo "<input id='wppizza_add_".$field."_fields' size='1' type='text' value='1' />".__('how many size option fields ?', 'wppizza-admin')."";
+				echo "<input type='button' id='wppizza_add_".$field."' class='button' value='".__('Add', 'wppizza-admin')."' />";
+				echo "<input id='wppizza_add_".$field."_fields' size='1' type='text' value='1' />".__('How many size option fields ?', 'wppizza-admin')."";
 			echo"</div>";
 		}
 	}
