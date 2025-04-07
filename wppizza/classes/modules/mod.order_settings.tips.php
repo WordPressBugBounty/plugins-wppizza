@@ -176,7 +176,7 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TIPS{
 
 		if($field=='tips_value_options'){
 			echo "<label>";
-				echo "<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' size='15' type='text' value='".implode(',',$wppizza_options[$options_key][$field])."' />";
+				echo "<input id='".$field."' name='".WPPIZZA_SLUG."[".$options_key."][".$field."]' size='15' type='text' value='".implode(',',(array)$wppizza_options[$options_key][$field])."' />";
 				echo "".$label."";
 			echo "</label>";
 			echo"".$description."";
