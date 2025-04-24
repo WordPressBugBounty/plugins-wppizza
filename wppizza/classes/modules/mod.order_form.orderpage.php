@@ -212,15 +212,15 @@ class WPPIZZA_MODULE_ORDERFORM_ORDERPAGE{
 					/*sort*/
 					echo"<td>";
 						echo"<span class='".WPPIZZA_SLUG."_td_label_mobile'>".__('Sort', 'wppizza-admin')."</span>";
-						if($attr['sort']){echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][sort]' size='1' type='text' value='".$v['sort']."' />";}else{echo"".__('N/A', 'wppizza-admin')."";}
+						if($attr['sort']){echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][sort]' size='1' type='text' value='".esc_html($v['sort'])."' />";}else{echo"".__('N/A', 'wppizza-admin')."";}
 					echo"</td>";
 
 
 					/*label / placeholder*/
 					echo"<td>";
 						echo"<span class='".WPPIZZA_SLUG."_td_label_mobile'>".__('Label / Placeholder', 'wppizza-admin')."</span>";
-						if($attr['label']){echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][lbl]' size='15' type='text' value='".$v['lbl']."' placeholder='".__('Label', 'wppizza-admin')."' />";}else{echo"".__('N/A', 'wppizza-admin')."";}
-						if($attr['placeholder']){echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][placeholder]' size='15' type='text' value='".$v['placeholder']."' placeholder='".__('Placeholder', 'wppizza-admin')."' />";}
+						if($attr['label']){echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][lbl]' size='15' type='text' value='".esc_html($v['lbl'])."' placeholder='".esc_html(__('Label', 'wppizza-admin'))."' />";}else{echo"".__('N/A', 'wppizza-admin')."";}
+						if($attr['placeholder']){echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][placeholder]' size='15' type='text' value='".esc_html($v['placeholder'])."' placeholder='".esc_html(__('Placeholder', 'wppizza-admin'))."' />";}
 					echo"</td>";
 
 
@@ -266,7 +266,7 @@ class WPPIZZA_MODULE_ORDERFORM_ORDERPAGE{
 						/**non editable just show label and use hidden input**/
 						if(isset($attr['fixedType'])){
 							echo "".$attr['fixedType']."";
-							echo "<input type='hidden' name='".WPPIZZA_SLUG."[".$options_key."][".$k."][type]' value='".$v['type']."'/>";
+							echo "<input type='hidden' name='".WPPIZZA_SLUG."[".$options_key."][".$k."][type]' value='".esc_html($v['type'])."'/>";
 						}else{
 							echo "<select id='".WPPIZZA_SLUG."_".$options_key."_type_".$k."' class='".WPPIZZA_SLUG."_".$options_key."_type' name='".WPPIZZA_SLUG."[".$options_key."][".$k."][type]' />";
 								echo'<option value="text" '.selected($v['type'],"text",false).'>text</option>';
@@ -290,7 +290,7 @@ class WPPIZZA_MODULE_ORDERFORM_ORDERPAGE{
 						}
 
 						echo "<span class='".WPPIZZA_SLUG."_".$options_key."_select' ".$display.">";
-							echo "<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][value]' type='text' value='".$val."' />";
+							echo "<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][value]' type='text' value='".esc_html($val)."' />";
 						echo "</span>";
 						echo "<span class='".WPPIZZA_SLUG."_".$options_key."_select' ".$display.">";
 								echo "<span class='description'>".__('separate options with comma', 'wppizza-admin')."</span>";
@@ -307,7 +307,7 @@ class WPPIZZA_MODULE_ORDERFORM_ORDERPAGE{
 							echo"<label><select id='".WPPIZZA_SLUG."-".$options_key."-validation_rules-".$k."'  class='".WPPIZZA_SLUG."-".$options_key."-validation_rules'   name='".WPPIZZA_SLUG."[".$options_key."][".$k."][validation][rule][]' ".$multiple_rules.">";
 							foreach($this->get_validation_rules() as $validation_key=>$rule){
 								$option_has_parameters = (!empty($rule['parameters'])) ? '-hasparameters' : '';
-								echo'<option value="'. $validation_key . $option_has_parameters .'" '.selected(isset($v['validation'][$validation_key]),true,false).'>'.$rule['lbl'].'</option>';
+								echo'<option value="'. $validation_key . $option_has_parameters .'" '.selected(isset($v['validation'][$validation_key]),true,false).'>'.esc_html($rule['lbl']).'</option>';
 							}
 							echo"</select></label>";
 
@@ -317,7 +317,7 @@ class WPPIZZA_MODULE_ORDERFORM_ORDERPAGE{
 										/* only for rules that have / need parameters set */
 										if($rules_available[$rule_key]['parameters']){
 										//echo"<span>".$rules_available[$rule_key]['lbl'].":</span>";
-										echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][validation][parameters][".$rule_key."]'  type='text' value='".$rule_value."' placeholder='".__('Parameters', 'wppizza-admin')."' />";
+										echo"<input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][validation][parameters][".$rule_key."]'  type='text' value='".esc_html($rule_value)."' placeholder='".esc_html(__('Parameters', 'wppizza-admin'))."' />";
 										}
 									}
 							echo "</span>";
@@ -418,7 +418,12 @@ class WPPIZZA_MODULE_ORDERFORM_ORDERPAGE{
 
 			foreach($input[$this->settings_page] as $key=>$b){
 
-
+				
+				/*
+					sanitise key
+				*/
+				$key = wppizza_validate_alpha_only($key);
+				
 				/*
 					force some types for certain keys
 				*/

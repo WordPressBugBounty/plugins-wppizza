@@ -11,7 +11,7 @@ function wppizza_dev_textdomain__( $text, $domain = 'default' ) {
 * @htmlAllowed  whether or not html should be escaped/stripped
 ******************************************************/
 function wppizza_validate_string($str, $htmlAllowed=false) {
-	if($str === null || $str === false  || trim($str) == ''){
+	if($str === null || $str === false  || trim((string)$str) === ''){
 		return '';
 	}
 	$str=convert_chars($str);
@@ -638,7 +638,7 @@ function wppizza_sanitize_post_vars($arr, $serialize = false, $validation_functi
 /* recursively sanitize array above */
 function wppizza_sanitize_post_vars_recursive(&$str) {
 	//avoid some potential php notices/warning
-	if($str === null || $str === false  || trim($str) == ''){
+	if($str === null || $str === false  || trim((string)$str) === ''){
 		$str = '';
 	}else{
 		$str = trim(stripslashes($str));
@@ -656,7 +656,7 @@ function wppizza_sanitize_post_vars_recursive(&$str) {
 ******************************************************/
 function wppizza_sanitize_posted_var($str, $html = false,  $kses = array()){
 	//avoid some potential php notices/warning
-	if($str === null || $str === false  || trim($str) == ''){
+	if($str === null || $str === false  || trim((string)$str) === ''){
 		$str = '';
 	}else{
 		$str = trim(stripslashes($str));
@@ -716,7 +716,7 @@ function wppizza_sanitise_forsprintf($string, $max_occurances, $pattern = '/%s/'
 		spare us the rest if there's only the allowed max number of % here anyway
 		or the string is even empty
 	*/
-	if(trim($string) == ''){
+	if(trim((string)$string) === ''){
 		return '';
 	}
 	$x = explode('%', $string);
