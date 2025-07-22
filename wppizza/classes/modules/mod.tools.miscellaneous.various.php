@@ -482,7 +482,7 @@ class WPPIZZA_MODULE_TOOLS_MISCELLANEOUS{
 		*
 		*************************************************************************************************/
 		$tags = get_terms(''.WPPIZZA_TAGS.'', array('hide_empty' => false));
-		if(count($tags)>0){
+		if(is_array($tags) && count($tags)>0){
 		foreach( $tags as $tag ){
 			wp_delete_term( $tag->term_id, WPPIZZA_TAGS );
 		}}

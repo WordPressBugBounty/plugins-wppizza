@@ -951,7 +951,7 @@ class WPPIZZA_SESSIONS{
 
 					$order_session['checkout_parameters']['min_order_required_free_delivery'] = $wppizza_options['order_settings']['delivery']['minimum_total']['min_total'] ;
 
-					if( $this_order_total_price_items_for_delivery < $wppizza_options['order_settings']['delivery']['minimum_total']['min_total']){
+					if( $this_order_total_price_items_for_delivery < (float)$wppizza_options['order_settings']['delivery']['minimum_total']['min_total']){
 						/*disable place order button**/
 						$order_session['checkout_parameters']['can_checkout'] = false;/*no checkout*/
 						$cannot_checkout_reason['NC_1012'] = __('Delivery : Minimum order value not reached (always free delivery)', 'wppizza-admin');
