@@ -1979,7 +1979,7 @@ public static function customer_details_formatted($order = false, $tpl_args = fa
 			if($val['type'] == 'select'){
 				//for backwards compatibility with other plugins
 				if(!isset($native_formfields[$key])){
-					$customer_parameters[$key]['value'] = !empty($order['customer_ini'][$key]) ? $order['customer_ini'][$key] : '' ;
+					$customer_parameters[$key]['value'] = isset($order['customer_ini'][$key]) ? $order['customer_ini'][$key] : '' ;
 				}else{
 					$customer_parameters[$key]['value'] = isset($order['customer_ini'][$key]) && is_numeric($order['customer_ini'][$key]) && $order['customer_ini'][$key] >= 0 ? $order['customer_ini'][$key] : '' ;
 				}
