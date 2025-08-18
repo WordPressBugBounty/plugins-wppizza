@@ -52,8 +52,9 @@ jQuery(document).ready(function($){
 		var self=$(this);
 		var selId=self.val();
 		var fieldArray=self.attr('name').replace("[sizes]","");
+		var nonce  = $('#wppizza_ajax_nonce').val(); 
 
-		jQuery.post(ajaxurl , {action :'wppizza_admin_menu_items_ajax',vars:{'field':'sizeschanged','id':selId,'inpname':fieldArray}}, function(response) {
+		jQuery.post(ajaxurl , {action :'wppizza_admin_menu_items_ajax',vars:{'field':'sizeschanged','id':selId,'inpname':fieldArray, 'nonce': nonce}}, function(response) {
 
 			$.each(response.element,function(e,v){
 				if(typeof response.inp[e]!=='undefined'){

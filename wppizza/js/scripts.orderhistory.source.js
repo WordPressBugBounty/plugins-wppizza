@@ -16,7 +16,7 @@ jQuery(document).ready(function($){
 			order status has been successfully changed
 		*************************************************************/
 		var wppizzaOrderStatusChanged = (function(functionArray, self, blog_id, order_id, status) {
-			if(functionArray.length>0){
+			if(typeof functionArray !== 'undefined' && functionArray.length>0){
 				for(i=0;i<functionArray.length;i++){
 					var func = new Function("self, blog_id, order_id, status", "return " + functionArray[i] + "(self, blog_id, order_id, status);");
 					func(self, blog_id, order_id, status);
@@ -36,7 +36,9 @@ jQuery(document).ready(function($){
 			var atts = adminOrdersAttributes.val();
 			/* parse attributes */
 			var atts_parameters = JSON.parse( atts );
-
+			/* nonce */
+			var nonce  = $('#wppizza_ajax_nonce').val();
+			
        		/* set audio alerts*/
        		if(typeof atts_parameters.audio_notify !== 'undefined'){
        			var notifyNewOrdersAudio = new Audio(atts_parameters.audio_notify);
@@ -46,7 +48,7 @@ jQuery(document).ready(function($){
 			/* prepend loading gif */
 			adminOrdersElement.prepend('<div class="wppizza-loading"></div>');
 			/* get orders via ajax */
-			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-order-history', 'post_id' : post_id , 'atts' : atts }}, function(response) {
+			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-order-history', 'post_id' : post_id , 'atts' : atts, 'nonce' : nonce }}, function(response) {
 				console.log('orders polling');
 
 				/* audio notify */
@@ -87,10 +89,11 @@ jQuery(document).ready(function($){
 			var status=self.val();
 			var update_failed = false;
 			var blog_order_id = uoKey.split('_');
+			/* nonce */
+			var nonce  = $('#wppizza_ajax_nonce').val();
 
 
-
-			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type': 'admin-change-status', 'uoKey':uoKey, 'status':status}}, function(response) {
+			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type': 'admin-change-status', 'uoKey':uoKey, 'status':status, 'nonce' : nonce}}, function(response) {
 
 				/*
 					update prohibited, alert
@@ -145,8 +148,9 @@ jQuery(document).ready(function($){
 			var self=$(this);
 			var uoKey = self.attr('id').split('-').pop(-1);
 			var doPrint = self.hasClass('wppizza-order-print') ? true : false;
-
-			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-view-order','uoKey':uoKey}}, function(output) {
+			/* nonce */
+			var nonce  = $('#wppizza_ajax_nonce').val();
+			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-view-order','uoKey':uoKey, 'nonce' : nonce}}, function(output) {
 
 	            //Print Page : as Android doesnt understnd this, let's open a window
 	            var wppizzaPrintViewOrder = window.open("","WppizzaOrder","width="+output['window-width']+",height="+output['window-height']+"");
@@ -191,7 +195,9 @@ jQuery(document).ready(function($){
 			}
 
 			var uoKey = self.attr('id').split('-').pop(-1);
-			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-delete-order','uoKey':uoKey}}, function(response) {
+			/* nonce */
+			var nonce  = $('#wppizza_ajax_nonce').val();
+			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-delete-order','uoKey':uoKey, 'nonce' : nonce}}, function(response) {
 
 				/*
 					update prohibited, alert

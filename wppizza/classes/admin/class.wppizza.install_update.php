@@ -1070,14 +1070,17 @@ class WPPIZZA_INSTALL_UPDATE{
 			install notice
 		*/
 		if(empty($wppizza_options['plugin_data']['upgrade']) && !empty($wppizza_options['plugin_data']['nag_notice'])){
+			
+			/*
+				links and nonces
+			*/
+			$pluginInfoInstallationUrl = 'https://docs.wp-pizza.com/getting-started/?section=setup';
+			$pluginInfoFaqUrl = 'https://docs.wp-pizza.com/faqs/';
+			$nonce = ''.wp_nonce_field( '' . WPPIZZA_PREFIX . '_ajax_nonce','' . WPPIZZA_PREFIX . '_ajax_nonce', true, false).'';
 
-			//$pluginInfoInstallationUrl = admin_url( 'plugin-install.php?tab=plugin-information&plugin='.WPPIZZA_SLUG.'&section=installation&TB_iframe=true&width=600&height=800');
-			//$pluginInfoFaqUrl = admin_url( 'plugin-install.php?tab=plugin-information&plugin='.WPPIZZA_SLUG.'&section=faq&TB_iframe=true&width=600&height=800');
-
-			$pluginInfoInstallationUrl = 'http://docs.wp-pizza.com/getting-started/?section=setup';
-			$pluginInfoFaqUrl = 'http://docs.wp-pizza.com/faqs/';
-
-
+			/*
+				markup
+			*/
 			$nag_notices['install'] = '';
 			$nag_notices['install'].='<b>'.sprintf(__('%s Installed. Thank you. ','wppizza-admin'),WPPIZZA_NAME).'</b><br/><br/>';
 			$nag_notices['install'].='<br/>';
@@ -1088,16 +1091,16 @@ class WPPIZZA_INSTALL_UPDATE{
 			$nag_notices['install'].='<b>'.sprintf(__('D) Go to "%s -> Opening Times" and edit as appropriate.','wppizza-admin'), WPPIZZA_NAME).'</b><br/>';
 			$nag_notices['install'].='<br/>';
 			$nag_notices['install'].='<b>'.__('For more details please make sure to read the <a href="'.$pluginInfoInstallationUrl.'" target="_blank">"Installation Instructions"</a> and <a href="'.$pluginInfoFaqUrl.'" target="_blank">"FAQ"</a>','wppizza-admin').'</b>';
-			//$nag_notices['install'].=__('For more details please make sure to read the <a href="'.$pluginInfoInstallationUrl.'" taget="thickbox">"Installation Instructions"</a> and <a href="'.$pluginInfoFaqUrl.'" class="thickbox">"FAQ"</a>','wppizza-admin');
 			$nag_notices['install'].='<br/><br/>';
 		}
 
 		/*output*/
 		if(!empty($nag_notices)){
 			foreach($nag_notices as $key => $nag_notice){
-				print'<div id="'.WPPIZZA_PREFIX.'_admin_notice_'.$key.'" class="notice notice-success '.WPPIZZA_PREFIX.'_admin_notice" style="padding:20px;">'.$nag_notice.'<br/><a href="javascript:void(0);" onclick="wppizza_dismiss_notice(\''.$key.'\'); return false;" class="button-primary">'.__('dismiss','wppizza-admin').'</a></div>';
-
+				print'<div id="'.WPPIZZA_PREFIX.'_admin_notice_'.$key.'" class="notice notice-success '.WPPIZZA_PREFIX.'_admin_notice" style="padding:20px;">'.$nag_notice.'<br/><a href="javascript:void(0);" onclick="wppizza_dismiss_notice(\''.$key.'\'); return false;" class="button-primary">'.__('Dismiss','wppizza-admin').'</a></div>';
 			}
+			//adding nonce
+			print $nonce;
 		}
 
 		/*

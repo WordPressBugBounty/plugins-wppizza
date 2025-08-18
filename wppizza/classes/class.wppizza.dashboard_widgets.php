@@ -54,7 +54,17 @@ class WPPIZZA_DASHBOARD_WIDGETS{
 	*
 	*********************************************************/
 	function wppizza_do_dashboard_widget_sales($return_markup = false) {
-
+		
+		
+		//access control 
+		if (!current_user_can('wppizza_cap_reports')){
+			if(empty($return_markup)){
+				echo '<center><h2>'.__('Forbidden','wppizza-admin').'</h2></center>';
+			}else{
+				return '<center><h2>'.__('Forbidden','wppizza-admin').'</h2></center>';
+			}
+		exit();
+		}
 
 		/***
 			get sales data returns error if <5.3
@@ -139,8 +149,9 @@ class WPPIZZA_DASHBOARD_WIDGETS{
 		$totalItemsCountLastMonth=$data['dataset']['items_last_month_count_total'];
 
 
-		$dpwDashicon='<span class="wppizza-dashicons-medium wppizza-dashboard-widget-update dashicons dashicons-update" title="'.__('update now', 'wppizza-admin').'"></span>';
-		$markup = '<div class="wppizza-dash wppizza-dash-updated">'.__('last update ','wppizza-admin').' '.date('Y-m-d H:i:s',$transientSetAt).' '.$dpwDashicon.'</div>';
+		$dpwDashicon = '<span class="wppizza-dashicons-medium wppizza-dashboard-widget-update dashicons dashicons-update" title="'.__('Update now', 'wppizza-admin').'"></span>';
+		$ajax_nonce = wp_nonce_field( '' . WPPIZZA_PREFIX . '_ajax_nonce','' . WPPIZZA_PREFIX . '_ajax_nonce', true, false).'';
+		$markup = '<div class="wppizza-dash wppizza-dash-updated">'.__('Last update ','wppizza-admin').' '.date('Y-m-d H:i:s',$transientSetAt).' '.$dpwDashicon.' '.$ajax_nonce.'</div>';
 
 		/*
 			sales summary

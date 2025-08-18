@@ -14,8 +14,9 @@ jQuery(document).ready(function($){
 		var self=$(this);
 		var arrayKey = self.attr("id").split("_").pop(-1);/*email or print etc*/
 		self.attr("disabled", "true");/*disable button*/
+		var nonce  = $('#wppizza_ajax_nonce').val();
 		var countNewKeys=$(".wppizza-templates-new").length;
-		jQuery.post(ajaxurl , {action :'wppizza_admin_templates_ajax',vars:{'field':'add_template', 'arrayKey': arrayKey, 'countNewKeys':countNewKeys}}, function(response) {
+		jQuery.post(ajaxurl , {action :'wppizza_admin_templates_ajax',vars:{'field':'add_template', 'arrayKey': arrayKey, 'countNewKeys':countNewKeys, 'nonce': nonce}}, function(response) {
 			$('#wppizza_list_templates_new').prepend(response.markup);
 			self.removeAttr("disabled");/*re-enable button*/
 			/**reinitialise sortable*/
@@ -158,6 +159,8 @@ jQuery(document).ready(function($){
 		var self=$(this);
 		/*get id*/
 		var selected_element_id = self.attr("id").split("-").pop(-1);
+		/* nonce*/
+		var nonce  = $('#wppizza_ajax_nonce').val();
 		/*ini data to send to ajax*/
 		var data={};
 		/*template id */
@@ -184,7 +187,7 @@ jQuery(document).ready(function($){
 		//console.log(data);
 
 		/**send to ajax to create preview*/
-		jQuery.post(ajaxurl , {action :'wppizza_admin_templates_ajax',vars:{'field':'preview_template', 'data': data}}, function(response) {
+		jQuery.post(ajaxurl , {action :'wppizza_admin_templates_ajax',vars:{'field':'preview_template', 'data': data, 'nonce': nonce}}, function(response) {
 			
 			//console.log(response);
 

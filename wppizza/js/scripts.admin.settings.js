@@ -9,6 +9,7 @@ jQuery(document).ready(function($){
 		
 		e.preventDefault();
 		var formInputs=$(this).closest("form").serialize();
+		var nonce  = $('#wppizza_ajax_nonce').val();
 		/*make sure it's hidden and empty first*/
 		$('#wppizza_smtp_test_results').fadeIn();
 		$('#wppizza_smtp_test_results>pre').text('---one moment : testing smtp connection---');
@@ -28,7 +29,7 @@ jQuery(document).ready(function($){
 			alert('please enter an email address');
 			return;
 		}
-		jQuery.post(ajaxurl , {action :'wppizza_admin_settings_ajax',vars:{'field':'wppizza_smtp_test','smtp_parameters':parameters}}, function(response) {
+		jQuery.post(ajaxurl , {action :'wppizza_admin_settings_ajax',vars:{'field':'wppizza_smtp_test','smtp_parameters':parameters, 'nonce': nonce}}, function(response) {
 			$('#wppizza_smtp_test_results>pre').html(response);
 		},'html').fail(function(jqXHR, textStatus, errorThrown) {alert("error : " + errorThrown);});
 	});

@@ -5,7 +5,8 @@ jQuery(document).ready(function($){
 	*********************************************************/
 	$(document).on('click', '#wppizza_show_php_vars', function(e){
 		var elm=$('#wppizza_php_info');
-		jQuery.post(ajaxurl , {action :'wppizza_admin_tools_ajax',vars:{'field':'get-php-vars'}}, function(res) {
+		var nonce  = $('#wppizza_ajax_nonce').val();
+		jQuery.post(ajaxurl , {action :'wppizza_admin_tools_ajax',vars:{'field':'get-php-vars', 'nonce': nonce}}, function(res) {
 			elm.html(res);
 		},'html').fail(function(jqXHR, textStatus, errorThrown) {alert("error : " + errorThrown);});
 	});

@@ -43,6 +43,21 @@ if(!wppizza_debug()){
 global $wppizza_options, $blog_id;
 
 
+/**************************************************
+	[some frontend ajax calls should check the nonce too]
+	to be expanded if needs be.....
+**************************************************/
+if(isset($_POST['vars']['type']) && in_array( $_POST['vars']['type'], array('admin-delete-order', 'admin-change-status', 'admin-view-order', 'admin-order-history') ) ){
+	$wppizza_ajax_nonce = '' . WPPIZZA_PREFIX . '_ajax_nonce';
+	if (! isset( $_POST['vars']['nonce'] ) || !wp_verify_nonce(  $_POST['vars']['nonce'] , $wppizza_ajax_nonce ) ) {
+		header('HTTP/1.0 403 Forbidden [F]', true, 403);
+		print"Forbidden [F]. Invalid Nonce.";
+		exit; //just for good measure
+	}
+}
+
+
+
 /*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*
 *
 *
@@ -1383,6 +1398,7 @@ if(isset($_POST['vars']['type']) && $_POST['vars']['type']=='submitorder'){
 #
 #
 ****************************************************************************************************************************************/
+
 	/*************************************************************************************
 	*
 	*	[FRONTEND - IF USED/ADDED BY SHORTCODE]

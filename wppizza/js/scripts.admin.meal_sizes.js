@@ -6,7 +6,8 @@ jQuery(document).ready(function($){
 	$(document).on('click', '#wppizza_add_sizes', function(e){
 		e.preventDefault();
 			var self=$(this);
-			self.prop( "disabled", true );/* disable add button */			
+			self.prop( "disabled", true );/* disable add button */
+			var nonce  = $('#wppizza_ajax_nonce').val();			
 			var getKeys=$('.wppizza-getkey');
 			if(getKeys.length>0){
 				var allKeys=getKeys.serializeArray();
@@ -15,7 +16,7 @@ jQuery(document).ready(function($){
 			}
 			var newFields=parseInt($('#wppizza_add_sizes_fields').val());
 			if(newFields>=1){
-				jQuery.post(ajaxurl, {action :'wppizza_admin_meal_sizes_ajax',vars:{'field':'sizes','allKeys': allKeys, 'newFields':newFields}}, function(response) {
+				jQuery.post(ajaxurl, {action :'wppizza_admin_meal_sizes_ajax',vars:{'field':'sizes','allKeys': allKeys, 'newFields':newFields, 'nonce': nonce}}, function(response) {
 					var html=response;
 					$('#wppizza_sizes_options').append(html);
 					self.prop( "disabled", false  );

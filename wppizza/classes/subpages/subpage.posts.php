@@ -238,22 +238,22 @@ class WPPIZZA_POSTS{
 		$wppizza_meta_box=array();
 		$wppizza_meta_box=apply_filters('wppizza_filter_admin_metaboxes', $wppizza_meta_box, $meta_values, $wppizza_sizes, $wppizza_options);
 
-		/**implode and output adding nonce**/
+		/**implode and output**/
 		$output=implode('',$wppizza_meta_box);
-		$output .= ''.wp_nonce_field( '' . WPPIZZA_PREFIX . '_nonce_meta_box','' . WPPIZZA_PREFIX . '_nonce_meta_box',true,false).'';
-
 		print"".$output;
 	}
 
 	function wppizza_save_metaboxes($item_id, $item_details ) {
 
-		/** bypass, when doing "quickedit" (ajax) and /or "bulk edit"  as it will otherwsie loose all meta info (i.e prices, additives etc)!!!***/
+		/*** 
+			bypass, when doing "quickedit" (ajax) and /or "bulk edit"  as it will otherwsie loose all meta info (i.e prices, additives etc)!!!
+		***/
 		if ( defined('DOING_AJAX') || isset($_GET['bulk_edit'])){
 			return;
 		}
 
 		/* check for nonce, which will also bypass this on install */
-		$nonce = '' . WPPIZZA_PREFIX . '_nonce_meta_box';
+		$nonce = '' . WPPIZZA_PREFIX . '_ajax_nonce';
 		if (! isset( $_POST[$nonce] ) || !wp_verify_nonce(  $_POST[$nonce] , $nonce ) ) {
 			return;
 		}
@@ -363,12 +363,6 @@ class WPPIZZA_POSTS{
 	function wppizza_add_quick_edit($column, $post_type) {
 		if ($column != 'wppizza-prices' || $post_type!=WPPIZZA_POST_TYPE ){ return;}
 
-		/*do we need this ?*/
-    	//static $printNonce = TRUE;
-    	//if ( $printNonce ) {
-        //	$printNonce = FALSE;
-        //	wp_nonce_field( plugin_basename( __FILE__ ), 'wppizza_edit_nonce' );
-    	//}
 		echo'<fieldset class="inline-edit-col-right inline-edit-wppizza-prices" style="width:auto;border:1px dotted #cecece;margin:5px">';
 			echo'<div class="inline-edit-col column-'.$column.'">';
 				echo'<div style="font-weight:600;text-align:center;text-decoration:underline">'.__('Item Price(s)', 'wppizza-admin').'</div>';

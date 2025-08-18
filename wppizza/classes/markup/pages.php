@@ -2041,6 +2041,9 @@ class WPPIZZA_MARKUP_PAGES{
 			apply filter if required and implode for output
 		*/
 		$markup = apply_filters('wppizza_filter_pages_shortcode_orderhistory_markup', $markup, $has_orders, $order_history);
+		//alwasy add nonce
+		$markup['_ajax_nonce'] = wp_nonce_field( '' . WPPIZZA_PREFIX . '_ajax_nonce','' . WPPIZZA_PREFIX . '_ajax_nonce', true, false);
+		
 		$markup = implode('', $markup);
 		/*
 			add attributes if logged in or not protected in the first place

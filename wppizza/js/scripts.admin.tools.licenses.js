@@ -12,10 +12,11 @@ jQuery(document).ready(function($){
 		var data=div.find('input').serialize();
 		var status=div.find('.wppizza_license_status');
 		var action = self.hasClass('wppizza_license_activate') ? 'activate' : 'deactivate';
+		var nonce  = $('#wppizza_ajax_nonce').val();
 		
 		/* add spinner */
 		div.prepend('<span id="'+spinner_id+'" class="wppizza-load"></span>');
-		jQuery.post(ajaxurl , {action :'wppizza_admin_tools_ajax',vars:{'field':'license_action', 'action' : action, 'data' : data}}, function(res) {
+		jQuery.post(ajaxurl , {action :'wppizza_admin_tools_ajax',vars:{'field':'license_action', 'action' : action, 'data' : data, 'nonce' : nonce}}, function(res) {
 			
 			/* remove spinner */
 			$('#'+spinner_id+'').remove();

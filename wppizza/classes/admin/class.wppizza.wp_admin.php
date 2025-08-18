@@ -42,6 +42,7 @@ class WPPIZZA_WP_ADMIN{
 	*
 	********************************************************************************************************************************************************/
 	function admin_ajax($wppizza_options){
+
 		/******************************************************
 			[dashboard widget update - delete transient and return new output]
 		******************************************************/
@@ -148,6 +149,17 @@ class WPPIZZA_WP_ADMIN{
 		wp_enqueue_script(WPPIZZA_SLUG.'-global');
 
 
+    	/******************
+    		ajax nonce in footer for all wppizza admin pages
+    		Note: dashboard and nag notices have their own nonce added 
+    		to not fall foul of ajax nonce checks 
+ 		******************/
+    	if($current_screen->post_type == WPPIZZA_POST_TYPE || $current_screen->id == WPPIZZA_POST_TYPE ){
+    		/*** add wppizza_ajax_nonce to footer ***/
+			add_action('admin_footer', array($this, 'wppizza_ajax_nonce'));
+    	}
+
+
 		/*****************************************************************************
 
 
@@ -176,6 +188,17 @@ class WPPIZZA_WP_ADMIN{
 
 		wp_localize_script( WPPIZZA_SLUG.'-global', WPPIZZA_SLUG, $localize );
 	}
+	
+/*********************************************************
+*
+*		[ adding wppizza_ajax_nonce to footer ]
+*
+*********************************************************/
+	function wppizza_ajax_nonce(){
+		wp_nonce_field( '' . WPPIZZA_PREFIX . '_ajax_nonce','' . WPPIZZA_PREFIX . '_ajax_nonce', true, true);
+	return;
+	}	
+	
 }
 $WPPIZZA_WP_ADMIN=new WPPIZZA_WP_ADMIN();
 ?>

@@ -867,31 +867,31 @@ class WPPIZZA_USER{
 
 				/* normal links - no inputs */
 				if($ff['type']=='link'){
-					$formfields[$key]['field'] .= '<label for="'. $key .'"' . $ff['required_class'] . '>';
+					$formfields[$key]['field'] .= '<label for="'. esc_html($key) .'"' . $ff['required_class'] . '>';
 					$formfields[$key]['field'] .= '' . $ff['label'] . '';
 					$formfields[$key]['field'] .= '</label>';
 				}
 
 				/* text / emails / (tips are displayed in subtotals) */
 				if(in_array($ff['type'],array('text', 'email'))){
-					$formfields[$key]['field'] .= '<label for="'. $key .'"' . $ff['required_class'] . '>';
+					$formfields[$key]['field'] .= '<label for="'. esc_html($key) .'"' . $ff['required_class'] . '>';
 					$formfields[$key]['field'] .= '' . $ff['label'] . '';
 					$formfields[$key]['field'] .= '</label>';
-					$formfields[$key]['field'] .= '<input id="'. $key .'" name="'. $key.'"  type="text" value="' . $ff['value'] . '" placeholder="' .$ff['placeholder'] . '"  ' . $ff['required_attribute'] . ' ' . ( !empty($ff['autocomplete']) ? $ff['autocomplete'] : '' ) . ' />';
+					$formfields[$key]['field'] .= '<input id="'. esc_html($key) .'" name="'. $key.'"  type="text" value="' . esc_html($ff['value']) . '" placeholder="' .$ff['placeholder'] . '"  ' . $ff['required_attribute'] . ' ' . ( !empty($ff['autocomplete']) ? $ff['autocomplete'] : '' ) . ' />';
 				}
 
 				/* textarea */
 				if($ff['type']=='textarea'){
-					$formfields[$key]['field'] .= '<label for="'. $key .'"' . $ff['required_class'] . '>';
+					$formfields[$key]['field'] .= '<label for="'. esc_html($key) .'"' . $ff['required_class'] . '>';
 					$formfields[$key]['field'] .= '' . $ff['label'] . '';
 					$formfields[$key]['field'] .= '</label>';
-					$formfields[$key]['field'] .= '<textarea id="'. $key .'" name="'. $key.'" placeholder="' .$ff['placeholder'] . '" ' . $ff['required_attribute'] . ' ' . (!empty($ff['autocomplete']) ? $ff['autocomplete'] : '') . '>' . $ff['value'] . '</textarea>';
+					$formfields[$key]['field'] .= '<textarea id="'. esc_html($key) .'" name="'. $key.'" placeholder="' .$ff['placeholder'] . '" ' . $ff['required_attribute'] . ' ' . (!empty($ff['autocomplete']) ? $ff['autocomplete'] : '') . '>' . $ff['value'] . '</textarea>';
 				}
 
 				/* checkbox -  with label _after_ input*/
 				if($ff['type']=='checkbox'){
-					$formfields[$key]['field'] .= '<label for="'. $key .'"' . $ff['required_class'] . ' title="'.esc_attr($ff['placeholder']).'">';
-					$formfields[$key]['field'] .= '<input id="'. $key .'" name="'. $key.'"  type="checkbox" value="1"  ' . $ff['required_attribute'] . ' '.checked($ff['value'], true, false).'/>';
+					$formfields[$key]['field'] .= '<label for="'. esc_html($key) .'"' . $ff['required_class'] . ' title="'.esc_attr($ff['placeholder']).'">';
+					$formfields[$key]['field'] .= '<input id="'. esc_html($key) .'" name="'. $key.'"  type="checkbox" value="1"  ' . $ff['required_attribute'] . ' '.checked($ff['value'], true, false).'/>';
 					$formfields[$key]['field'] .= '' . $ff['label'] . '';
 					$formfields[$key]['field'] .= '</label>';
 				}
@@ -901,35 +901,35 @@ class WPPIZZA_USER{
 					// convert comma separated value back to (trimmed) array
 					$val_as_array = array_map('trim', explode(',' , $ff['value']) );
 
-					$formfields[$key]['field'] .= '<label for="'. $key .'"' . $ff['required_class'] . '>';
+					$formfields[$key]['field'] .= '<label for="'. esc_html($key) .'"' . $ff['required_class'] . '>';
 					$formfields[$key]['field'] .= '' . $ff['label'] . '';
 					$formfields[$key]['field'] .= '</label>';
 					$formfields[$key]['field'] .= '<div class="'.WPPIZZA_PREFIX.'-multicheckbox" title="'.esc_attr($ff['placeholder']).'">';
 					foreach($ff['options'] as $k => $option){
 						//Note: Do not add the $k to the [] in the name or validation will not work when set to required
-						$formfields[$key]['field'] .= '<label><input id="'. $key .'_'.$k.'" value="'. $k .'" name="'. $key.'[]"  type="checkbox" ' . $ff['required_attribute'] . ' '.checked( ( !empty($val_as_array) && in_array($k, $val_as_array)) ,true, false).'/>'.$option.' </label>';
+						$formfields[$key]['field'] .= '<label><input id="'. esc_html($key .'_'.$k).'" value="'. $k .'" name="'. $key.'[]"  type="checkbox" ' . $ff['required_attribute'] . ' '.checked( ( !empty($val_as_array) && in_array($k, $val_as_array)) ,true, false).'/>'.$option.' </label>';
 					}
 					$formfields[$key]['field'] .= '</div>';
 				}
 
 				/* radio */
 				if($ff['type']=='radio'){
-					$formfields[$key]['field'] .= '<label for="'. $key .'"' . $ff['required_class'] . '>';
+					$formfields[$key]['field'] .= '<label for="'. esc_html($key) .'"' . $ff['required_class'] . '>';
 					$formfields[$key]['field'] .= '' . $ff['label'] . '';
 					$formfields[$key]['field'] .= '</label>';
 					$formfields[$key]['field'] .= '<div class="'.WPPIZZA_PREFIX.'-radio" title="'.esc_attr($ff['placeholder']).'">';
 					foreach($ff['options'] as $k => $option){
-						$formfields[$key]['field'] .= '<label><input id="'. $key .'_'.$k.'" value="'. $k .'" name="'. $key.'"  type="radio" ' . $ff['required_attribute'] . ' '.checked($ff['value'], $k, false).'/>'.$option.' </label>';
+						$formfields[$key]['field'] .= '<label><input id="'. esc_html($key .'_'.$k).'" value="'. $k .'" name="'. $key.'"  type="radio" ' . $ff['required_attribute'] . ' '.checked($ff['value'], $k, false).'/>'.$option.' </label>';
 					}
 					$formfields[$key]['field'] .= '</div>';
 				}
 
 				/* select */
 				if($ff['type']=='select'){
-					$formfields[$key]['field'] .= '<label for="'. $key .'"' . $ff['required_class'] . '>';
+					$formfields[$key]['field'] .= '<label for="'. esc_html($key) .'"' . $ff['required_class'] . '>';
 					$formfields[$key]['field'] .= '' . $ff['label'] . '';
 					$formfields[$key]['field'] .= '</label>';
-					$formfields[$key]['field'] .= '<select id="'. $key .'" name="'. $key.'" title="'.esc_attr($ff['placeholder']).'" ' . $ff['required_attribute'] . ' >';
+					$formfields[$key]['field'] .= '<select id="'. esc_html($key) .'" name="'. $key.'" title="'.esc_attr($ff['placeholder']).'" ' . $ff['required_attribute'] . ' >';
 					foreach($ff['options'] as $oKey => $option){
 						/* account for placeholder separately*/
 						if($oKey == -1){
@@ -946,7 +946,7 @@ class WPPIZZA_USER{
 
 				/* hidden, just add hidden field  */
 				if($ff['type']=='hidden'){
-					$formfields[$key]['field'] .= '<input id="'. $key .'" name="'. $key.'"  type="hidden" value="' . $ff['value'] . '" />';
+					$formfields[$key]['field'] .= '<input id="'. esc_html($key) .'" name="'. $key.'"  type="hidden" value="' . $ff['value'] . '" />';
 				}
 
 				/* html,  adding some custom html after it all - unused in plugin itself , but might come in handy for 3rd party plugins*/

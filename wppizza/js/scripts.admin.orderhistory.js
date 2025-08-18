@@ -56,7 +56,8 @@ jQuery(document).ready(function($){
 		/** all form fields used when polling, might be useful for other plugins to hook into on change or so*/
 		var form_data = $("#wppizza_orderhistory_polling").find("[name]").serialize();
 		var getparameters = window.location.search.substr(1);/*get url parameters with leading '?' */
-		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'get_orders','limit':limit,'status':status,'custom':custom,'getparameters':getparameters,'form_data':form_data}}, function(response) {
+		var nonce  = $('#wppizza_ajax_nonce').val();
+		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'get_orders','limit':limit,'status':status,'custom':custom,'getparameters':getparameters,'form_data':form_data, 'nonce':nonce}}, function(response) {
 			/**
 				allow to run custom functions on get orders
 			**/
@@ -205,7 +206,8 @@ jQuery(document).ready(function($){
 					self.attr("disabled", "true");/*disable button*/
 					parentElement.prepend('<div class="wppizza-spinner"></div>');
 
-					jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'refund_at_gateway','id':keys.order_id,'blogid':keys.blog_id,'class':refundEnabled.val()}}, function(response) {
+					var nonce  = $('#wppizza_ajax_nonce').val();
+					jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'refund_at_gateway','id':keys.order_id,'blogid':keys.blog_id,'class':refundEnabled.val(), 'nonce':nonce}}, function(response) {
 
 
 						if(typeof response.update_prohibited!=='undefined'){
@@ -285,8 +287,8 @@ jQuery(document).ready(function($){
 
 		var self=$(this);
 		var keys=wppizza_get_unique_order_key(self);
-
-		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'complete_failed_order','id':keys.order_id,'blogid':keys.blog_id}}, function(response) {
+		var nonce  = $('#wppizza_ajax_nonce').val();
+		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'complete_failed_order','id':keys.order_id,'blogid':keys.blog_id, 'nonce':nonce}}, function(response) {
 			/*
 				output full results to console too here
 			*/
@@ -378,7 +380,8 @@ jQuery(document).ready(function($){
 				refundElm.hide();
 			}
 		}
-		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'orderstatuschange','id':keys.order_id,'blogid':keys.blog_id,'status':status}}, function(response) {
+		var nonce  = $('#wppizza_ajax_nonce').val();
+		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'orderstatuschange','id':keys.order_id,'blogid':keys.blog_id,'status':status, 'nonce':nonce}}, function(response) {
 
 			if(typeof response.update_prohibited!=='undefined'){
 				alert(response.update_prohibited);
@@ -424,7 +427,8 @@ jQuery(document).ready(function($){
 		var self=$(this);
 		var keys=wppizza_get_unique_order_key(self);
 		var status=self.val();
-		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'customoptionchange','id':keys.order_id,'blogid':keys.blog_id,'status':status}}, function(response) {
+		var nonce  = $('#wppizza_ajax_nonce').val();
+		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'customoptionchange','id':keys.order_id,'blogid':keys.blog_id,'status':status, 'nonce':nonce}}, function(response) {
 
 			if(typeof response.update_prohibited!=='undefined'){
 				alert(response.update_prohibited);
@@ -444,7 +448,8 @@ jQuery(document).ready(function($){
 		if(!confirm('are you sure ?')){ return false;}
 		var self=$(this);
 		var keys=wppizza_get_unique_order_key(self);
-		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'delete_order','order_id':keys.order_id,'blog_id':keys.blog_id}}, function(response) {
+		var nonce  = $('#wppizza_ajax_nonce').val();
+		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'delete_order','order_id':keys.order_id,'blog_id':keys.blog_id, 'nonce':nonce}}, function(response) {
 
 			if(typeof response.update_prohibited!=='undefined'){
 				alert(response.update_prohibited);
@@ -493,7 +498,8 @@ jQuery(document).ready(function($){
 
 		/* anything to delete ? */
 		if(delete_order_ids.length >0 ){
-			jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'delete_order_bulk','delete_order_ids':delete_order_ids}}, function(response) {
+			var nonce  = $('#wppizza_ajax_nonce').val();
+			jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'delete_order_bulk','delete_order_ids':delete_order_ids, 'nonce':nonce}}, function(response) {
 
 				if(typeof response.update_prohibited!=='undefined'){
 					alert(response.update_prohibited);
@@ -526,8 +532,8 @@ jQuery(document).ready(function($){
 		var self=$(this);
 		var keys=wppizza_get_unique_order_key(self);
 		var entered_notes=$('#wppizza-orderhistory-notes-'+keys.key+'').val();
-
-		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'ordernoteschange', 'order_id':keys.order_id, 'blog_id':keys.blog_id, 'entered_notes':entered_notes}}, function(response) {
+		var nonce  = $('#wppizza_ajax_nonce').val();
+		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'ordernoteschange', 'order_id':keys.order_id, 'blog_id':keys.blog_id, 'entered_notes':entered_notes, 'nonce':nonce}}, function(response) {
 
 			if(typeof response.update_prohibited!=='undefined'){
 				alert(response.update_prohibited);
@@ -587,8 +593,8 @@ jQuery(document).ready(function($){
 		e.stopPropagation();
 		var self=$(this);
 		var keys=wppizza_get_unique_order_key(self);
-
-		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'print-order','id':keys.order_id,'blog_id':keys.blog_id}}, function(output) {
+		var nonce  = $('#wppizza_ajax_nonce').val();
+		jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'print-order','id':keys.order_id,'blog_id':keys.blog_id, 'nonce':nonce}}, function(output) {
             //Print Page : as Android doesnt understnd this, let's open a window
             var wppizzaPrintOrder = window.open("","WppizzaOrder","width="+output['window-width']+",height="+output['window-height']+"");
 

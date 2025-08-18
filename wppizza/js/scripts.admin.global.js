@@ -26,8 +26,9 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		e.stopPropagation();
 		var elm = $('#wppizza_dashboard_widget .inside');
+		var nonce  = $('#wppizza_ajax_nonce').val(); 
 		elm.prepend('<div id="wppizza-dash-loading" class="wppizza-load"></div>');
-		jQuery.post(ajaxurl , {action :'wppizza_admin_ajax',vars:{'field':'update-dashboard-widget'}}, function(response){
+		jQuery.post(ajaxurl , {action :'wppizza_admin_ajax',vars:{'field':'update-dashboard-widget', 'nonce': nonce}}, function(response){
 			$('#wppizza_dashboard_widget .inside').empty().html(response);
 			$('#wppizza-dash-loading').remove();
 		},'html').fail(function(jqXHR, textStatus, errorThrown) {alert("error : " + errorThrown);});
@@ -74,7 +75,8 @@ jQuery(document).ready(function($){
 	*	[dismiss notices]
 	******************************/
 	wppizza_dismiss_notice = function (e) {
-		jQuery.post(ajaxurl , {action :'wppizza_admin_ajax',vars:{'field':'dismiss-notice', 'key' : e}}, function(response){
+		var nonce  = $('#wppizza_ajax_nonce').val(); 
+		jQuery.post(ajaxurl , {action :'wppizza_admin_ajax',vars:{'field':'dismiss-notice', 'key' : e, 'nonce': nonce}}, function(response){
 			$('#wppizza_admin_notice_'+e+'').hide('slow');
 		},'html').fail(function(jqXHR, textStatus, errorThrown) {alert("error : " + errorThrown);});
 	};
