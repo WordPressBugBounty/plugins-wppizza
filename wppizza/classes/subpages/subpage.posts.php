@@ -238,8 +238,10 @@ class WPPIZZA_POSTS{
 		$wppizza_meta_box=array();
 		$wppizza_meta_box=apply_filters('wppizza_filter_admin_metaboxes', $wppizza_meta_box, $meta_values, $wppizza_sizes, $wppizza_options);
 
-		/**implode and output**/
+		/** implode for output **/
 		$output=implode('',$wppizza_meta_box);
+		/** add nonce **/
+		$output .= ''.wp_nonce_field( '' . WPPIZZA_PREFIX . '_ajax_nonce','' . WPPIZZA_PREFIX . '_ajax_nonce',true,false).'';
 		print"".$output;
 	}
 
@@ -266,7 +268,7 @@ class WPPIZZA_POSTS{
 		global $wppizza_options;
 		/**add filter we can hook into from other pages to add meta data**/
 		$itemMeta = apply_filters('wppizza_filter_admin_save_metaboxes', $itemMeta = array(), $item_id, $wppizza_options);
-		update_post_meta($item_id, WPPIZZA_SLUG, $itemMeta);
+		update_post_meta($item_id, WPPIZZA_POST_TYPE, $itemMeta);
 	}
 
 	/*******************************************************

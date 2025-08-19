@@ -7,8 +7,8 @@ Tags: pizzeria, restaurant, restaurant menu, food ordering, online ordering
 Requires PHP: 5.3
 Requires at least: 3.3
 Tested up to: 6.8
-Version: 3.19.8
-Stable tag: 3.19.8
+Version: 3.19.8.1
+Stable tag: 3.19.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -162,6 +162,10 @@ Note: Allergen/Foodtype Icons included with this plugin can be used on your site
 "Double Ring" Loading Icon SVG (v3.13+) generated at <a href="https://loading.io/spinner/double-ring">loading.io</a>  
 
 == Changelog ==
+
+3.19.8.1  
+* Fix: Not able to save post meta values (in 3.19.8).  
+19th Aug 2025  
 
 3.19.8  
 * Security update. Minor tidyup.  
