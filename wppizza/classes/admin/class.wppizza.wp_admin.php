@@ -15,17 +15,36 @@ if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/
 class WPPIZZA_WP_ADMIN{
 
 	function __construct() {
-		/*register settings*/
+		/**
+			register settings
+		**/
 		add_action('admin_init', array( $this, 'admin_register_settings' ) );
 
-		/***enqueue backend scripts and styles***/
+		/**
+			enqueue backend scripts and styles
+		**/
 		add_action('admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts_and_styles'));
 
-		/**admin ajax**/
+		/**
+			admin ajax
+		**/
 		add_action('wp_ajax_wppizza_admin_ajax', array($this, 'set_admin_ajax') );
 
-		/** admin ajax **/
+		/**
+			admin ajax
+		**/
 		add_action('wppizza_ajax_admin', array( $this, 'admin_ajax'));
+
+	    /******************
+	    	ajax nonce in footer for all admin pages
+	    	
+	    	Note: also needed for non-wppizza admin pages for: 
+	    	-	dashboard widgets, 
+	    	-	order notifications on non-wppizza pages, 
+	    	-	dismissal of install notices
+	    	etc
+	 	******************/	
+		add_action('admin_footer', array($this, 'wppizza_ajax_nonce'));
 
 	}
 
@@ -147,17 +166,6 @@ class WPPIZZA_WP_ADMIN{
 		/**include everywhere (expecially widget pages)*/
 		wp_register_script(WPPIZZA_SLUG.'-global', plugins_url( 'js/scripts.admin.global.js', WPPIZZA_PLUGIN_PATH ), array('jquery'), WPPIZZA_VERSION ,true);
 		wp_enqueue_script(WPPIZZA_SLUG.'-global');
-
-
-    	/******************
-    		ajax nonce in footer for all wppizza admin pages
-    		Note: dashboard and nag notices have their own nonce added 
-    		to not fall foul of ajax nonce checks 
- 		******************/
-    	if($current_screen->post_type == WPPIZZA_POST_TYPE || $current_screen->id == WPPIZZA_POST_TYPE ){
-    		/*** add wppizza_ajax_nonce to footer ***/
-			add_action('admin_footer', array($this, 'wppizza_ajax_nonce'));
-    	}
 
 
 		/*****************************************************************************

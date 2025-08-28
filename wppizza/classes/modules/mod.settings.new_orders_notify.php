@@ -126,7 +126,8 @@ class WPPIZZA_MODULE_SETTINGS_NEW_ORDERS_NOTIFY{
             		/*polling */
             		var poll_and_notify = function(){            			
 						/* ajax get new orders */
-						jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'new_orders'}}, function(orders) {
+						var nonce  = $('#wppizza_ajax_nonce').val();
+						jQuery.post(ajaxurl , {action :'wppizza_admin_orderhistory_ajax',vars:{'field':'new_orders', 'nonce':nonce}}, function(orders) {
 							/* we have orders ! */
 							if(typeof orders.new_orders !=='undefined' && orders.new_orders > 0 ){
 								/* admin bar notifications */
