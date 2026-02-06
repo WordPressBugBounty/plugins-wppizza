@@ -288,7 +288,13 @@ class WPPIZZA_DB{
 		$query = "SELECT id FROM ".$order_table." WHERE ".$column."=".$value." AND payment_status = 'CANCELLED' ";
 		$get_cancelled_order = $wpdb->get_row( $query , ARRAY_A);
 		$update_order = empty($get_cancelled_order['id']) ? false : true ;
+		$cancelled_order_id = empty($get_cancelled_order['id']) ? 0 : $get_cancelled_order['id'] ;
 
+		/** 
+			allow some actions to run when an order was cancelled - since 3.19.9 
+			the cancel_order function here is called from the 'order cancelled' page
+		**/
+		do_action('wppizza_on_order_cancel', $cancelled_order_id, __CLASS__ );
 
 	return $update_order;
 	}

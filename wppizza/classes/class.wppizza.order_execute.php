@@ -1166,6 +1166,9 @@ class WPPIZZA_ORDER_EXECUTE{
 
 		$refund = WPPIZZA() -> db -> update_order(false, $order_id, false, $update_db_values);
 
+		/* allow some actions to run when an order was refunded - since 3.19.9 */
+		do_action('wppizza_on_order_refund', $order_id);
+
 	return $refund;
 	}
 
@@ -1203,6 +1206,11 @@ class WPPIZZA_ORDER_EXECUTE{
 		/** update order **/
 		$update_order = WPPIZZA() -> db -> update_order(false, $order_id, false, $update_db_values);
 
+		/** 
+			allow some actions to run when an order was cancelled - since 3.19.9 
+			the order_cancel function here is/canbe called with the wppizza_order_cancel helper
+		**/
+		do_action('wppizza_on_order_cancel', $order_id, __CLASS__);
 
 	return $update_order;
 	}
@@ -1283,6 +1291,8 @@ class WPPIZZA_ORDER_EXECUTE{
 		/** update order **/
 		$update_order = WPPIZZA() -> db -> update_order(false, $order_id, false, $update_db_values);
 
+		/* allow some actions to run when an order was rejected - since 3.19.9 */
+		do_action('wppizza_on_order_reject', $order_id);
 
 	return $update_order;
 	}
@@ -1322,6 +1332,10 @@ class WPPIZZA_ORDER_EXECUTE{
 		/** update order **/
 		$update_order = WPPIZZA() -> db -> update_order(false, $order_id, false, $update_db_values);
 
+		/* allow some actions to run when an order failed - since 3.19.9 */
+		do_action('wppizza_on_order_failed', $order_id);
+
+
 	return $update_order;
 	}
 
@@ -1354,6 +1368,9 @@ class WPPIZZA_ORDER_EXECUTE{
 
 		/** update order **/
 		$update_order = WPPIZZA() -> db -> update_order(false, $order_id, false, $update_db_values);
+
+		/* allow some actions to run when an order expired - since 3.19.9 */
+		do_action('wppizza_on_order_expired', $order_id);
 
 	return $update_order;
 	}
