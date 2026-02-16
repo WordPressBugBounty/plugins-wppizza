@@ -2173,14 +2173,15 @@ class WPPIZZA_SESSIONS{
 		*/
 		$key = 'ctips_type';
 		if(isset($posted_vars[$key])){
-			if(empty($posted_vars[$key])){
+			if(empty($posted_vars[$key]) || !in_array($posted_vars[$key], array('init', 'pc' , 'val'))){
 				unset($_SESSION[$this->session_key_userdata][$key]);
 			}else{
 				$_SESSION[$this->session_key_userdata][$key] = $posted_vars[$key];
 			}
-		}else{
-			unset($_SESSION[$this->session_key_userdata][$key]);
-		}		
+		}
+		#else{
+		#	unset($_SESSION[$this->session_key_userdata][$key]);
+		#}		
 		
 	return ;
 	}

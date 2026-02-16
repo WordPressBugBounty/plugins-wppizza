@@ -2958,7 +2958,7 @@ return $customer_parameters;
 				if(!empty($show_tips)){
 					$summary['tips'][0]['sort']					=	70;
 					$summary['tips'][0]['class_ident']			=	'tips';
-					$summary['tips'][0]['label']				=	$blog_options['localization']['tips'] . (!empty($_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc]) ? '<span class="tips_pc">'.$_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc].'%</span>': '' );//add percentage selection if defined
+					$summary['tips'][0]['label']				=	$blog_options['localization']['tips'] . (!empty($_SESSION[WPPIZZA_SLUG.'_userdata']['ctips_type'] && $_SESSION[WPPIZZA_SLUG.'_userdata']['ctips_type'] == 'pc' ) ? '<span class="tips_pc">'.$_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc].'%</span>': '' ) ;//add percentage selection if defined
 					$summary['tips'][0]['value']				=	$order_values['summary']['tips'] ;
 					$summary['tips'][0]['value_formatted']		=	wppizza_format_price($order_values['summary']['tips'], $currency) ;
 				}

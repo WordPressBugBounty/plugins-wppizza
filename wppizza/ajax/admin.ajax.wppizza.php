@@ -22,10 +22,15 @@ if(!$wppizzaDebug){
 #	[check for nonce]
 #########################################
 $wppizza_ajax_nonce = '' . WPPIZZA_PREFIX . '_ajax_nonce';
-if (! isset( $_POST['vars']['nonce'] ) || !wp_verify_nonce(  $_POST['vars']['nonce'] , $wppizza_ajax_nonce ) ) {
-	header('HTTP/1.0 403 Forbidden [A]', true, 403);
-	print"Forbidden [A]. Invalid Nonce.";
-	exit; //just for good measure
+/* --- skip nonce check for all '...nag_dismiss' notices --- */
+if( isset( $_POST['vars']['type'] ) && stristr($_POST['vars']['type'], 'nag_dismiss') !== false ){
+	//skip nonce check
+}else{
+	if (! isset( $_POST['vars']['nonce'] ) || !wp_verify_nonce(  $_POST['vars']['nonce'] , $wppizza_ajax_nonce ) ) {
+		header('HTTP/1.0 403 Forbidden [A]', true, 403);
+		print"Forbidden [A]. Invalid Nonce.";
+		exit; //just for good measure
+	}
 }
 
 ###################################################################
