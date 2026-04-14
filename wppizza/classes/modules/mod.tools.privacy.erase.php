@@ -210,6 +210,7 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_ERASE{
 			$erase_results = array(
 				'items_removed' => true,
 				'items_retained' => false,
+				/* Translators: 1: WPPizza Name as defined by constant */
 				'messages' => array(sprintf(__('No %s records to process', 'wppizza-admin'), WPPIZZA_NAME)),
 				'done' => true
 			);
@@ -289,6 +290,7 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_ERASE{
 			$erase_results = array(
 				'items_removed' => true,
 				'items_retained' => false,
+				/* Translators: 1: WPPizza Name as defined by constant */
 				'messages' => array(sprintf(__('No %s records to process', 'wppizza-admin'), WPPIZZA_NAME)),
 				'done' => true
 			);
@@ -436,8 +438,10 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_ERASE{
 			return data
 		*/
 		$msg = array();
-		$msg[0] = sprintf(__('%s - %s %s records processed', 'wppizza-admin'), (($page-1) * $limit) ,  (($page-1) * $limit) + $orders_for_erasure['number_orders_on_page'] , WPPIZZA_NAME);
-		$msg[1] = sprintf(__('%s anonymised, %s deleted', 'wppizza-admin'), $orders_anonymised_count, $orders_removed_count);//$orders_retained_count,
+		/* Translators: 1,2,3: count(s) of number of records processed ,4: WPPizza Name as defined by constant */
+		$msg[0] = sprintf(__('%1$s - %2$s %3$s records processed', 'wppizza-admin'), (($page-1) * $limit) ,  (($page-1) * $limit) + $orders_for_erasure['number_orders_on_page'] , WPPIZZA_NAME);
+		/* Translators: 1,2: count of anonymised / deleted records */
+		$msg[1] = sprintf(__('%1$s anonymised, %2$s deleted', 'wppizza-admin'), $orders_anonymised_count, $orders_removed_count);//$orders_retained_count,
 		$erase_results = array(
 			'items_removed' => $items_removed,
 			'items_retained' => $items_retained,
@@ -451,6 +455,7 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_ERASE{
 		file_put_contents($erase_log_file,''.date('Y-m-d H:i:s').', '.$email_address.', ' . print_r($msg, true).''.PHP_EOL, FILE_APPEND);
 
 		if($done){
+		/* Translators: 1: Logfile location path (abs) */
 		$erase_results['messages'][] =	array( sprintf(__('A log of this action has been saved to %s','wppizza-admin'), $erase_log_file ) );
 		}
 

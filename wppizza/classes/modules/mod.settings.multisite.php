@@ -424,7 +424,8 @@ class WPPIZZA_MODULE_SETTINGS_MULTISITE{
 				$settings['fields'][$this->section_key][$field] = array( __('Orders/Customers (Admin) - all subsites', 'wppizza-admin'), array(
 					'value_key'=>$field,
 					'option_key'=>$this->settings_page,
-					'label'=>sprintf(__('check to have order history/customers to use all orders/customers of all child sites (%s -> Order History / %s -> Customers ) ', 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME),
+					/* Translators: 1,2: WPPizza Name as defined by constant */
+					'label'=>sprintf(__('check to have order history/customers to use all orders/customers of all child sites (%1$s -> Order History / %2$s -> Customers ) ', 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME),
 					'description'=>array(
 						'<span class="wppizza-highlight">'.__('NOTE: THIS MIGHT SLOW THINGS DOWN IN THE ADMIN ORDER HISTORY PAGE OF YOUR MAIN/PARENT SITE CONSIDERABLY', 'wppizza-admin').'</span>'
 					)
@@ -434,6 +435,7 @@ class WPPIZZA_MODULE_SETTINGS_MULTISITE{
 				$settings['fields'][$this->section_key][$field] = array( __('Reports (Admin) - all subsites', 'wppizza-admin'), array(
 					'value_key'=>$field,
 					'option_key'=>$this->settings_page,
+					/* Translators: 1: WPPizza Name as defined by constant */
 					'label'=>sprintf(__('check to have reporting - including dashboard widget - to use all orders of all child sites (%s -> Reports)', 'wppizza-admin'), WPPIZZA_NAME),
 					'description'=>array(
 						'<span class="wppizza-highlight">'.__('NOTE: THIS MIGHT SLOW THINGS DOWN IN THE ADMIN ORDER HISTORY PAGE OF YOUR MAIN/PARENT SITE CONSIDERABLY', 'wppizza-admin').'</span>'

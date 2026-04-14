@@ -92,6 +92,7 @@ class WPPIZZA_ORDER_EXECUTE{
 			$result['error'][] = array(
 				'critical'=> true, /* force sending of email to admin */
 				'error_id'=> 10005,
+				/* Translators: 1: php session save path as setup on server */
 				'error_message' => sprintf(__('Missing hash - are your php sessions set up correctly %s ?','wppizza-admin'), '[session.save_path = '.$ssp.']') ,
 				'wp_error' => ''
 			);
@@ -161,6 +162,7 @@ class WPPIZZA_ORDER_EXECUTE{
 			$result['error'][] = array(
 				'critical'=> false, /* true to force sending of email to admin */
 				'error_id'=> 20000 ,
+				/* Translators: 1: Currently selected gateway that is not in fact available */
 				'error_message' => sprintf(__('Selected gateway %s unavailable','wppizza-admin'), $trace) ,
 				'wp_error' => ''
 			);
@@ -828,7 +830,8 @@ class WPPIZZA_ORDER_EXECUTE{
 			$result['error'][] = array(
 				'critical'=> true, /* force sending of email to admin */
 				'error_id'=> 10002,
-				'error_message' => $ipn_error_prefix . __('TEMPLATES: '.print_r($email_templates['error'], true).'','wppizza-admin'),
+				/* Translators: 1: error details */
+				'error_message' => $ipn_error_prefix . sprintf(__('TEMPLATES: %s','wppizza-admin'), print_r($email_templates['error'], true) ),
 				'wp_error' => '',
 				'wp_last_query' => print_r($wpdb->last_query, true)
 			);
@@ -862,7 +865,8 @@ class WPPIZZA_ORDER_EXECUTE{
 				$result['error'][] = array(
 					'critical'=> true, /* force sending of email to admin */
 					'error_id'=> 10003,
-					'error_message' => $ipn_error_prefix .  __('EMAIL TO SHOP FAILED: '.print_r(nl2br(print_r($email_results['shop'], true)), true).'','wppizza-admin'),
+					/* Translators: 1: error details mail results */
+					'error_message' => $ipn_error_prefix .  sprintf(__('EMAIL TO SHOP FAILED: %s','wppizza-admin'), print_r(nl2br(print_r($email_results['shop'], true)), true) ),
 					'wp_error' => '',
 					'wp_last_query' => print_r($wpdb->last_query, true)
 
@@ -1912,6 +1916,7 @@ class WPPIZZA_ORDER_EXECUTE{
 					if($is_notice){
 						$print['tx_error_'.$k.''] .= '----------------------------------------'.PHP_EOL;
 						$print['tx_error_'.$k.''] .= __('Note:','wppizza-admin').PHP_EOL;
+						/* Translators: 1: WPPizza Name as defined by constant */
 						$print['tx_error_'.$k.''] .= sprintf(__('Email notices of this kind (i.e non-critcal errors) can be turned off in "%s -> Settings -> Logging -> Errors to admin email".','wppizza-admin'), WPPIZZA_NAME) . PHP_EOL;
 						$print['tx_error_'.$k.''] .= __('However, notices will still be logged if "Log failed orders" has been enabled.','wppizza-admin');
 						$print['tx_error_'.$k.''] .= PHP_EOL.'----------------------------------------';

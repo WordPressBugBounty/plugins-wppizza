@@ -28,29 +28,29 @@
 	/*default sizeoptions/tiers and associated prices**/
 	$default_sizes=array(
 		0=>array(
-			0=>array('lbl'=>esc_html__('regular', 'wppizza'),'price'=>'5.99')
+			0=>array('lbl'=>wppizza_textdomain('regular', 'wppizza'),'price'=>'5.99')
 		),
 		1=>array(
-			0=>array('lbl'=>esc_html__('small', 'wppizza'),'price'=>'4.95'),
-			1=>array('lbl'=>esc_html__('large', 'wppizza'),'price'=>'9.95')
+			0=>array('lbl'=>wppizza_textdomain('small', 'wppizza'),'price'=>'4.95'),
+			1=>array('lbl'=>wppizza_textdomain('large', 'wppizza'),'price'=>'9.95')
 		),
 		2=>array(
-			0=>array('lbl'=>esc_html__('small', 'wppizza'),'price'=>'4.95'),
-			1=>array('lbl'=>esc_html__('medium', 'wppizza'),'price'=>'7.45'),
-			2=>array('lbl'=>esc_html__('large', 'wppizza'),'price'=>'9.95')
+			0=>array('lbl'=>wppizza_textdomain('small', 'wppizza'),'price'=>'4.95'),
+			1=>array('lbl'=>wppizza_textdomain('medium', 'wppizza'),'price'=>'7.45'),
+			2=>array('lbl'=>wppizza_textdomain('large', 'wppizza'),'price'=>'9.95')
 		),
 		3=>array(
-			0=>array('lbl'=>esc_html__('small', 'wppizza'),'price'=>'4.95'),
-			1=>array('lbl'=>esc_html__('medium', 'wppizza'),'price'=>'7.45'),
-			2=>array('lbl'=>esc_html__('large', 'wppizza'),'price'=>'9.95'),
-			3=>array('lbl'=>esc_html__('xxl', 'wppizza'),'price'=>'14.99')
+			0=>array('lbl'=>wppizza_textdomain('small', 'wppizza'),'price'=>'4.95'),
+			1=>array('lbl'=>wppizza_textdomain('medium', 'wppizza'),'price'=>'7.45'),
+			2=>array('lbl'=>wppizza_textdomain('large', 'wppizza'),'price'=>'9.95'),
+			3=>array('lbl'=>wppizza_textdomain('xxl', 'wppizza'),'price'=>'14.99')
 		),
 		4=>array(
-			0=>array('lbl'=>esc_html__('0.25l', 'wppizza'),'price'=>'0.99'),
-			1=>array('lbl'=>esc_html__('0.33l', 'wppizza'),'price'=>'1.25'),
-			2=>array('lbl'=>esc_html__('0.75l', 'wppizza'),'price'=>'1.99'),
-			3=>array('lbl'=>esc_html__('1.00l', 'wppizza'),'price'=>'2.25'),
-			4=>array('lbl'=>esc_html__('1.50l', 'wppizza'),'price'=>'2.99'),
+			0=>array('lbl'=>wppizza_textdomain('0.25l', 'wppizza'),'price'=>'0.99'),
+			1=>array('lbl'=>wppizza_textdomain('0.33l', 'wppizza'),'price'=>'1.25'),
+			2=>array('lbl'=>wppizza_textdomain('0.75l', 'wppizza'),'price'=>'1.99'),
+			3=>array('lbl'=>wppizza_textdomain('1.00l', 'wppizza'),'price'=>'2.25'),
+			4=>array('lbl'=>wppizza_textdomain('1.50l', 'wppizza'),'price'=>'2.99'),
 		)
 	);
 	/* allow filtering */
@@ -94,13 +94,13 @@
 		[categories]
 	/*************************************/
 	$default_categories = array(
-		0=>esc_html__('Special Offers', 'wppizza'),
-		1=>esc_html__('Pizza', 'wppizza'),
-		2=>esc_html__('Pasta', 'wppizza'),
-		3=>esc_html__('Salads', 'wppizza'),
-		4=>esc_html__('Desserts', 'wppizza'),
-		5=>esc_html__('Beverages', 'wppizza'),
-		6=>esc_html__('Snacks', 'wppizza')
+		0=>wppizza_textdomain('Special Offers', 'wppizza'),
+		1=>wppizza_textdomain('Pizza', 'wppizza'),
+		2=>wppizza_textdomain('Pasta', 'wppizza'),
+		3=>wppizza_textdomain('Salads', 'wppizza'),
+		4=>wppizza_textdomain('Desserts', 'wppizza'),
+		5=>wppizza_textdomain('Beverages', 'wppizza'),
+		6=>wppizza_textdomain('Snacks', 'wppizza')
 	);
 	/* allow filtering */
 	$default_categories = apply_filters('wppizza_filter_install_default_categories', $default_categories);
@@ -114,58 +114,58 @@
 	/*************************************/
 	$defaultItems=array();
 	$defaultItems[0] = array(
-		array('title'=>esc_html__('Special Pizza', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>3,'prices'=>$default_prices[3]),'featuredimage'=>'pizza-64.png'),
-		array('title'=>esc_html__('Great Steak', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>3,'prices'=>$default_prices[3]),'featuredimage'=>'steak-64.png'),
-		array('title'=>esc_html__('Yummy Pudding', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>3,'prices'=>$default_prices[3]),'featuredimage'=>'cake-64.png')
+		array('title'=>wppizza_textdomain('Special Pizza', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>3,'prices'=>$default_prices[3]),'featuredimage'=>'pizza-64.png'),
+		array('title'=>wppizza_textdomain('Great Steak', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>3,'prices'=>$default_prices[3]),'featuredimage'=>'steak-64.png'),
+		array('title'=>wppizza_textdomain('Yummy Pudding', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>3,'prices'=>$default_prices[3]),'featuredimage'=>'cake-64.png')
 	);
 	$defaultItems[1] = array(
-		array('title'=>esc_html__('Pizza A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>'pizza-64.png'),
-		array('title'=>esc_html__('Pizza B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>'pizza-64.png'),
-		array('title'=>esc_html__('Pizza C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>'pizza-64.png'),
-		array('title'=>esc_html__('Pizza D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1,2),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>''),
-		array('title'=>esc_html__('Pizza E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>''),
-		array('title'=>esc_html__('Pizza F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(2,3,4),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>'')
+		array('title'=>wppizza_textdomain('Pizza A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>'pizza-64.png'),
+		array('title'=>wppizza_textdomain('Pizza B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>'pizza-64.png'),
+		array('title'=>wppizza_textdomain('Pizza C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>'pizza-64.png'),
+		array('title'=>wppizza_textdomain('Pizza D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1,2),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Pizza E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Pizza F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(2,3,4),'sizes'=>2,'prices'=>$default_prices[2]),'featuredimage'=>'')
 	);
 	$defaultItems[2] = array(
-		array('title'=>esc_html__('Pasta A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Pasta B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Pasta C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Pasta D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Pasta E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Pasta F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>'')
+		array('title'=>wppizza_textdomain('Pasta A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Pasta B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Pasta C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Pasta D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Pasta E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Pasta F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>'')
 	);
 	$defaultItems[3] = array(
-		array('title'=>esc_html__('Salad A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Salad B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Salad C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Salad D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Salad E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Salad F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>'')
+		array('title'=>wppizza_textdomain('Salad A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Salad B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Salad C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Salad D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Salad E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Salad F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>'')
 	);
 	$defaultItems[4] = array(
-		array('title'=>esc_html__('Dessert A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1,2),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>'cake-64.png'),
-		array('title'=>esc_html__('Dessert B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>''),
-		array('title'=>esc_html__('Dessert C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1,4),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>''),
-		array('title'=>esc_html__('Dessert D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>''),
-		array('title'=>esc_html__('Dessert E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(2,3,4),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>''),
-		array('title'=>esc_html__('Dessert F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>'')
+		array('title'=>wppizza_textdomain('Dessert A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1,2),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>'cake-64.png'),
+		array('title'=>wppizza_textdomain('Dessert B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Dessert C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1,4),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Dessert D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Dessert E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(2,3,4),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Dessert F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(),'sizes'=>0,'prices'=>$default_prices[0]),'featuredimage'=>'')
 	);
 	$defaultItems[5] = array(
-		array('title'=>esc_html__('Drink A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
-		array('title'=>esc_html__('Drink B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
-		array('title'=>esc_html__('Drink C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
-		array('title'=>esc_html__('Drink D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
-		array('title'=>esc_html__('Drink E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
-		array('title'=>esc_html__('Drink F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>'')
+		array('title'=>wppizza_textdomain('Drink A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Drink B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Drink C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Drink D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Drink E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Drink F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(1),'sizes'=>4,'prices'=>$default_prices[4]),'featuredimage'=>'')
 	);
 
 	$defaultItems[6] = array(
-		array('title'=>esc_html__('Snack A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Snack B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Snack C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Snack D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Snack E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
-		array('title'=>esc_html__('Snack F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>'')
+		array('title'=>wppizza_textdomain('Snack A', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Snack B', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Snack C', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Snack D', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Snack E', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>''),
+		array('title'=>wppizza_textdomain('Snack F', 'wppizza'),'descr'=>array_rand($loremIpsum,1),'meta'=>array('add_ingredients'=>false,'additives'=>array(0,1),'sizes'=>1,'prices'=>$default_prices[1]),'featuredimage'=>'')
 	);
 	/* allow filtering */
 	$defaultItems = apply_filters('wppizza_filter_install_default_items', $defaultItems, $default_prices, $loremIpsum);

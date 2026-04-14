@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
 			var atts_parameters = JSON.parse( atts );
 			/* nonce */
 			var nonce  = $('#wppizza_ajax_nonce').val();
-			
+
        		/* set audio alerts*/
        		if(typeof atts_parameters.audio_notify !== 'undefined'){
        			var notifyNewOrdersAudio = new Audio(atts_parameters.audio_notify);
@@ -50,6 +50,14 @@ jQuery(document).ready(function($){
 			/* get orders via ajax */
 			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-order-history', 'post_id' : post_id , 'atts' : atts, 'nonce' : nonce }}, function(response) {
 				console.log('orders polling');
+				/*
+					access prohibited
+				*/
+				if(typeof response.access_prohibited!=='undefined'){
+					/* replace html */
+					adminOrdersElement.html(response.access_prohibited);
+				return;
+				}
 
 				/* audio notify */
 				if(typeof response.notify!=='undefined'){
@@ -96,12 +104,20 @@ jQuery(document).ready(function($){
 			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type': 'admin-change-status', 'uoKey':uoKey, 'status':status, 'nonce' : nonce}}, function(response) {
 
 				/*
-					update prohibited, alert
+					update prohibited (by setting php constant WPPIZZA_DEV_ADMIN_NO_SAVE ), alert
 				*/
 				if(typeof response.update_prohibited!=='undefined'){
 					alert(response.update_prohibited);
 					update_failed=true;
-					return;
+				return;
+				}
+				/*
+					access prohibited, alert
+				*/
+				if(typeof response.access_prohibited!=='undefined'){
+					alert(response.access_prohibited);
+					update_failed=true;
+				return;
 				}
 
 				/*
@@ -152,7 +168,19 @@ jQuery(document).ready(function($){
 			var nonce  = $('#wppizza_ajax_nonce').val();
 			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-view-order','uoKey':uoKey, 'nonce' : nonce}}, function(output) {
 
-	            //Print Page : as Android doesnt understnd this, let's open a window
+				/*
+					access prohibited
+				*/
+				if(typeof output.access_prohibited!=='undefined'){
+					/* alert */
+					alert(output.access_prohibited);
+				return;
+				}
+
+
+	            /*
+	            	Print Page : as Android doesnt understand this, let's open a window
+	            */
 	            var wppizzaPrintViewOrder = window.open("","WppizzaOrder","width="+output['window-width']+",height="+output['window-height']+"");
 
 		        if (wppizzaPrintViewOrder == null || typeof(wppizzaPrintViewOrder)=='undefined'){
@@ -162,7 +190,9 @@ jQuery(document).ready(function($){
 
 				wppizzaPrintViewOrder.document.open("text/html", "replace");/*text/plain makes no difference....so wrap in <pre> instead*/
 
-				/**plaintext output, wrap in pre **/
+				/*
+					plaintext output, wrap in pre
+				*/
 	    		if(output['content-type']=='text/plain'){
 	    			var wpPizzaOrder=output['markup']['plaintext'];
 	    			wppizzaPrintViewOrder.document.write('<pre>'+wpPizzaOrder+'</pre>');
@@ -172,8 +202,13 @@ jQuery(document).ready(function($){
 	    		}
 
 	            wppizzaPrintViewOrder.focus();
-				/*android doesn't understand .print() not my fault really*/
+				/*
+					android doesn't understand .print() not my fault really
+				*/
 				if(doPrint){
+					/* seems required by chrome now */
+					wppizzaPrintViewOrder.document.close();
+					/*android doesn't understand .print() not my fault really*/					
 					wppizzaPrintViewOrder.print();
 				}
 			},'json').fail(function(jqXHR, textStatus, errorThrown) {alert("error[view/print] : " + errorThrown);});
@@ -200,17 +235,24 @@ jQuery(document).ready(function($){
 			jQuery.post(wppizza.ajaxurl , {action :'wppizza_json',vars:{'type':'admin-delete-order','uoKey':uoKey, 'nonce' : nonce}}, function(response) {
 
 				/*
-					update prohibited, alert
+					Access Prohibited. Missing wppizza_cap_orderhistory caps, alert
+				*/
+				if(typeof response.access_prohibited!=='undefined'){
+					alert(response.access_prohibited);
+				return;
+				}
+				/*
+					Apdate Prohibited (by setting php constant WPPIZZA_DEV_ADMIN_NO_SAVE or not having wppizza_cap_delete_order Caps), alert
 				*/
 				if(typeof response.update_prohibited!=='undefined'){
 					alert(response.update_prohibited);
-					return;
+				return;
 				}
 
 				if(typeof response.success!=='undefined'){
 					self.closest('tr').empty().remove();
 					alert(response.success);
-					return;
+				return;
 				}
 
 

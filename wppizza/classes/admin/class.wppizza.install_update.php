@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/
 class WPPIZZA_INSTALL_UPDATE{
 
 	function __construct() {
+
 		/* register plugin checking for requirements */
 		register_activation_hook( WPPIZZA_PLUGIN_INDEX, array($this, 'check_requirements'));
 		/* check if we are installing or updating */
@@ -29,7 +30,6 @@ class WPPIZZA_INSTALL_UPDATE{
 		add_action('admin_notices', array( $this, 'admin_nagscreens') );
 		/** admin ajax **/
 		add_action('wppizza_ajax_admin', array( $this, 'admin_nagscreens_ajax'));
-
 	}
 	/**************************************
 	*
@@ -67,7 +67,7 @@ class WPPIZZA_INSTALL_UPDATE{
 		/*
 			redirect after install for wppizza to show up
 		*/
-		wp_redirect(admin_url('edit.php?post_type='.WPPIZZA_POST_TYPE.'&page=order_settings'));
+		wp_safe_redirect(admin_url('edit.php?post_type='.WPPIZZA_POST_TYPE.'&page=order_settings'));
 	exit();
 	}
 	/*************************************
@@ -1066,11 +1066,12 @@ class WPPIZZA_INSTALL_UPDATE{
 			dismissible notices
 		*/
 		$nag_notices = array();
+
 		/*
 			install notice
 		*/
 		if(empty($wppizza_options['plugin_data']['upgrade']) && !empty($wppizza_options['plugin_data']['nag_notice'])){
-			
+
 			/*
 				links and nonces
 			*/
@@ -1082,25 +1083,30 @@ class WPPIZZA_INSTALL_UPDATE{
 				markup
 			*/
 			$nag_notices['install'] = '';
+			/* Translators: 1: WPPizza Name as defined by constant */
 			$nag_notices['install'].='<b>'.sprintf(__('%s Installed. Thank you. ','wppizza-admin'),WPPIZZA_NAME).'</b><br/><br/>';
 			$nag_notices['install'].='<br/>';
 			$nag_notices['install'].='<b>'.__('Quick start:.','wppizza-admin').'</b><br/>';
+			/* Translators: 1: WPPizza Name as defined by constant */
 			$nag_notices['install'].='<b>'.sprintf(__('A) Go to "Appearance -> Widget" and put the "%s  widget" - setting type to "cart" - into a sidebar.','wppizza-admin'), WPPIZZA_NAME).'</b><br/>';
-			$nag_notices['install'].='<b>'.sprintf(__('B) Add the created %s pages to your menu by going to "Appearance -> Menu" (Suggestion: use "Our Menu" as parent page and add all other %s created pages as children of it)','wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME).'</b><br/>';
+			/* Translators: 1,2: WPPizza Name as defined by constant */
+			$nag_notices['install'].='<b>'.sprintf(__('B) Add the created %1$s pages to your menu by going to "Appearance -> Menu" (Suggestion: use "Our Menu" as parent page and add all other %2$s created pages as children of it)','wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME).'</b><br/>';
 			$nag_notices['install'].='<b>'.__('C) Go to "Settings -> General" and ensure your timezone setting is correct','wppizza-admin').'</b><br/>';
+			/* Translators: 1: WPPizza Name as defined by constant */
 			$nag_notices['install'].='<b>'.sprintf(__('D) Go to "%s -> Opening Times" and edit as appropriate.','wppizza-admin'), WPPIZZA_NAME).'</b><br/>';
 			$nag_notices['install'].='<br/>';
-			$nag_notices['install'].='<b>'.__('For more details please make sure to read the <a href="'.$pluginInfoInstallationUrl.'" target="_blank">"Installation Instructions"</a> and <a href="'.$pluginInfoFaqUrl.'" target="_blank">"FAQ"</a>','wppizza-admin').'</b>';
+			/* Translators: 1: WPPizza Install Instructions URL, 2: WPPizza FAQ's URL */
+			$nag_notices['install'].='<b>'.sprintf(__('For more details please make sure to read the <a href="%1$s" target="_blank">"Installation Instructions"</a> and <a href="%2$s" target="_blank">"FAQ"</a>','wppizza-admin'), $pluginInfoInstallationUrl, $pluginInfoFaqUrl ).'</b>';
 			$nag_notices['install'].='<br/><br/>';
 		}
 
 		/*output*/
 		if(!empty($nag_notices)){
 			foreach($nag_notices as $key => $nag_notice){
-				print'<div id="'.WPPIZZA_PREFIX.'_admin_notice_'.$key.'" class="notice notice-success '.WPPIZZA_PREFIX.'_admin_notice" style="padding:20px;">'.$nag_notice.'<br/><a href="javascript:void(0);" onclick="wppizza_dismiss_notice(\''.$key.'\'); return false;" class="button-primary">'.__('Dismiss','wppizza-admin').'</a></div>';
+				print'<div id="'.esc_attr(WPPIZZA_PREFIX.'_admin_notice_'.$key).'" class="notice notice-success '.esc_attr(WPPIZZA_PREFIX.'_admin_notice').'" style="padding:20px;">'.wp_kses_post($nag_notice).'<br/><a href="javascript:void(0);" onclick="wppizza_dismiss_notice(\''.esc_js($key).'\'); return false;" class="button-primary">'.esc_html(__('Dismiss','wppizza-admin')).'</a></div>';
 			}
 			//adding nonce
-			print $nonce;
+			print wp_kses_post($nonce);
 		}
 
 		/*
@@ -1121,11 +1127,12 @@ class WPPIZZA_INSTALL_UPDATE{
 			$staticFromEmail=$wppizza_options['order_settings']['order_email_from'];
 			$pos = strpos($staticFromEmail, $domain);
 			if ($pos === false) {
+				/* Translators: 1,4: WPPizza Name as defined by constant, 2,3: Domain name the plugin is installed on. */
 				$static_notices['dmarc'] = sprintf(__('<b>EMAIL DMARC POLICIES:</b><br /><br />
-					Due to policy changes by many email servers (yahoo, google hotmail - others may follow suit) it is <span style="color:red; font-weight:600">strongly advised to set a static email address in %s -> Order Settings -> "From email address"</span>, that corrosponds to your domain name.<br />
-					As your domain appears to be <b>"%s"</b> you should <span style="color:red; font-weight:600">set an email address like "abc@%s"</span><br />
+					Due to policy changes by many email servers (yahoo, google hotmail - others may follow suit) it is <span style="color:red; font-weight:600">strongly advised to set a static email address in %1$s -> Order Settings -> "From email address"</span>, that corrosponds to your domain name.<br />
+					As your domain appears to be <b>"%2$s"</b> you should <span style="color:red; font-weight:600">set an email address like "abc@%3$s"</span><br />
 					<span style="color:red; font-weight:600">If you do NOT do this, some emails might NOT get delivered to you and/or your customers</span> as they might be in violation of DMARC policies.<br /><br />
-					<b>This notice will remain until acted upon or you forcefully switch it off in %s -> Order Settings -> "Turn Off DMARC Notice" .</b><br /><br />
+					<b>This notice will remain until acted upon or you forcefully switch it off in %4$s -> Order Settings -> "Turn Off DMARC Notice" .</b><br /><br />
 					Thank you<br/>(search on your favourite searchengine for "DMARC" if you would like to find out more.)','wppizza-admin'), WPPIZZA_NAME, $domain, $domain, WPPIZZA_NAME );
 			}
 		}
@@ -1133,7 +1140,7 @@ class WPPIZZA_INSTALL_UPDATE{
 		/*output*/
 		if(!empty($static_notices)){
 			foreach($static_notices as $key => $static_notice){
-				print'<div id="'.WPPIZZA_PREFIX.'_admin_notice_'.$key.'" class="notice notice-error '.WPPIZZA_PREFIX.'_admin_notice" style="padding:20px;">'.$static_notice.'</div>';
+				print'<div id="'.esc_attr(WPPIZZA_PREFIX.'_admin_notice_'.$key).'" class="notice notice-error '.esc_attr(WPPIZZA_PREFIX.'_admin_notice').'" style="padding:20px;">'.wp_kses_post($static_notice).'</div>';
 
 			}
 		}
@@ -1145,12 +1152,13 @@ class WPPIZZA_INSTALL_UPDATE{
 	*
 	********************************************************************************************************************************************************/
 	function admin_nagscreens_ajax($wppizza_options){
+
 		/******************************************************
 			[dismiss install nag]
 		******************************************************/
 		if(!empty($_POST['vars']['field']) && $_POST['vars']['field']=='dismiss-notice'){
 			if($_POST['vars']['key'] == 'install'){
-    			$wppizza_options['plugin_data']['nag_notice']=0;
+    			$wppizza_options['plugin_data']['nag_notice'] = 0;
     			update_option(WPPIZZA_SLUG, $wppizza_options);
         		die();
 			}
@@ -1184,25 +1192,30 @@ class WPPIZZA_INSTALL_UPDATE{
 			checks and error messages
 		*/
 		/* mbstring */
+		/* Translators: 1: WPPizza Name as defined by constant. */
 		$check['mbstring'] = array('check' => function_exists( 'mb_internal_encoding' ), 'notice' => sprintf( __( "%s requires the mbstring extension to be installed", 'wppizza-admin'), WPPIZZA_NAME));
 
 		/* php */
 		$min_version_php = '5.3';
-		$check['php_min_version'] = array('check' => version_compare( $min_version_php , PHP_VERSION, '<' ), 'notice' => sprintf( __( "%s requires PHP version %s or higher", 'wppizza-admin'), WPPIZZA_NAME, $min_version_php ));
+		/* Translators: 1: WPPizza Name as defined by constant, 2: Required Php version number */
+		$check['php_min_version'] = array('check' => version_compare( $min_version_php , PHP_VERSION, '<' ), 'notice' => sprintf( __( "%1\$s requires PHP version %2\$s or higher", 'wppizza-admin'), WPPIZZA_NAME, $min_version_php ));
 
 		/* mysql */
 		$min_version_sql = '5.5';
-		$check['mysql_min_version'] = array('check' => version_compare( $min_version_sql, $wpdb->db_version(), '<' ), 'notice' => sprintf( __( "%s requires MySQL version %s or higher", 'wppizza-admin'), WPPIZZA_NAME, $min_version_sql ));
+		/* Translators: 1: WPPizza Name as defined by constant, 2: Required MySql version number */
+		$check['mysql_min_version'] = array('check' => version_compare( $min_version_sql, $wpdb->db_version(), '<' ), 'notice' => sprintf( __( "%1\$s requires MySQL version %2\$s or higher", 'wppizza-admin'), WPPIZZA_NAME, $min_version_sql ));
 
 		/* session support*/
 		$session_support = (session_start()) ?  true : false;
+		/* Translators: 1: WPPizza Name as defined by constant */
 		$check['session_support'] = array('check' => $session_support , 'notice' => sprintf( __( "%s requires PHP session support", 'wppizza-admin'), WPPIZZA_NAME));
 
 
-		/* session savepath*/
-		$ssp = ini_get( 'session.save_path' );
-		$session_save_path = (!empty($ssp)) ?  true : false;
-		$check['session_save_path'] = array('check' => $session_save_path , 'notice' => sprintf(__( "%s requires PHP session support. Your <a href='http://php.net/manual/en/function.session-save-path.php'>session.save_path</a> in your php.ini does not appear to be set. This must be set and be read/writeable for sessions to work.", 'wppizza-admin'), WPPIZZA_NAME));
+		/* session savepath - disabled since 3.20 as a) path might not be explicitly set [especially on Win], b) if session_start() works above it should all be fine anyway */
+#		$ssp = ini_get( 'session.save_path' );
+#		$session_save_path = (!empty($ssp)) ?  true : false;
+#		/* Translators: 1: WPPizza Name as defined by constant */
+#		$check['session_save_path'] = array('check' => $session_save_path , 'notice' => sprintf(__( "%s requires PHP session support. Your <a href='http://php.net/manual/en/function.session-save-path.php'>session.save_path</a> in your php.ini does not appear to be set. This must be set and be read/writeable for sessions to work.", 'wppizza-admin'), WPPIZZA_NAME));
 
 
 		/* check max_input_vars*/
@@ -1213,7 +1226,8 @@ class WPPIZZA_INSTALL_UPDATE{
 		/* wppizza min version if updating to v3*/
 		if(!empty($wppizza_options)){
 			$min_version_wppizza = '2.16.11.10';
-			$check['wppizza_v3_update'] = array('check' => version_compare( $min_version_wppizza, $wppizza_options['plugin_data']['version'], '<' ), 'notice' => sprintf( __( "To update %s to version 3+, you must first update to version %s+ of the version 2 branch", 'wppizza-admin'), WPPIZZA_NAME, $min_version_wppizza ));
+			/* Translators: 1: WPPizza Name as defined by constant, 2: Required minimum WPPizza version number */
+			$check['wppizza_v3_update'] = array('check' => version_compare( $min_version_wppizza, $wppizza_options['plugin_data']['version'], '<' ), 'notice' => sprintf( __( "To update %1\$s to version 3+, you must first update to version %2\$s+ of the version 2 branch", 'wppizza-admin'), WPPIZZA_NAME, $min_version_wppizza ));
 		}
 
 		/*
@@ -1231,11 +1245,14 @@ class WPPIZZA_INSTALL_UPDATE{
 		*/
 		if(empty($requirements_met)){
 			$error = '';
+			/* Translators: 1: WPPizza Name as defined by constant */
 			$error .= '<div style="text-align:center"><b>' .sprintf( __( "%s de-activated ", 'wppizza-admin'), WPPIZZA_NAME ).'</b></div>';
 			$error .= '<br /><br />';
-			$error .= '<b>' . sprintf( __( "Sorry, there were some problems activating the %s plugin:", 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_VERSION ).'</b>';
+			/* Translators: 1: WPPizza Name as defined by constant */
+			$error .= '<b>' . sprintf( __( "Sorry, there were some problems activating the %s plugin:", 'wppizza-admin'), WPPIZZA_NAME ).'</b>';
 			$error .= '<br /><br />';
-			$error .= sprintf( __( "The following requirements must be met for %s version %s to work: ", 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_VERSION );
+			/* Translators: 1: WPPizza Name as defined by constant, 2: WPPizza version number that is being installed */
+			$error .= sprintf( __( "The following requirements must be met for %1\$s version %2\$s to work: ", 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_VERSION );
 			$error .= '<br />';
 			$error .= '<ul>';
 			foreach($notices as $notice){
@@ -1250,7 +1267,7 @@ class WPPIZZA_INSTALL_UPDATE{
 
 			deactivate_plugins(WPPIZZA_PLUGIN_INDEX);
 
-			wp_die( $error );
+			wp_die( wp_kses_post($error) );
 		exit();/* just for good measure */
 		}
 	return ;

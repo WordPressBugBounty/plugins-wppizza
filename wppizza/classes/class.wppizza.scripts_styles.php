@@ -195,7 +195,7 @@ class WPPIZZA_SCRIPTS_AND_STYLES{
 				enqueue dashicons for cartimage under prices and empty image/photo placeholder
 			*/
 			$css_enqueue_ident='dashicons';
-			$enqueue_styles_ident[$css_enqueue_ident] = wp_register_style($css_enqueue_ident, get_stylesheet_uri(), array($dependency_last_style));
+			$enqueue_styles_ident[$css_enqueue_ident] = wp_register_style($css_enqueue_ident, get_stylesheet_uri(), array($dependency_last_style), $wp_scripts->default_version);
 			$dependency_last_style = $css_enqueue_ident;
 
 
@@ -700,7 +700,7 @@ class WPPIZZA_SCRIPTS_AND_STYLES{
 		if(!empty($wppizza_options['layout']['prettify_js_alerts'])){
 			$miscOptions['pjsa'] = array();
 			$miscOptions['pjsa']['h1'] = get_bloginfo( 'name' );
-			$miscOptions['pjsa']['ok'] = __('OK');
+			$miscOptions['pjsa']['ok'] = __('OK', 'default' );
 		}
 
 		/**pretty photo style - if enabled **/

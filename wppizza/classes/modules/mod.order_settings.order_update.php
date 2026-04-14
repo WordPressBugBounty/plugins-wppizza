@@ -107,11 +107,11 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_ORDER_UPDATE{
 				/* quanity (input/spinner) or plain */
 				$menu_item_columns['item_td_quantity'] .= '<td class="'.WPPIZZA_PREFIX.'-item-quantity">';
 					if($type == 'cart'){//spinner in cart only. there's simply not enough space in minicart details
-						$menu_item_columns['item_td_quantity'] .= '<input type="text" size="3" id="'.WPPIZZA_PREFIX.'-cart-modify-'.$key.'" class="'.WPPIZZA_PREFIX.'-cart-mod" name="'.WPPIZZA_PREFIX.'-cart-mod-'.$key.'" value="'.$item['quantity'].'" />';
+						$menu_item_columns['item_td_quantity'] .= '<input type="number" size="3" step="1" min="0" autocomplete="off" onmousewheel id="'.WPPIZZA_PREFIX.'-cart-modify-'.$key.'" class="'.WPPIZZA_PREFIX.'-cart-mod" name="'.WPPIZZA_PREFIX.'-cart-mod-'.$key.'" value="'.$item['quantity'].'" />';
 					}else{
 						//minicart. spinner specifically enabled
 						if(!empty($wppizza_options['order_settings']['cart_increase_minicart'])){
-							$menu_item_columns['item_td_quantity'] .= '<input type="text" size="3" id="'.WPPIZZA_PREFIX.'-minicart-modify-'.$key.'" class="'.WPPIZZA_PREFIX.'-cart-mod" name="'.WPPIZZA_PREFIX.'-cart-mod-'.$key.'" value="'.$item['quantity'].'" />';
+							$menu_item_columns['item_td_quantity'] .= '<input type="number" size="3" step="1" min="0" autocomplete="off" onmousewheel id="'.WPPIZZA_PREFIX.'-minicart-modify-'.$key.'" class="'.WPPIZZA_PREFIX.'-cart-mod" name="'.WPPIZZA_PREFIX.'-cart-mod-'.$key.'" value="'.$item['quantity'].'" />';
 						}else{
 							$menu_item_columns['item_td_quantity'] .= $item['quantity'];
 						}
@@ -211,9 +211,10 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_ORDER_UPDATE{
 				if($wppizza_options['order_settings']['menu_item_remove_button'] == 'left'){
 					$item_column['item_td_quantity'] .= '<input type="button" id="'.WPPIZZA_PREFIX.'-cart-'.$key.'" class="'.WPPIZZA_PREFIX.'-delete-from-cart" title="'.$txt['remove_from_cart'].'" value="x" />';
 				}
-				#if(!empty($wppizza_options['order_settings']['order_page_quantity_change'])){
-					$item_column['item_td_quantity'] .= '<input type="text" size="1" id="'.WPPIZZA_PREFIX.'-qkey-'.$key.'" name="'.WPPIZZA_PREFIX.'-cart-mod-'.$key.'" class="'.WPPIZZA_PREFIX.'-item-qupdate" value="'.$item['quantity'].'" />';
-				#}
+
+				$item_column['item_td_quantity'] .= '<input type="number" size="1" step="1" min="0" autocomplete="off" onmousewheel id="'.WPPIZZA_PREFIX.'-qkey-'.$key.'" name="'.WPPIZZA_PREFIX.'-cart-mod-'.$key.'" class="'.WPPIZZA_PREFIX.'-item-qupdate" value="'.$item['quantity'].'" />';
+					
+					
 			$item_column['item_td_quantity'] .='</td>';
 
 		}else{

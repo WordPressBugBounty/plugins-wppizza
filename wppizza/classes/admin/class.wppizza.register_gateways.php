@@ -412,6 +412,7 @@ class WPPIZZA_REGISTER_GATEWAYS{
                             'options' => '',
                             'validateCallback' => 'wppizza_validate_string',
                             'label' => __('Frontend Label','wppizza-admin'),
+                            /* Translators: 1: Default Gateway Name derived from gateway class name after the starting WPPIZZA_GATEWAY_...... */
                             'descr' => '['.sprintf(__('displays "%s" if empty','wppizza-admin'),$gateway_object->gatewayName).']<br/>['.__('Used in emails and frontend. However, it is only being displayed on frontend order page if more than one gateway installed, activated and enabled','wppizza-admin').']',
                             'placeholder' => '',
                             'wpml' => true

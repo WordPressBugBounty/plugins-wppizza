@@ -330,7 +330,7 @@ class WPPIZZA_SUBPAGES_SETTINGS{
 
 		echo'<form action="options.php" method="post">';
 		echo'<input type="hidden" name="'.WPPIZZA_SLUG.'_'.$this->class_key.'" value="1" />';
-
+		
 			/**echo wppizza settings field*/
 			settings_fields(WPPIZZA_SLUG);
 

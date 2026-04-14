@@ -160,7 +160,7 @@ class WPPIZZA_REPORTS{
 	*
 	*********************************************************/
 	function wppizza_enqueue_admin_scripts_and_styles(){
-		global $current_screen, $wp_styles, $wp_scripts;
+		global $current_screen, $wp_styles, $wp_scripts, $wppizza_options;
       	/**include reporting js**/
       	if($current_screen->id == ''.WPPIZZA_POST_TYPE.'_page_'.$this->class_key.'' && $current_screen->post_type == WPPIZZA_POST_TYPE){
 
@@ -170,8 +170,14 @@ class WPPIZZA_REPORTS{
 			/************
 				css
 			***********/
-			/*datepicker*/
-			wp_enqueue_style('jquery-style', '//code.jquery.com/ui/'.$jquery_ui_core_version .'/themes/smoothness/jquery-ui.min.css');
+			/*
+				datepicker css
+				load a localised (gdpr) version (currently only smoothness supported) here too if we load it in the frontend
+			*/
+			$ui_style = $wppizza_options['order_settings']['order_page_quantity_change_style'];
+			$isLocal = substr($ui_style, -5) == '.gdpr' ? true : false ;
+			$stylePath = $isLocal ? ''. WPPIZZA_URL . 'css/ui/smoothness.css' : '//code.jquery.com/ui/'.$jquery_ui_core_version .'/themes/smoothness/jquery-ui.min.css';
+			wp_enqueue_style('jquery-style', $stylePath, array(), $jquery_ui_core_version);	
 
 			/** chosen **/
     	    wp_register_style(WPPIZZA_SLUG.'-chosen', plugins_url( 'css/wppizza-chosen.min.css', WPPIZZA_PLUGIN_PATH ), array(), WPPIZZA_VERSION);

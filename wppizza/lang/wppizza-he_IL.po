@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPPizza v3.x - First Install Frontend Localization\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-06 21:45+0000\n"
-"PO-Revision-Date: 2022-12-06 21:45+0000\n"
+"POT-Creation-Date: 2026-04-14 00:44+0100\n"
+"PO-Revision-Date: 2026-04-14 00:44+0100\n"
 "Last-Translator: ollybach <dev@wp-pizza.com>\n"
 "Language-Team: Yair - Halev.sites <halev.sites@gmail.com>\n"
 "Language: he_IL\n"
@@ -11,405 +11,442 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: esc_html__\n"
+"X-Poedit-KeywordsList: ;wppizza_textdomain\n"
 "X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
 # @ wppizza-locale
-#: classes/modules/mod.additives.additives.php:301
+#: classes/modules/mod.additives.additives.php:308
 msgid "Food coloring"
 msgstr "צבע מאכל"
 
 # @ wppizza-locale
-#: classes/modules/mod.additives.additives.php:302
+#: classes/modules/mod.additives.additives.php:309
 msgid "Flavor enhancers"
 msgstr "משפרי טעם"
 
 # @ wppizza-locale
-#: classes/modules/mod.additives.additives.php:303
+#: classes/modules/mod.additives.additives.php:310
 msgid "Preservatives"
 msgstr "חומרים משמרים"
 
 # @ wppizza-locale
-#: classes/modules/mod.additives.additives.php:304
+#: classes/modules/mod.additives.additives.php:311
 msgid "Stabilizers"
 msgstr "מייצבים"
 
 # @ wppizza-locale
-#: classes/modules/mod.additives.additives.php:305
+#: classes/modules/mod.additives.additives.php:312
 msgid "Sweeteners"
 msgstr "ממתיקים"
 
-#: classes/modules/mod.additives.allergens.php:376
+#: classes/modules/mod.additives.allergens.php:395
 msgid "Gluten"
 msgstr "Gluten"
 
-#: classes/modules/mod.additives.allergens.php:377
+#: classes/modules/mod.additives.allergens.php:396
 msgid "Gluten Free"
 msgstr "Gluten Free"
 
-#: classes/modules/mod.additives.allergens.php:378
+#: classes/modules/mod.additives.allergens.php:397
 msgid "Crustaceans"
 msgstr "Crustaceans"
 
-#: classes/modules/mod.additives.allergens.php:379
+#: classes/modules/mod.additives.allergens.php:398
 msgid "Crustacean Free"
 msgstr "Crustacean Free"
 
-#: classes/modules/mod.additives.allergens.php:380
+#: classes/modules/mod.additives.allergens.php:399
 msgid "Eggs"
 msgstr "Eggs"
 
-#: classes/modules/mod.additives.allergens.php:381
+#: classes/modules/mod.additives.allergens.php:400
 msgid "Egg Free"
 msgstr "Egg Free"
 
-#: classes/modules/mod.additives.allergens.php:382
+#: classes/modules/mod.additives.allergens.php:401
 msgid "Fish"
 msgstr "Fish"
 
-#: classes/modules/mod.additives.allergens.php:383
+#: classes/modules/mod.additives.allergens.php:402
 msgid "Fish Free"
 msgstr "Fish Free"
 
-#: classes/modules/mod.additives.allergens.php:384
+#: classes/modules/mod.additives.allergens.php:403
 msgid "Peanuts"
 msgstr "Peanuts"
 
-#: classes/modules/mod.additives.allergens.php:385
+#: classes/modules/mod.additives.allergens.php:404
 msgid "Peanut Free"
 msgstr "Peanut Free"
 
-#: classes/modules/mod.additives.allergens.php:386
+#: classes/modules/mod.additives.allergens.php:405
 msgid "Soybeans"
 msgstr "Soybeans"
 
-#: classes/modules/mod.additives.allergens.php:387
+#: classes/modules/mod.additives.allergens.php:406
 msgid "Soybean Free"
 msgstr "Soybean Free"
 
-#: classes/modules/mod.additives.allergens.php:388
+#: classes/modules/mod.additives.allergens.php:407
 msgid "Milk / Lactose"
 msgstr "Milk / Lactose"
 
-#: classes/modules/mod.additives.allergens.php:389
+#: classes/modules/mod.additives.allergens.php:408
 msgid "Milk / Lactose Free"
 msgstr "Milk / Lactose Free"
 
-#: classes/modules/mod.additives.allergens.php:390
+#: classes/modules/mod.additives.allergens.php:409
 msgid "Nuts"
 msgstr "Nuts"
 
 # @ wppizza-locale
-#: classes/modules/mod.additives.allergens.php:391
+#: classes/modules/mod.additives.allergens.php:410
 msgid "Free from Nuts"
 msgstr "Free from Nuts"
 
-#: classes/modules/mod.additives.allergens.php:392
+#: classes/modules/mod.additives.allergens.php:411
 msgid "Celery"
 msgstr "Celery"
 
 # @ wppizza-locale
-#: classes/modules/mod.additives.allergens.php:393
+#: classes/modules/mod.additives.allergens.php:412
 msgid "Free from Celery"
 msgstr "Free from Celery"
 
-#: classes/modules/mod.additives.allergens.php:394
+#: classes/modules/mod.additives.allergens.php:413
 msgid "Mustard"
 msgstr "Mustard"
 
-#: classes/modules/mod.additives.allergens.php:395
+#: classes/modules/mod.additives.allergens.php:414
 msgid "No Mustard"
 msgstr "No Mustard"
 
-#: classes/modules/mod.additives.allergens.php:396
+#: classes/modules/mod.additives.allergens.php:415
 msgid "Sesame"
 msgstr "Sesame"
 
-#: classes/modules/mod.additives.allergens.php:397
+#: classes/modules/mod.additives.allergens.php:416
 msgid "Sesame Free"
 msgstr "Sesame Free"
 
-#: classes/modules/mod.additives.allergens.php:398
+#: classes/modules/mod.additives.allergens.php:417
 msgid "Sulphites"
 msgstr "Sulphites"
 
-#: classes/modules/mod.additives.allergens.php:399
+#: classes/modules/mod.additives.allergens.php:418
 msgid "Sulphite Free"
 msgstr "Sulphite Free"
 
-#: classes/modules/mod.additives.allergens.php:400
+#: classes/modules/mod.additives.allergens.php:419
 msgid "Lupin"
 msgstr "Lupin"
 
-#: classes/modules/mod.additives.allergens.php:401
+#: classes/modules/mod.additives.allergens.php:420
 msgid "Lupin Free"
 msgstr "Lupin Free"
 
-#: classes/modules/mod.additives.allergens.php:402
+#: classes/modules/mod.additives.allergens.php:421
 msgid "Molluscs"
 msgstr "Molluscs"
 
-#: classes/modules/mod.additives.allergens.php:403
+#: classes/modules/mod.additives.allergens.php:422
 msgid "No Molluscs"
 msgstr "No Molluscs"
 
-#: classes/modules/mod.additives.foodtype.php:357
+#: classes/modules/mod.additives.foodtype.php:364
 msgid "Mild"
 msgstr "Mild"
 
-#: classes/modules/mod.additives.foodtype.php:358
+#: classes/modules/mod.additives.foodtype.php:365
 msgid "Spicy"
 msgstr "Spicy"
 
-#: classes/modules/mod.additives.foodtype.php:359
+#: classes/modules/mod.additives.foodtype.php:366
 msgid "Hot"
 msgstr "Hot"
 
-#: classes/modules/mod.additives.foodtype.php:360
+#: classes/modules/mod.additives.foodtype.php:367
 msgid "Very Hot"
 msgstr "Very Hot"
 
-#: classes/modules/mod.additives.foodtype.php:361
+#: classes/modules/mod.additives.foodtype.php:368
 msgid "Frozen"
 msgstr "קפוא"
 
-#: classes/modules/mod.additives.foodtype.php:362
+#: classes/modules/mod.additives.foodtype.php:369
 msgid "Halal"
 msgstr "Halal"
 
-#: classes/modules/mod.additives.foodtype.php:363
+#: classes/modules/mod.additives.foodtype.php:370
 msgid "Kosher"
 msgstr "Kosher"
 
-#: classes/modules/mod.additives.foodtype.php:364
+#: classes/modules/mod.additives.foodtype.php:371
 msgid "Vegetarian"
 msgstr "Vegetarian"
 
-#: classes/modules/mod.additives.foodtype.php:365
+#: classes/modules/mod.additives.foodtype.php:372
 msgid "Vegan"
 msgstr "Vegan"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1409
-msgid "contains additives"
+#: classes/modules/mod.localization.common.php:1426
+#, fuzzy
+#| msgid "contains additives"
+msgid "Contains additives"
 msgstr "מכיל תוספות"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1410
-msgid "add to cart"
+#: classes/modules/mod.localization.common.php:1427
+#, fuzzy
+#| msgid "add to cart"
+msgid "Add to cart"
 msgstr "הוסף לסל"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1411
-msgid "sorry, we are currently closed"
+#: classes/modules/mod.localization.common.php:1428
+#, fuzzy
+#| msgid "sorry, we are currently closed"
+msgid "Sorry, we are currently closed"
 msgstr "מצטערים, אנחנו כרגע סגורים"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1412
-msgid "please choose a size"
+#: classes/modules/mod.localization.common.php:1429
+#, fuzzy
+#| msgid "please choose a size"
+msgid "Please choose a size"
 msgstr "אנא בחר גודל"
 
-#: classes/modules/mod.localization.common.php:1413
+#: classes/modules/mod.localization.common.php:1430
 msgid "<div>&#10004;</div>item added"
 msgstr "<div>&#10004;</div>item added"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1414
-msgid "no results found"
+#: classes/modules/mod.localization.common.php:1431
+#, fuzzy
+#| msgid "no results found"
+msgid "No results found"
 msgstr "no results found"
 
 # @ default
-#: classes/modules/mod.localization.common.php:1415
-msgid "uncategorised"
+#: classes/modules/mod.localization.common.php:1432
+#, fuzzy
+#| msgid "uncategorised"
+msgid "Uncategorised"
 msgstr "uncategorised"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1416
-msgid "< previous"
+#: classes/modules/mod.localization.common.php:1433
+#, fuzzy
+#| msgid "< previous"
+msgid "< Previous"
 msgstr "&lt;קודם"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1417
-msgid "next >"
+#: classes/modules/mod.localization.common.php:1434
+#, fuzzy
+#| msgid "next >"
+msgid "Next >"
 msgstr "הבא&gt;"
 
-#: classes/modules/mod.localization.common.php:1418
+#: classes/modules/mod.localization.common.php:1436
 #, php-format
 msgid "%s - %s of %s"
 msgstr "%s - %s of %s"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1419
-msgid "currently closed"
+#: classes/modules/mod.localization.common.php:1437
+#, fuzzy
+#| msgid "currently closed"
+msgid "Currently closed"
 msgstr "כרגע סגור"
 
-#: classes/modules/mod.localization.common.php:1420
-msgid "empty cart"
+#: classes/modules/mod.localization.common.php:1439
+#, php-format
+msgid "Closed for holidays. We will open again on %s."
+msgstr "סגור בחגים. נשוב ונפתח ב-%s."
+
+#: classes/modules/mod.localization.common.php:1440
+#, fuzzy
+#| msgid "empty cart"
+msgid "Empty cart"
 msgstr "רוקן עגלה"
 
-#: classes/modules/mod.localization.common.php:1421
-msgid "view cart"
+#: classes/modules/mod.localization.common.php:1441
+#, fuzzy
+#| msgid "view cart"
+msgid "View cart"
 msgstr "view cart"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1422
-msgid "your cart is empty"
+#: classes/modules/mod.localization.common.php:1442
+#, fuzzy
+#| msgid "your cart is empty"
+msgid "Your cart is empty"
 msgstr "עגלת הקניות שלך ריקה"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1423
-msgid "remove from cart"
+#: classes/modules/mod.localization.common.php:1443
+#, fuzzy
+#| msgid "remove from cart"
+msgid "Remove from cart"
 msgstr "להסיר מסל הקניות"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1424
-msgid "place your order"
+#: classes/modules/mod.localization.common.php:1444
+#, fuzzy
+#| msgid "place your order"
+msgid "Place your order"
 msgstr "לבצע את ההזמנה שלך"
 
-#: classes/modules/mod.localization.common.php:1425
-msgid "checkout"
+#: classes/modules/mod.localization.common.php:1445
+#, fuzzy
+#| msgid "checkout"
+msgid "Checkout"
 msgstr "checkout"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1426
-msgid "we're closed"
+#: classes/modules/mod.localization.common.php:1446
+#, fuzzy
+#| msgid "we're closed"
+msgid "We're closed"
 msgstr "we're closed"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1427
+#: classes/modules/mod.localization.common.php:1447
 msgid "You have no previous orders"
 msgstr "You have no previous orders"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1428
-#: classes/modules/mod.localization.common.php:1523
+#: classes/modules/mod.localization.common.php:1448
+#: classes/modules/mod.localization.common.php:1549
 msgid "Order Details"
 msgstr "פרטי הזמנה"
 
-#: classes/modules/mod.localization.common.php:1429
+#: classes/modules/mod.localization.common.php:1449
 msgid "Transaction Details"
 msgstr "Transaction Details"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1430
+#: classes/modules/mod.localization.common.php:1450
 msgid "Delivered:"
 msgstr "Delivered:"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1431
+#: classes/modules/mod.localization.common.php:1451
 #, fuzzy
 #| msgid "your order"
 msgid "Your order"
 msgstr "ההזמנה שלך"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1432
+#: classes/modules/mod.localization.common.php:1452
 #, fuzzy
 #| msgid "send order"
 msgid "Send order"
 msgstr "שלח הזמנה"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1433
+#: classes/modules/mod.localization.common.php:1453
 #, fuzzy
 #| msgid "update order"
 msgid "Update order"
 msgstr "update order"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1434
+#: classes/modules/mod.localization.common.php:1454
 #, fuzzy
 #| msgid "please enter the required information below"
 msgid "Please enter the required information below"
 msgstr "נא להזין את המידע הנדרש "
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1435
+#: classes/modules/mod.localization.common.php:1455
 #, fuzzy
 #| msgid "handling charge"
 msgid "Handling charge"
 msgstr "טיפול במשלוח"
 
-#: classes/modules/mod.localization.common.php:1436
+#: classes/modules/mod.localization.common.php:1456
 #, fuzzy
 #| msgid "calculated on checkout"
 msgid "Calculated on checkout"
 msgstr "calculated on checkout"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1437
+#: classes/modules/mod.localization.common.php:1457
 #, fuzzy
 #| msgid "this is a required field"
 msgid "This is a required field"
 msgstr "שדה חובה"
 
-#: classes/modules/mod.localization.common.php:1438
+#: classes/modules/mod.localization.common.php:1458
 #, fuzzy
 #| msgid "invalid email address"
 msgid "Invalid email address"
 msgstr "invalid email address"
 
-#: classes/modules/mod.localization.common.php:1439
+#: classes/modules/mod.localization.common.php:1459
 #, fuzzy
 #| msgid "decimal numbers only please"
 msgid "Decimal numbers only please"
 msgstr "מספרים עשרוניים בלבד בבקשה"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1440
+#: classes/modules/mod.localization.common.php:1460
 #, fuzzy
 #| msgid "thank you"
 msgid "Thank you"
 msgstr "תודה"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1441
+#: classes/modules/mod.localization.common.php:1461
 #, fuzzy
 #| msgid "thank you, we have received your order"
 msgid "Thank you, we have received your order"
 msgstr "תודה לך, קבלנו את ההזמנה שלך"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1442
+#: classes/modules/mod.localization.common.php:1462
 #, fuzzy
 #| msgid "personal information"
 msgid "Personal information"
 msgstr "personal information"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1443
+#: classes/modules/mod.localization.common.php:1463
 #, fuzzy
 #| msgid "order details"
 msgid "Order details"
 msgstr "פרטי הזמנה"
 
-#: classes/modules/mod.localization.common.php:1444
+#: classes/modules/mod.localization.common.php:1464
 msgid "Apologies. There was an error receiving your order. Please try again."
 msgstr "מצטערים. יש כמה שגיאות בעמוד ההזמנה. נא לנסות שוב."
 
-#: classes/modules/mod.localization.common.php:1445
+#: classes/modules/mod.localization.common.php:1465
 msgid "Apologies. There was an error receiving your order. Please contact us."
 msgstr "תנצלותי. אירעה שגיאה בקבלת ההזמנה. אנא צרו עמנו קשר."
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1446
+#: classes/modules/mod.localization.common.php:1466
 msgid "Order cancelled"
 msgstr "Order cancelled"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1447
+#: classes/modules/mod.localization.common.php:1467
 msgid "This order has been cancelled. Thank you."
 msgstr "This order has been cancelled. Thank you."
 
-#: classes/modules/mod.localization.common.php:1448
+#: classes/modules/mod.localization.common.php:1468
 msgid "Processing Payment"
 msgstr "Processing Payment"
 
-#: classes/modules/mod.localization.common.php:1449
+#: classes/modules/mod.localization.common.php:1469
 msgid ""
 "<p>We are processing your payment! This page will automatically refresh and "
 "check again in a few seconds. Please wait.....</p><p>If this page appears "
@@ -421,11 +458,11 @@ msgstr ""
 "for more than a minute, please contact us stating the following order "
 "details</p>"
 
-#: classes/modules/mod.localization.common.php:1450
+#: classes/modules/mod.localization.common.php:1470
 msgid "Payment Pending"
 msgstr "Payment Pending"
 
-#: classes/modules/mod.localization.common.php:1451
+#: classes/modules/mod.localization.common.php:1472
 #, php-format
 msgid ""
 "<p>Your payment has not yet been sent to us by your payment provider.</"
@@ -442,11 +479,11 @@ msgstr ""
 "p><p>This page will refresh periodically, but you can also return to this "
 "page using <a href=\"%s\">this link</a> to check back yourself later.</p>"
 
-#: classes/modules/mod.localization.common.php:1452
+#: classes/modules/mod.localization.common.php:1473
 msgid "Payment Accepted - Awaiting confirmation"
 msgstr "Payment Accepted - Awaiting confirmation"
 
-#: classes/modules/mod.localization.common.php:1453
+#: classes/modules/mod.localization.common.php:1474
 msgid ""
 "<p>Your payment was accepted but has not yet been confirmed.</p><p>You will "
 "receive another email when your payment has been confirmed. Your order can "
@@ -458,69 +495,69 @@ msgstr ""
 "not be processed until final confirmation has been received.</p><p>Please be "
 "patient</p>"
 
-#: classes/modules/mod.localization.common.php:1454
+#: classes/modules/mod.localization.common.php:1475
 msgid "Payment Confirmed"
 msgstr "Payment Confirmed"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1455
+#: classes/modules/mod.localization.common.php:1476
 msgid "<p>Your payment has been confirmed. Thank you.</p>"
 msgstr "<p>Your payment has been confirmed. Thank you.</p>"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1456
+#: classes/modules/mod.localization.common.php:1477
 msgid "Your order at"
 msgstr "Your order at"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1457
+#: classes/modules/mod.localization.common.php:1478
 msgid "Please enter your payment details"
 msgstr "Please enter your payment details"
 
-#: classes/modules/mod.localization.common.php:1458
+#: classes/modules/mod.localization.common.php:1479
 msgid "Sorry, this order can not be found."
 msgstr "Sorry, this order can not be found."
 
-#: classes/modules/mod.localization.common.php:1459
+#: classes/modules/mod.localization.common.php:1480
 msgid "Return to shop"
 msgstr "Return to shop"
 
-#: classes/modules/mod.localization.common.php:1461
+#: classes/modules/mod.localization.common.php:1482
 #, fuzzy
 #| msgid "update my user data with the details above"
 msgid "Update my user data with the details above"
 msgstr "לעדכן את נתוני המשתמש שלי כמפורט לעיל"
 
-#: classes/modules/mod.localization.common.php:1462
-#: classes/modules/mod.order_form.orderpage.php:382
+#: classes/modules/mod.localization.common.php:1483
+#: classes/modules/mod.order_form.orderpage.php:390
 msgid "Tips / Gratuities"
 msgstr "Tips / Gratuities"
 
-#: classes/modules/mod.localization.common.php:1463
+#: classes/modules/mod.localization.common.php:1484
 #, fuzzy
 #| msgid "already registered ?"
 msgid "Already registered ?"
 msgstr "already registered ?"
 
-#: classes/modules/mod.localization.common.php:1464
+#: classes/modules/mod.localization.common.php:1485
 #, fuzzy
 #| msgid "continue as :"
 msgid "Continue as :"
 msgstr "continue as :"
 
-#: classes/modules/mod.localization.common.php:1465
-#: classes/modules/mod.localization.common.php:1528
+#: classes/modules/mod.localization.common.php:1486
+#: classes/modules/mod.localization.common.php:1554
 msgid "Guest"
 msgstr "Guest"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1466
+#: classes/modules/mod.localization.common.php:1487
 #, fuzzy
 #| msgid "create account"
 msgid "Create account"
 msgstr "Create Account"
 
-#: classes/modules/mod.localization.common.php:1467
+#: classes/modules/mod.localization.common.php:1488
 msgid ""
 "Please ensure your email address is correct. A password will be emailed to "
 "you."
@@ -528,286 +565,287 @@ msgstr ""
 "Please ensure your email address is correct. A password will be emailed to "
 "you."
 
-#: classes/modules/mod.localization.common.php:1468
+#: classes/modules/mod.localization.common.php:1489
 msgid ""
-"This email address has already been registered. Please either <a href="
-"\"#login\">login</a>, use a different email address or continue as guest."
+"This email address has already been registered. Please either <a "
+"href=\"#login\">login</a>, use a different email address or continue as "
+"guest."
 msgstr ""
-"This email address has already been registered. Please either <a href="
-"\"#login\">login</a>, use a different email address or continue as guest."
+"This email address has already been registered. Please either <a "
+"href=\"#login\">login</a>, use a different email address or continue as "
+"guest."
 
-#: classes/modules/mod.localization.common.php:1469
-#: classes/modules/mod.localization.common.php:1501
-#: classes/modules/mod.localization.common.php:1524
+#: classes/modules/mod.localization.common.php:1490
+#: classes/modules/mod.localization.common.php:1527
+#: classes/modules/mod.localization.common.php:1550
 msgid "Qty"
 msgstr "Qty"
 
-#: classes/modules/mod.localization.common.php:1470
-#: classes/modules/mod.localization.common.php:1499
+#: classes/modules/mod.localization.common.php:1491
 #: classes/modules/mod.localization.common.php:1525
+#: classes/modules/mod.localization.common.php:1551
 msgid "Article"
 msgstr "Article"
 
-#: classes/modules/mod.localization.common.php:1471
-#: classes/modules/mod.localization.common.php:1500
+#: classes/modules/mod.localization.common.php:1492
 #: classes/modules/mod.localization.common.php:1526
+#: classes/modules/mod.localization.common.php:1552
 msgid "Price"
 msgstr "Price"
 
-#: classes/modules/mod.localization.common.php:1472
+#: classes/modules/mod.localization.common.php:1493
 msgid "Tax Rate"
 msgstr "Tax Rate"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1473
-#: classes/modules/mod.localization.common.php:1491
+#: classes/modules/mod.localization.common.php:1494
+#: classes/modules/mod.localization.common.php:1517
 msgid "Total"
 msgstr "Total"
 
-#: classes/modules/mod.localization.common.php:1478
+#: classes/modules/mod.localization.common.php:1500
 #, php-format
 msgid "Spend %s save %s."
-msgstr ""
+msgstr "להוציא %s לחסוך %s."
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1479
+#: classes/modules/mod.localization.common.php:1501
 msgid "Free Delivery"
 msgstr "Free Delivery"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1480
+#: classes/modules/mod.localization.common.php:1502
 msgid "Delivery Charges"
 msgstr "Delivery Charges"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1481
+#: classes/modules/mod.localization.common.php:1503
 msgid "Delivery Charges Per Item"
 msgstr "Delivery Charges Per Item"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1482
+#: classes/modules/mod.localization.common.php:1504
 msgid "Discount"
 msgstr "Discount"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1483
+#: classes/modules/mod.localization.common.php:1506
 #, php-format
 msgid "Sales Tax @ %s"
 msgstr "Sales Tax @ %s"
 
-#: classes/modules/mod.localization.common.php:1484
+#: classes/modules/mod.localization.common.php:1508
 #, php-format
 msgid "Incl. Tax @ %s"
 msgstr "Incl. Tax @ %s"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1485
+#: classes/modules/mod.localization.common.php:1509
 msgid "Handling Charges"
 msgstr "Handling Charges"
 
-#: classes/modules/mod.localization.common.php:1486
+#: classes/modules/mod.localization.common.php:1511
 #, php-format
 msgid "Shipping Tax @ %s"
 msgstr "Shipping Tax @ %s"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1487
+#: classes/modules/mod.localization.common.php:1512
 msgid "Tax Total"
 msgstr "Tax Total"
 
-#: classes/modules/mod.localization.common.php:1488
+#: classes/modules/mod.localization.common.php:1513
 msgid "Taxes Included"
 msgstr "Taxes Included"
 
-#: classes/modules/mod.localization.common.php:1489
+#: classes/modules/mod.localization.common.php:1515
 #, php-format
 msgid "Surcharge @ %s"
 msgstr "תשלום נוסף %s"
 
-#: classes/modules/mod.localization.common.php:1490
+#: classes/modules/mod.localization.common.php:1516
 msgid "Surcharge"
 msgstr "תשלום נוסף"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1492
+#: classes/modules/mod.localization.common.php:1518
 msgid "Your Items"
 msgstr "Your Items"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1493
+#: classes/modules/mod.localization.common.php:1519
 msgid "closed"
 msgstr "סגור"
 
-#: classes/modules/mod.localization.common.php:1494
+#: classes/modules/mod.localization.common.php:1520
 msgid "all day"
 msgstr "all day"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1497
+#: classes/modules/mod.localization.common.php:1523
 msgid "Customer Details / Delivery Address"
 msgstr "Customer Details / Delivery Address"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1498
+#: classes/modules/mod.localization.common.php:1524
 msgid "Order"
 msgstr "סדר"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1502
+#: classes/modules/mod.localization.common.php:1528
 msgid "For Delivery"
 msgstr "For Delivery"
 
-#: classes/modules/mod.localization.common.php:1503
+#: classes/modules/mod.localization.common.php:1529
 msgid "For Pickup"
 msgstr "For Pickup"
 
-#: classes/modules/mod.localization.common.php:1504
+#: classes/modules/mod.localization.common.php:1530
 msgid "Cash"
 msgstr "Cash"
 
-#: classes/modules/mod.localization.common.php:1505
+#: classes/modules/mod.localization.common.php:1531
 msgid "Credit Card"
 msgstr "Credit Card"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1506
+#: classes/modules/mod.localization.common.php:1532
 msgid "Delivery Type :"
 msgstr "Delivery Type :"
 
-#: classes/modules/mod.localization.common.php:1507
+#: classes/modules/mod.localization.common.php:1533
 msgid "User ID :"
 msgstr "User ID :"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1508
+#: classes/modules/mod.localization.common.php:1534
 msgid "Order ID :"
 msgstr "Order ID :"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1509
+#: classes/modules/mod.localization.common.php:1535
 msgid "Currency :"
 msgstr "Currency :"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1510
+#: classes/modules/mod.localization.common.php:1536
 msgid "Paid By :"
 msgstr "Paid By :"
 
-#: classes/modules/mod.localization.common.php:1511
+#: classes/modules/mod.localization.common.php:1537
 msgid "Note :"
 msgstr "Note :"
 
-#: classes/modules/mod.localization.common.php:1512
+#: classes/modules/mod.localization.common.php:1538
 msgid "Payment Method :"
 msgstr "Payment Method :"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1513
+#: classes/modules/mod.localization.common.php:1539
 msgid "Order Date :"
 msgstr "Order Date :"
 
-#: classes/modules/mod.localization.common.php:1514
+#: classes/modules/mod.localization.common.php:1540
 msgid "Transaction Id :"
 msgstr "Transaction Id :"
 
-#: classes/modules/mod.localization.common.php:1515
+#: classes/modules/mod.localization.common.php:1541
 msgid "Payment Due :"
 msgstr "Payment Due :"
 
-#: classes/modules/mod.localization.common.php:1516
+#: classes/modules/mod.localization.common.php:1542
 msgid "Unconfirmed Payment :"
 msgstr "Unconfirmed Payment :"
 
-#: classes/modules/mod.localization.common.php:1517
+#: classes/modules/mod.localization.common.php:1543
 msgid "Payment Confirmed :"
 msgstr "Payment Confirmed :"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1518
+#: classes/modules/mod.localization.common.php:1544
 msgid "Total :"
 msgstr "Total :"
 
-#: classes/modules/mod.localization.common.php:1519
+#: classes/modules/mod.localization.common.php:1545
 msgid "Refunded :"
 msgstr "Refunded :"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1520
+#: classes/modules/mod.localization.common.php:1546
 msgid "Site Details"
 msgstr "Site Details"
 
-#: classes/modules/mod.localization.common.php:1521
+#: classes/modules/mod.localization.common.php:1547
 msgid "Overview"
 msgstr "Overview"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1522
+#: classes/modules/mod.localization.common.php:1548
 msgid "Customer Details"
 msgstr "פרטי לקוח"
 
-#: classes/modules/mod.localization.common.php:1527
+#: classes/modules/mod.localization.common.php:1553
 msgid "Summary"
 msgstr "Summary"
 
-#: classes/modules/mod.localization.common.php:1529
+#: classes/modules/mod.localization.common.php:1555
 msgid "Registered User"
 msgstr "Registered User"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1532
+#: classes/modules/mod.localization.common.php:1558
 msgid " - Our Menu - "
 msgstr " - Our Menu - "
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1533
+#: classes/modules/mod.localization.common.php:1559
 msgid "Additional Information"
 msgstr "Additional Information"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1534
+#: classes/modules/mod.localization.common.php:1560
 msgid "Please select your payment method:"
 msgstr "אנא בחר את שיטת התשלום שלך:"
 
-#: classes/modules/mod.localization.common.php:1535
-#: classes/modules/mod.meal_sizes.sizes.php:132
+#: classes/modules/mod.localization.common.php:1561
 msgid "--- Please select ---"
 msgstr "--- Please select ---"
 
-#: classes/modules/mod.localization.common.php:1536
+#: classes/modules/mod.localization.common.php:1562
 msgid "No"
 msgstr "No"
 
-#: classes/modules/mod.localization.common.php:1537
+#: classes/modules/mod.localization.common.php:1563
 msgid "Yes"
 msgstr "Yes"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1538
+#: classes/modules/mod.localization.common.php:1564
 msgid "New Order(s)"
 msgstr "New Order(s)"
 
-#: classes/modules/mod.localization.common.php:1539
+#: classes/modules/mod.localization.common.php:1565
 msgid "Try Again"
 msgstr "Try Again"
 
-#: classes/modules/mod.localization.common.php:1540
+#: classes/modules/mod.localization.common.php:1566
 msgid "Back to Merchant Site"
 msgstr "Back to Merchant Site"
 
-#: classes/modules/mod.localization.common.php:1541
+#: classes/modules/mod.localization.common.php:1567
 msgid "Error"
 msgstr "Error"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1542
+#: classes/modules/mod.localization.common.php:1568
 msgid "Error Details"
 msgstr "Error Details"
 
-#: classes/modules/mod.localization.common.php:1543
+#: classes/modules/mod.localization.common.php:1569
 msgid "Free"
 msgstr "Free"
 
-#: classes/modules/mod.localization.common.php:1544
+#: classes/modules/mod.localization.common.php:1571
 #, php-format
 msgid ""
 "I have read and accept the <a href=\"%s\" target=\"_blank\">Privacy Policy</"
@@ -816,211 +854,211 @@ msgstr ""
 "I have read and accept the <a href=\"%s\" target=\"_blank\">Privacy Policy</"
 "a>"
 
-#: classes/modules/mod.localization.common.php:1545
+#: classes/modules/mod.localization.common.php:1572
 msgid "Privacy Policy accepted:"
 msgstr "Privacy Policy accepted:"
 
-#: classes/modules/mod.localization.common.php:1546
+#: classes/modules/mod.localization.common.php:1573
 msgid "New"
 msgstr "New"
 
-#: classes/modules/mod.localization.common.php:1547
+#: classes/modules/mod.localization.common.php:1574
 msgid "Acknowledged"
 msgstr "Acknowledged"
 
-#: classes/modules/mod.localization.common.php:1548
+#: classes/modules/mod.localization.common.php:1575
 msgid "On Hold"
 msgstr "On Hold"
 
-#: classes/modules/mod.localization.common.php:1549
+#: classes/modules/mod.localization.common.php:1576
 msgid "Processed"
 msgstr "Processed"
 
 # @ wppizza-locale
-#: classes/modules/mod.localization.common.php:1550
+#: classes/modules/mod.localization.common.php:1577
 msgid "Delivered"
 msgstr "Delivered"
 
-#: classes/modules/mod.localization.common.php:1551
+#: classes/modules/mod.localization.common.php:1578
 msgid "Rejected"
 msgstr "Rejected"
 
-#: classes/modules/mod.localization.common.php:1552
+#: classes/modules/mod.localization.common.php:1579
 msgid "Refunded"
 msgstr "Refunded"
 
-#: classes/modules/mod.localization.common.php:1553
-#: classes/modules/mod.order_form.confirmationpage.php:391
+#: classes/modules/mod.localization.common.php:1580
 #: classes/modules/mod.order_form.confirmationpage.php:392
 #: classes/modules/mod.order_form.confirmationpage.php:393
 #: classes/modules/mod.order_form.confirmationpage.php:394
+#: classes/modules/mod.order_form.confirmationpage.php:395
 msgid "Other"
 msgstr "Other"
 
-#: classes/modules/mod.mixed.sku.php:805
+#: classes/modules/mod.mixed.sku.php:806
 msgid "SKU"
 msgstr "SKU"
 
-#: classes/modules/mod.order_form.confirmationpage.php:389
+#: classes/modules/mod.order_form.confirmationpage.php:390
 msgid "Accept Terms and Conditions"
 msgstr "Accept Terms and Conditions"
 
-#: classes/modules/mod.order_form.confirmationpage.php:390
+#: classes/modules/mod.order_form.confirmationpage.php:391
 msgid "Distance Selling Regulations "
 msgstr "Distance Selling Regulations "
 
-#: classes/modules/mod.order_form.confirmationpage.php:401
+#: classes/modules/mod.order_form.confirmationpage.php:402
 msgid "change"
 msgstr "change"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.confirmationpage.php:402
+#: classes/modules/mod.order_form.confirmationpage.php:403
 msgid "amend order"
 msgstr "amend order"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.confirmationpage.php:403
+#: classes/modules/mod.order_form.confirmationpage.php:404
 msgid "selected payment method :"
 msgstr "selected payment method :"
 
-#: classes/modules/mod.order_form.confirmationpage.php:404
+#: classes/modules/mod.order_form.confirmationpage.php:405
 msgid "legal aspects"
 msgstr "legal aspects"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.confirmationpage.php:405
+#: classes/modules/mod.order_form.confirmationpage.php:406
 msgid "personal information"
 msgstr "personal information"
 
-#: classes/modules/mod.order_form.confirmationpage.php:406
+#: classes/modules/mod.order_form.confirmationpage.php:407
 msgid "payment method"
 msgstr "payment method"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.confirmationpage.php:407
+#: classes/modules/mod.order_form.confirmationpage.php:408
 msgid "order details"
 msgstr "פרטי הזמנה"
 
-#: classes/modules/mod.order_form.confirmationpage.php:408
+#: classes/modules/mod.order_form.confirmationpage.php:409
 msgid "buy now (legally binding)"
 msgstr "buy now (legally binding)"
 
-#: classes/modules/mod.order_form.confirmationpage.php:409
+#: classes/modules/mod.order_form.confirmationpage.php:410
 msgid "article"
 msgstr "article"
 
-#: classes/modules/mod.order_form.confirmationpage.php:410
+#: classes/modules/mod.order_form.confirmationpage.php:411
 msgid "single price"
 msgstr "single price"
 
-#: classes/modules/mod.order_form.confirmationpage.php:411
+#: classes/modules/mod.order_form.confirmationpage.php:412
 msgid "quantity"
 msgstr "quantity"
 
-#: classes/modules/mod.order_form.confirmationpage.php:412
+#: classes/modules/mod.order_form.confirmationpage.php:413
 msgid "price"
 msgstr "price"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:349
+#: classes/modules/mod.order_form.orderpage.php:357
 msgid "Name"
 msgstr "שם"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:352
+#: classes/modules/mod.order_form.orderpage.php:360
 msgid "Email"
 msgstr "Email"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:355
+#: classes/modules/mod.order_form.orderpage.php:363
 msgid "Address"
 msgstr "כתובת"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:358
+#: classes/modules/mod.order_form.orderpage.php:366
 msgid "Telephone"
 msgstr "טלפון"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:361
+#: classes/modules/mod.order_form.orderpage.php:369
 msgid "Comments"
 msgstr "תגובות"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:364
+#: classes/modules/mod.order_form.orderpage.php:372
 msgid "Custom Field 1"
 msgstr "שדה מותאם אישית 1"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:367
+#: classes/modules/mod.order_form.orderpage.php:375
 msgid "Custom Field 2"
 msgstr "שדה מתואם אישית 2"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:370
+#: classes/modules/mod.order_form.orderpage.php:378
 msgid "Custom Field 3"
 msgstr "שדה מתואם אישית 3"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:373
+#: classes/modules/mod.order_form.orderpage.php:381
 msgid "Custom Field 4"
 msgstr "שדה מתואם אישית 4"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:376
+#: classes/modules/mod.order_form.orderpage.php:384
 msgid "Custom Field 5"
 msgstr "שדה מתואם אישית 5"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_form.orderpage.php:379
+#: classes/modules/mod.order_form.orderpage.php:387
 msgid "Custom Field 6"
 msgstr "שדה מותאם אישית 6"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.delivery.php:414
+#: classes/modules/mod.order_settings.delivery.php:416
 msgid "free delivery for orders over"
 msgstr "משלוח חינם להזמנות מעל"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.delivery.php:415
+#: classes/modules/mod.order_settings.delivery.php:417
 msgid "minimum order for delivery"
 msgstr "מינימום הזמנה למשלוח"
 
-#: classes/modules/mod.order_settings.delivery.php:416
+#: classes/modules/mod.order_settings.delivery.php:419
 #, php-format
 msgid "Please allow %s minutes for delivery."
 msgstr "Please allow %s minutes for delivery."
 
-#: classes/modules/mod.order_settings.delivery.php:417
+#: classes/modules/mod.order_settings.delivery.php:420
 msgid "Your order is out for delivery and will arrive with you shortly."
 msgstr "Your order is out for delivery and will arrive with you shortly."
 
-#: classes/modules/mod.order_settings.delivery.php:418
+#: classes/modules/mod.order_settings.delivery.php:422
 #, php-format
 msgid "Your order will be delivered no later than %s."
 msgstr "Your order will be delivered no later than %s."
 
-#: classes/modules/mod.order_settings.delivery.php:419
+#: classes/modules/mod.order_settings.delivery.php:423
 msgid "I would like my order to be delivered"
 msgstr "I would like my order to be delivered"
 
-#: classes/modules/mod.order_settings.delivery.php:420
+#: classes/modules/mod.order_settings.delivery.php:425
 #, php-format
 msgid "Please allow %s min. for us to deliver your order."
 msgstr "Please allow %s min. for us to deliver your order."
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.pickup.php:362
+#: classes/modules/mod.order_settings.pickup.php:363
 msgid "Delivery"
 msgstr "Delivery"
 
-#: classes/modules/mod.order_settings.pickup.php:363
+#: classes/modules/mod.order_settings.pickup.php:364
 msgid "Pickup"
 msgstr "Pickup"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.pickup.php:364
-#: classes/modules/mod.order_settings.pickup.php:370
+#: classes/modules/mod.order_settings.pickup.php:366
+#: classes/modules/mod.order_settings.pickup.php:374
 #, php-format
 msgid ""
 "You have chosen to pickup the order yourself. This order will not be "
@@ -1030,52 +1068,52 @@ msgstr ""
 "delivered. Please allow %s min. for us to prepare your order."
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.pickup.php:365
+#: classes/modules/mod.order_settings.pickup.php:367
 msgid "Please collect your order from the store at your earliest convenience."
 msgstr "Please collect your order from the store at your earliest convenience."
 
-#: classes/modules/mod.order_settings.pickup.php:366
+#: classes/modules/mod.order_settings.pickup.php:369
 #, php-format
 msgid "Your order will be ready for collection at %s."
 msgstr "Your order will be ready for collection at %s."
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.pickup.php:367
+#: classes/modules/mod.order_settings.pickup.php:370
 msgid "Please collect your order at the store."
 msgstr "Please collect your order at the store."
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.pickup.php:368
+#: classes/modules/mod.order_settings.pickup.php:371
 msgid "I would like to pickup the order myself"
 msgstr "אני רוצה לאסוף בעצמי"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.pickup.php:369
+#: classes/modules/mod.order_settings.pickup.php:372
 msgid "Delivery: pickup"
 msgstr "משלוח: איסוף עצמי"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.pickup.php:371
+#: classes/modules/mod.order_settings.pickup.php:375
 msgid "minimum order"
 msgstr "מינימום הזמנה"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.repurchase.php:399
-#: classes/modules/mod.order_settings.repurchase.php:402
+#: classes/modules/mod.order_settings.repurchase.php:400
 #: classes/modules/mod.order_settings.repurchase.php:403
+#: classes/modules/mod.order_settings.repurchase.php:404
 msgid "Re-order"
 msgstr "Re-order"
 
-#: classes/modules/mod.order_settings.repurchase.php:400
+#: classes/modules/mod.order_settings.repurchase.php:401
 msgid "+"
 msgstr "+"
 
 # @ wppizza-locale
-#: classes/modules/mod.order_settings.repurchase.php:401
+#: classes/modules/mod.order_settings.repurchase.php:402
 msgid "Re-order this item"
 msgstr "Re-order this item"
 
-#: classes/modules/mod.order_settings.repurchase.php:404
+#: classes/modules/mod.order_settings.repurchase.php:405
 msgid "N/A"
 msgstr "לא זמין"
 
@@ -1365,33 +1403,27 @@ msgid "Snack F"
 msgstr "חטיף F"
 
 # @ wppizza-locale
-#: wppizza.php:258
 #, fuzzy
-#| msgid "Order Details"
-msgid "Order Settings"
-msgstr "הגדרות הזמנה"
+#~| msgid "Order Details"
+#~ msgid "Order Settings"
+#~ msgstr "הגדרות הזמנה"
 
-#: wppizza.php:275
-msgid "Getting started"
-msgstr ""
+#~ msgid "Getting started"
+#~ msgstr "תחילת עבודה"
 
-#: wppizza.php:276
-msgid "Documentation"
-msgstr ""
+#~ msgid "Documentation"
+#~ msgstr "תיעוד"
 
-#: wppizza.php:277
-msgid "Homepage"
-msgstr ""
+#~ msgid "Homepage"
+#~ msgstr "דף הבית"
 
-#: wppizza.php:278
 #, fuzzy
-#| msgid "change"
-msgid "Changelog"
-msgstr "change"
+#~| msgid "change"
+#~ msgid "Changelog"
+#~ msgstr "change"
 
-#: wppizza.php:279
-msgid "Rate this plugin&nbsp;Â»"
-msgstr ""
+#~ msgid "Rate this plugin"
+#~ msgstr "דרג את התוסף הזה"
 
 #~ msgid "guest"
 #~ msgstr "guest"

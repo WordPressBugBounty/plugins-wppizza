@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/ ?>
 <?php
 /********************************************************************************************
 
@@ -361,14 +362,33 @@ class WPPIZZA_USER_CAPS{
 
 						/* role name */
 						$str .= "<input type='hidden' name='".$plugin_slug."[".$section_key."][".$roleName."]' value='".$roleName."'>";
+						
 						/* role name label */
 						$str .= "<span class='wppizza_label_100'>".translate_user_role($v['name']).":</span>";
 
-
-
+						/* put it into table*/
+						$str .= "<table>";
+						$str .= "<tr>";	
+						$rCount = 1;
+						$newTr = 7;
+						$rCountTotal = count($user_capabilities);
 						foreach($user_capabilities as $access_key=>$access_array){
-							$str .= "<span><label><input name='".$plugin_slug."[".$section_key."][".$roleName."][".$access_array['cap']."]' type='checkbox' ". checked(!empty($userRole->capabilities[$access_array['cap']]),true,false)." value='".$access_array['cap']."' />".$access_array['name']."</label></span>";
+							
+							// last one, add colspan
+							$str .= $rCountTotal == $rCount ? '<td colspan="'. ( $newTr - ($rCount % $newTr ) + 1 ) .'">' : '<td>';
+								$str .= "<label><input name='".$plugin_slug."[".$section_key."][".$roleName."][".$access_array['cap']."]' type='checkbox' ". checked(!empty($userRole->capabilities[$access_array['cap']]),true,false)." value='".$access_array['cap']."' />".$access_array['name']."</label>";
+							$str .= "</td>";
+							
+							// next row every $newTr
+							if(is_int($rCount / $newTr) ){
+								$str .= "</tr><tr>";
+							}
+
+
+						$rCount++;
 						}
+						$str .= "</tr>";
+						$str .= "</table>";
 
 					$str .= "</div>";
 				}
@@ -376,7 +396,7 @@ class WPPIZZA_USER_CAPS{
 
 		/* echo (default) */
 		if($echo){
-			echo $str;
+			echo wp_kses($str, WPPIZZA_SLUG);
 		return;
 		}
 

@@ -337,7 +337,7 @@ class WPPIZZA_POSTS{
 	    foreach( $defaults as $key => $value ) {
 	        $columns[$key] = $value;
 	        if ( 1 == $i++ ) {
-	            $columns['featured_image'] = __('Image');
+	            $columns['featured_image'] = __('Image', 'default' );
 	        }
 	    }
 	    return $columns;
@@ -443,7 +443,7 @@ class WPPIZZA_POSTS{
 
 	    /**hijack quick edit link*/
 	    $actions['inline hide-if-no-js'] = '<a href="javascript:void(0)" class="editinline" title="';
-	    $actions['inline hide-if-no-js'] .= esc_attr( __( 'Edit this item inline' ) ) . '"';
+	    $actions['inline hide-if-no-js'] .= esc_attr( __( 'Edit this item inline', 'default' ) ) . '"';
 	    $actions['inline hide-if-no-js'] .= " onclick='";
 	    	/* filterable js functions for quickedit link,
 	    		use htmlentities entities, in case there are some undesireable chars
@@ -451,7 +451,7 @@ class WPPIZZA_POSTS{
 	    	*/
 	    	$actions['inline hide-if-no-js'] .= htmlentities(apply_filters('wppizza_filter_quick_edit_link_functions', "wppizza_set_prices(\"".$jsSizes."\",\"".$jsPrices."\",\"".$jsLabels."\",".$meta.");", $getMeta, $meta, $post->ID));
 	    $actions['inline hide-if-no-js'] .= "' >";
-	    $actions['inline hide-if-no-js'] .= __( 'Quick&nbsp;Edit' );
+	    $actions['inline hide-if-no-js'] .= __( 'Quick&nbsp;Edit', 'default' );
 	    $actions['inline hide-if-no-js'] .= '</a>';
 
 	    /**add id before [edit] link */

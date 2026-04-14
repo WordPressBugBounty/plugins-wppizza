@@ -455,7 +455,7 @@ class WPPIZZA_SALES_DATA{
 		global $wppizza_options;
 
 		if( version_compare( PHP_VERSION, '5.3', '<' )) {
-			print"<div id='wppizza-report-error'>".__('Sorry, reporting is only available with php >=5.3','wppizza-admin')."</div>";
+			print"<div id='wppizza-report-error'>".esc_html(__('Sorry, reporting is only available with php >=5.3','wppizza-admin'))."</div>";
 			return;
 		}
 
@@ -2050,6 +2050,7 @@ class WPPIZZA_SALES_DATA{
 
 				/*boxes right*/
 				$boxrt[]=array('id'=>'wppizza-report-top10-volume', 'class'=>'', 'lbl'=>__('Best/Worst sellers by Volume - All','wppizza-admin'),'val'=>$htmlBsVol.$htmlWsVol);
+				/* Translators: 1: Percentage sign */
 				$boxrt[]=array('id'=>'wppizza-report-top10-value', 'class'=>'', 'lbl'=>sprintf(__('Best/Worst sellers by Value - All [%s of order total]','wppizza-admin'), '%') ,'val'=>$htmlBsVal.$htmlWsVal);
 				$boxrt[]=array('id'=>'wppizza-report-nonsellers', 'class'=>'', 'lbl'=>__('Non-Sellers - All','wppizza-admin'),'val'=>$htmlNoSellers);
 			}
@@ -2068,6 +2069,7 @@ class WPPIZZA_SALES_DATA{
 
 				/*boxes right*/
 				$boxrt[]=array('id'=>'wppizza-report-top10-volume', 'class'=>'', 'lbl'=>__('Best/Worst sellers by Volume [in range]','wppizza-admin'),'val'=>$htmlBsVol.$htmlWsVol);
+				/* Translators: 1: Percentage sign */
 				$boxrt[]=array('id'=>'wppizza-report-top10-value', 'class'=>'', 'lbl'=>sprintf(__('Best/Worst sellers by Value [%s of all orders in range]','wppizza-admin'), '%'),'val'=>$htmlBsVal.$htmlWsVal);
 				$boxrt[]=array('id'=>'wppizza-report-nonsellers', 'class'=>'', 'lbl'=>__('Non-Sellers [in range]','wppizza-admin'),'val'=>$htmlNoSellers);
 
@@ -2269,7 +2271,7 @@ class WPPIZZA_SALES_DATA{
 		}
 		$ordersQuery.='as order_date, "'.$blog_id.'" as blog_id FROM '.$wpdbPrefix . WPPIZZA_TABLE_ORDERS .' WHERE payment_status IN ("COMPLETED") AND order_status != "REJECTED" ';
 		$ordersQuery.= $oQuery;
-		$ordersQuery.='ORDER BY order_date ASC';
+		$ordersQuery.=' ORDER BY order_date ASC';
 
 		/*
 			allow filtering , passing on additional "where" parameters
@@ -2388,6 +2390,7 @@ class WPPIZZA_SALES_DATA{
 			$condition = key($parameters);
 			foreach($parameters as $fragments){
 				foreach($fragments as $q){
+					//prepare each fragment
 					$query[] = $wpdb->prepare("".$q['column']." ".$q['comparison']." %s", $q['value']);
 				}
 			}
@@ -2395,7 +2398,7 @@ class WPPIZZA_SALES_DATA{
 		$i++;
 		}
 		$querystring = implode(' ',$oQuery);
-	/* resturn as string */
+	/* return as string */
 	return $querystring;
 	}
 }

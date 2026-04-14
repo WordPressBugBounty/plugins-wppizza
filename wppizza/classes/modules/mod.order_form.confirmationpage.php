@@ -281,7 +281,8 @@ class WPPIZZA_MODULE_ORDERFORM_CONFIRMATIONPAGE{
 				/**inputs**/
 				foreach($input_fields as $k=>$v){
 					echo"<tr class='".$v['key']."'>";
-						echo"<td><span class='button' title='".sprintf(__('ID : %s', 'wppizza-admin'), $v['key'])."'><input name='".WPPIZZA_SLUG."[".$this->section_key."][".$this->section_formfields."][".$k."][enabled]' type='checkbox' ". checked($v['enabled'],true,false)." value='1' /></span></td>";					
+						/* Translators: 1: WPPizza Name as defined by constant */
+						echo"<td><button class='button ".WPPIZZA_SLUG."-button' title='".sprintf(__('ID : %s', 'wppizza-admin'), $v['key'])."'><input name='".WPPIZZA_SLUG."[".$this->section_key."][".$this->section_formfields."][".$k."][enabled]' type='checkbox' ". checked($v['enabled'],true,false)." value='1' /></button></td>";					
 						echo"<td><input name='".WPPIZZA_SLUG."[".$this->section_key."][".$this->section_formfields."][".$k."][sort]' size='1' type='text' value='".$v['sort']."' /></td>";
 						echo"<td><input name='".WPPIZZA_SLUG."[".$this->section_key."][".$this->section_formfields."][".$k."][lbl]' size='55' type='text' value='".esc_html($v['lbl'])."' /></td>";
 						echo"<td><input name='".WPPIZZA_SLUG."[".$this->section_key."][".$this->section_formfields."][".$k."][required]' type='checkbox' ". checked($v['required'],true,false)." value='1' /></td>";
@@ -386,30 +387,30 @@ class WPPIZZA_MODULE_ORDERFORM_CONFIRMATIONPAGE{
 			[confirmation form legal/required]
 		*****************************************/
 		$options[$this->section_key][$this->section_formfields]=array(
-			0=>array('sort'=>0,'key'=>'wpppizza_confirm_1','lbl'=>esc_html__('Accept Terms and Conditions', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
-			1=>array('sort'=>1,'key'=>'wpppizza_confirm_2','lbl'=>esc_html__('Distance Selling Regulations ', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
-			2=>array('sort'=>2,'key'=>'wpppizza_confirm_3','lbl'=>esc_html__('Other', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
-			3=>array('sort'=>3,'key'=>'wpppizza_confirm_4','lbl'=>esc_html__('Other', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
-			4=>array('sort'=>4,'key'=>'wpppizza_confirm_5','lbl'=>esc_html__('Other', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
-			5=>array('sort'=>5,'key'=>'wpppizza_confirm_6','lbl'=>esc_html__('Other', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false)
+			0=>array('sort'=>0,'key'=>'wpppizza_confirm_1','lbl'=>wppizza_textdomain('Accept Terms and Conditions', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
+			1=>array('sort'=>1,'key'=>'wpppizza_confirm_2','lbl'=>wppizza_textdomain('Distance Selling Regulations ', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
+			2=>array('sort'=>2,'key'=>'wpppizza_confirm_3','lbl'=>wppizza_textdomain('Other', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
+			3=>array('sort'=>3,'key'=>'wpppizza_confirm_4','lbl'=>wppizza_textdomain('Other', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
+			4=>array('sort'=>4,'key'=>'wpppizza_confirm_5','lbl'=>wppizza_textdomain('Other', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false),
+			5=>array('sort'=>5,'key'=>'wpppizza_confirm_6','lbl'=>wppizza_textdomain('Other', 'wppizza'),'value'=>array(),'type'=>'checkbox','enabled'=>false,'required'=>false, 'placeholder'=>false)
 		);
 		
 		/*****************************************
 			[confirmation form localization]
 		*****************************************/
 		/**make sure keys are NOT used in "normal" localization vars too, as we are merging those two arrays to use in confirmation page */
-		$options[$this->section_key][$this->section_form_localize]['change_user_details']=esc_html__('change', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['change_order_details']=esc_html__('amend order', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['payment_method']=esc_html__('selected payment method :', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['legend_legal']=esc_html__('legal aspects', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['legend_personal']=esc_html__('personal information', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['legend_payment_method']=esc_html__('payment method', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['legend_order_details']=esc_html__('order details', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['confirm_now_button']=esc_html__('buy now (legally binding)', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['header_itemised_article']=esc_html__('article', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['header_itemised_price_single']=esc_html__('single price', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['header_itemised_quantity']=esc_html__('quantity', 'wppizza');
-		$options[$this->section_key][$this->section_form_localize]['header_itemised_price']=esc_html__('price', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['change_user_details']=wppizza_textdomain('change', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['change_order_details']=wppizza_textdomain('amend order', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['payment_method']=wppizza_textdomain('selected payment method :', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['legend_legal']=wppizza_textdomain('legal aspects', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['legend_personal']=wppizza_textdomain('personal information', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['legend_payment_method']=wppizza_textdomain('payment method', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['legend_order_details']=wppizza_textdomain('order details', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['confirm_now_button']=wppizza_textdomain('buy now (legally binding)', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['header_itemised_article']=wppizza_textdomain('article', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['header_itemised_price_single']=wppizza_textdomain('single price', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['header_itemised_quantity']=wppizza_textdomain('quantity', 'wppizza');
+		$options[$this->section_key][$this->section_form_localize]['header_itemised_price']=wppizza_textdomain('price', 'wppizza');
 		$options[$this->section_key][$this->section_form_localize]['subtotals_after_additional_info']='';
 
 

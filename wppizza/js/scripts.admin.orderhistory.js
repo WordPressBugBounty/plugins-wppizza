@@ -613,10 +613,12 @@ jQuery(document).ready(function($){
     			var wpPizzaOrder=output['markup']['html'];
     			wppizzaPrintOrder.document.write(wpPizzaOrder);
     		}
-
             wppizzaPrintOrder.focus();
+			/* seems required by chrome now */
+			wppizzaPrintOrder.document.close();
 			/*android doesn't understand .print() not my fault really*/
 			wppizzaPrintOrder.print();
+			
 		},'json').fail(function(jqXHR, textStatus, errorThrown) {alert("error[print] : " + errorThrown);});
 	});
 	/*****************************

@@ -349,6 +349,7 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_DELIVERY{
 			$settings['fields'][$this->localization_section_append][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->localization_page,
+					/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('Delivery Time: text on order page / email to indicate delivery times (if applicable) %s will be replaced by delivery times set in wppizza -> order settings', 'wppizza-admin')
 			));
 			$field = 'generic_order_delivered_shortly';
@@ -361,6 +362,7 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_DELIVERY{
 			$settings['fields'][$this->localization_section_append][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->localization_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('Delivery: generic text that could be used (by 3rd party plugins) to indicate when an order will delivered [%s to be replaced with appropriate time]', 'wppizza-admin')
 			));
 			$field = 'order_request_delivery';
@@ -411,13 +413,16 @@ class WPPIZZA_MODULE_ORDER_SETTINGS_DELIVERY{
 		/*
 			localization
 		*/
-		$options[$this->localization_page]['free_delivery_for_orders_of'] = esc_html__('free delivery for orders over', 'wppizza');
-		$options[$this->localization_page]['minimum_order_delivery'] = esc_html__('minimum order for delivery', 'wppizza');
-		$options[$this->localization_page]['order_page_delivery_time'] = esc_html__('Please allow %s minutes for delivery.', 'wppizza');
-		$options[$this->localization_page]['generic_order_delivered_shortly'] = esc_html__('Your order is out for delivery and will arrive with you shortly.', 'wppizza');
-		$options[$this->localization_page]['generic_order_delivery_time'] = esc_html__('Your order will be delivered no later than %s.', 'wppizza');
-		$options[$this->localization_page]['order_request_delivery'] = esc_html__('I would like my order to be delivered', 'wppizza');
-		$options[$this->localization_page]['order_delivery_cartjs'] = esc_html__('Please allow %s min. for us to deliver your order.', 'wppizza');
+		$options[$this->localization_page]['free_delivery_for_orders_of'] = wppizza_textdomain('free delivery for orders over', 'wppizza');
+		$options[$this->localization_page]['minimum_order_delivery'] = wppizza_textdomain('minimum order for delivery', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->localization_page]['order_page_delivery_time'] = wppizza_textdomain('Please allow %s minutes for delivery.', 'wppizza');
+		$options[$this->localization_page]['generic_order_delivered_shortly'] = wppizza_textdomain('Your order is out for delivery and will arrive with you shortly.', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->localization_page]['generic_order_delivery_time'] = wppizza_textdomain('Your order will be delivered no later than %s.', 'wppizza');
+		$options[$this->localization_page]['order_request_delivery'] = wppizza_textdomain('I would like my order to be delivered', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->localization_page]['order_delivery_cartjs'] = wppizza_textdomain('Please allow %s min. for us to deliver your order.', 'wppizza');
 
 
 

@@ -204,7 +204,7 @@ class WPPIZZA_MODULE_ORDERFORM_ORDERPAGE{
 							echo "".$attr['fixedEnabled']."";
 						}else{
 							echo"<span class='".WPPIZZA_SLUG."_td_label_mobile'>".__('Enabled', 'wppizza-admin')."</span>";
-							echo"<span class='button' title='ID : ".$v['key']."'><input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][enabled]' type='checkbox' ". checked($v['enabled'],true,false)." value='1' /></span>";
+							echo"<button class='button ".WPPIZZA_SLUG."-button' title='ID : ".$v['key']."'><input name='".WPPIZZA_SLUG."[".$options_key."][".$k."][enabled]' type='checkbox' ". checked($v['enabled'],true,false)." value='1' /></button>";
 						}
 					echo"</td>";
 
@@ -354,40 +354,40 @@ class WPPIZZA_MODULE_ORDERFORM_ORDERPAGE{
 
 		$options[$this->settings_page]=array(
 			'cname'=>array(
-				'sort'=>0,'key'=>'cname','lbl'=>esc_html__('Name', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>true,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>true,'onregister'=>false,'add_to_subject_line'=>true, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>0,'key'=>'cname','lbl'=>wppizza_textdomain('Name', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>true,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>true,'onregister'=>false,'add_to_subject_line'=>true, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'cemail'=>array(
-				'sort'=>1,'key'=>'cemail','lbl'=>esc_html__('Email', 'wppizza').' :','value'=>array(),'type'=>'email','enabled'=>true,'required'=>true,'required_on_pickup'=>true,'omit_if_optional'=>false,'prefill'=>true,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('email'=>true)
+				'sort'=>1,'key'=>'cemail','lbl'=>wppizza_textdomain('Email', 'wppizza').' :','value'=>array(),'type'=>'email','enabled'=>true,'required'=>true,'required_on_pickup'=>true,'omit_if_optional'=>false,'prefill'=>true,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('email'=>true)
 			),
 			'caddress'=>array(
-				'sort'=>2,'key'=>'caddress','lbl'=>esc_html__('Address', 'wppizza').' :','value'=>array(),'type'=>'textarea','enabled'=>true,'required'=>true,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>true,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>2,'key'=>'caddress','lbl'=>wppizza_textdomain('Address', 'wppizza').' :','value'=>array(),'type'=>'textarea','enabled'=>true,'required'=>true,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>true,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'ctel'=>array(
-				'sort'=>3,'key'=>'ctel','lbl'=>esc_html__('Telephone', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>true,'required'=>true,'required_on_pickup'=>true,'omit_if_optional'=>false,'prefill'=>true,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('number'=>true)
+				'sort'=>3,'key'=>'ctel','lbl'=>wppizza_textdomain('Telephone', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>true,'required'=>true,'required_on_pickup'=>true,'omit_if_optional'=>false,'prefill'=>true,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('number'=>true)
 			),
 			'ccomments'=>array(
-				'sort'=>4,'key'=>'ccomments','lbl'=>esc_html__('Comments', 'wppizza').' :','value'=>array(),'type'=>'textarea','enabled'=>true,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>4,'key'=>'ccomments','lbl'=>wppizza_textdomain('Comments', 'wppizza').' :','value'=>array(),'type'=>'textarea','enabled'=>true,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'ccustom1'=>array(
-				'sort'=>5,'key'=>'ccustom1','lbl'=>esc_html__('Custom Field 1', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>5,'key'=>'ccustom1','lbl'=>wppizza_textdomain('Custom Field 1', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'ccustom2'=>array(
-				'sort'=>6,'key'=>'ccustom2','lbl'=>esc_html__('Custom Field 2', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>6,'key'=>'ccustom2','lbl'=>wppizza_textdomain('Custom Field 2', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'ccustom3'=>array(
-				'sort'=>7,'key'=>'ccustom3','lbl'=>esc_html__('Custom Field 3', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>7,'key'=>'ccustom3','lbl'=>wppizza_textdomain('Custom Field 3', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'ccustom4'=>array(
-				'sort'=>8,'key'=>'ccustom4','lbl'=>esc_html__('Custom Field 4', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>8,'key'=>'ccustom4','lbl'=>wppizza_textdomain('Custom Field 4', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'ccustom5'=>array(
-				'sort'=>9,'key'=>'ccustom5','lbl'=>esc_html__('Custom Field 5', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>9,'key'=>'ccustom5','lbl'=>wppizza_textdomain('Custom Field 5', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'ccustom6'=>array(
-				'sort'=>10,'key'=>'ccustom6','lbl'=>esc_html__('Custom Field 6', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
+				'sort'=>10,'key'=>'ccustom6','lbl'=>wppizza_textdomain('Custom Field 6', 'wppizza').' :','value'=>array(),'type'=>'text','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('default'=>true)
 			),
 			'ctips'=>array(
-				'sort'=>11,'key'=>'ctips','lbl'=>esc_html__('Tips / Gratuities', 'wppizza').' :','value'=>array(),'type'=>'tips','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('decimal'=>true)
+				'sort'=>11,'key'=>'ctips','lbl'=>wppizza_textdomain('Tips / Gratuities', 'wppizza').' :','value'=>array(),'type'=>'tips','enabled'=>false,'required'=>false,'required_on_pickup'=>false,'omit_if_optional'=>false,'prefill'=>false,'onregister'=>false,'add_to_subject_line'=>false, 'placeholder'=>false, 'validation'=>array('decimal'=>true)
 			)
 		);
 

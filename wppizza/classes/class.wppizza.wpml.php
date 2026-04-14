@@ -219,8 +219,10 @@ class WPPIZZA_WPML{
 			$settings['fields'][$this->section_key][$field] = array(__('(De)Register WPML Strings', 'wppizza-admin') , array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>sprintf( __( 'If you have enabled/added WPML *after* installing or updating %s, check this box and save to register all translatable %s strings.', 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME),
+				/* Translators: 1,2: WPPizza Name as defined by constant */
+				'label'=>sprintf( __( 'If you have enabled/added WPML *after* installing or updating %1$s, check this box and save to register all translatable %2$s strings.', 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME),
 				'description'=>array(
+					/* Translators: 1: WPPizza Name as defined by constant */
 					sprintf(__( 'Note: Once WPML string translations have been registered, you can also run this again at any time to de-register any obsolete %s translations that may have been added over time (such as removed additives, sizes etc)', 'wppizza-admin'), WPPIZZA_NAME)
 				)
 			));

@@ -585,7 +585,7 @@ class WPPIZZA_MARKUP_PAGES{
 			right after opening div
 		*/
 		if(!empty($wppizza_options['tools']['disable_emails'])){
-			$markup['div_'] .= '<h3 style="color:red; text-align:center">'.wppizza_dev_textdomain__('Note: Email sending has currently been disabled by the administrator', 'wppizza_dev').'</h3>';
+			$markup['div_'] .= '<h3 style="color:red; text-align:center">'.wppizza_textdomain_dev('Note: Email sending has currently been disabled by the administrator.', 'wppizza-dev').'</h3>';
 		}
 
 		/*
@@ -597,7 +597,7 @@ class WPPIZZA_MARKUP_PAGES{
 			/* explode comma separated str to array */
 			$always_open_for_user = explode(',', $wppizza_options['tools']['always_open_for_user']);
 			if( in_array(get_current_user_id(), $always_open_for_user) || in_array($_SERVER['REMOTE_ADDR'], $always_open_for_user)){
-				$markup['div_'] .= '<h3 style="color:red; text-align:center">'.wppizza_dev_textdomain__('Note: Shop is set to be always open for your UserID / IP-Address', 'wppizza_dev').'</h3>';
+				$markup['div_'] .= '<h3 style="color:red; text-align:center">'.wppizza_textdomain_dev('Note: Shop is set to be always open for your UserID / IP-Address.', 'wppizza-dev').'</h3>';
 			}
 		}
 
@@ -1651,7 +1651,7 @@ class WPPIZZA_MARKUP_PAGES{
 			but do not have the required capabilities
 		*******************/
 		if (!empty($protected) && is_user_logged_in() && empty($current_user->allcaps['wppizza_cap_orderhistory'])){
-			$markup = __('Sorry, you are not allowed to access this page.');
+			$markup = __('Sorry, you are not allowed to access this page.', 'default' );
 
 			/* set flag to disallow access to orders */
 			$access_denied = true;
@@ -1832,7 +1832,7 @@ class WPPIZZA_MARKUP_PAGES{
 			but do not have the required capabilities
 		*******************/
 		if (!empty($protected) && is_user_logged_in() && empty($current_user->allcaps['wppizza_cap_orderhistory'])){
-			$login_form = __('Sorry, you are not allowed to access this page.');
+			$login_form = __('Sorry, you are not allowed to access this page.', 'default' );
 
 			/* set flag to disallow access to orders */
 			$access_denied = true;
@@ -1972,6 +1972,7 @@ class WPPIZZA_MARKUP_PAGES{
 					/***
 					#	order delete (if attribute set)
 					***/
+					/* Translators: 1: WPPizza Order ID to be deleted */
 					$order_delete  = empty($delete_order) ? '' : '<span id="'.WPPIZZA_PREFIX.'-order-delete-'.$uoKey.'" class="'.WPPIZZA_PREFIX.'-order-delete '.WPPIZZA_PREFIX.'-dashicon dashicons dashicons-trash" title="'.sprintf(__('delete order #%s', 'wppizza-admin'), $order_formatted['ordervars']['order_id']['value']).'"></span>';
 
 					/*************************************************
@@ -2109,9 +2110,9 @@ class WPPIZZA_MARKUP_PAGES{
 			*/
 			if($current_page>1){
 				$link= esc_url_raw(add_query_arg(array('pg' => ($current_page-1)), $currentPageLink ));
-				$markup['previous'] = '<a href="'.$link.'" class="'.WPPIZZA_PREFIX.'-history-pagination-previous">'.__('&laquo; Previous Page').'</a>';
+				$markup['previous'] = '<a href="'.$link.'" class="'.WPPIZZA_PREFIX.'-history-pagination-previous">'.__('&laquo; Previous Page', 'default' ).'</a>';
 			}else{
-				$markup['previous_disabled'] = '<a class="'.WPPIZZA_PREFIX.'-history-pagination-previous '.WPPIZZA_PREFIX.'-history-pagination-disabled" disabled="disabled">'.__('&laquo; Previous Page').'</a>';
+				$markup['previous_disabled'] = '<a class="'.WPPIZZA_PREFIX.'-history-pagination-previous '.WPPIZZA_PREFIX.'-history-pagination-disabled" disabled="disabled">'.__('&laquo; Previous Page', 'default' ).'</a>';
 			}
 
 			/*
@@ -2160,9 +2161,9 @@ class WPPIZZA_MARKUP_PAGES{
 			*/
 			if($current_page<$total_pages){
 				$link= esc_url_raw(add_query_arg(array('pg' => ($current_page+1)), $currentPageLink ));
-				$markup['next']= '<a href="'.$link.'" class="'.WPPIZZA_PREFIX.'-history-pagination-next">'.__('Next Page &raquo;').'</a>';
+				$markup['next']= '<a href="'.$link.'" class="'.WPPIZZA_PREFIX.'-history-pagination-next">'.__('Next Page &raquo;', 'default' ).'</a>';
 			}else{
-				$markup['next_disabled']= '<a class="'.WPPIZZA_PREFIX.'-history-pagination-next '.WPPIZZA_PREFIX.'-history-pagination-disabled" disabled="disabled">'.__('Next Page &raquo;').'</a>';
+				$markup['next_disabled']= '<a class="'.WPPIZZA_PREFIX.'-history-pagination-next '.WPPIZZA_PREFIX.'-history-pagination-disabled" disabled="disabled">'.__('Next Page &raquo;', 'default' ).'</a>';
 			}
 
 			/*

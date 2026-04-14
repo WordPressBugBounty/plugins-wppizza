@@ -110,6 +110,7 @@ class WPPIZZA_MODULE_LAYOUT_GENERAL{
 				'option_key'=>$this->settings_page,
 				'label'=> __('Allow insertion of "Read More" tag in menu item content fields', 'wppizza-admin'),
 				'description'=>array(
+					/* Translators: 1: Url/Link to documentation */
 					'<span class="wppizza-highlight">'.sprintf(__('In most cases, this will link to the single menu item, so you probably also want to set up the single item pages as <a href="%s">described here</a> if you insert this link into the content.', 'wppizza-admin'), 'https://docs.wp-pizza.com/developers/?section=wppizza-markup-single-single-php').'</span>'
 				)
 			));

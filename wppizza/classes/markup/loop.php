@@ -392,13 +392,12 @@ class WPPIZZA_MARKUP_MENU_ITEMS{
 				or if it's the first time (as ts next_update is set to 0 ) 
 			*/
 			$forceIndex = apply_filters('wppizza_force_bestseller_index', false);//dev only
-			
 			if($bestsellers_cache['next_update'] < WPPIZZA_WP_TIME || $forceIndex){
 							
 				/********************** set bestsellers *****************************/
 				global $wpdb;
 				/**wppizza posts to compare against, making sure posts still exists**/
-				$wppPostsQuery="SELECT ID FROM ".$wpdb->prefix ."posts where post_type='".WPPIZZA_POST_TYPE."' AND post_status='publish' ";
+				$wppPostsQuery = $wpdb->prepare("SELECT ID FROM ".$wpdb->prefix ."posts where post_type='%s' AND post_status='publish' ", WPPIZZA_POST_TYPE );
 				$wppPostsRes = $wpdb->get_results($wppPostsQuery,OBJECT_K );
 	
 				/**
@@ -406,8 +405,9 @@ class WPPIZZA_MARKUP_MENU_ITEMS{
 					limit to 10000 , should be plenty enough, but stops silly memory consumption on first index
 					(if anyone has more than 10000 orders per day, they probably want a different system)
 				**/
-				$bestsellersQuery="SELECT id, order_ini FROM ".$wpdb->prefix . WPPIZZA_TABLE_ORDERS." WHERE payment_status='COMPLETED' AND id > ".$bestsellers_cache['indexed_upto_id']." ORDER BY id desc LIMIT 0, 10000 ";
+				$bestsellersQuery=$wpdb->prepare("SELECT id, order_ini FROM ".$wpdb->prefix . WPPIZZA_TABLE_ORDERS." WHERE payment_status='COMPLETED' AND id > %d ORDER BY id desc LIMIT 0, 10000 ", $bestsellers_cache['indexed_upto_id']);
 				$bestsellersRes = $wpdb->get_results($bestsellersQuery);			
+
 				
 				//set the last indexed here to start off with 
 				$bestsellersIndexed = array($bestsellers_cache['indexed_upto_id']);
@@ -2495,9 +2495,9 @@ class WPPIZZA_MARKUP_MENU_ITEMS{
 				/*filterable args*/
 	 			$args = array(
 	           		'mid_size' => 1,
-	           		'prev_text' => $txt['previous'] ,
+	           		'prev_text' => $txt['previous'],
 	           		'next_text' => $txt['next'],
-	           		'screen_reader_text' => __( 'Posts navigation')
+	           		'screen_reader_text' => __( 'Posts navigation', 'default' ),
 	        	);
 
 				$args = apply_filters('wppizza_filter_menu_pagination_args', $args);

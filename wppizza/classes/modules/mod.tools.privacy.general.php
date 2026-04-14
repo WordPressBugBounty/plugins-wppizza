@@ -109,7 +109,9 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_GENERAL{
 		$ffs = "&middot; ".implode(PHP_EOL."&middot; ", $registered_formfields).PHP_EOL."&middot; Credit Card / Payment Details.";
 
 		/* text */
+		/* Translators: 1: WPPizza Name as defined by constant */
 		$content = '<div class="wppizza-highlight">'.sprintf(__('Disclaimer: the below is some suggested privacy policy text when using the %s plugin. Edit as required for your particular site/setup. It does not constitute legal advise as to what is appropriate in your particular scenario.', 'wppizza-admin'),WPPIZZA_NAME).'</div>';
+		/* Translators: 1: middot separated list of information that may be collected, based on formfields in WPPizza->Orderform */
 		$content .=  sprintf(__( '
 			We collect information about you during the checkout process on our store.
 			This information may include but is not limited to:
@@ -171,6 +173,7 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_GENERAL{
 		// If you define your own group, the first exporter to
 		// include a label will be used as the group label in the
 		// final exported report
+		/* Translators: 1 : Bloginfo name as set in general settings */
 		$group_label = sprintf(__( '%s Orders', 'wppizza-admin'), get_bloginfo( 'name' ));
 
 
@@ -395,14 +398,16 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_GENERAL{
 					'<br>',
 
 					'<b>'.__('The following will apply if you check "Enable Privacy Settings" below.', 'wppizza-admin').'</b>',
-					'<ul>
-						<li><b>'.__('Agree to Privacy Policy', 'wppizza-admin').'</b> - '.sprintf(__('A checkbox will be added to the end of the personal information form at checkout that must be ticked by the customer to be able to place an order.<br>If required, you can change the text adjacent to this checkbox in the "%s -> Localization -> Miscellaneous" settings of this plugin.<br>Use " %s -> Templates -> Emails / Templates -> Print" to show/hide the submitted value if required<br><span class="wppizza-highlight">Make sure you also write, set and publish a page that contains your privacy policy in "Wordpress -> Setings-> Privacy".<br/>Your privacy statement should include a statement why you need to collect certain data (i.e the formfields you have enabled in "%s -> Order Form") to fulfill an order.</span>', 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME, WPPIZZA_NAME).'</li>
-						<li><b>'.__('Personal Data - "Keep Browser Data"', 'wppizza-admin').'</b> - '.__('Unless this option is specifically enabled/checked, Browser Data (such as Referrer URL, User Agent etc) will not be stored anymore, as this data is typically unnecessary for processing or fulfillment of an order', 'wppizza-admin').'</li>
-						<li><b>'.__('Personal Data - "Keep IP Addresses"', 'wppizza-admin').'</b> - '.__('Unless this option is specifically enabled/checked all IP Addresses will be stored anonymised, as this data is typically unnecessary for processing or fulfillment of an order.', 'wppizza-admin').'</li>
-						<li><b>'.__('Export Personal Data', 'wppizza-admin').'</b> - '.__('Any personal data captured in the orders table of this plugin will be appended to the data export information when using "Wordpress -> Tools -> Export Personal Data"', 'wppizza-admin').'</li>
-						<li><b>'.__('Erase Personal Data', 'wppizza-admin').'</b> - '.__('If you have received a request to erase a users personal data, you can choose which action (if any) should be taken for the various order statuses when using "Wordpress -> Tools -> Erase Personal Data"', 'wppizza-admin').'</li>
-						<li><b>'.__('Data Retention', 'wppizza-admin').'</b> - '.sprintf(__('You might want to consider removing old database entries of orders that were not being completed for one reason or another in "%s -> Tools -> Maintenance"', 'wppizza-admin'), WPPIZZA_NAME ).'</li>
-					</ul>',
+					'<ul>',	
+						/* Translators: 1, 2, 3:  WPPizza Name as defined by constant */					
+						'<li><b>'.__('Agree to Privacy Policy', 'wppizza-admin').'</b> - '.sprintf(__('A checkbox will be added to the end of the personal information form at checkout that must be ticked by the customer to be able to place an order.<br>If required, you can change the text adjacent to this checkbox in the "%1$s -> Localization -> Miscellaneous" settings of this plugin.<br>Use " %2$s -> Templates -> Emails / Templates -> Print" to show/hide the submitted value if required<br><span class="wppizza-highlight">Make sure you also write, set and publish a page that contains your privacy policy in "Wordpress -> Setings-> Privacy".<br/>Your privacy statement should include a statement why you need to collect certain data (i.e the formfields you have enabled in "%3$s -> Order Form") to fulfill an order.</span>', 'wppizza-admin'), WPPIZZA_NAME, WPPIZZA_NAME, WPPIZZA_NAME).'</li>',
+						'<li><b>'.__('Personal Data - "Keep Browser Data"', 'wppizza-admin').'</b> - '.__('Unless this option is specifically enabled/checked, Browser Data (such as Referrer URL, User Agent etc) will not be stored anymore, as this data is typically unnecessary for processing or fulfillment of an order', 'wppizza-admin').'</li>',
+						'<li><b>'.__('Personal Data - "Keep IP Addresses"', 'wppizza-admin').'</b> - '.__('Unless this option is specifically enabled/checked all IP Addresses will be stored anonymised, as this data is typically unnecessary for processing or fulfillment of an order.', 'wppizza-admin').'</li>',
+						'<li><b>'.__('Export Personal Data', 'wppizza-admin').'</b> - '.__('Any personal data captured in the orders table of this plugin will be appended to the data export information when using "Wordpress -> Tools -> Export Personal Data"', 'wppizza-admin').'</li>',
+						'<li><b>'.__('Erase Personal Data', 'wppizza-admin').'</b> - '.__('If you have received a request to erase a users personal data, you can choose which action (if any) should be taken for the various order statuses when using "Wordpress -> Tools -> Erase Personal Data"', 'wppizza-admin').'</li>',
+						/* Translators: 1 :  WPPizza Name as defined by constant */
+						'<li><b>'.__('Data Retention', 'wppizza-admin').'</b> - '.sprintf(__('You might want to consider removing old database entries of orders that were not being completed for one reason or another in "%s -> Tools -> Maintenance"', 'wppizza-admin'), WPPIZZA_NAME ).'</li>',
+					'</ul>',
 					'<b>'.__('The functionalities associated with the settings here might be amended over time as requirements and possibilities (i.e additions to the Wordpress core) develop.', 'wppizza-admin').'</b>',
 
 					'<br>',
@@ -414,8 +419,8 @@ class WPPIZZA_MODULE_TOOLS_PRIVACY_GENERAL{
 						'<li>'.__('Example: If your current/this sites wp-config.php has the following: <code>define("SECURE_AUTH_SALT", "abcdefghifklmn");</code> *add* <code>"define("WPPIZZA_CRYPT_KEY", "abcdefghifklmn");"</code> to the *new* sites wp-config.php', 'wppizza-admin').'</li>'.
 						'<li>'.__('Nothing will break if you do not do this, but some privacy functions might not work as expected on your new site if you do not define this constant.', 'wppizza-admin').'</li>'.
 					'</ul>',
-
-					'<br/>'.__('If you have any questions or comments regarding the above, please use the ususal channels (preferably the <a href="https://www.wp-pizza.com/support/" target="_blank">"Support forum"</a> in this case to make conversations about this topic visible to anyone)', 'wppizza-admin').'',
+					/* Translators: 1 :  Url to support forum */
+					'<br/>'.sprintf(__('If you have any questions or comments regarding the above, please use the ususal channels (preferably the <a href="%s" target="_blank">"Support forum"</a> in this case to make conversations about this topic visible to anyone)', 'wppizza-admin'), 'https://www.wp-pizza.com/support/').'',
 				)
 			);
 		}

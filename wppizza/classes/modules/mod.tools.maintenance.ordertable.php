@@ -315,10 +315,10 @@ class WPPIZZA_MODULE_TOOLS_MAINTENANCE_ORDERTABLE{
 		global $wpdb;
 		/*no backticks or apostrophies please**/
 		/** see http://codex.wordpress.org/Creating_Tables_with_Plugins **/
-		$sql="TRUNCATE ".$wpdb->prefix . WPPIZZA_TABLE_ORDERS."";
+		$sql=$wpdb->prepare("TRUNCATE %s", $wpdb->prefix . WPPIZZA_TABLE_ORDERS );
 		$e = $wpdb->query($sql);
 		
-		$sql="TRUNCATE ".$wpdb->prefix . WPPIZZA_TABLE_ORDERS_META."";
+		$sql=$wpdb->prepare("TRUNCATE %s", $wpdb->prefix . WPPIZZA_TABLE_ORDERS_META );
 		$e = $wpdb->query($sql);		
 	
 	return;

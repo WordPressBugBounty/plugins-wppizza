@@ -608,7 +608,7 @@ class WPPIZZA_EDD_SL{
 		*/
 		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
 			$err_message = $response->get_error_message();
-			$edd['error']['message'] =  ( is_wp_error( $response ) && ! empty( $err_message ) ) ? 'WP Error: ' . $err_message : '['.wp_remote_retrieve_response_code( $response ).'] '.__( 'Response Error: An error occurred, please try again.' );
+			$edd['error']['message'] =  ( is_wp_error( $response ) && ! empty( $err_message ) ) ? 'WP Error: ' . $err_message : '['.wp_remote_retrieve_response_code( $response ).'] '.__( 'Response Error: An error occurred, please try again.','wppizza-admin' );
 			$edd['error']['value'] = false;
 			$edd['status'] = 'unknown';
 		}else{
@@ -623,48 +623,47 @@ class WPPIZZA_EDD_SL{
 				switch( $license_data->error ) {
 
 					case 'expired' :
-
-						$message = sprintf(
-							__( 'Your license key expired on %s.' ),
-							date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, WPPIZZA_WP_TIME ) )
-						);
+						
+						/* Translators: 1:  Expiration Date license key */
+						$message = sprintf( __( 'Your license key expired on %s.','wppizza-admin' ), date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, WPPIZZA_WP_TIME ) ));
 						break;
 
 					case 'revoked' :
 
-						$message = __( 'Your license key has been disabled.' );
+						$message = __( 'Your license key has been disabled.','wppizza-admin' );
 						break;
 
 					case 'missing' :
 
-						$message = __( 'Invalid license.' );
+						$message = __( 'Invalid license.','wppizza-admin' );
 						break;
 
 					case 'invalid' :
 
 					case 'site_inactive' :
 
-						$message = __( 'Your license is not active for this URL.' );
+						$message = __( 'Your license is not active for this URL.','wppizza-admin' );
 						break;
 
 					case 'item_name_mismatch' :
-
-						$message = sprintf( __( 'This appears to be an invalid license key for %s.' ), $edd_name );
+						
+						/* Translators: 1:  Applicable EDD licensed plugin name */
+						$message = sprintf( __( 'This appears to be an invalid license key for %s.','wppizza-admin' ), $edd_name );
 						break;
 
 					case 'no_activations_left':
 
-						$message = __( 'Your license key has reached its activation limit.' );
+						$message = __( 'Your license key has reached its activation limit.','wppizza-admin' );
 						break;
 
 					case 'license_not_activable':
 
-						$message = __( 'You cannot activate a bundle license.' );
+						$message = __( 'You cannot activate a bundle license.','wppizza-admin' );
 						break;
 
 					default :
 						//$license_data->license = 'unknown';
-						$message = __( 'An unspecified error occurred, please try again.' );
+						$message = __( 'An unspecified error occurred, please try again.','wppizza-admin' );
 						break;
 				}
 			$edd['error']['message'] = $message;

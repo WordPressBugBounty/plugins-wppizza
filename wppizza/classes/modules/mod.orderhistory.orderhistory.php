@@ -995,6 +995,7 @@ class WPPIZZA_MODULE_ORDERHISTORY_ORDERHISTORY{
 			**/
 			if(!empty($user_id) && is_numeric($user_id) && $user_id>0){
 				$user_data = get_userdata($user_id);
+				/* Translators: 1: User Login Name */
 				$markup['history_user_info'] = '<h2 id="'.WPPIZZA_SLUG.'_'.$this->section_key.'_user-info">'.sprintf(__('Orders for user "%s"', 'wppizza-admin'), print_r($user_data->user_login, true)).'</h2>';
 			}
 
@@ -1002,7 +1003,7 @@ class WPPIZZA_MODULE_ORDERHISTORY_ORDERHISTORY{
 				bulk delete toggle
 			**/
 			if (current_user_can('wppizza_cap_delete_order')){
-			$markup['bulk_delete'] = '<div id="'.WPPIZZA_SLUG.'_'.$this->section_key.'_bulk-delete"><label class="button"><input id="'.WPPIZZA_SLUG.'_'.$this->section_key.'_bulk-delete-toggle" class="'.WPPIZZA_SLUG.'_'.$this->section_key.'_bulk-delete-toggle" type="checkbox" value="1" /></label><span class="'.WPPIZZA_SLUG.'_'.$this->section_key.'_bulk-delete-do '.WPPIZZA_SLUG.'-dashicons dashicons-trash"></span></div>';
+			$markup['bulk_delete'] = '<div id="'.WPPIZZA_SLUG.'_'.$this->section_key.'_bulk-delete"><button class="button '.WPPIZZA_SLUG.'-button"><input id="'.WPPIZZA_SLUG.'_'.$this->section_key.'_bulk-delete-toggle" class="'.WPPIZZA_SLUG.'_'.$this->section_key.'_bulk-delete-toggle" type="checkbox" value="1" /></button><span class="'.WPPIZZA_SLUG.'_'.$this->section_key.'_bulk-delete-do '.WPPIZZA_SLUG.'-dashicons dashicons-trash"></label></div>';
 			}
 
 			/**
@@ -1544,6 +1545,7 @@ class WPPIZZA_MODULE_ORDERHISTORY_ORDERHISTORY{
 										$orderdetails_info['refund'] = "<div id='".WPPIZZA_SLUG."-".$this->section_key."-refund-".$uoKey."' class='".WPPIZZA_SLUG."-".$this->section_key."-refund'>";
 											$orderdetails_info['refund'] .= "<label class='".WPPIZZA_SLUG."-".$this->section_key."-enable-refund-label'>";
 											$orderdetails_info['refund'] .= "<input type='checkbox' class='".WPPIZZA_SLUG."-".$this->section_key."-enable-refund' value='".$gateway_refunds[$order['initiator']]['classname']."' />";
+											/* Translators: 1: Applicable Gateway Name */
 											$orderdetails_info['refund'] .= sprintf(__('Refund in %s', 'wppizza-admin'), $gateway_refunds[$gateway_ident]['name']);
 											$orderdetails_info['refund'] .= "</label>";
 											$orderdetails_info['refund'] .= " <input type='button' id='".WPPIZZA_SLUG."-".$this->section_key."-process-refund-".$uoKey."' class='".WPPIZZA_SLUG."-".$this->section_key."-process-refund' value='".__('OK', 'wppizza-admin')."' />";

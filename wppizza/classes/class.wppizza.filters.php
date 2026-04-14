@@ -24,6 +24,7 @@ class WPPIZZA_FILTERS{
 
 		add_action('init', array( $this, 'wppizza_allow_options_filter'), 5);/*allow filtering of options. let's use a reasonably high priority, but after session initialization**/
 
+
 		/*
 			adds a couple of action hooks  - reasonably early - that only run
 			when a frontend page is requested or a frontend ajax call was made
@@ -47,8 +48,11 @@ class WPPIZZA_FILTERS{
 		add_filter( 'wppizza_filter_order_date', array( $this, 'wppizza_filter_order_date'),10);
 
 		/***dont put "WPPizza Categories" in title tag */
-		add_filter( 'wp_title', array( $this, 'wppizza_filter_title_tag'),20,3);
-
+		add_filter( 'wp_title', array( $this, 'wppizza_filter_title_tag'), 20, 3);
+		
+		/* allow some additional html when escaping markup in certain places, since 3.20 */				
+		add_filter( 'wp_kses_allowed_html', array( $this, 'wppizza_filter_wp_kses_allowed_html'), 10, 2 );		
+		
 		/***filter tax display */
 		add_filter( 'wppizza_filter_combine_taxes', array( $this, 'wppizza_filter_combine_taxes'));
 
@@ -930,7 +934,7 @@ class WPPIZZA_FILTERS{
 			/**for safeties sake loop through all conotations (though the last one probanly does the trick) */
 			$catTitleSearch[] = __('WPPizza Categories', 'wppizza-admin');
 			$catTitleSearch[] = __('Categories WPPizza', 'wppizza-admin');
-			$catTitleSearch[] = WPPIZZA_NAME . ' ' .__('Categories');
+			$catTitleSearch[] = WPPIZZA_NAME . ' ' .__('Categories', 'default' );
 
 			foreach($catTitleSearch as $strSearch){
 
@@ -960,6 +964,52 @@ class WPPIZZA_FILTERS{
 		return $title;
 	}
 
+	/*******************************************************************************
+	*
+	*	[allow some additional html when escaping markup in certain places]
+	*	@ since 3.2
+	*
+	*******************************************************************************/
+	function wppizza_filter_wp_kses_allowed_html($tags, $context ){
+		
+
+		if( WPPIZZA_SLUG === $context )	{
+			static $custom_tags;
+			
+			# all standard post tags
+			$custom_tags = wp_kses_allowed_html( 'post' );		
+			
+			# allow inputs  
+			$custom_tags['input'] = array(
+				'id'	=>	true,
+				'name'	=>	true,
+				'type'	=>	true,
+				'value'	=>	true,
+				'size'	=>	true,
+				'class'	=>	true,
+				'checked'	=>	true,
+			);		
+			// allow selects. To be determined when/if needed  
+			#$custom_tags['select'] = array(
+			#	'id'	=>	true,
+			#	'name'	=>	true,
+			#	'type'	=>	true,
+			#	'value'	=>	true,
+			#	'size'	=>	true,
+			#	'class'	=>	true,
+			#	'options'	=>	true,
+			#	//might need to be an array, tyo be determined when needed
+			#	'options'	=>	array('selected' => true),
+			#	'selected'	=>	true,
+			#);			
+
+		return $custom_tags;
+		}
+
+
+
+	return $tags;
+	}
 	/*******************************************************************************
 	*
 	*

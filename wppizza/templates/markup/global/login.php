@@ -20,8 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/
 				**/
 				$markup['div_toggle_']	 = '<div class="' . $class_toggle . '">';
 					$markup['label']	 = '<label>'.$txt['loginout_have_account'].'</label> ';
-					$markup['link_login']	 = '<a href="javascript:void(0);" class="' . $class_show . '" >'. __( 'Log In' ).'</a>';
-					$markup['link_cancel']	 = '<a href="javascript:void(0);" class="' . $class_cancel . '" >'. __( 'Cancel' ).'</a>';
+					$markup['link_login']	 = '<a href="javascript:void(0);" class="' . $class_show . '" >'. __( 'Log In', 'default' ).'</a>';
+					$markup['link_cancel']	 = '<a href="javascript:void(0);" class="' . $class_cancel . '" >'. __( 'Cancel', 'default' ).'</a>';
 				$markup['_div_toggle']	 = '</div>';
 
 
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;/*Exit if accessed directly*/
    						lost password
    					*/
    					$markup['div_lost_password_'] = '<div class="' . $class_password . '">';
-   						$markup['lost_password'] = '<a href="'.wp_lostpassword_url( get_permalink() ).'" title="'.__( 'Lost Password' ).'">'.__( 'Lost Password' ).'</a>';
+   						$markup['lost_password'] = '<a href="'.wp_lostpassword_url( get_permalink() ).'" title="'.__( 'Lost Password', 'default' ).'">'.__( 'Lost Password', 'default' ).'</a>';
    					$markup['_div_lost_password'] = '</div>';
 
 

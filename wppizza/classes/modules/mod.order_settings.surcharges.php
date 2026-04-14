@@ -80,8 +80,11 @@ class WPPIZZA_MODULE_ORDERSETTINGS_SURCHARGES{
 				'label'=>__('Surcharges', 'wppizza-admin'),
 				'description'=>array(
 					__('Adjust settings as appropriate according to the information provided next to each individual option.', 'wppizza-admin'),
+					/* Translators: 1: WPPizza Name as defined by constant */
 					sprintf(__('Set labels in "%s -> Localizations -> (Sub)Totals".', 'wppizza-admin'), WPPIZZA_NAME),
+					/* Translators: 1: WPPizza Name as defined by constant */
 					sprintf(__('If used, you want to ensure the display of these surcharges is enabled in your templates in "%s -> Templates".', 'wppizza-admin'), WPPIZZA_NAME),
+					/* Translators: 1: WPPizza Name as defined by constant */
 					sprintf(__('Surcharges to apply depending on payment method selected can be set in "%s -> Gateways".', 'wppizza-admin'), WPPIZZA_NAME),
 				)
 			);
@@ -120,6 +123,7 @@ class WPPIZZA_MODULE_ORDERSETTINGS_SURCHARGES{
 				echo "".$label."";
 				/** add taxrates  **/
 				$trField = 'surcharge_percentage_tax';
+				/* Translators: 1: A text input field - accepting a float value - that lets the user set a percentage amount */
 				echo "<span style='margin:0 10px'>-</span>" . sprintf(__('Add %s percent tax to this surcharge.', 'wppizza-admin'), "<input id='".$trField."' name='".WPPIZZA_SLUG."[".$options_key."][".$trField."]' size='2' type='text' value='".$wppizza_options[$options_key][$trField]."' />")."";
 			echo "</label>";
 			echo"".$description."";
@@ -131,6 +135,7 @@ class WPPIZZA_MODULE_ORDERSETTINGS_SURCHARGES{
 				echo "".$label."";
 				/** add taxrates  **/
 				$trField = 'surcharge_fixed_tax';
+				/* Translators: 1: A text input field - accepting a float value - that lets the user set a percentage amount */
 				echo "<span style='margin:0 10px'>-</span>" . sprintf(__('Add %s percent tax to this surcharge.', 'wppizza-admin'), "<input id='".$trField."' name='".WPPIZZA_SLUG."[".$options_key."][".$trField."]' size='2' type='text' value='".$wppizza_options[$options_key][$trField]."' />")."";
 			echo "</label>";
 			echo"".$description."";

@@ -66,7 +66,7 @@ class WPPIZZA_MARKUP_NAVIGATION{
 		  'depth'     	 => 0,
 		  'exclude'      => (isset($atts['exclude'])) ? $atts['exclude'] : '' ,
 		  'child_of'     => $child_of,
-		  'show_option_none'   => empty($atts['as_dropdown']) ? __('Nothing here') : $wppizza_options['localization']['widget_navigation_dropdown_placeholder']  ,
+		  'show_option_none'   => empty($atts['as_dropdown']) ? __('Nothing here', 'wppizza' ) : $wppizza_options['localization']['widget_navigation_dropdown_placeholder']  ,
 		  'hide_empty'   => 1,
 		  'echo'   => 0 ,				// keep as variable
 		  'walker'	=> ( !empty($atts['as_dropdown']) ? new WPPIZZA_Walker_CategoryDropdown() : new WPPIZZA_Walker_Category() ),/* set (filterable) walkers for dropdown or (current dummy) for normal list*/

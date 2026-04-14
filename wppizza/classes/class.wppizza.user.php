@@ -245,7 +245,7 @@ class WPPIZZA_USER{
 
 		/* h3 header */
 		if($wppizza_options['localization']['user_profile_label_additional_info']!=''){
-			print'<h3>'.$wppizza_options['localization']['user_profile_label_additional_info'].'</h3>';
+			print'<h3>'.esc_html($wppizza_options['localization']['user_profile_label_additional_info']).'</h3>';
 		}
 
 		print'<table class="form-table">';
@@ -256,22 +256,22 @@ class WPPIZZA_USER{
 
 				$selectedValue = !empty($userMetaData[''.WPPIZZA_SLUG.'_'.$field['key'].'']) ? (maybe_unserialize($userMetaData['wppizza_'.$field['key'].''])) : '';
 
-				print'<tr><th><label for="'.WPPIZZA_SLUG.'_'.$field['key'].'">' . $field['lbl'] . '</label></th><td>';
+				print'<tr><th><label for="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'">' . esc_html($field['lbl']) . '</label></th><td>';
 
 					/**normal text input**/
 					if ( $field['type']=='text'){
-			    		print'<input type="text" name="'.WPPIZZA_SLUG.'_'.$field['key'].'" id="'.WPPIZZA_SLUG.'_'.$field['key'].'" value="'.$selectedValue.'" class="regular-text" />';
+			    		print'<input type="text" name="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'" id="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'" value="'.esc_attr($selectedValue).'" class="regular-text" />';
 					}
 					/**textareas**/
 					if ( $field['type']=='textarea'){
-						print'<textarea name="'.WPPIZZA_SLUG.'_'.$field['key'].'" id="'.WPPIZZA_SLUG.'_'.$field['key'].'" rows="5" cols="30">'.$selectedValue.'</textarea>';
+						print'<textarea name="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'" id="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'" rows="5" cols="30">'.esc_textarea($selectedValue).'</textarea>';
 					}
 					/**select**/
 					if ( $field['type']=='select'){
 
 						$setVal = wppizza_decode_entities_trim($selectedValue);
 
-						print'<select name="'.WPPIZZA_SLUG.'_'.$field['key'].'" id="'.WPPIZZA_SLUG.'_'.$field['key'].'">';
+						print'<select name="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'" id="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'">';
 
 							print'<option value="">-----------</option>';
 
@@ -279,19 +279,19 @@ class WPPIZZA_USER{
 
 								$optVal = wppizza_decode_entities_trim($value);
 
-								print'<option value="'.$value.'" '.selected($optVal, $setVal, false).'>'.$value.'</option>';
+								print'<option value="'.esc_attr($value).'" '.selected($optVal, $setVal, false).'>'.esc_html($value).'</option>';
 
 							}
 						print'</select>';
 					}
 					/**checkbox**/
 					if ($field['type']=='checkbox'){
-						print'<input type="checkbox" name="'.WPPIZZA_SLUG.'_'.$field['key'].'" id="'.WPPIZZA_SLUG.'_'.$field['key'].'" value="1" '.checked(!empty($selectedValue),true,false).' />';
+						print'<input type="checkbox" name="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'" id="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'" value="1" '.checked(!empty($selectedValue),true,false).' />';
 					}
 					/**multicheckbox**/
 					if ($field['type']=='multicheckbox'){
 						foreach($field['value'] as $mKey => $multicheckbox_value){
-							echo'<span><input type="checkbox" name="'.WPPIZZA_SLUG.'_'.$field['key'].'['.$mKey.']" id="'.WPPIZZA_SLUG.'_'.$field['key'].'_'.$mKey.'"  '.checked(!empty($selectedValue[$mKey]),true,false).' value="'.$multicheckbox_value.'"/>'.$multicheckbox_value.' </span>';
+							echo'<span><input type="checkbox" name="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'['.esc_attr($mKey).']" id="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key'].'_'.$mKey).'"  '.checked(!empty($selectedValue[$mKey]),true,false).' value="'.esc_attr($multicheckbox_value).'"/>'.esc_html($multicheckbox_value).' </span>';
 						}
 					}
 					/**radio**/
@@ -303,7 +303,7 @@ class WPPIZZA_USER{
 
 							$optVal = wppizza_decode_entities_trim($radio_value);
 
-							echo'<span><input type="radio" name="'.WPPIZZA_SLUG.'_'.$field['key'].'" id="'.WPPIZZA_SLUG.'_'.$field['key'].'"  '.checked($optVal, $setVal, false).' value="'.$radio_value.'"/>'.$radio_value.' </span>';
+							echo'<span><input type="radio" name="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'" id="'.esc_attr(WPPIZZA_SLUG.'_'.$field['key']).'"  '.checked($optVal, $setVal, false).' value="'.esc_attr($radio_value).'"/>'.esc_html($radio_value).' </span>';
 						}
 					}
 				print"</td></tr>";
@@ -343,47 +343,47 @@ class WPPIZZA_USER{
 			*/
 	 		echo'<p>';
 	 			/* label */
-	 			echo'<label for="' . $name_id . '">';
+	 			echo'<label for="' . esc_attr($name_id) . '">';
 	 			/* text input */
 	 			if ( $field['type']=='text'){
-	 				echo''.$field['lbl'].'<br />';
-	 				echo'<input type="text" name="' . $name_id . '" id="' . $name_id . '" class="' . $class . '" value="'. $input_value . '" size="20" />';
+	 				echo''.esc_html($field['lbl']).'<br />';
+	 				echo'<input type="text" name="' . esc_attr($name_id) . '" id="' . esc_attr($name_id) . '" class="' . esc_attr($class) . '" value="'. esc_attr($input_value) . '" size="20" />';
 	 			}
 				/**textareas**/
 				if ( $field['type']=='textarea'){
-					echo''.$field['lbl'].'<br />';
-					print'<textarea name="' . $name_id . '" id="' . $name_id . '" class="' . $class . '" rows="5" cols="30">' . $input_value . '</textarea>';
+					echo''.esc_html($field['lbl']).'<br />';
+					print'<textarea name="' . esc_attr($name_id) . '" id="' . esc_attr($name_id) . '" class="' . esc_attr($class) . '" rows="5" cols="30">' . esc_textarea($input_value) . '</textarea>';
 				}
 				/**select**/
 				if ( $field['type']=='select'){
-					echo''.$field['lbl'].'<br />';
-					print'<select name="' . $name_id . '" id="' . $name_id . '" class="' . $class . '">';
+					echo''.esc_html($field['lbl']).'<br />';
+					print'<select name="' . esc_attr($name_id) . '" id="' . esc_attr($name_id) . '" class="' . esc_attr($class) . '">';
 						print'<option value="">--------</option>';
 						foreach($field['value'] as $key => $select_value){
-							print'<option value="' . $key . '" '.selected($key,$select_value,false).'>' . $select_value . '</option>';
+							print'<option value="' . esc_attr($key) . '" '.selected($key,$select_value,false).'>' . esc_html($select_value) . '</option>';
 						}
 					print'</select>';
 				}
 				/**checkbox**/
 				if ( $field['type']=='checkbox'){
-					echo''.$field['lbl'].' ';
-					echo'<input type="checkbox" name="' . $name_id . '" id="' . $name_id . '" class="" value="1" />';
+					echo''.esc_html($field['lbl']).' ';
+					echo'<input type="checkbox" name="' . esc_attr($name_id) . '" id="' . esc_attr($name_id) . '" class="" value="1" />';
 				}
 				/**multicheckbox**/
 				if ( $field['type'] == 'multicheckbox'){
-					echo''.$field['lbl'].'<br />';
+					echo''.esc_html($field['lbl']).'<br />';
 					foreach($field['value'] as $key => $select_value){
 						/* show multi checkbox options */
-						echo'<span><input type="checkbox" name="' . $name_id . '[]" id="' . $name_id . '_'.$key.'"  value="'. $key . '" />'.$select_value.' </span>';
+						echo'<span><input type="checkbox" name="' . esc_attr($name_id) . '[]" id="' . esc_attr($name_id . '_'.$key).'"  value="'. esc_attr($key) . '" />'.esc_html($select_value).' </span>';
 					}
 				}
 				/**radio**/
 				if ( $field['type']=='radio'){
-					echo''.$field['lbl'].'<br />';
+					echo''.esc_html($field['lbl']).'<br />';
 					$i=0;
 					foreach($field['value'] as $key => $select_value){
 						/* show radio options, preselecting first one */
-						echo'<span><input type="radio" name="' . $name_id . '" id="' . $name_id . '"  value="'. $key . '"  '.checked($i,0,false).'/>'.$select_value.' </span>';
+						echo'<span><input type="radio" name="' . esc_attr($name_id) . '" id="' . esc_attr($name_id) . '"  value="'. esc_attr($key) . '"  '.checked($i,0,false).'/>'.esc_html($select_value).' </span>';
 					$i++;
 					}
 				}

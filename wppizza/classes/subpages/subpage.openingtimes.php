@@ -96,7 +96,7 @@ class WPPIZZA_OPENINGTIMES{
 	*
 	*********************************************************/
     public function wppizza_enqueue_admin_scripts_and_styles($hook) {
-		global $wp_scripts;
+		global $wp_scripts, $wppizza_options;
 		/* Get the WP built-in jquery-ui-core version to use for jquery ui*/
 		$jquery_ui_core_version = $wp_scripts->registered['jquery-ui-core']->ver;
 
@@ -108,8 +108,14 @@ class WPPIZZA_OPENINGTIMES{
         wp_register_style(WPPIZZA_SLUG.'-chosen', plugins_url( 'css/wppizza-chosen.min.css', WPPIZZA_PLUGIN_PATH ), array(), WPPIZZA_VERSION);
 		wp_enqueue_style(WPPIZZA_SLUG.'-chosen');
 
-		/*datepicker / timepicker css*/
-		wp_enqueue_style('jquery-style', '//code.jquery.com/ui/'.$jquery_ui_core_version .'/themes/smoothness/jquery-ui.min.css');
+		/*
+			datepicker / timepicker css
+			load a localised (gdpr) version (currently only smoothness supported) here too if we load it in the frontend
+		*/
+		$ui_style = $wppizza_options['order_settings']['order_page_quantity_change_style'];
+		$isLocal = substr($ui_style, -5) == '.gdpr' ? true : false ;
+		$stylePath = $isLocal ? ''. WPPIZZA_URL . 'css/ui/smoothness.css' : '//code.jquery.com/ui/'.$jquery_ui_core_version .'/themes/smoothness/jquery-ui.min.css';
+		wp_enqueue_style('jquery-style', $stylePath, array(), $jquery_ui_core_version);	
 
 		/************
 			js

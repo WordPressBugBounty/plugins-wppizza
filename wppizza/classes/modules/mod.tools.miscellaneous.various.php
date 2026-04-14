@@ -171,10 +171,12 @@ class WPPIZZA_MODULE_TOOLS_MISCELLANEOUS{
 			$settings['fields'][$this->section_key][$field] = array( __('Continue order on mail error', 'wppizza-admin'), array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: WPPizza Name as defined by constant */
 				'label'=>sprintf(__('Do not mark an order as "FAILED" if there are errors sending emails to the *shops* email address as set in "%s -> Order Settings" ["Prepaid" i.e Credit Card etc orders only]', 'wppizza-admin'), WPPIZZA_NAME),
 				'description'=>array(
 					'<span class="wppizza-highlight">'.__('If you receive notifications at your Wordpress admin email address, that emails of orders to the shop failed, enable this option to still have those orders appear in your "Order History".','wppizza-admin').'</span>',
-					'<span class="wppizza-highlight">'.__('However, you would be well advised to only temporarily enable this option while the underlying email problems are being fixed as per the error messages received.').'</span>',
+					'<span class="wppizza-highlight">'.__('However, you would be well advised to only temporarily enable this option while the underlying email problems are being fixed as per the error messages received.','wppizza-admin').'</span>',
+					/* Translators: 1: WPPizza Name as defined by constant */
 					'<span>'.sprintf(__('Details of the error encountered can also be found in the "logs/" directory of the %s plugin as well as in your Wordpress/Server debug/error log', 'wppizza-admin'), WPPIZZA_NAME).'</span>',
 				)
 			));
@@ -187,7 +189,7 @@ class WPPIZZA_MODULE_TOOLS_MISCELLANEOUS{
 				'description'=>array(
 					'<span class="wppizza-highlight">'.__('use with care','wppizza-admin').'</span>',
 					'<span class="wppizza-highlight">'.__('if you select "delete images too", all featured images used for any menu items will be deleted too','wppizza-admin').'</span>',
-					'<span class="wppizza-highlight">'.__('if you use these images elsewhere, you should not select this !').'</span>'
+					'<span class="wppizza-highlight">'.__('if you use these images elsewhere, you should not select this !','wppizza-admin').'</span>'
 				)
 			));
 

@@ -252,6 +252,7 @@ class WPPIZZA_ORDERHISTORY{
 
 						echo"<td>";
 							echo"<label>";
+								/* Translators: 1:  Text input field to set order polling interval in seconds (integer)*/
 								echo "".sprintf(__('Check every %s seconds', 'wppizza-admin'), "<input id='".WPPIZZA_SLUG."_".$this->class_key."_orders_poll_interval' name='".WPPIZZA_SLUG."_".$this->class_key."_orders_poll_interval' size='2' type='text' value='".apply_filters('wppizza_filter_order_history_polling_time',60)."' />");
 							echo"</label>";
 

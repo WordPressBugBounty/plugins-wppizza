@@ -247,8 +247,10 @@ class WPPIZZA_MARKUP_EMAIL_PRINT{
 										/*label for order is made up of 3 labels*/
 										if($section_key=='order'){
 											$orderlbl=implode(' | ',$section['labels']['parameters']);
+											/* Translators: 1: Section titles such as 'Site Details', 'Overview', 'Customer Details'... */
 											$markup.=''.sprintf( __( 'Show "%1$s"', 'wppizza-admin'), $orderlbl ).'';
 										}else{
+											/* Translators: 1: Section labels such as 'Site Details', 'Overview', 'Customer Details'... */
 											$markup.=''.sprintf( __( 'Show "%1$s" label', 'wppizza-admin'), $section['labels']['label'] ).'';
 										}
 									$markup.='</label>';

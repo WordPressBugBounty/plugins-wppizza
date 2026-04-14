@@ -49,7 +49,7 @@ class WPPIZZA_TOOLS{
 		/*titles/labels throughout class*/
 		add_action('init', array( $this, 'init_admin_lables') );
 		/** registering submenu page **/
-		add_action( 'admin_menu', array( $this, 'wppizza_register_submenu_page'), $this->submenu_priority );
+		add_action('admin_menu', array( $this, 'wppizza_register_submenu_page'), $this->submenu_priority );
 		/**add settings sections on this submenu page**/
 		add_action('current_screen', array( $this, 'wppizza_admin_settings_sections'));
 		/*register capabilities for this page*/

@@ -226,8 +226,8 @@ class WPPIZZA_ADMIN_HELPERS{
 			'end_size'     => 3,
 			'mid_size'     => 1,
 			'prev_next'    => True,
-			'prev_text'    => __('&#171; Previous'),
-			'next_text'    => __('Next &#187;'),
+			'prev_text'    => __('&#171; Previous', 'default' ),
+			'next_text'    => __('Next &#187;', 'default' ),
 			'type'         => 'plain',
 			'add_args'     => False,
 			'add_fragment' => $add_fragment,
@@ -327,11 +327,11 @@ class WPPIZZA_ADMIN_HELPERS{
 		$str=str_replace(PHP_EOL,'',$str);
 		/**first convert all " to ' */
 		$str=str_replace('"','\'',$str);
-		/*strip tags*/
+		/*strip tags. contrary to wp_strip_all_tags , this will leave what's between the tags*/
 		$str=strip_tags($str);
 		/*trim*/
 		$str=trim($str);
-		/*now ltes replace totally invalid things*/
+		/*now let's replace totally invalid things*/
 		$str=str_replace($charRemove,'',$str);
 		/*convert remaining namely single quotes */
 		//$str=htmlspecialchars($str,ENT_QUOTES);

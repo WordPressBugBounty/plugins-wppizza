@@ -361,15 +361,15 @@ class WPPIZZA_MODULE_FOODTYPE{
 		*/
 		$options[$this->section_key] = array(
 			
-			0=>array( 'sort'=>'+', 'name'=>esc_html__('Mild', 'wppizza'), 'icon' => 'mild' ),	
-			1=>array( 'sort'=>'++', 'name'=>esc_html__('Spicy', 'wppizza'), 'icon' => 'medium'),	
-			2=>array( 'sort'=>'+++', 'name'=>esc_html__('Hot', 'wppizza'), 'icon' => 'hot'),		
-			3=>array( 'sort'=>'++++', 'name'=>esc_html__('Very Hot', 'wppizza'), 'icon' => 'very_hot'),	
-			4=>array( 'sort'=>'Fz', 'name'=>esc_html__('Frozen', 'wppizza'), 'icon' => 'frozen'),
-			5=>array( 'sort'=>'Hl', 'name'=>esc_html__('Halal', 'wppizza'), 'icon' => 'halal'),	
-			6=>array( 'sort'=>'Ks', 'name'=>esc_html__('Kosher', 'wppizza'), 'icon' => 'kosher'),	
-			7=>array( 'sort'=>'V', 'name'=>esc_html__('Vegetarian', 'wppizza'), 'icon' => 'vegetarian'),		
-			8=>array( 'sort'=>'Vg', 'name'=>esc_html__('Vegan', 'wppizza'), 'icon' => 'vegan'),
+			0=>array( 'sort'=>'+', 'name'=>wppizza_textdomain('Mild', 'wppizza'), 'icon' => 'mild' ),	
+			1=>array( 'sort'=>'++', 'name'=>wppizza_textdomain('Spicy', 'wppizza'), 'icon' => 'medium'),	
+			2=>array( 'sort'=>'+++', 'name'=>wppizza_textdomain('Hot', 'wppizza'), 'icon' => 'hot'),		
+			3=>array( 'sort'=>'++++', 'name'=>wppizza_textdomain('Very Hot', 'wppizza'), 'icon' => 'very_hot'),	
+			4=>array( 'sort'=>'Fz', 'name'=>wppizza_textdomain('Frozen', 'wppizza'), 'icon' => 'frozen'),
+			5=>array( 'sort'=>'Hl', 'name'=>wppizza_textdomain('Halal', 'wppizza'), 'icon' => 'halal'),	
+			6=>array( 'sort'=>'Ks', 'name'=>wppizza_textdomain('Kosher', 'wppizza'), 'icon' => 'kosher'),	
+			7=>array( 'sort'=>'V', 'name'=>wppizza_textdomain('Vegetarian', 'wppizza'), 'icon' => 'vegetarian'),		
+			8=>array( 'sort'=>'Vg', 'name'=>wppizza_textdomain('Vegan', 'wppizza'), 'icon' => 'vegan'),
 			
 		);
 		/* allow filtering */

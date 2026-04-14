@@ -287,7 +287,8 @@ class WPPIZZA_MODULE_SETTINGS_GENERAL{
 				'option_key'=>$this->settings_page,
 				'label'=>__('you could also leave this off and use the wppizza widget/shortcode for a dedicated search box', 'wppizza-admin'),
 				'description'=>array(
-					__('please see the <a href="http://docs.wp-pizza.com/developers/?section=wppizza-markup-single-single-php">faq\'s -> single wppizza menu items display</a> for details as to how this works', 'wppizza-admin')
+					/* Translators: 1: URL to applicable documentation */
+					sprintf(__('please see the <a href="%s">faq\'s -> single wppizza menu items display</a> for details as to how this works', 'wppizza-admin'), 'https://docs.wp-pizza.com/developers/?section=wppizza-markup-single-single-php')
 				)
 			));
 			$field = 'using_cache_plugin';

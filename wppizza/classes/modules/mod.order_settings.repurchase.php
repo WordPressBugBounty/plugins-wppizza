@@ -275,7 +275,8 @@ class WPPIZZA_MODULE_ORDERSETTINGS_REPURCHASE{
 			$settings['fields'][$this->section_key][$field] = array( __('Order Repurchase', 'wppizza-admin'), array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
-				'label'=>__('allow items to be repurchased from users order purchase page. ', 'wppizza-admin'). ' '.__('if it deos not exists already create a page with the shortcode as described <a href="http://docs.wp-pizza.com/shortcodes/?section=user-orderhistory">here</a>.', 'wppizza-admin') .' '.sprintf(__('furthermore ensure this page also has a %s cart on it (widget/shortcode) as without it there is nothing to put the re-order into.','wppizza-admin'), WPPIZZA_NAME) ,
+				/* Translators: 1: URL to applicable shortcodes documentation, 1: WPPizza Name as defined by constant */
+				'label'=>__('allow items to be repurchased from users order purchase page. ', 'wppizza-admin'). ' '.sprintf(__('if it deos not exists already create a page with the shortcode as described <a href="%s">here</a>.', 'wppizza-admin'), 'https://docs.wp-pizza.com/shortcodes/?section=user-orderhistory') .' '.sprintf(__('furthermore ensure this page also has a %s cart on it (widget/shortcode) as without it there is nothing to put the re-order into.','wppizza-admin'), WPPIZZA_NAME) ,
 				'description'=>array()
 			));			
 		}
@@ -396,12 +397,12 @@ class WPPIZZA_MODULE_ORDERSETTINGS_REPURCHASE{
 		/* 
 			localization 
 		*/
-		$options[$this->localization_page]['history_label_reorder_header'] =  esc_html__('Re-order', 'wppizza');
-		$options[$this->localization_page]['history_label_item_reorder_button'] =  esc_html__('+', 'wppizza');
-		$options[$this->localization_page]['history_title_item_reorder_button'] =  esc_html__('Re-order this item', 'wppizza');
-		$options[$this->localization_page]['history_label_reorder_purchase_button'] =  esc_html__('Re-order', 'wppizza');
-		$options[$this->localization_page]['history_title_reorder_purchase_button'] =  esc_html__('Re-order', 'wppizza');
-		$options[$this->localization_page]['history_reorder_not_available'] =  esc_html__('N/A', 'wppizza-admin');
+		$options[$this->localization_page]['history_label_reorder_header'] =  wppizza_textdomain('Re-order', 'wppizza');
+		$options[$this->localization_page]['history_label_item_reorder_button'] =  wppizza_textdomain('+', 'wppizza');
+		$options[$this->localization_page]['history_title_item_reorder_button'] =  wppizza_textdomain('Re-order this item', 'wppizza');
+		$options[$this->localization_page]['history_label_reorder_purchase_button'] =  wppizza_textdomain('Re-order', 'wppizza');
+		$options[$this->localization_page]['history_title_reorder_purchase_button'] =  wppizza_textdomain('Re-order', 'wppizza');
+		$options[$this->localization_page]['history_reorder_not_available'] =  wppizza_textdomain('N/A', 'wppizza-admin');
 		
 	return $options;
 	}

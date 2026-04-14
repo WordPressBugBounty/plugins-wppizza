@@ -37,13 +37,13 @@ class WPPIZZA_WP_ADMIN{
 
 	    /******************
 	    	ajax nonce in footer for all admin pages
-	    	
-	    	Note: also needed for non-wppizza admin pages for: 
-	    	-	dashboard widgets, 
-	    	-	order notifications on non-wppizza pages, 
+
+	    	Note: also needed for non-wppizza admin pages for:
+	    	-	dashboard widgets,
+	    	-	order notifications on non-wppizza pages,
 	    	-	dismissal of install notices
 	    	etc
-	 	******************/	
+	 	******************/
 		add_action('admin_footer', array($this, 'wppizza_ajax_nonce'));
 
 	}
@@ -77,8 +77,8 @@ class WPPIZZA_WP_ADMIN{
 			$dbw = ob_get_clean();
 
 
-			print"".$dbw."";
-			exit();
+			print wp_kses_post($dbw);
+		exit();
 		}
 
 	}
@@ -97,12 +97,47 @@ class WPPIZZA_WP_ADMIN{
 *
 *********************************************************/
     public function admin_options_validate($input){
-    	global $wppizza_options;
+    	global $wppizza_options, $pagenow;
 
     	/* no saving/editing alowed, just return options as they were, but ALWAYS bypass on install */
     	if(WPPIZZA_DEV_ADMIN_NO_SAVE && !empty($wppizza_options)){
     		return 	$wppizza_options;
     	}
+
+    	/* unless we are actually saving options, skip everything else */
+    	$current_screen  = get_current_screen();
+    	if( ( !empty($current_screen) && $current_screen -> id != 'options' ) ){
+    		return $wppizza_options ;
+    	}
+
+       	/* let's make sure user has required caps for all that he/she wants to update */
+    	if(!empty($_POST[WPPIZZA_SLUG])){
+   		foreach($_POST[WPPIZZA_SLUG] as $cap_id => $page_options){
+
+   			/*
+   				some exemptions where one single capability is set for multiple parts
+   			*/
+   			if( $cap_id == 'confirmation_form' )						{ $cap_id = 'order_form'; /* granted cap */}
+   			if( $cap_id == 'sizes' )									{ $cap_id = 'meal_sizes'; /* granted cap */}
+   			if( $cap_id == 'allergens' || $cap_id == 'foodtype' )		{ $cap_id = 'additives'; /* granted cap */}
+   			if( $cap_id == 'opening_times_format' )						{ $cap_id = 'openingtimes'; /* granted cap */}
+   			if( $cap_id == 'prices_format' )							{ $cap_id = 'layout'; /* granted cap */}
+   			if( $cap_id == 'templates_apply' )							{ $cap_id = 'templates'; /* granted cap */}
+   			if( $cap_id == 'access' )									{ $cap_id = 'access_rights'; /* granted cap */}
+   			if( $cap_id == 'cron' )										{ $cap_id = 'tools'; /* granted cap */}
+
+
+
+   			if( !current_user_can( 'wppizza_cap_'.$cap_id ) ) {
+				#global $current_user;
+				#print_r($current_user->allcaps);
+				wp_die(
+					'<h1>'.esc_html(WPPIZZA_NAME .' "'.$cap_id.'"').': ' . __( 'You need a higher access level to update these options.', 'wppizza-admin' ) . '</h1>' .
+					'<p>' . esc_html(__( 'Sorry, you are not permitted to update these options.', 'wppizza-admin' )) . '</p>',
+					403
+				);
+   			}
+   		}}
 
 		/**get previously saved options unless it's a new install**/
 		$options=($wppizza_options==0) ? array() : $wppizza_options;
@@ -119,6 +154,7 @@ class WPPIZZA_WP_ADMIN{
 
 		/**register applicable/new WPML strings on options save*/
 		//require(WPPIZZA_PATH .'inc/wpml.register.strings.php');
+
 	return $options;
     }
 
@@ -190,13 +226,13 @@ class WPPIZZA_WP_ADMIN{
 		$localize['fnStatusChanged'] = $fnStatusChanged; /* add to localized script */
 		/* filterable */
 		$localize = apply_filters('wppizza_filter_admin_js_localize', $localize);
-		
-		/** analogous with wppizza_filter_js_extend in frontend **/		
+
+		/** analogous with wppizza_filter_js_extend in frontend **/
 		$localize['extend'] = apply_filters('wppizza_filter_js_extend_admin', array() );//
 
 		wp_localize_script( WPPIZZA_SLUG.'-global', WPPIZZA_SLUG, $localize );
 	}
-	
+
 /*********************************************************
 *
 *		[ adding wppizza_ajax_nonce to footer ]
@@ -205,8 +241,8 @@ class WPPIZZA_WP_ADMIN{
 	function wppizza_ajax_nonce(){
 		wp_nonce_field( '' . WPPIZZA_PREFIX . '_ajax_nonce','' . WPPIZZA_PREFIX . '_ajax_nonce', true, true);
 	return;
-	}	
-	
+	}
+
 }
 $WPPIZZA_WP_ADMIN=new WPPIZZA_WP_ADMIN();
 ?>

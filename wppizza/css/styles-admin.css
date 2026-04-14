@@ -9,8 +9,11 @@
 .wppizza-section h3{font-size:120%;padding:0 2px}
 .wppizza-section > .form-table  > tbody > tr > th,.wppizza-section > .form-table > tbody > tr > td{font-size:90%;}
 
+/** alignments (checkboxes/inputs mainly) **/
+.wppizza-section > .form-table > tbody > tr > td > .wppizza_admin_options > .wppizza_option >span{ display: inline-block; vertical-align: middle;}
+
 /*inputs*/
-.wppizza-section input, .wppizza-section select, .wppizza-section textarea{font-size:100%; margin:0 5px; vertical-align:inherit !important;}
+.wppizza-section input, .wppizza-section select, .wppizza-section textarea{font-size:100%;/*margin:0 5px; vertical-align:inherit !important;*/}
 .wppizza-section select{height:auto !important; padding:0px 2px; margin-right:5px}
 .wppizza-section input[type="checkbox"], .wppizza-section input[type="radio"]{margin:5px !important;}
 .wppizza-section input[type="text"],.wppizza-section textarea, .wppizza-section select {padding:5px 5px !important}
@@ -106,7 +109,7 @@ body.post-type-wppizza #the-list.ui-sortable>tr{cursor: move}
 ***************************************/
 .wppizza-wrap>h2{line-height:200%;margin-bottom:10px}
 .wppizza-dashicons-admin {width:40px !important;height:35px !important; line-height:150%; position:relative; text-decoration:none}
-.wppizza-dashicons-admin >span{line-height:100%;position:absolute;left:2px;top:2px; font-size:250%;color:#AAAAAA}
+.wppizza-dashicons-admin >span{line-height:100%!important;position:absolute;left:2px;top:2px; font-size:250%;color:#AAAAAA}
 .wppizza-dashicons-admin >span:hover{color:#80a583}
 .wppizza-help-hint{color:#00a0d2;margin:0;padding: 3px 0;font-weight:600}
 
@@ -147,6 +150,7 @@ body.post-type-wppizza #the-list.ui-sortable>tr{cursor: move}
 *	[wppizza customised dashicons]
 *
 *******************************************************************************************************************************/
+.wppizza-button{padding:5px 2px 3px 2px!important;line-height: 100% !important;min-height: 30px !important}
 /*******************
 	[dashicons as buttons]
 ********************/
@@ -161,12 +165,12 @@ body.post-type-wppizza #the-list.ui-sortable>tr{cursor: move}
   text-align: center;
   border-color: #ccc;
   background: #f7f7f7;
-  vertical-align: top;
-  display: inline-block;
+  vertical-align: middle;
+  display: inline-block !important;
   text-decoration: none;
-  line-height: 26px;
+  line-height: 28px;
   margin: 0 2px;
-  padding: 0 0 0 2px;
+  padding: 0 0 0 0;
   cursor: pointer;
   border-width: 1px;
   border-style: solid;
@@ -269,6 +273,10 @@ body.post-type-wppizza #the-list.ui-sortable>tr{cursor: move}
 *
 **************************************************************************************************************************************************/
 #wppizza-access_rights .wppizza-section>.form-table > tbody > tr > th{display:none}
+#wppizza-access_rights .wppizza-section>.form-table > tbody > tr > td > #wppizza_show_admin_access_capabilities_options table {border-collapse: collapse; width:100%}
+#wppizza-access_rights .wppizza-section>.form-table > tbody > tr > td > #wppizza_show_admin_access_capabilities_options > div > span {font-weight:600;font-size:110%; padding-bottom:5px /*label*/}
+#wppizza-access_rights .wppizza-section>.form-table > tbody > tr > td > #wppizza_show_admin_access_capabilities_options td {margin:0; padding:0 2px;font-size:100%; white-space:nowrap; min-width:14%/* checkbox & lbl */}
+
 
 /*************************************************************************************************************************************************
 *
@@ -326,6 +334,7 @@ body.post-type-wppizza #the-list.ui-sortable>tr{cursor: move}
 #wppizza_orderhistory_results{margin-top:20px}
 
 #wppizza_orderhistory_bulk-delete{text-align:right;margin:3px 0;}
+#wppizza_orderhistory_bulk-delete-toggle{margin:0px 5px;}
 
 #wppizza_list_orderhistory.widefat{width:auto;min-width:100%}
 #wppizza_list_orderhistory.striped > tbody > tr{background-color:#FFFFFF;}

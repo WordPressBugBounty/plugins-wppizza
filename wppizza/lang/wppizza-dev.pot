@@ -1,0 +1,47 @@
+# WordPress Pot
+# Copyright 2014 ...
+# This file is distributed under the GNU General Public License v3 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WPPizza - A "
+"Wordpress Plugin - Frontend "
+"Development Textstrings (For "
+"completeness - feel free to "
+"ignore)\n"
+"Report-Msgid-Bugs-To: Translator "
+"Name <translations@example.com>\n"
+"POT-Creation-Date: 2026-04-13 "
+"20:33+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Your Name "
+"<you@example.com>\n"
+"Language-Team: dev@wp-pizza.com\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; "
+"charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; "
+"plural=n != 1;\n"
+"X-Textdomain-Support: yesX-"
+"Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-"
+"KeywordsList: ;wppizza_textdomain_dev\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/markup/pages.php:588
+msgid ""
+"Note: Email sending has currently "
+"been disabled by the "
+"administrator."
+msgstr ""
+
+#: classes/markup/pages.php:600
+msgid ""
+"Note: Shop is set to be always "
+"open for your UserID / IP-Address."
+msgstr ""

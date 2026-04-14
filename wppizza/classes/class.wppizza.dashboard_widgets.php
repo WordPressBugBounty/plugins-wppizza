@@ -59,7 +59,7 @@ class WPPIZZA_DASHBOARD_WIDGETS{
 		//access control 
 		if (!current_user_can('wppizza_cap_reports')){
 			if(empty($return_markup)){
-				echo '<center><h2>'.__('Forbidden','wppizza-admin').'</h2></center>';
+				echo '<center><h2>'.esc_html(__('Forbidden','wppizza-admin')).'</h2></center>';
 			}else{
 				return '<center><h2>'.__('Forbidden','wppizza-admin').'</h2></center>';
 			}
@@ -327,9 +327,9 @@ class WPPIZZA_DASHBOARD_WIDGETS{
 
 
 		if(empty($return_markup)){
-			echo $markup;
+			echo wp_kses_post($markup);
 		}else{
-			return $markup;
+			return wp_kses_post($markup);
 		}
 	}
 }

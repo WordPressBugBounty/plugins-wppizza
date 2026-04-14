@@ -11,6 +11,9 @@
 			/** currency formatting **/
 			require_once(WPPIZZA_PATH .'includes/global.currency.prices.functions.inc.php');
 
+			/** i18n **/
+			require_once(WPPIZZA_PATH .'includes/global.i18n.functions.inc.php');
+
 			/** include miscellaneous globally available helper functions **/
 			require_once(WPPIZZA_PATH .'includes/global.helper.functions.inc.php');
 

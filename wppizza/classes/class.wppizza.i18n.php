@@ -46,14 +46,17 @@ class WPPIZZA_I18N{
   		*/
   		$plugin_text_domain_path =  apply_filters('wppizza_filter_textdomain_path', dirname(plugin_basename( __DIR__ ) ) . '/lang');
   		if(is_admin()){
+        
         	// admin localization strings
-        	load_plugin_textdomain('wppizza-admin', false, $plugin_text_domain_path );
+        	load_plugin_textdomain('wppizza-admin', false, $plugin_text_domain_path  );
+        	
         	// load after admin to insert default localization strings
         	load_plugin_textdomain('wppizza', false, $plugin_text_domain_path );
+  		
   		}else{
         	// frontend dev constants - not loaded by default (but can be enabled by constant) as it's kind of overkill loading these for very little benefit,
         	if(WPPIZZA_DEV_LOAD_TEXTDOMAIN){
-        		load_plugin_textdomain('wppizza_dev', false, $plugin_text_domain_path );
+        		load_plugin_textdomain('wppizza-dev', false, $plugin_text_domain_path );
         	}
   		}
     return;

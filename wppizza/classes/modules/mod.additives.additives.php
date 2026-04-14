@@ -305,11 +305,11 @@ class WPPIZZA_MODULE_ADDITIVES{
 			default additives
 		*/
 		$options[$this->section_key]=array(
-			0=>array('sort'=>1,'name'=>esc_html__('Food coloring', 'wppizza')),
-			1=>array('sort'=>2,'name'=>esc_html__('Flavor enhancers', 'wppizza')),
-			2=>array('sort'=>3,'name'=>esc_html__('Preservatives', 'wppizza')),
-			3=>array('sort'=>4,'name'=>esc_html__('Stabilizers', 'wppizza')),
-			4=>array('sort'=>5,'name'=>esc_html__('Sweeteners', 'wppizza'))
+			0=>array('sort'=>1,'name'=>wppizza_textdomain('Food coloring', 'wppizza')),
+			1=>array('sort'=>2,'name'=>wppizza_textdomain('Flavor enhancers', 'wppizza')),
+			2=>array('sort'=>3,'name'=>wppizza_textdomain('Preservatives', 'wppizza')),
+			3=>array('sort'=>4,'name'=>wppizza_textdomain('Stabilizers', 'wppizza')),
+			4=>array('sort'=>5,'name'=>wppizza_textdomain('Sweeteners', 'wppizza'))
 		);
 	
 		/* allow filtering */

@@ -1,7 +1,7 @@
 <?php
-if(!defined('DOING_AJAX') || !DOING_AJAX){
+if( !defined('DOING_AJAX') || !DOING_AJAX || !defined('ABSPATH') ){
 	header('HTTP/1.0 400 Bad Request', true, 400);
-	print"you cannot call this script directly";
+	print"You cannot call this script directly.";
   exit; //just for good measure
 }
 /**testing variables ***********************/

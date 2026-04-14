@@ -296,6 +296,7 @@ class WPPIZZA_MODULE_ORDERSETTINGS_PICKUP{
 			$settings['fields'][$this->section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->localization_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('Self Pickup: generic text that could be used (by 3rd party plugins) to indicate when an order will be ready for collection [%s to be replaced with appropriate time]', 'wppizza-admin')
 			));
 			$field = 'order_page_no_delivery';
@@ -359,16 +360,19 @@ class WPPIZZA_MODULE_ORDERSETTINGS_PICKUP{
 		/*
 			localization
 		*/
-		$options[$this->localization_page]['pickup_toggle_delivery']	= esc_html__('Delivery', 'wppizza');
-		$options[$this->localization_page]['pickup_toggle_pickup']		= esc_html__('Pickup', 'wppizza');
-		$options[$this->localization_page]['order_page_selfpickup']		= esc_html__('You have chosen to pickup the order yourself. This order will not be delivered. Please allow %s min. for us to prepare your order.', 'wppizza');
-		$options[$this->localization_page]['generic_ready_for_pickup']	= esc_html__('Please collect your order from the store at your earliest convenience.', 'wppizza');
-		$options[$this->localization_page]['generic_ready_for_pickup_time']	= esc_html__('Your order will be ready for collection at %s.', 'wppizza');
-		$options[$this->localization_page]['order_page_no_delivery'] 	= esc_html__('Please collect your order at the store.', 'wppizza');
-		$options[$this->localization_page]['order_self_pickup'] 		= esc_html__('I would like to pickup the order myself', 'wppizza');
-		$options[$this->localization_page]['order_self_pickup_cart'] 	= esc_html__('Delivery: pickup', 'wppizza');
-		$options[$this->localization_page]['order_self_pickup_cartjs'] 	= esc_html__('You have chosen to pickup the order yourself. This order will not be delivered. Please allow %s min. for us to prepare your order.', 'wppizza');
-		$options[$this->localization_page]['minimum_order'] 			= esc_html__('minimum order', 'wppizza');
+		$options[$this->localization_page]['pickup_toggle_delivery']	= wppizza_textdomain('Delivery', 'wppizza');
+		$options[$this->localization_page]['pickup_toggle_pickup']		= wppizza_textdomain('Pickup', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->localization_page]['order_page_selfpickup']		= wppizza_textdomain('You have chosen to pickup the order yourself. This order will not be delivered. Please allow %s min. for us to prepare your order.', 'wppizza');
+		$options[$this->localization_page]['generic_ready_for_pickup']	= wppizza_textdomain('Please collect your order from the store at your earliest convenience.', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->localization_page]['generic_ready_for_pickup_time']	= wppizza_textdomain('Your order will be ready for collection at %s.', 'wppizza');
+		$options[$this->localization_page]['order_page_no_delivery'] 	= wppizza_textdomain('Please collect your order at the store.', 'wppizza');
+		$options[$this->localization_page]['order_self_pickup'] 		= wppizza_textdomain('I would like to pickup the order myself', 'wppizza');
+		$options[$this->localization_page]['order_self_pickup_cart'] 	= wppizza_textdomain('Delivery: pickup', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->localization_page]['order_self_pickup_cartjs'] 	= wppizza_textdomain('You have chosen to pickup the order yourself. This order will not be delivered. Please allow %s min. for us to prepare your order.', 'wppizza');
+		$options[$this->localization_page]['minimum_order'] 			= wppizza_textdomain('minimum order', 'wppizza');
 	return $options;
 	}
 

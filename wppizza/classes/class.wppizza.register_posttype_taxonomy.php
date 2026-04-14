@@ -76,6 +76,7 @@ class WPPIZZA_REGISTER_POSTTYPE_AND_TAXONOMY{
 
 		$args = array(
 			'labels'        => $labels,
+			/* Translators: 1: WPPizza Name as defined by constant */
 			'description'   => sprintf( __( 'Holds %1$s  menu items data', 'wppizza-admin'), WPPIZZA_NAME ),
 			'show_ui'		=> true,
 			'public'        => true,
@@ -122,17 +123,17 @@ class WPPIZZA_REGISTER_POSTTYPE_AND_TAXONOMY{
 
 		  // Add new taxonomy, make it hierarchical (like categories)
 		  $labels = array(
-		    'name' => WPPIZZA_NAME. ' ' ._x( 'Categories', 'taxonomy general name' ),
-		    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
-		    'search_items' =>  __( 'Search Categories' ),
-		    'all_items' => __( 'All Categories' ),
-		    'parent_item' => __( 'Parent Category' ),
-		    'parent_item_colon' => __( 'Parent Category:' ),
-		    'edit_item' => __( 'Edit Category' ),
-		    'update_item' => __( 'Update Category' ),
-		    'add_new_item' => __( 'Add New Category' ),
-		    'new_item_name' => __( 'New Category Name' ),
-		    'menu_name' => __( 'Categories' )
+		    'name' => WPPIZZA_NAME. ' ' ._x( 'Categories', 'taxonomy general name', 'default' ),
+		    'singular_name' => _x( 'Category', 'taxonomy singular name', 'default' ),
+		    'search_items' =>  __( 'Search Categories', 'default' ),
+		    'all_items' => __( 'All Categories', 'default' ),
+		    'parent_item' => __( 'Parent Category', 'default' ),
+		    'parent_item_colon' => __( 'Parent Category:', 'default' ),
+		    'edit_item' => __( 'Edit Category', 'default' ),
+		    'update_item' => __( 'Update Category', 'default' ),
+		    'add_new_item' => __( 'Add Category', 'default' ),
+		    'new_item_name' => __( 'New Category Name', 'default' ),
+		    'menu_name' => __( 'Categories', 'default' )
 		  );
 		/** filter labels **/
 		$labels = apply_filters('wppizza_filter_ctx_lbls', $labels);
@@ -173,21 +174,21 @@ class WPPIZZA_REGISTER_POSTTYPE_AND_TAXONOMY{
 		
 		// Add new taxonomy, NOT hierarchical (like tags)
 		$labels = array(
-			'name' => _x( 'Tags', 'taxonomy general name' ),
-			'singular_name' => _x( 'Tag', 'taxonomy singular name' ),
-			'search_items' =>  __( 'Search Tags' ),
-			'popular_items' => __( 'Popular Tags' ),
-			'all_items' => __( 'All Tags' ),
+			'name' => _x( 'Tags', 'taxonomy general name', 'default' ),
+			'singular_name' => _x( 'Tag', 'taxonomy singular name', 'default' ),
+			'search_items' =>  __( 'Search Tags', 'default' ),
+			'popular_items' => __( 'Popular Tags', 'default' ),
+			'all_items' => __( 'All Tags', 'default' ),
 			'parent_item' => null,
 			'parent_item_colon' => null,
-			'edit_item' => __( 'Edit Tag' ), 
-			'update_item' => __( 'Update Tag' ),
-			'add_new_item' => __( 'Add New Tag' ),
-			'new_item_name' => __( 'New Tag Name' ),
-			'separate_items_with_commas' => __( 'Separate tags with commas' ),
-			'add_or_remove_items' => __( 'Add or remove tags' ),
-			'choose_from_most_used' => __( 'Choose from the most used tags' ),
-			'menu_name' => __( 'Tags' ),
+			'edit_item' => __( 'Edit Tag', 'default' ), 
+			'update_item' => __( 'Update Tag', 'default' ),
+			'add_new_item' => __( 'Add New Tag', 'default' ),
+			'new_item_name' => __( 'New Tag Name', 'default' ),
+			'separate_items_with_commas' => __( 'Separate tags with commas', 'default' ),
+			'add_or_remove_items' => __( 'Add or remove tags', 'default' ),
+			'choose_from_most_used' => __( 'Choose from the most used tags', 'default' ),
+			'menu_name' => __( 'Tags', 'default' ),
 		); 
 		/** filter labels **/
 		$labels = apply_filters('wppizza_filter_tags_lbls', $labels);	  

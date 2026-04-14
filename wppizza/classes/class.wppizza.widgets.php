@@ -31,7 +31,8 @@ class WPPIZZA_WIDGETS extends WP_Widget{
         		description under widget 
         		IMPORTANT : OMIT textdomain in gettext call here as it will not work for whatever reason and stop all translations !!!
         	*/
-        	'description' => sprintf( __( '%s Widgets'), WPPIZZA_NAME),
+        	/* Translators: 1: WPPizza Name as defined by constant */
+        	'description' => sprintf( __( '%s Widgets' ), WPPIZZA_NAME),
     	);
 		parent::__construct(false, WPPIZZA_NAME, $widget_options );
 	}
@@ -308,20 +309,20 @@ class WPPIZZA_WIDGETS extends WP_Widget{
 		  	$loggedinonly = !empty($instance['loggedinonly']) ? true : false;
 
 		?>
-		<div id="<?php echo $this->id; ?>" class="<?php echo WPPIZZA_SLUG; ?>">
+		<div id="<?php echo esc_attr($this->id); ?>" class="<?php echo esc_attr(WPPIZZA_SLUG); ?>">
 
 			    <p>
-			    	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e("Widget Title", 'wppizza-admin'); ?>:</label>
-			    	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+			    	<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php esc_attr_e("Widget Title", 'wppizza-admin'); ?>:</label>
+			    	<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 			    	<br/>
-			    	<input class="checkbox" type="checkbox" id="<?php echo $this->get_field_id('suppresstitle'); ?>" name="<?php echo $this->get_field_name('suppresstitle'); ?>" <?php echo $suppresstitle; ?> value="1" />
-			    	<label for="<?php echo $this->get_field_id( 'suppresstitle' ); ?>"><?php _e("Suppress Title ?", 'wppizza-admin'); ?></label>
+			    	<input class="checkbox" type="checkbox" id="<?php echo esc_attr($this->get_field_id('suppresstitle')); ?>" name="<?php echo esc_attr($this->get_field_name('suppresstitle')); ?>" <?php echo $suppresstitle; ?> value="1" />
+			    	<label for="<?php echo esc_attr($this->get_field_id( 'suppresstitle' )); ?>"><?php _e("Suppress Title ?", 'wppizza-admin'); ?></label>
 
 			    </p>
 
 			    <p class="<?php echo WPPIZZA_SLUG; ?>-type">
-			    	<label for="<?php echo $this->get_field_id( 'type' ); ?>"><?php _e("Widget Type", 'wppizza-admin'); ?>:</label>
-			        <select id="<?php echo $this->get_field_id( 'type' ); ?>" class="widefat <?php echo WPPIZZA_SLUG; ?>-widget-select" name="<?php echo $this->get_field_name( 'type' ); ?>">
+			    	<label for="<?php echo esc_attr($this->get_field_id( 'type' )); ?>"><?php _e("Widget Type", 'wppizza-admin'); ?>:</label>
+			        <select id="<?php echo esc_attr($this->get_field_id( 'type' )); ?>" class="widefat <?php echo WPPIZZA_SLUG; ?>-widget-select" name="<?php echo esc_attr($this->get_field_name( 'type' )); ?>">
 			        <?php foreach($this->wppizza_shortcode_type_options() as $key => $val){ ?>
 			        	<option value="<?php echo $key; ?>" <?php selected($key,$type,true) ?>><?php echo $val; ?></option>
 			        <?php } ?>
@@ -341,7 +342,7 @@ class WPPIZZA_WIDGETS extends WP_Widget{
 				        </select><br/>
 				        <input class="checkbox" type="checkbox" id="<?php echo $this->get_field_id('as_dropdown'); ?>" name="<?php echo $this->get_field_name('as_dropdown'); ?>" <?php echo $as_dropdown; ?> value="1" />
 				    	<label for="<?php echo $this->get_field_id( 'as_dropdown' ); ?>"><?php _e("As dropdown ?", 'wppizza-admin'); ?></label><br/>
-				        <small style="color:blue"><?php _e("Please refer to <a href='http://docs.wp-pizza.com/getting-started/?section=setup' target='_blank'>Set-Up</a> and  <a href='http://docs.wp-pizza.com/shortcodes/?section=navigation' target='_blank'>Navigation Shortcode/Widget</a> documentation when using this widget (or shortcode) to display the navigation", 'wppizza-admin'); ?></small>
+				        <small style="color:blue"><?php echo sprintf( __('Please refer to <a href="%1$s" target="_blank">Set-Up</a> and <a href="%2$s" target="_blank">Navigation Shortcode/Widget</a> documentation when using this widget (or shortcode) to display the navigation', "wppizza-admin"), "https://docs.wp-pizza.com/getting-started/?section=setup" , "https://docs.wp-pizza.com/shortcodes/?section=navigation"); ?></small>
 					</p>
 
 				    <p class="<?php echo WPPIZZA_SLUG; ?>-selected-orderpage" <?php if($type=='orderpage'){echo "style='display:block'";}else{echo "style='display:none'";} ?>>
@@ -421,7 +422,7 @@ class WPPIZZA_WIDGETS extends WP_Widget{
 
 				    	<input class="checkbox" type="checkbox" id="<?php echo $this->get_field_id('wppizza'); ?>" name="<?php echo $this->get_field_name('wppizza'); ?>" <?php checked($posttypewppizza,true,true) ?> value="1" />
 				    	<label for="<?php echo $this->get_field_id( 'wppizza' ); ?>"><?php _e("wppizza menu items", 'wppizza-admin'); ?>
-				    	<small style="color:blue;"><br> <?php _e('If enabled, create a <a href="http://docs.wp-pizza.com/developers/?section=wppizza-markup-single-single-php">single page</a> and <a href="https://docs.wp-pizza.com/developers/?section=wppizza-markup-search-search-php">search page</a> appropriate for your theme', 'wppizza-admin'); ?></small>
+				    	<small style="color:blue;"><br> <?php echo sprintf(__('If enabled, create a <a href="%1$s">single page</a> and <a href="%2$s">search page</a> appropriate for your theme', 'wppizza-admin'), "https://docs.wp-pizza.com/developers/?section=wppizza-markup-single-single-php", "https://docs.wp-pizza.com/developers/?section=wppizza-markup-search-search-php"); ?></small>
 				    	</label>
 				    	<br/>
 

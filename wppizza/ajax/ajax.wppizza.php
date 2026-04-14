@@ -2,9 +2,9 @@
 /**************************************************
 	[ajax only]
 **************************************************/
-if(!defined('DOING_AJAX') || !DOING_AJAX){
+if( !defined('DOING_AJAX') || !DOING_AJAX || !defined('ABSPATH') ){
 	header('HTTP/1.0 400 Bad Request', true, 400);
-	print"you cannot call this script directly";
+	print"You cannot call this script directly.";
   exit; //just for good measure
 }
 /**************************************************
@@ -40,23 +40,69 @@ if(!wppizza_debug()){
 /**************************************************
 	[add globals to use]
 **************************************************/
-global $wppizza_options, $blog_id;
+global $wppizza_options, $blog_id, $current_user;
 
 
-/**************************************************
+/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*
+*
+*
+*
+*	Nonce/Auth/Credentials/Caps checks 
+*
+*
+*
+*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\**\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\**\/*\/*\/*\/*\/*/
+
+/*-------------------------------------------------
 	[some frontend ajax calls should check the nonce too]
 	to be expanded if needs be.....
-**************************************************/
+-------------------------------------------------*/
 if(isset($_POST['vars']['type']) && in_array( $_POST['vars']['type'], array('admin-delete-order', 'admin-change-status', 'admin-view-order', 'admin-order-history') ) ){
 	$wppizza_ajax_nonce = '' . WPPIZZA_PREFIX . '_ajax_nonce';
 	if (! isset( $_POST['vars']['nonce'] ) || !wp_verify_nonce(  $_POST['vars']['nonce'] , $wppizza_ajax_nonce ) ) {
 		header('HTTP/1.0 403 Forbidden [F]', true, 403);
 		print"Forbidden [F]. Invalid Nonce.";
-		exit; //just for good measure
+		exit(); //just for good measure
 	}
 }
 
+/*-------------------------------------------------
+	additional auth/capability checks 
+	for certain order (history) related ajax calls
+-------------------------------------------------*/
+if(isset($_POST['vars']['type']) && in_array( $_POST['vars']['type'], array('admin-delete-order', 'admin-order-history', 'admin-view-order', 'admin-change-status') ) ){
+	//logged in user only with wppizza_cap_orderhistory privileges
+	if (!is_user_logged_in() || empty($current_user->allcaps['wppizza_cap_orderhistory'])){		
+		$obj = array();
+		$obj['access_prohibited'] = __('Sorry, you are not allowed to access this page.', 'default' );
+		print"".json_encode($obj)."";
+		exit();
+	}
+}
+/*-------------------------------------------------
+	Delete order needs additional credentials 
+-------------------------------------------------*/
+if( isset($_POST['vars']['type']) && $_POST['vars']['type']=='admin-delete-order' && !empty($_POST['vars']['uoKey']) ){
 
+	/* missing wppizza_cap_delete_order capabilities */
+	if(!current_user_can('wppizza_cap_delete_order')){
+		$obj['update_prohibited'] = __('Error: You need order delete permissions to perform this action.', 'wppizza-admin');
+		print"".json_encode($obj)."";
+	exit();
+	}
+}
+
+/*-------------------------------------------------
+	saving/update disabled by constant
+	for selected actions
+-------------------------------------------------*/
+if(isset($_POST['vars']['type']) && in_array( $_POST['vars']['type'], array('admin-delete-order', 'admin-change-status') ) && !empty($_POST['vars']['uoKey']) ){
+	if(WPPIZZA_DEV_ADMIN_NO_SAVE){
+		$obj['update_prohibited'] = __('Update Prohibited', 'wppizza-admin');
+		print"".json_encode($obj)."";
+	exit();
+	}
+}
 
 /*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*
 *
@@ -1061,7 +1107,7 @@ if(isset($_POST['vars']['type']) && $_POST['vars']['type']=='user-login'){
 		ini object
 	*********/
 	$obj = array();
-	$obj['button_value'] = __( 'Log In' );
+	$obj['button_value'] = __( 'Log In', 'default' );
 
 	/*********
 		parse posted vars
@@ -1102,7 +1148,7 @@ if(isset($_POST['vars']['type']) && $_POST['vars']['type']=='user-login'){
 		[output error if any]
 	***************************************************************/
 	if(!$valid_login){
-		$wp_error = new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid username or incorrect password.'));/*native wp localization*/
+		$wp_error = new WP_Error('authentication_failed', __('<strong>Error:</strong> Invalid username, email address or incorrect password.', 'default' ));
 		$obj['error'] = '<span class="' . WPPIZZA_PREFIX . '-login-error">'.$wp_error->get_error_message().'</span>';
 	}
 
@@ -1577,18 +1623,6 @@ if(isset($_POST['vars']['type']) && $_POST['vars']['type']=='submitorder'){
 	*************************************************************************************/
 	if( isset($_POST['vars']['type']) && $_POST['vars']['type']=='admin-change-status' && !empty($_POST['vars']['uoKey']) ){
 
-
-		/*
-			saving disabled
-		*/
-		if(WPPIZZA_DEV_ADMIN_NO_SAVE){
-			$obj['update_prohibited'] = __('Update Prohibited', 'wppizza-admin');
-			print"".json_encode($obj)."";
-		exit();
-		}
-
-
-
 		/*
 			get unique order key and split into blog/order id
 		*/
@@ -1688,23 +1722,6 @@ if(isset($_POST['vars']['type']) && $_POST['vars']['type']=='submitorder'){
 	if( isset($_POST['vars']['type']) && $_POST['vars']['type']=='admin-delete-order' && !empty($_POST['vars']['uoKey']) ){
 
 		/*
-			saving disabled
-		*/
-		if(WPPIZZA_DEV_ADMIN_NO_SAVE){
-			$obj['update_prohibited'] = __('Update Prohibited', 'wppizza-admin');
-			print"".json_encode($obj)."";
-		exit();
-		}
-		/*
-			missing credentials
-		*/
-		if(!current_user_can('wppizza_cap_delete_order')){
-			$obj['update_prohibited'] = __('Error: You need order delete permissions to perform this action.', 'wppizza-admin');
-			print"".json_encode($obj)."";
-		exit();
-		}
-
-		/*
 			blog_id / order id
 		*/
 		$_id = explode('_', $_POST['vars']['uoKey']);
@@ -1715,6 +1732,7 @@ if(isset($_POST['vars']['type']) && $_POST['vars']['type']=='submitorder'){
 		/* delete from db */
 		$res = WPPIZZA()->db->delete_order($order_delete_id, $blog_id);
 		/* ajax alert */
+		/* Translators: 1: Order ID */
 		$obj['success']="".sprintf(__('Order #%s deleted', 'wppizza-admin'), $order_delete_id )."";
 
 

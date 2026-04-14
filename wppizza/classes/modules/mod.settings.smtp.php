@@ -105,8 +105,10 @@ class WPPIZZA_MODULE_SMTP{
 
 		// Set up the mail variables
 		$email = $smtp_parameters['smtp_email'];
+		/* Translators: 1: WPPizza Name as defined by constant */
 		$subject = sprintf(__('%s SMTP Test: Test mail to ', 'wppizza-admin'),WPPIZZA_NAME) . $email;
-		$message = sprintf(__('%s SMTP test email message from "%s" site', 'wppizza-admin'),WPPIZZA_NAME, get_bloginfo('name')).'';
+		/* Translators: 1: WPPizza Name as defined by constant, 2: Bloginfo name as per general settings */
+		$message = sprintf(__('%1$s SMTP test email message from "%2$s" site', 'wppizza-admin'),WPPIZZA_NAME, get_bloginfo('name')).'';
 		$headers = array(WPPIZZA_CUSTOM_HEADER_EMAIL);/* add custom header so we know it's an email send by wppizza */
 
 		/**
@@ -206,10 +208,13 @@ class WPPIZZA_MODULE_SMTP{
 		/*help*/
 		if($help){
 			$settings['help'][$this->section_key][] = array(
+				/* Translators: 1: WPPizza Name as defined by constant */
 				'label'=>sprintf(__('use SMTP for sending %s related emails', 'wppizza-admin'),WPPIZZA_NAME),
 				'description'=>array(
+					/* Translators: 1: WPPizza Name as defined by constant */
 					sprintf(__('To use SMTP for any %s related emails, set the values as appropriate.', 'wppizza-admin'),WPPIZZA_NAME),
 					__('Make sure you test your settings by using the SMTP test provided.', 'wppizza-admin'),
+					/* Translators: 1: WPPizza Name as defined by constant */
 					'<span class="wppizza-highlight-important">'.sprintf(__('Please note, only %s emails will be affected', 'wppizza-admin'), WPPIZZA_NAME).'</span>'
 				)
 			);
@@ -220,6 +225,7 @@ class WPPIZZA_MODULE_SMTP{
 			$settings['fields'][$this->section_key][$field] = array( __('Use SMTP', 'wppizza-admin'), array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: WPPizza Name as defined by constant */
 				'label'=>sprintf(__('check to use SMTP when sending %s related emails', 'wppizza-admin'), WPPIZZA_NAME),
 				'description'=>array()
 			));

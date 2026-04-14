@@ -663,7 +663,7 @@ class WPPIZZA_MODULE_TOOLS_LICENCES_INIT{
 		/*
 			license key input
 		*/
-		$markup.="<input id='".WPPIZZA_SLUG."_license_key_".$plugin_slug."' class='".WPPIZZA_SLUG."_license_key' name='".WPPIZZA_SLUG."_license_key' type='text' placeholder='".__('Enter your Licence Key')."' size='35' class='regular-text' value='".$license."' />";
+		$markup.="<input id='".WPPIZZA_SLUG."_license_key_".$plugin_slug."' class='".WPPIZZA_SLUG."_license_key' name='".WPPIZZA_SLUG."_license_key' type='text' placeholder='".__('Enter your Licence Key', 'wppizza-admin')."' size='35' class='regular-text' value='".$license."' />";
 		$markup.=' '.__('Licence Key', 'wppizza-admin').'<br />';
 
 		/**
@@ -747,9 +747,11 @@ class WPPIZZA_MODULE_TOOLS_LICENCES_INIT{
 
 		if(!empty($expiry_time)){
 			if($status == 'valid' && $expiry_time > time()){
+				/* Translators: 1: License expiry date (future) */
 				$markup.='<br/><span style="font-size:90%">'.sprintf(__('This licence key expires on %s', 'wppizza-admin'),date('l d F, Y', $expiry_time)).'</span>';
 			}
 			if(in_array($status, array('expired', 'invalid')) && $expiry_time <= time()){
+				/* Translators: 1: License expiry date (past) */
 				$markup.='<br/><span style="font-size:90%;color:red;">'.sprintf(__('This licence key expired on %s', 'wppizza-admin'),date('l d F, Y', $expiry_time)).'</span>';
 			}
 		}

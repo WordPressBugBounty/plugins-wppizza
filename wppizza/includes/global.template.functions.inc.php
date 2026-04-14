@@ -55,9 +55,9 @@ function wppizza_search_results_get_template_part($slug, $name){
 if(!function_exists('wppizza_breadcrumbs')){
 function wppizza_breadcrumbs($args = array()){
     // Set variables for later use
-    $here_text        = isset($args['here_text']) 	?  $args['here_text'] : __( 'You are currently here!' );
+    $here_text        = isset($args['here_text']) 	?  $args['here_text'] : __( 'You are currently here!', 'default' );
     $home_link        = isset($args['home_link']) 	?  $args['home_link'] : home_url('/');
-    $home_text        = isset($args['home_text']) 	?  $args['home_text'] : __( 'Home' );
+    $home_text        = isset($args['home_text']) 	?  $args['home_text'] : __( 'Home', 'default' );
     $link_before      = isset($args['link_before']) ?  $args['link_before'] : '<span typeof="v:Breadcrumb">';
     $link_after       = isset($args['link_after']) 	?  $args['link_after'] : '</span>';
     $link_attr        = isset($args['link_attr']) 	?  $args['link_attr'] : ' rel="v:url" property="v:title"';
@@ -185,7 +185,7 @@ function wppizza_breadcrumbs($args = array()){
 
         } elseif ( is_author() ) {
 
-            $breadcrumb_trail = __( 'Author archive for ') .  $before . $queried_object->data->display_name . $after;
+            $breadcrumb_trail = __( 'Author archive for ', 'default' ) .  $before . $queried_object->data->display_name . $after;
 
         } elseif ( is_date() ) {
             // Set default variables
@@ -229,18 +229,19 @@ function wppizza_breadcrumbs($args = array()){
 
     // Handle the search page
     if ( is_search() ) {
-        $breadcrumb_trail = __( 'Search query for: ' ) . $before . get_search_query() . $after;
+        $breadcrumb_trail = __( 'Search query for: ', 'default' ) . $before . get_search_query() . $after;
     }
 
     // Handle 404's
     if ( is_404() ) {
-        $breadcrumb_trail = $before . __( 'Error 404' ) . $after;
+        $breadcrumb_trail = $before . __( 'Error 404', 'default' ) . $after;
     }
 
     // Handle paged pages
     if ( is_paged() ) {
         $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' );
-        $page_addon   = $before . sprintf( __( ' ( Page %s )' ), number_format_i18n( $current_page ) ) . $after;
+        /* Translators: 1:  Page number (integer) */
+        $page_addon   = $before . sprintf( __( ' ( Page %s )', 'default' ), number_format_i18n( $current_page ) ) . $after;
     }
 
     $breadcrumb_output_link  = '';

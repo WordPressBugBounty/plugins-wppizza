@@ -79,6 +79,7 @@ class WPPIZZA_MODULE_ORDERSETTINGS_TIPS{
 			$settings['help'][$this->section_key][] = array(
 				'label'=>__('Tips', 'wppizza-admin'),
 				'description'=>array(
+					/* Translators: 1: WPPizza Name as defined by constant */
 					sprintf(__('Please note that tips must be enabled in "%s -> Order Form" first for the settings here to have any effect.', 'wppizza-admin'), WPPIZZA_NAME),
 					__('Adjust settings as appropriate according to the information provided next to each individual option.', 'wppizza-admin'),
 				)

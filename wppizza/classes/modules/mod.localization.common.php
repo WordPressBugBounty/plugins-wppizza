@@ -364,6 +364,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('Label Discount (Spend x and save y): i.e spend 50.00 save 10.00. (%s will be replaced by the applicable values.)', 'wppizza-admin')
 			));			
 		}
@@ -460,6 +461,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('pagination info (i.e 5-10 of 35 or similar, %s being replaced as required)', 'wppizza-admin')
 			));
 		}
@@ -760,6 +762,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('(Sub)Totals: text before sum of tax applied to all items(if > 0). %s will be replaced by taxrate(s) applied', 'wppizza-admin')
 			));
 			$field = 'taxes_included';
@@ -767,12 +770,14 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
 				'label'=>__('(Sub)Totals: text before sum of tax applied if prices have been entered *inclusive* of tax (if > 0)', 'wppizza-admin'),
+				/* Translators: 1: %s should not be translated here but used literally */
 				'description'=>array(__('%s will be replaced by taxrate(s) applied', 'wppizza-admin'))
 			));
 			$field = 'shipping_tax';
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('(Sub)Totals: delivery charges tax (if any). %s will be replaced by taxrate(s) applied', 'wppizza-admin')
 			));
 			$field = 'tax_total';
@@ -797,6 +802,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('(Sub)Totals: surcharges percentage (if any). %s will be replaced by rate applied', 'wppizza-admin')
 			));
 			$field = 'surcharge_fixed';
@@ -893,6 +899,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('text to display when shop closed for holidays. %s being replaced by next opening day', 'wppizza-admin')
 			));	
 			$field = 'empty_cart';
@@ -1081,6 +1088,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: %s should not be translated here but used literally */
 				'label'=>__('text on order page when payment has not yet been confirmed / is still pending (%s will be replaced by the link to the current page) [html allowed]', 'wppizza-admin')
 			));
 
@@ -1197,6 +1205,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1: %%s should not be translated here but used literally, 2 : WPPizza Name as defined by constant. */
 				'label'=>sprintf(__('Admin bar "New Order(s)" notifications [%%s will be replaced with %s]', 'wppizza-admin'), WPPIZZA_NAME)
 			));
 			$field = 'failed_payment_try_again_link';
@@ -1234,6 +1243,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1 : WPPizza Name as defined by constant, 2: %%s should not be translated here but used literally */
 				'label'=>sprintf(__('Label for "accept privacy" checkbox on order form (if enabled in %s->Settings->GDPR / Privacy). %%s will be replaced with a link to your published privacy page set in Wordpress->Settings->Privacy', 'wppizza-admin'), WPPIZZA_NAME)
 			));
 
@@ -1241,6 +1251,7 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 			$settings['fields'][$section_key][$field] = array( '', array(
 				'value_key'=>$field,
 				'option_key'=>$this->settings_page,
+				/* Translators: 1 : WPPizza Name as defined by constant. */
 				'label'=>sprintf(__('Label if "accept privacy" checkbox was checked on confirmation page (if used and provided %s->Settings->GDPR / Privacy is enabled) ', 'wppizza-admin'), WPPIZZA_NAME)
 			));
 
@@ -1408,156 +1419,165 @@ class WPPIZZA_MODULE_LOCALIZATION_COMMON{
 	*	$parameter $options array() | filter passing on filtered options
 	*	@since 3.0
 	*	@return array()
-	*	using esc_html__ here to distinctly find for poedit frontend values
+	*	using wppizza_textdomain here to distinctly find for poedit frontend values
 	****************************************************************/
 	function options_default($options){
 
-		$options[$this->settings_page]['contains_additives'] = esc_html__('Contains additives', 'wppizza');
-		$options[$this->settings_page]['add_to_cart'] = esc_html__('Add to cart', 'wppizza');
-		$options[$this->settings_page]['alert_closed'] = esc_html__('Sorry, we are currently closed', 'wppizza');
-		$options[$this->settings_page]['alert_choose_size'] = esc_html__('Please choose a size', 'wppizza');
-		$options[$this->settings_page]['jquery_fb_add_to_cart_info'] = html_entity_decode(esc_html__('<div>&#10004;</div>item added', 'wppizza'));
-		$options[$this->settings_page]['no_results_found'] = esc_html__('No results found', 'wppizza');
-		$options[$this->settings_page]['uncategorised'] = esc_html__('Uncategorised', 'wppizza');
-		$options[$this->settings_page]['previous'] = esc_html__('< Previous', 'wppizza');
-		$options[$this->settings_page]['next'] = esc_html__('Next >', 'wppizza');
-		$options[$this->settings_page]['pagination_info'] = esc_html__('%s - %s of %s', 'wppizza');
-		$options[$this->settings_page]['closed'] = esc_html__('Currently closed', 'wppizza');
-		$options[$this->settings_page]['closed_for_holidays'] = esc_html__('Closed for holidays. We will open again on %s.', 'wppizza');
-		$options[$this->settings_page]['empty_cart'] = esc_html__('Empty cart', 'wppizza');
-		$options[$this->settings_page]['view_cart'] = esc_html__('View cart', 'wppizza');
-		$options[$this->settings_page]['cart_is_empty'] = esc_html__('Your cart is empty', 'wppizza');
-		$options[$this->settings_page]['remove_from_cart'] = esc_html__('Remove from cart', 'wppizza');
-		$options[$this->settings_page]['place_your_order'] = esc_html__('Place your order', 'wppizza');
-		$options[$this->settings_page]['cart_checkout'] = esc_html__('Checkout', 'wppizza');
-		$options[$this->settings_page]['cart_closed'] = esc_html__('We\'re closed', 'wppizza');
-		$options[$this->settings_page]['history_no_previous_orders'] = esc_html__('You have no previous orders', 'wppizza');
-		$options[$this->settings_page]['history_legend_order_details'] = esc_html__('Order Details', 'wppizza');
-		$options[$this->settings_page]['history_legend_transaction_details'] = esc_html__('Transaction Details', 'wppizza');
-		$options[$this->settings_page]['history_order_delivered_label'] = esc_html__('Delivered:', 'wppizza');
-		$options[$this->settings_page]['your_order'] = esc_html__('Your order', 'wppizza');
-		$options[$this->settings_page]['send_order'] = esc_html__('Send order', 'wppizza');
-		$options[$this->settings_page]['update_order'] = esc_html__('Update order', 'wppizza');
-		$options[$this->settings_page]['order_form_legend'] = esc_html__('Please enter the required information below', 'wppizza');
-		$options[$this->settings_page]['order_page_handling'] = esc_html__('Handling charge', 'wppizza');
-		$options[$this->settings_page]['order_page_handling_oncheckout'] = esc_html__('Calculated on checkout', 'wppizza');
-		$options[$this->settings_page]['required_field'] = esc_html__('This is a required field', 'wppizza');
-		$options[$this->settings_page]['required_field_email'] = esc_html__('Invalid email address', 'wppizza');
-		$options[$this->settings_page]['required_field_decimal'] = esc_html__('Decimal numbers only please', 'wppizza');
-		$options[$this->settings_page]['thank_you'] = esc_html__('Thank you', 'wppizza');
-		$options[$this->settings_page]['thank_you_p'] = esc_html__('Thank you, we have received your order', 'wppizza');
-		$options[$this->settings_page]['personal_information'] = esc_html__('Personal information', 'wppizza');
-		$options[$this->settings_page]['order_details'] = esc_html__('Order details', 'wppizza');
-		$options[$this->settings_page]['thank_you_error'] = esc_html__('Apologies. There was an error receiving your order. Please try again.', 'wppizza');
-		$options[$this->settings_page]['thank_you_error_contact_us'] = esc_html__('Apologies. There was an error receiving your order. Please contact us.', 'wppizza');
-		$options[$this->settings_page]['order_cancelled'] = esc_html__('Order cancelled', 'wppizza');
-		$options[$this->settings_page]['order_cancelled_p'] = esc_html__('This order has been cancelled. Thank you.', 'wppizza');
-		$options[$this->settings_page]['order_processing'] = esc_html__('Processing Payment', 'wppizza');
-		$options[$this->settings_page]['order_processing_p'] = html_entity_decode(esc_html__('<p>We are processing your payment! This page will automatically refresh and check again in a few seconds. Please wait.....</p><p>If this page appears for more than a minute, please contact us stating the following order details</p>', 'wppizza'));
-		$options[$this->settings_page]['order_payment_pending'] = esc_html__('Payment Pending', 'wppizza');
-		$options[$this->settings_page]['order_payment_pending_p']  = html_entity_decode(esc_html__('<p>Your payment has not yet been sent to us by your payment provider.</p><p>As soon as we have received your payment, a notification will be sent to you and we will process your order.</p><p><strong>Please note: we have no control over how quickly your provider will settle payments</strong></p><p>This page will refresh periodically, but you can also return to this page using <a href="%s">this link</a> to check back yourself later.</p>', 'wppizza'));
-		$options[$this->settings_page]['order_unconfirmed'] = esc_html__('Payment Accepted - Awaiting confirmation', 'wppizza');
-		$options[$this->settings_page]['order_unconfirmed_p']  = html_entity_decode(esc_html__('<p>Your payment was accepted but has not yet been confirmed.</p><p>You will receive another email when your payment has been confirmed. Your order can not be processed until final confirmation has been received.</p><p>Please be patient</p>', 'wppizza'));
-		$options[$this->settings_page]['order_confirmed'] = esc_html__('Payment Confirmed', 'wppizza');
-		$options[$this->settings_page]['order_confirmed_p']  = html_entity_decode(esc_html__('<p>Your payment has been confirmed. Thank you.</p>', 'wppizza'));
-		$options[$this->settings_page]['gateway_your_order'] = esc_html__('Your order at', 'wppizza') . ' '. get_bloginfo('name');
-		$options[$this->settings_page]['gateway_enter_payment_details'] = esc_html__('Please enter your payment details', 'wppizza');
-		$options[$this->settings_page]['order_not_found'] = esc_html__('Sorry, this order can not be found.', 'wppizza');
-		$options[$this->settings_page]['label_return_to_shop'] = esc_html__('Return to shop', 'wppizza');
+		$options[$this->settings_page]['contains_additives'] = wppizza_textdomain('Contains additives', 'wppizza');
+		$options[$this->settings_page]['add_to_cart'] = wppizza_textdomain('Add to cart', 'wppizza');
+		$options[$this->settings_page]['alert_closed'] = wppizza_textdomain('Sorry, we are currently closed', 'wppizza');
+		$options[$this->settings_page]['alert_choose_size'] = wppizza_textdomain('Please choose a size', 'wppizza');
+		$options[$this->settings_page]['jquery_fb_add_to_cart_info'] = html_entity_decode(wppizza_textdomain('<div>&#10004;</div>item added', 'wppizza'));
+		$options[$this->settings_page]['no_results_found'] = wppizza_textdomain('No results found', 'wppizza');
+		$options[$this->settings_page]['uncategorised'] = wppizza_textdomain('Uncategorised', 'wppizza');
+		$options[$this->settings_page]['previous'] = wppizza_textdomain('< Previous', 'wppizza');
+		$options[$this->settings_page]['next'] = wppizza_textdomain('Next >', 'wppizza');
+		/* Translators: 1,2,3: %s should not be translated here but used literally */
+		$options[$this->settings_page]['pagination_info'] = wppizza_textdomain('%s - %s of %s', 'wppizza');
+		$options[$this->settings_page]['closed'] = wppizza_textdomain('Currently closed', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->settings_page]['closed_for_holidays'] = wppizza_textdomain('Closed for holidays. We will open again on %s.', 'wppizza');
+		$options[$this->settings_page]['empty_cart'] = wppizza_textdomain('Empty cart', 'wppizza');
+		$options[$this->settings_page]['view_cart'] = wppizza_textdomain('View cart', 'wppizza');
+		$options[$this->settings_page]['cart_is_empty'] = wppizza_textdomain('Your cart is empty', 'wppizza');
+		$options[$this->settings_page]['remove_from_cart'] = wppizza_textdomain('Remove from cart', 'wppizza');
+		$options[$this->settings_page]['place_your_order'] = wppizza_textdomain('Place your order', 'wppizza');
+		$options[$this->settings_page]['cart_checkout'] = wppizza_textdomain('Checkout', 'wppizza');
+		$options[$this->settings_page]['cart_closed'] = wppizza_textdomain('We\'re closed', 'wppizza');
+		$options[$this->settings_page]['history_no_previous_orders'] = wppizza_textdomain('You have no previous orders', 'wppizza');
+		$options[$this->settings_page]['history_legend_order_details'] = wppizza_textdomain('Order Details', 'wppizza');
+		$options[$this->settings_page]['history_legend_transaction_details'] = wppizza_textdomain('Transaction Details', 'wppizza');
+		$options[$this->settings_page]['history_order_delivered_label'] = wppizza_textdomain('Delivered:', 'wppizza');
+		$options[$this->settings_page]['your_order'] = wppizza_textdomain('Your order', 'wppizza');
+		$options[$this->settings_page]['send_order'] = wppizza_textdomain('Send order', 'wppizza');
+		$options[$this->settings_page]['update_order'] = wppizza_textdomain('Update order', 'wppizza');
+		$options[$this->settings_page]['order_form_legend'] = wppizza_textdomain('Please enter the required information below', 'wppizza');
+		$options[$this->settings_page]['order_page_handling'] = wppizza_textdomain('Handling charge', 'wppizza');
+		$options[$this->settings_page]['order_page_handling_oncheckout'] = wppizza_textdomain('Calculated on checkout', 'wppizza');
+		$options[$this->settings_page]['required_field'] = wppizza_textdomain('This is a required field', 'wppizza');
+		$options[$this->settings_page]['required_field_email'] = wppizza_textdomain('Invalid email address', 'wppizza');
+		$options[$this->settings_page]['required_field_decimal'] = wppizza_textdomain('Decimal numbers only please', 'wppizza');
+		$options[$this->settings_page]['thank_you'] = wppizza_textdomain('Thank you', 'wppizza');
+		$options[$this->settings_page]['thank_you_p'] = wppizza_textdomain('Thank you, we have received your order', 'wppizza');
+		$options[$this->settings_page]['personal_information'] = wppizza_textdomain('Personal information', 'wppizza');
+		$options[$this->settings_page]['order_details'] = wppizza_textdomain('Order details', 'wppizza');
+		$options[$this->settings_page]['thank_you_error'] = wppizza_textdomain('Apologies. There was an error receiving your order. Please try again.', 'wppizza');
+		$options[$this->settings_page]['thank_you_error_contact_us'] = wppizza_textdomain('Apologies. There was an error receiving your order. Please contact us.', 'wppizza');
+		$options[$this->settings_page]['order_cancelled'] = wppizza_textdomain('Order cancelled', 'wppizza');
+		$options[$this->settings_page]['order_cancelled_p'] = wppizza_textdomain('This order has been cancelled. Thank you.', 'wppizza');
+		$options[$this->settings_page]['order_processing'] = wppizza_textdomain('Processing Payment', 'wppizza');
+		$options[$this->settings_page]['order_processing_p'] = html_entity_decode(wppizza_textdomain('<p>We are processing your payment! This page will automatically refresh and check again in a few seconds. Please wait.....</p><p>If this page appears for more than a minute, please contact us stating the following order details</p>', 'wppizza'));
+		$options[$this->settings_page]['order_payment_pending'] = wppizza_textdomain('Payment Pending', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->settings_page]['order_payment_pending_p']  = html_entity_decode(wppizza_textdomain('<p>Your payment has not yet been sent to us by your payment provider.</p><p>As soon as we have received your payment, a notification will be sent to you and we will process your order.</p><p><strong>Please note: we have no control over how quickly your provider will settle payments</strong></p><p>This page will refresh periodically, but you can also return to this page using <a href="%s">this link</a> to check back yourself later.</p>', 'wppizza'));
+		$options[$this->settings_page]['order_unconfirmed'] = wppizza_textdomain('Payment Accepted - Awaiting confirmation', 'wppizza');
+		$options[$this->settings_page]['order_unconfirmed_p']  = html_entity_decode(wppizza_textdomain('<p>Your payment was accepted but has not yet been confirmed.</p><p>You will receive another email when your payment has been confirmed. Your order can not be processed until final confirmation has been received.</p><p>Please be patient</p>', 'wppizza'));
+		$options[$this->settings_page]['order_confirmed'] = wppizza_textdomain('Payment Confirmed', 'wppizza');
+		$options[$this->settings_page]['order_confirmed_p']  = html_entity_decode(wppizza_textdomain('<p>Your payment has been confirmed. Thank you.</p>', 'wppizza'));
+		$options[$this->settings_page]['gateway_your_order'] = wppizza_textdomain('Your order at', 'wppizza') . ' '. get_bloginfo('name');
+		$options[$this->settings_page]['gateway_enter_payment_details'] = wppizza_textdomain('Please enter your payment details', 'wppizza');
+		$options[$this->settings_page]['order_not_found'] = wppizza_textdomain('Sorry, this order can not be found.', 'wppizza');
+		$options[$this->settings_page]['label_return_to_shop'] = wppizza_textdomain('Return to shop', 'wppizza');
 		$options[$this->settings_page]['order_ini_additional_info']='';
-		$options[$this->settings_page]['update_profile'] = esc_html__('Update my user data with the details above', 'wppizza');		
-		$options[$this->settings_page]['tips'] = esc_html__('Tips / Gratuities', 'wppizza');
-		$options[$this->settings_page]['loginout_have_account'] = esc_html__('Already registered ?', 'wppizza');
-		$options[$this->settings_page]['register_option_label'] = esc_html__('Continue as :', 'wppizza');
-		$options[$this->settings_page]['register_option_guest'] = esc_html__('Guest', 'wppizza');
-		$options[$this->settings_page]['register_option_create_account'] = esc_html__('Create account', 'wppizza');
-		$options[$this->settings_page]['register_option_create_account_info'] = esc_html__('Please ensure your email address is correct. A password will be emailed to you.', 'wppizza');
-		$options[$this->settings_page]['register_option_create_account_error'] = esc_html__('This email address has already been registered. Please either <a href="#login">login</a>, use a different email address or continue as guest.', 'wppizza');
-		$options[$this->settings_page]['itemised_label_quantity'] = esc_html__('Qty', 'wppizza');
-		$options[$this->settings_page]['itemised_label_article'] = esc_html__('Article', 'wppizza');
-		$options[$this->settings_page]['itemised_label_price'] = esc_html__('Price', 'wppizza');
-		$options[$this->settings_page]['itemised_label_taxrate'] = esc_html__('Tax Rate', 'wppizza');
-		$options[$this->settings_page]['itemised_label_total'] = esc_html__('Total', 'wppizza');
-		//$options[$this->settings_page]['order_paid_by'] = esc_html__('Paid By:', 'wppizza');
+		$options[$this->settings_page]['update_profile'] = wppizza_textdomain('Update my user data with the details above', 'wppizza');		
+		$options[$this->settings_page]['tips'] = wppizza_textdomain('Tips / Gratuities', 'wppizza');
+		$options[$this->settings_page]['loginout_have_account'] = wppizza_textdomain('Already registered ?', 'wppizza');
+		$options[$this->settings_page]['register_option_label'] = wppizza_textdomain('Continue as :', 'wppizza');
+		$options[$this->settings_page]['register_option_guest'] = wppizza_textdomain('Guest', 'wppizza');
+		$options[$this->settings_page]['register_option_create_account'] = wppizza_textdomain('Create account', 'wppizza');
+		$options[$this->settings_page]['register_option_create_account_info'] = wppizza_textdomain('Please ensure your email address is correct. A password will be emailed to you.', 'wppizza');
+		$options[$this->settings_page]['register_option_create_account_error'] = wppizza_textdomain('This email address has already been registered. Please either <a href="#login">login</a>, use a different email address or continue as guest.', 'wppizza');
+		$options[$this->settings_page]['itemised_label_quantity'] = wppizza_textdomain('Qty', 'wppizza');
+		$options[$this->settings_page]['itemised_label_article'] = wppizza_textdomain('Article', 'wppizza');
+		$options[$this->settings_page]['itemised_label_price'] = wppizza_textdomain('Price', 'wppizza');
+		$options[$this->settings_page]['itemised_label_taxrate'] = wppizza_textdomain('Tax Rate', 'wppizza');
+		$options[$this->settings_page]['itemised_label_total'] = wppizza_textdomain('Total', 'wppizza');
+		//$options[$this->settings_page]['order_paid_by'] = wppizza_textdomain('Paid By:', 'wppizza');
 		//$options[$this->settings_page]['order_email_footer']='';
-		//$options[$this->settings_page]['spend'] = esc_html__('Spend', 'wppizza');
-		//$options[$this->settings_page]['save'] = esc_html__('save', 'wppizza');
-		$options[$this->settings_page]['spend_save'] = esc_html__('Spend %s save %s.', 'wppizza');
-		$options[$this->settings_page]['free_delivery'] = esc_html__('Free Delivery', 'wppizza');
-		$options[$this->settings_page]['delivery_charges'] = esc_html__('Delivery Charges', 'wppizza');
-		$options[$this->settings_page]['delivery_charges_per_item'] = esc_html__('Delivery Charges Per Item', 'wppizza');
-		$options[$this->settings_page]['discount'] = esc_html__('Discount', 'wppizza');
-		$options[$this->settings_page]['item_tax_total'] = esc_html__('Sales Tax @ %s', 'wppizza');
-		$options[$this->settings_page]['taxes_included'] = esc_html__('Incl. Tax @ %s', 'wppizza');
-		$options[$this->settings_page]['handling_charges'] = esc_html__('Handling Charges', 'wppizza');
-		$options[$this->settings_page]['shipping_tax'] = esc_html__('Shipping Tax @ %s', 'wppizza');
-		$options[$this->settings_page]['tax_total'] = esc_html__('Tax Total', 'wppizza');
-		$options[$this->settings_page]['tax_total_included'] = esc_html__('Taxes Included', 'wppizza');
-		$options[$this->settings_page]['surcharge_percentage'] = esc_html__('Surcharge @ %s', 'wppizza');
-		$options[$this->settings_page]['surcharge_fixed'] = esc_html__('Surcharge', 'wppizza');		
-		$options[$this->settings_page]['order_total'] = esc_html__('Total', 'wppizza');
-		$options[$this->settings_page]['order_items'] = esc_html__('Your Items', 'wppizza');
-		$options[$this->settings_page]['openinghours_closed'] = esc_html__('closed', 'wppizza');
-		$options[$this->settings_page]['openinghours_24hrs'] = esc_html__('all day', 'wppizza');
+		//$options[$this->settings_page]['spend'] = wppizza_textdomain('Spend', 'wppizza');
+		//$options[$this->settings_page]['save'] = wppizza_textdomain('save', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->settings_page]['spend_save'] = wppizza_textdomain('Spend %s save %s.', 'wppizza');
+		$options[$this->settings_page]['free_delivery'] = wppizza_textdomain('Free Delivery', 'wppizza');
+		$options[$this->settings_page]['delivery_charges'] = wppizza_textdomain('Delivery Charges', 'wppizza');
+		$options[$this->settings_page]['delivery_charges_per_item'] = wppizza_textdomain('Delivery Charges Per Item', 'wppizza');
+		$options[$this->settings_page]['discount'] = wppizza_textdomain('Discount', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->settings_page]['item_tax_total'] = wppizza_textdomain('Sales Tax @ %s', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->settings_page]['taxes_included'] = wppizza_textdomain('Incl. Tax @ %s', 'wppizza');
+		$options[$this->settings_page]['handling_charges'] = wppizza_textdomain('Handling Charges', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->settings_page]['shipping_tax'] = wppizza_textdomain('Shipping Tax @ %s', 'wppizza');
+		$options[$this->settings_page]['tax_total'] = wppizza_textdomain('Tax Total', 'wppizza');
+		$options[$this->settings_page]['tax_total_included'] = wppizza_textdomain('Taxes Included', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->settings_page]['surcharge_percentage'] = wppizza_textdomain('Surcharge @ %s', 'wppizza');
+		$options[$this->settings_page]['surcharge_fixed'] = wppizza_textdomain('Surcharge', 'wppizza');		
+		$options[$this->settings_page]['order_total'] = wppizza_textdomain('Total', 'wppizza');
+		$options[$this->settings_page]['order_items'] = wppizza_textdomain('Your Items', 'wppizza');
+		$options[$this->settings_page]['openinghours_closed'] = wppizza_textdomain('closed', 'wppizza');
+		$options[$this->settings_page]['openinghours_24hrs'] = wppizza_textdomain('all day', 'wppizza');
 		$options[$this->settings_page]['header_order_print_header']=''.get_bloginfo('name').'';
 		$options[$this->settings_page]['header_order_print_shop_address'] = ''.get_bloginfo('name').'';
-		$options[$this->settings_page]['header_order_print_customer_label'] = esc_html__('Customer Details / Delivery Address', 'wppizza');
-		$options[$this->settings_page]['header_order_print_overview_label'] = esc_html__('Order', 'wppizza');
-		$options[$this->settings_page]['header_order_print_itemised_article'] = esc_html__('Article', 'wppizza');
-		$options[$this->settings_page]['header_order_print_itemised_price'] = esc_html__('Price', 'wppizza');
-		$options[$this->settings_page]['header_order_print_itemised_quantity'] = esc_html__('Qty', 'wppizza');
-		$options[$this->settings_page]['common_value_order_delivery'] = esc_html__('For Delivery', 'wppizza');
-		$options[$this->settings_page]['common_value_order_pickup'] = esc_html__('For Pickup', 'wppizza');
-		$options[$this->settings_page]['common_value_order_cash'] = esc_html__('Cash', 'wppizza');
-		$options[$this->settings_page]['common_value_order_credit_card'] = esc_html__('Credit Card', 'wppizza');
-		$options[$this->settings_page]['common_label_order_delivery_type'] = esc_html__('Delivery Type :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_wp_user_id'] = esc_html__('User ID :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_order_id'] = esc_html__('Order ID :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_currency'] = esc_html__('Currency :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_payment_type'] = esc_html__('Paid By :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_delivery_pickup_note'] = esc_html__('Note :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_payment_method'] = esc_html__('Payment Method :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_order_date'] = esc_html__('Order Date :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_transaction_id'] = esc_html__('Transaction Id :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_payment_outstanding'] = esc_html__('Payment Due :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_payment_unconfirmed'] = esc_html__('Unconfirmed Payment :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_payment_confirmed'] = esc_html__('Payment Confirmed :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_total'] = esc_html__('Total :', 'wppizza');
-		$options[$this->settings_page]['common_label_order_refund'] = esc_html__('Refunded :', 'wppizza');
-		$options[$this->settings_page]['templates_label_site'] = esc_html__('Site Details', 'wppizza');
-		$options[$this->settings_page]['templates_label_ordervars'] = esc_html__('Overview', 'wppizza');
-		$options[$this->settings_page]['templates_label_customer'] = esc_html__('Customer Details', 'wppizza');
-		$options[$this->settings_page]['templates_label_order'] = esc_html__('Order Details', 'wppizza');
-		$options[$this->settings_page]['templates_label_order_left'] = esc_html__('Qty', 'wppizza');
-		$options[$this->settings_page]['templates_label_order_center'] = esc_html__('Article', 'wppizza');
-		$options[$this->settings_page]['templates_label_order_right'] = esc_html__('Price', 'wppizza');
-		$options[$this->settings_page]['templates_label_summary'] = esc_html__('Summary', 'wppizza');
-		$options[$this->settings_page]['templates_user_is_guest'] = esc_html__('Guest', 'wppizza');
-		$options[$this->settings_page]['templates_user_is_registered'] = esc_html__('Registered User', 'wppizza');
+		$options[$this->settings_page]['header_order_print_customer_label'] = wppizza_textdomain('Customer Details / Delivery Address', 'wppizza');
+		$options[$this->settings_page]['header_order_print_overview_label'] = wppizza_textdomain('Order', 'wppizza');
+		$options[$this->settings_page]['header_order_print_itemised_article'] = wppizza_textdomain('Article', 'wppizza');
+		$options[$this->settings_page]['header_order_print_itemised_price'] = wppizza_textdomain('Price', 'wppizza');
+		$options[$this->settings_page]['header_order_print_itemised_quantity'] = wppizza_textdomain('Qty', 'wppizza');
+		$options[$this->settings_page]['common_value_order_delivery'] = wppizza_textdomain('For Delivery', 'wppizza');
+		$options[$this->settings_page]['common_value_order_pickup'] = wppizza_textdomain('For Pickup', 'wppizza');
+		$options[$this->settings_page]['common_value_order_cash'] = wppizza_textdomain('Cash', 'wppizza');
+		$options[$this->settings_page]['common_value_order_credit_card'] = wppizza_textdomain('Credit Card', 'wppizza');
+		$options[$this->settings_page]['common_label_order_delivery_type'] = wppizza_textdomain('Delivery Type :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_wp_user_id'] = wppizza_textdomain('User ID :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_order_id'] = wppizza_textdomain('Order ID :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_currency'] = wppizza_textdomain('Currency :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_payment_type'] = wppizza_textdomain('Paid By :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_delivery_pickup_note'] = wppizza_textdomain('Note :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_payment_method'] = wppizza_textdomain('Payment Method :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_order_date'] = wppizza_textdomain('Order Date :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_transaction_id'] = wppizza_textdomain('Transaction Id :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_payment_outstanding'] = wppizza_textdomain('Payment Due :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_payment_unconfirmed'] = wppizza_textdomain('Unconfirmed Payment :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_payment_confirmed'] = wppizza_textdomain('Payment Confirmed :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_total'] = wppizza_textdomain('Total :', 'wppizza');
+		$options[$this->settings_page]['common_label_order_refund'] = wppizza_textdomain('Refunded :', 'wppizza');
+		$options[$this->settings_page]['templates_label_site'] = wppizza_textdomain('Site Details', 'wppizza');
+		$options[$this->settings_page]['templates_label_ordervars'] = wppizza_textdomain('Overview', 'wppizza');
+		$options[$this->settings_page]['templates_label_customer'] = wppizza_textdomain('Customer Details', 'wppizza');
+		$options[$this->settings_page]['templates_label_order'] = wppizza_textdomain('Order Details', 'wppizza');
+		$options[$this->settings_page]['templates_label_order_left'] = wppizza_textdomain('Qty', 'wppizza');
+		$options[$this->settings_page]['templates_label_order_center'] = wppizza_textdomain('Article', 'wppizza');
+		$options[$this->settings_page]['templates_label_order_right'] = wppizza_textdomain('Price', 'wppizza');
+		$options[$this->settings_page]['templates_label_summary'] = wppizza_textdomain('Summary', 'wppizza');
+		$options[$this->settings_page]['templates_user_is_guest'] = wppizza_textdomain('Guest', 'wppizza');
+		$options[$this->settings_page]['templates_user_is_registered'] = wppizza_textdomain('Registered User', 'wppizza');
 		$options[$this->settings_page]['templates_footer_note'] = '';
 		$options[$this->settings_page]['templates_footer_note_print'] = '';
-		$options[$this->settings_page]['widget_navigation_dropdown_placeholder'] = esc_html__(' - Our Menu - ', 'wppizza');
-		$options[$this->settings_page]['user_profile_label_additional_info'] = esc_html__('Additional Information', 'wppizza');
-		$options[$this->settings_page]['gateway_select_label'] = esc_html__('Please select your payment method:', 'wppizza');
-		$options[$this->settings_page]['generic_placeholder_select'] = esc_html__('--- Please select ---', 'wppizza');
-		$options[$this->settings_page]['generic_placeholder_checkbox_0'] = esc_html__('No', 'wppizza');
-		$options[$this->settings_page]['generic_placeholder_checkbox_1'] = esc_html__('Yes', 'wppizza');
-		$options[$this->settings_page]['admin_notify_new_order_label'] = esc_html__('New Order(s)', 'wppizza');
-		$options[$this->settings_page]['failed_payment_try_again_link'] = esc_html__('Try Again', 'wppizza');
-		$options[$this->settings_page]['generic_back_to_site'] = esc_html__('Back to Merchant Site', 'wppizza');
-		$options[$this->settings_page]['generic_error_label'] = esc_html__('Error', 'wppizza');
-		$options[$this->settings_page]['generic_error_details'] = esc_html__('Error Details', 'wppizza');
-		$options[$this->settings_page]['localize_zero_price'] = esc_html__('Free', 'wppizza');
-		$options[$this->settings_page]['privacy_terms_accept'] = html_entity_decode(esc_html__('I have read and accept the <a href="%s" target="_blank">Privacy Policy</a>', 'wppizza'));
-		$options[$this->settings_page]['privacy_terms_accepted'] = esc_html__('Privacy Policy accepted:', 'wppizza');
-		$options[$this->settings_page]['order_history_status_new'] = esc_html__('New', 'wppizza');
-		$options[$this->settings_page]['order_history_status_acknowledged'] = esc_html__('Acknowledged', 'wppizza');
-		$options[$this->settings_page]['order_history_status_on_hold'] = esc_html__('On Hold', 'wppizza');
-		$options[$this->settings_page]['order_history_status_processed'] = esc_html__('Processed', 'wppizza');
-		$options[$this->settings_page]['order_history_status_delivered'] = esc_html__('Delivered', 'wppizza');
-		$options[$this->settings_page]['order_history_status_rejected'] = esc_html__('Rejected', 'wppizza');
-		$options[$this->settings_page]['order_history_status_refunded'] = esc_html__('Refunded', 'wppizza');
-		$options[$this->settings_page]['order_history_status_other'] = esc_html__('Other', 'wppizza');
+		$options[$this->settings_page]['widget_navigation_dropdown_placeholder'] = wppizza_textdomain(' - Our Menu - ', 'wppizza');
+		$options[$this->settings_page]['user_profile_label_additional_info'] = wppizza_textdomain('Additional Information', 'wppizza');
+		$options[$this->settings_page]['gateway_select_label'] = wppizza_textdomain('Please select your payment method:', 'wppizza');
+		$options[$this->settings_page]['generic_placeholder_select'] = wppizza_textdomain('--- Please select ---', 'wppizza');
+		$options[$this->settings_page]['generic_placeholder_checkbox_0'] = wppizza_textdomain('No', 'wppizza');
+		$options[$this->settings_page]['generic_placeholder_checkbox_1'] = wppizza_textdomain('Yes', 'wppizza');
+		$options[$this->settings_page]['admin_notify_new_order_label'] = wppizza_textdomain('New Order(s)', 'wppizza');
+		$options[$this->settings_page]['failed_payment_try_again_link'] = wppizza_textdomain('Try Again', 'wppizza');
+		$options[$this->settings_page]['generic_back_to_site'] = wppizza_textdomain('Back to Merchant Site', 'wppizza');
+		$options[$this->settings_page]['generic_error_label'] = wppizza_textdomain('Error', 'wppizza');
+		$options[$this->settings_page]['generic_error_details'] = wppizza_textdomain('Error Details', 'wppizza');
+		$options[$this->settings_page]['localize_zero_price'] = wppizza_textdomain('Free', 'wppizza');
+		/* Translators: 1: %s should not be translated here but used literally */
+		$options[$this->settings_page]['privacy_terms_accept'] = html_entity_decode(wppizza_textdomain('I have read and accept the <a href="%s" target="_blank">Privacy Policy</a>', 'wppizza'));
+		$options[$this->settings_page]['privacy_terms_accepted'] = wppizza_textdomain('Privacy Policy accepted:', 'wppizza');
+		$options[$this->settings_page]['order_history_status_new'] = wppizza_textdomain('New', 'wppizza');
+		$options[$this->settings_page]['order_history_status_acknowledged'] = wppizza_textdomain('Acknowledged', 'wppizza');
+		$options[$this->settings_page]['order_history_status_on_hold'] = wppizza_textdomain('On Hold', 'wppizza');
+		$options[$this->settings_page]['order_history_status_processed'] = wppizza_textdomain('Processed', 'wppizza');
+		$options[$this->settings_page]['order_history_status_delivered'] = wppizza_textdomain('Delivered', 'wppizza');
+		$options[$this->settings_page]['order_history_status_rejected'] = wppizza_textdomain('Rejected', 'wppizza');
+		$options[$this->settings_page]['order_history_status_refunded'] = wppizza_textdomain('Refunded', 'wppizza');
+		$options[$this->settings_page]['order_history_status_other'] = wppizza_textdomain('Other', 'wppizza');
 		$options[$this->settings_page]['order_history_status_custom_1'] = '';
 		$options[$this->settings_page]['order_history_status_custom_2'] = '';
 		$options[$this->settings_page]['order_history_status_custom_3'] = '';

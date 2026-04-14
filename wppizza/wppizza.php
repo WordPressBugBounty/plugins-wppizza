@@ -3,7 +3,7 @@
 #* Plugin Name: WPPizza
 #* Plugin URI: https://wordpress.org/extend/plugins/wppizza/
 #* Description: A Restaurant Plugin (not only for Pizza)
-#* Version: 3.19.9
+#* Version: 3.20
 #* Requires PHP: 5.3
 #* Author: ollybach
 #* Author URI: https://www.wp-pizza.com
@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {exit();}
 *	allow constant overrides to enable beta versions for example
 ***************************************************************/
 if(!defined('WPPIZZA_VERSION')){
-	define('WPPIZZA_VERSION', '3.19.9');
+	define('WPPIZZA_VERSION', '3.20');
 }
 if(!defined('WPPIZZA_VERSION_MAJOR')){
 	define('WPPIZZA_VERSION_MAJOR', '3');
@@ -270,7 +270,7 @@ if (!class_exists( 'WPPIZZA' )){
 		function plugin_action_links($links, $file) {
 
 			if (($file === plugin_basename(__FILE__) ) && (current_user_can('manage_options'))) {
-				$settings = '<a href="'. admin_url('edit.php?post_type=wppizza&page=order_settings') .'">'. esc_html__('Order Settings', 'wppizza-admin') .'</a>';
+				$settings = '<a href="'. admin_url('edit.php?post_type=wppizza&page=order_settings') .'">'. esc_html(__('Order Settings', 'wppizza-admin')) .'</a>';
 				array_unshift($links, $settings);
 			}
 
@@ -287,11 +287,11 @@ if (!class_exists( 'WPPIZZA' )){
 		function plugin_meta_links($links, $file) {
 
 			if ($file === plugin_basename(__FILE__)) {
-				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://docs.wp-pizza.com/getting-started/?section=setup" title="'. esc_attr__('Getting started', 'wppizza-admin') .'">'. esc_html__('Getting started', 'wppizza-admin') .'</a>';
-				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://docs.wp-pizza.com" title="'. esc_attr__('Documentation', 'wppizza-admin') .'">'. esc_html__('Documentation', 'wppizza-admin') .'</a>';
-				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://www.wp-pizza.com" title="'. esc_attr__('Homepage', 'wppizza-admin') .'">'. esc_html__('Homepage', 'wppizza-admin') .'</a>';
-				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/plugins/wppizza/#developers" title="'. esc_attr__('Changelog', 'wppizza-admin') .'">'. esc_html__('Changelog', 'wppizza-admin') .'</a>';
-				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/support/plugin/wppizza/reviews/?rate=5#new-post" title="'. esc_attr__('Click here to rate and review this plugin on WordPress.org', 'wppizza-admin') .'">'. esc_html__('Rate this plugin', 'wppizza-admin') .'&nbsp;&raquo;</a>';
+				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://docs.wp-pizza.com/getting-started/?section=setup" title="'. esc_attr(__('Getting started', 'wppizza-admin')) .'">'. esc_html(__('Getting started', 'wppizza-admin')) .'</a>';
+				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://docs.wp-pizza.com" title="'. esc_attr(__('Documentation', 'wppizza-admin')) .'">'. esc_html(__('Documentation', 'wppizza-admin')) .'</a>';
+				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://www.wp-pizza.com" title="'. esc_attr(__('Homepage', 'wppizza-admin')) .'">'. esc_html(__('Homepage', 'wppizza-admin')) .'</a>';
+				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/plugins/wppizza/#developers" title="'. esc_attr(__('Changelog', 'wppizza-admin')) .'">'. esc_html(__('Changelog', 'wppizza-admin')) .'</a>';
+				$links[] = '<a target="_blank" rel="noopener noreferrer" href="https://wordpress.org/support/plugin/wppizza/reviews/?rate=5#new-post" title="'. esc_attr(__('Click here to rate and review this plugin on WordPress.org', 'wppizza-admin')) .'">'. esc_html(__('Rate this plugin', 'wppizza-admin')) .'&nbsp;&raquo;</a>';
 			}
 
 		return $links;

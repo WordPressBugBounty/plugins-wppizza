@@ -339,10 +339,10 @@ class WPPIZZA_ORDER{
 				/*
 					add to array
 				*/
-				$order_results['sections']['customer']['login'] = array('label' => __('Login'), 'value' => $getUserData->user_login, 'type' =>'text');
-				$order_results['sections']['customer']['first_name'] = array('label' => __('First Name'), 'value' => $getUserData->first_name, 'type' =>'text');
-				$order_results['sections']['customer']['last_name'] = array('label' => __('Last Name'), 'value' => $getUserData->last_name, 'type' =>'text');
-				$order_results['sections']['customer']['email'] = array('label' => __('Email'), 'value' => $getUserData->user_email, 'type' =>'email');
+				$order_results['sections']['customer']['login'] = array('label' => __('Login', 'default' ), 'value' => $getUserData->user_login, 'type' =>'text');
+				$order_results['sections']['customer']['first_name'] = array('label' => __('First Name', 'default' ), 'value' => $getUserData->first_name, 'type' =>'text');
+				$order_results['sections']['customer']['last_name'] = array('label' => __('Last Name', 'default' ), 'value' => $getUserData->last_name, 'type' =>'text');
+				$order_results['sections']['customer']['email'] = array('label' => __('Email', 'default' ), 'value' => $getUserData->user_email, 'type' =>'email');
 			}
 
 			/*********
@@ -354,10 +354,10 @@ class WPPIZZA_ORDER{
 					$array=explode(" ",trim($order_results['sections']['customer']['cname']['value']));
 					$arLen=count($array);
 					if(isset($array[0])){
-						$order_results['sections']['customer']['first_name'] = array('label' => __('First Name'), 'value' => trim($array[0]), 'type' =>'text', 'class_ident' => 'wp_first_name');
+						$order_results['sections']['customer']['first_name'] = array('label' => __('First Name', 'default' ), 'value' => trim($array[0]), 'type' =>'text', 'class_ident' => 'wp_first_name');
 					}
 					if($arLen>1){
-						$order_results['sections']['customer']['last_name'] = array('label' => __('Last Name'), 'value' => trim($array[($arLen-1)]), 'type' =>'text', 'class_ident' => 'wp_last_name');
+						$order_results['sections']['customer']['last_name'] = array('label' => __('Last Name', 'default' ), 'value' => trim($array[($arLen-1)]), 'type' =>'text', 'class_ident' => 'wp_last_name');
 					}
 				}
 			}
@@ -2958,7 +2958,7 @@ return $customer_parameters;
 				if(!empty($show_tips)){
 					$summary['tips'][0]['sort']					=	70;
 					$summary['tips'][0]['class_ident']			=	'tips';
-					$summary['tips'][0]['label']				=	$blog_options['localization']['tips'] . (!empty($_SESSION[WPPIZZA_SLUG.'_userdata']['ctips_type'] && $_SESSION[WPPIZZA_SLUG.'_userdata']['ctips_type'] == 'pc' ) ? '<span class="tips_pc">'.$_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc].'%</span>': '' ) ;//add percentage selection if defined
+					$summary['tips'][0]['label']				=	$blog_options['localization']['tips'] . ( !empty($_SESSION[WPPIZZA_SLUG.'_userdata']['ctips_type']) && $_SESSION[WPPIZZA_SLUG.'_userdata']['ctips_type'] == 'pc'  ? '<span class="tips_pc">'.$_SESSION[WPPIZZA_SLUG.'_userdata'][$ctips_pc].'%</span>': '' ) ;//add percentage selection if defined
 					$summary['tips'][0]['value']				=	$order_values['summary']['tips'] ;
 					$summary['tips'][0]['value_formatted']		=	wppizza_format_price($order_values['summary']['tips'], $currency) ;
 				}
